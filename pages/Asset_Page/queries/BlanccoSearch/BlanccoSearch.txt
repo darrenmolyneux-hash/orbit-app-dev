@@ -1,11 +1,16 @@
 {
-  "filters": [
-    {
-      "field": "@system_serial",
-      "operator": "EQUALS",
-      "value": "{{ Assets.selectedRow.serialnumber }}"
-    }
-  ],
-  "container": "NONE",
-  "format": "XML"
+  "filter": {
+    "date": {
+      "gte": "2026-06-03T00:00:00Z",
+      "lt": "2026-06-04T00:00:00Z"
+    },
+    "fields": [
+      {
+        "name": "@system_serial",
+        "like": "{{ SerialInput.text }}"
+      }
+    ]
+  },
+  "format": "XML",
+  "container": "NONE"
 }

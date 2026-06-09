@@ -1,0 +1,42 @@
+{
+  "gitSyncId": "6a27f57e40e83311173efe61_0e816a01-1ea3-43f5-81ec-0a1c1d9e9af5",
+  "unpublishedPage": {
+    "isHidden": false,
+    "layouts": [
+      {
+        "dsl": {
+          "backgroundColor": "none",
+          "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+          "bottomRow": 14000,
+          "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+          "canExtend": true,
+          "containerStyle": "none",
+          "detachFromLayout": true,
+          "dynamicBindingPathList": [
+            {
+              "key": "borderRadius"
+            },
+            {
+              "key": "boxShadow"
+            }
+          ],
+          "dynamicTriggerPathList": [],
+          "leftColumn": 0,
+          "minHeight": 880,
+          "parentColumnSpace": 1,
+          "parentRowSpace": 1,
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "snapRows": 86,
+          "topRow": 0,
+          "type": "CANVAS_WIDGET",
+          "version": 94,
+          "widgetId": "0",
+          "widgetName": "MainContainer"
+        }
+      }
+    ],
+    "name": "Blancco Debug",
+    "slug": "blancco-debug"
+  }
+}

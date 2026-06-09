@@ -1,0 +1,4 @@
+SELECT serial_number
+FROM assets
+WHERE serial_number IS NOT NULL
+AND serial_number <> '';

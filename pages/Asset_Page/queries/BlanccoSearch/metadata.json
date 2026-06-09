@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"filters\": [\n    {\n      \"field\": \"@system_serial\",\n      \"operator\": \"EQUALS\",\n      \"value\": \"{{ Assets.selectedRow.serialnumber }}\"\n    }\n  ],\n  \"container\": \"NONE\",\n  \"format\": \"XML\"\n}\n",
+      "body": "{\n  \"filter\": {\n    \"date\": {\n      \"gte\": \"2026-06-03T00:00:00Z\",\n      \"lt\": \"2026-06-04T00:00:00Z\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"@system_serial\",\n        \"like\": \"{{ SerialInput.text }}\"\n      }\n    ]\n  },\n  \"format\": \"XML\",\n  \"container\": \"NONE\"\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
@@ -28,7 +28,7 @@
         },
         {
           "key": "Accept",
-          "value": "application/zip"
+          "value": "application/html"
         }
       ],
       "httpMethod": "POST",
@@ -59,7 +59,7 @@
     ],
     "name": "BlanccoSearch",
     "pageId": "Asset_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
