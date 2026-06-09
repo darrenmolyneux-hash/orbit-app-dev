@@ -59,7 +59,7 @@
     ],
     "name": "BlanccoSearch",
     "pageId": "Asset_Page",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

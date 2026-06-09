@@ -1,0 +1,8 @@
+INSERT INTO asset_audit_log (asset_id, field_name, old_value, new_value, changed_by)
+VALUES (
+  {{ appsmith.URL.queryParams.asset_id }},
+  {{ fieldName }},
+  {{ oldValue }},
+  {{ newValue }},
+  {{ appsmith.store.username || "Unknown User" }}
+);

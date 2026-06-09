@@ -15,7 +15,16 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -38,6 +47,7 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 61,
   "needsErrorInfo": false,
+  "onTextChanged": "{{ \n  (() => {\n    const t = CityInput.text || \"\";\n    CityInput.setValue(t.toLowerCase().replace(/\\b\\w/g, c => c.toUpperCase()));\n  })()\n}}\n",
   "originalBottomRow": 48,
   "originalTopRow": 44,
   "parentColumnSpace": 17.9521484375,

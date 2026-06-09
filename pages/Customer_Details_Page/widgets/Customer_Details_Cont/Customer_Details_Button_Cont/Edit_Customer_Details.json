@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 7,
   "boxShadow": "none",
   "dynamicBindingPathList": [
     {
@@ -20,7 +20,7 @@
   "isVisible": true,
   "key": "d3j0tbeipx",
   "label": "Edit Customer Detail",
-  "leftColumn": 6,
+  "leftColumn": 7,
   "menuColor": "{{appsmith.theme.colors.primaryColor}}",
   "menuItems": {
     "menuItem1": {
@@ -46,8 +46,8 @@
   "parentRowSpace": 10,
   "placement": "CENTER",
   "renderMode": "CANVAS",
-  "rightColumn": 52,
-  "topRow": 1,
+  "rightColumn": 53,
+  "topRow": 3,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "tctx45j4cc",

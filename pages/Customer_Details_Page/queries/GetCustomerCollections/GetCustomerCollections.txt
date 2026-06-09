@@ -1,0 +1,16 @@
+SELECT 
+  collectionid,
+  customerid,
+  address1,
+  city,
+  postcode,
+  jobtype,
+  collectiondate,
+  status,
+  collection_ref,
+  collection_prefix,
+  dial,
+  dial_expiry,
+  createddate
+FROM collections
+WHERE customerid = {{ appsmith.URL.queryParams.customer_id }};

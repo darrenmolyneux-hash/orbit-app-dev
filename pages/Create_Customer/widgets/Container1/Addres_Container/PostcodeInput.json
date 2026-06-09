@@ -47,7 +47,7 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 61,
   "needsErrorInfo": false,
-  "onTextChanged": "{{ \n  PostcodeInput.text.length > 2 \n    ? GetPostcodeMatches.run() \n    : null \n}}\n",
+  "onTextChanged": "{{ PostcodeInput.setValue((PostcodeInput.text || \"\").toUpperCase()) }}",
   "originalBottomRow": 61,
   "originalTopRow": 57,
   "parentColumnSpace": 17.9521484375,

@@ -1,0 +1,60 @@
+{
+  "accentColor": "#22c55e",
+  "animateLoading": true,
+  "bottomRow": 44,
+  "defaultEndValue": 100,
+  "defaultStartValue": "0",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "w1pddf53z0",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Battery Health",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 8,
+  "leftColumn": 24,
+  "marks": [
+    {
+      "label": "25%",
+      "value": 25
+    },
+    {
+      "label": "50%",
+      "value": 50
+    },
+    {
+      "label": "75%",
+      "value": 75
+    }
+  ],
+  "max": "100",
+  "min": "",
+  "minRange": 5,
+  "mobileBottomRow": 53,
+  "mobileLeftColumn": 8,
+  "mobileRightColumn": 48,
+  "mobileTopRow": 45,
+  "needsErrorInfo": false,
+  "originalBottomRow": 44,
+  "originalTopRow": 36,
+  "parentColumnSpace": 19.1875,
+  "parentId": "dc4v6fjacj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 44,
+  "shouldScroll": false,
+  "shouldTruncate": false,
+  "showMarksLabel": true,
+  "sliderSize": "m",
+  "step": "25",
+  "tooltipAlwaysOn": false,
+  "topRow": 36,
+  "type": "RANGE_SLIDER_WIDGET",
+  "version": 1,
+  "widgetId": "4mjimeappi",
+  "widgetName": "RangeSlider1"
+}

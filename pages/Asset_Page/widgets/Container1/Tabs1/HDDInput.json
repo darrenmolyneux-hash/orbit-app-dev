@@ -3,15 +3,18 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 22,
+  "bottomRow": 13,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{ RamSwitch.isSwitchedOn ? \"No RAM Installed\" : \"\" }}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -58,7 +61,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 37,
   "showStepArrows": false,
-  "topRow": 18,
+  "topRow": 9,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "v88lsapgab",

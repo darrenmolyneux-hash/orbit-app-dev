@@ -1,0 +1,47 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 13,
+  "boxShadow": "none",
+  "defaultSwitchState": "false",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultSwitchState"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "d2iiwwpkv8",
+  "label": "Missing",
+  "labelPosition": "Left",
+  "leftColumn": 37,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 42,
+  "mobileLeftColumn": 28,
+  "mobileRightColumn": 40,
+  "mobileTopRow": 38,
+  "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 9,
+  "parentColumnSpace": 19.1875,
+  "parentId": "dc4v6fjacj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 42,
+  "topRow": 9,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "sk86b4e1ao",
+  "widgetName": "RamSwitch"
+}

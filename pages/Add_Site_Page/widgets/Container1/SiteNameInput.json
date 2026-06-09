@@ -15,7 +15,16 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -38,6 +47,7 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 37,
   "needsErrorInfo": false,
+  "onTextChanged": "{{ \n  (() => {\n    const t = SiteNameInput.text || \"\";\n    SiteNameInput.setValue(t.toLowerCase().replace(/\\b\\w/g, c => c.toUpperCase()));\n  })()\n}}\n",
   "originalBottomRow": 36,
   "originalTopRow": 32,
   "parentColumnSpace": 17.9521484375,

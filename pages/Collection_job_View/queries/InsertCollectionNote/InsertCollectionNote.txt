@@ -4,8 +4,8 @@ INSERT INTO job_notes (
     created_by
 )
 VALUES (
-    {{ Number(JobIDInput.text) }},
-    {{ NotesInput.text }},
+    {{ Number(Collection_Ref.text.replace("Collection:", "").trim()) }},
+    {{ NotesInput.text || NotesInput.value }},
     {{ appsmith.user.email.split("@")[0] }}
 )
 RETURNING *;

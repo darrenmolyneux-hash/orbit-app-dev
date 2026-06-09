@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 20,
   "boxShadow": "none",
-  "defaultText": "{{ GetCustomerById.data[0].dialexpiry }}",
+  "defaultText": "{{ moment(GetCustomerById.data[0].dialexpiry).format(\"DD MMM YYYY\") }}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

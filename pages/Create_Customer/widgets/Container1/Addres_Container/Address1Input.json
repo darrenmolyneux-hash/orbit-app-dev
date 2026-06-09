@@ -15,7 +15,16 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -38,6 +47,7 @@
   "mobileRightColumn": 42,
   "mobileTopRow": 37,
   "needsErrorInfo": false,
+  "onTextChanged": "{{ \n  (() => {\n    const t = Address1Input.text || \"\";\n    Address1Input.setValue(t.toLowerCase().replace(/\\b\\w/g, c => c.toUpperCase()));\n  })()\n}}\n",
   "originalBottomRow": 49,
   "originalTopRow": 45,
   "parentColumnSpace": 17.9521484375,

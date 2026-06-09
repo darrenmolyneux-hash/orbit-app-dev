@@ -1,5 +1,6 @@
 {
   "animateLoading": true,
+  "borderColor": "#3f3f46",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 15,
   "dynamicBindingPathList": [

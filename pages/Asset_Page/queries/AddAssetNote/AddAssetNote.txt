@@ -1,0 +1,8 @@
+INSERT INTO asset_notes (asset_id, note_text, created_by)
+VALUES (
+  {{ appsmith.URL.queryParams.asset_id }},
+  {{ NotesInput.text }},
+  {{ appsmith.user.email.split("@")[0] }}
+
+)
+RETURNING *;

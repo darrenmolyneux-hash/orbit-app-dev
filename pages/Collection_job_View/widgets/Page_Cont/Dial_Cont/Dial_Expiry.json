@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 6,
   "boxShadow": "none",
-  "defaultText": "{{ Load_Collection.data[0].dial_expiry.toString() }}\n",
+  "defaultText": "{{ \nmoment(String(Load_Collection.data[0].dial_expiry).split(\" \")[0])\n.format(\"D MMMM YYYY\")\n}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

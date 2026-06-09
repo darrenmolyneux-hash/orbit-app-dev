@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 25,
   "boxShadow": "none",
   "defaultText": "{{ GetCustomerById.data[0].msasigned }}",
   "dynamicBindingPathList": [
@@ -18,6 +18,11 @@
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
@@ -30,6 +35,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "",
   "labelTextSize": "0.875rem",
   "labelWidth": "8",
   "leftColumn": 2,
@@ -49,7 +55,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 17,
   "showStepArrows": false,
-  "topRow": 21,
+  "topRow": 20,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "jvuliyrkeo",
