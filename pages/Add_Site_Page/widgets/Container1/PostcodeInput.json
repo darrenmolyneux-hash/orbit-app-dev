@@ -1,0 +1,66 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 52,
+  "boxShadow": "none",
+  "defaultText": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "tjh8wxdsad",
+  "label": "Postcode",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "8",
+  "leftColumn": 17,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 68,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 61,
+  "needsErrorInfo": false,
+  "onTextChanged": "{{ \n  PostcodeInput.text.length > 2 \n    ? GetPostcodeMatches.run() \n    : null \n}}\n",
+  "originalBottomRow": 52,
+  "originalTopRow": 48,
+  "parentColumnSpace": 17.9521484375,
+  "parentId": "xgvjb501nc",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 36,
+  "showStepArrows": false,
+  "topRow": 48,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "zsilk3tn1e",
+  "widgetName": "PostcodeInput"
+}

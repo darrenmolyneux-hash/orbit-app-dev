@@ -1,0 +1,3 @@
+SELECT *
+FROM sites
+WHERE customerid = {{ appsmith.URL.queryParams.customer_id }};

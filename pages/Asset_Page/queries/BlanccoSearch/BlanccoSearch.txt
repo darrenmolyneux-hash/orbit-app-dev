@@ -1,0 +1,11 @@
+{
+  "filters": [
+    {
+      "field": "@system_serial",
+      "operator": "EQUALS",
+      "value": "{{ Assets.selectedRow.serialnumber }}"
+    }
+  ],
+  "container": "NONE",
+  "format": "XML"
+}

@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 72,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "a4e29wxhhg",
+  "leftColumn": 47,
+  "minWidth": 120,
+  "mobileBottomRow": 71,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 67,
+  "needsErrorInfo": false,
+  "onClick": "{{ \n  InsertCustomerSite.run(\n    () => navigateTo('Home', { customer_id: appsmith.URL.queryParams.customer_id })\n  ) \n}}\n",
+  "originalBottomRow": 72,
+  "originalTopRow": 68,
+  "parentColumnSpace": 17.9521484375,
+  "parentId": "xgvjb501nc",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "text": "Save New Site",
+  "topRow": 68,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "7ocbcg4jll",
+  "widgetName": "DatecreatedAtInput"
+}

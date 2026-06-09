@@ -1,0 +1,74 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "oouer2te8c",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "BOLD",
+  "labelText": "Status",
+  "labelTextColor": "#22c55e",
+  "labelTextSize": "1.25rem",
+  "labelWidth": 5,
+  "leftColumn": 41,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 41,
+  "mobileRightColumn": 61,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{ UpdateStatus.run() }}\n",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 17,
+  "originalTopRow": 13,
+  "parentColumnSpace": 18.880859375,
+  "parentId": "mexzu69f1l",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "serverSideFiltering": false,
+  "sourceData": "{{ StatusQuery.data }}",
+  "topRow": 6,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "wgmme1oink",
+  "widgetName": "StatusDropdown"
+}

@@ -1,0 +1,26 @@
+INSERT INTO public."assets" (
+	"added_by",
+	"date_added",
+	"so_number",
+	"return_ref",
+	"collection_id",
+	"customer",
+	"item_type",
+	"make",
+	"model",
+	"serial_number",
+	"colour"
+)
+VALUES (
+	'{{insert_form.formData.added_by}}',
+	'{{insert_form.formData.date_added}}',
+	'{{insert_form.formData.so_number}}',
+	'{{insert_form.formData.return_ref}}',
+	'{{insert_form.formData.collection_id}}',
+	'{{insert_form.formData.customer}}',
+	'{{insert_form.formData.item_type}}',
+	'{{insert_form.formData.make}}',
+	'{{insert_form.formData.model}}',
+	'{{insert_form.formData.serial_number}}',
+	'{{insert_form.formData.colour}}'
+);

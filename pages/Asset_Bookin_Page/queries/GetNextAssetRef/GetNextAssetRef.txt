@@ -1,0 +1,9 @@
+WITH nextval AS (
+    UPDATE collection_asset_refs
+    SET next_ref = next_ref + 1
+    WHERE collection_id = {{ collectionId }}
+    RETURNING next_ref - 1 AS ref
+)
+SELECT 
+    {{ collectionId }} || '-' || LPAD(ref::text, 4, '0') AS asset_ref
+FROM nextval;

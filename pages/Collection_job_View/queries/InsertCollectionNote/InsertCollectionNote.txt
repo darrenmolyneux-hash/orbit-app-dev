@@ -1,0 +1,11 @@
+INSERT INTO job_notes (
+    jobid,
+    note_text,
+    created_by
+)
+VALUES (
+    {{ Number(JobIDInput.text) }},
+    {{ NotesInput.text }},
+    {{ appsmith.user.email.split("@")[0] }}
+)
+RETURNING *;

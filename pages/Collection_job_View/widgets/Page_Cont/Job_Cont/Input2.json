@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "defaultText": "{{ String(Load_Collection.data[0].jobtype) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": false,
+  "key": "cjv33c3jzm",
+  "label": "Job Type",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "15",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 43,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 40,
+  "needsErrorInfo": false,
+  "originalBottomRow": 44,
+  "originalTopRow": 40,
+  "parentColumnSpace": 19.5,
+  "parentId": "96usq2uwc2",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 54,
+  "showStepArrows": false,
+  "topRow": 1,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "0ioo7a79tg",
+  "widgetName": "Input2"
+}

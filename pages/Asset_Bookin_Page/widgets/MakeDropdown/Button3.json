@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "xozcmidyis",
+  "leftColumn": 59,
+  "minWidth": 120,
+  "mobileBottomRow": 18,
+  "mobileLeftColumn": 43,
+  "mobileRightColumn": 59,
+  "mobileTopRow": 14,
+  "needsErrorInfo": false,
+  "onClick": "{{ AssetUtils.addMultipleAssets() }}\n",
+  "parentColumnSpace": 18.880859375,
+  "parentId": "xgvjb501nc",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "text": "Add Asset",
+  "topRow": 5,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "d27y4qsdlm",
+  "widgetName": "Button3"
+}

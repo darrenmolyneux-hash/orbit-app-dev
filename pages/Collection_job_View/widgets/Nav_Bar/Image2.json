@@ -1,0 +1,39 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 6,
+  "boxShadow": "none",
+  "defaultImage": "https://www.mbhglobal.co.uk/wp-content/uploads/2026/06/Orbit_logo_transparent_cropped.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "e6knv1gcgl",
+  "leftColumn": 0,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 32,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "parentColumnSpace": 19.5,
+  "parentId": "xp1wnchas2",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 12,
+  "topRow": 0,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "89xbo6t8sf",
+  "widgetName": "Image2"
+}

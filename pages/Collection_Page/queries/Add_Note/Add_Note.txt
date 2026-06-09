@@ -1,0 +1,6 @@
+INSERT INTO Job_Notes (jobid, note_text, created_by)
+VALUES (
+    {{ Number(appsmith.URL.queryParams.collectionid) }},
+    '{{ NotesInput.text }}',
+    '{{ appsmith.user.email }}'
+);

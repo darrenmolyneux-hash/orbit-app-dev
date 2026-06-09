@@ -1,0 +1,6 @@
+SELECT 
+  dialref,
+  dialexpiry,
+  msasigned
+FROM customers
+WHERE customer_id = {{ CustomerDropdown.selectedOptionValue }};

@@ -1,0 +1,60 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "defaultText": "{{ GetCustomerCompliance.data?.[0]?.dialref|| \"\" }}\n",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": false,
+  "key": "cznhk1ldc5",
+  "label": "Dial",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelTextColor": "#71717a",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 3,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 34,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 27,
+  "needsErrorInfo": false,
+  "originalBottomRow": 41,
+  "originalTopRow": 37,
+  "parentColumnSpace": 18.880859375,
+  "parentId": "kekssunu05",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 17,
+  "showStepArrows": false,
+  "topRow": 0,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "69xyw9w8y8",
+  "widgetName": "Dial_Input"
+}

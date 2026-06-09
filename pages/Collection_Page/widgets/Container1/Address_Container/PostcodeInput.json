@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 17,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "knof9sn6lj",
+  "leftColumn": 32,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 50,
+  "mobileLeftColumn": 36,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 46,
+  "needsErrorInfo": false,
+  "originalBottomRow": 17,
+  "originalTopRow": 13,
+  "overflow": "NONE",
+  "parentColumnSpace": 16.7138671875,
+  "parentId": "7vwxpe2imt",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 57,
+  "shouldTruncate": false,
+  "text": "{{ CollectionTable.selectedRow.postcode }}",
+  "textAlign": "LEFT",
+  "textColor": "#71717a",
+  "topRow": 13,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "spz4gcww3g",
+  "widgetName": "PostcodeInput"
+}

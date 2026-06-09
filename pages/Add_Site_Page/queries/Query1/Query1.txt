@@ -1,0 +1,3 @@
+SELECT *
+FROM sites
+ORDER BY siteid DESC;

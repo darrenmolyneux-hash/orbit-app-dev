@@ -1,0 +1,66 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 18,
+  "boxShadow": "none",
+  "defaultText": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "3vv9chv950",
+  "label": "Collection",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "16",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  (function() {\n    if (!CollectionRefSearch.text.trim()) {\n      showAlert(\"Enter a collection ID first\", \"warning\");\n      return;\n    }\n\n    SearchByCollection.run(() => {\n      const row = SearchByCollection.data[0];\n\n      if (row) {\n        navigateTo(\"Collection_job_View\", { collectionid: row.collectionid });\n      } else {\n        showAlert(\"No collection found\", \"warning\");\n      }\n    });\n  })()\n}}\n",
+  "originalBottomRow": 18,
+  "originalTopRow": 14,
+  "parentColumnSpace": 7,
+  "parentId": "1cmdu0zmhu",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 51,
+  "showStepArrows": false,
+  "topRow": 14,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "jo78cwam3i",
+  "widgetName": "CollectionRefSearch"
+}

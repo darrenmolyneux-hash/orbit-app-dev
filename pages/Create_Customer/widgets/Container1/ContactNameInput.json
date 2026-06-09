@@ -1,0 +1,65 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 15,
+  "boxShadow": "none",
+  "defaultText": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "tjh8wxdsad",
+  "label": "Contact",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "5",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 65,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 58,
+  "needsErrorInfo": false,
+  "onTextChanged": "{{ \n  (() => {\n    const t = ContactNameInput.text || \"\";\n    ContactNameInput.setValue(t.toLowerCase().replace(/\\b\\w/g, c => c.toUpperCase()));\n  })()\n}}\n",
+  "parentColumnSpace": 19.8125,
+  "parentId": "xgvjb501nc",
+  "parentRowSpace": 10,
+  "placeholderText": "Contact Name\n",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "showStepArrows": false,
+  "topRow": 11,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "1sdwo0ut0d",
+  "widgetName": "ContactNameInput"
+}

@@ -1,0 +1,4 @@
+SELECT created_by, created_at, note_text
+FROM job_notes
+WHERE jobid = {{ Number(JobIDInput.text) }}
+ORDER BY created_at DESC;

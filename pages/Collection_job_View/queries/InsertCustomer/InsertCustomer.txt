@@ -1,0 +1,21 @@
+INSERT INTO customers (
+  customername,
+  contactname,
+  contactnumber,
+  dialref,
+  dialexpiry,
+  msasigned,
+  created_at,
+  createdby
+)
+VALUES (
+  {{CustomerNameInput.text}},
+  {{ContactNameInput.text}},
+  {{ContactNumberInput.text}},
+  {{DialRefInput.text}},
+  {{DialExpiryDate.formattedDate}},
+  {{MSA_Signed.text.selectedOptionValue}},
+  {{DatecreatedAtInput.formattedDate}},
+  {{appsmith.user.username}}
+)
+RETURNING customer_id;

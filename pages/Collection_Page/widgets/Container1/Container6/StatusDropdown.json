@@ -1,0 +1,64 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 31,
+  "boxShadow": "none",
+  "defaultOptionValue": "BOOKED",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": false,
+  "key": "x4wdf7b5dj",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Status",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "17",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 29,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 48,
+  "originalTopRow": 44,
+  "parentColumnSpace": 18.880859375,
+  "parentId": "96usq2uwc2",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 56,
+  "serverSideFiltering": false,
+  "sourceData": "{{ \n[\n  { name: \"Booked\", code: \"BOOKED\" },\n  { name: \"Collected\", code: \"COLLECTED\" },\n  { name: \"Received\", code: \"RECEIVED\" },\n  { name: \" Complete\", code: \"COMPLETE\" }\n] \n}}\n",
+  "topRow": 27,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "1yb0motnue",
+  "widgetName": "StatusDropdown"
+}

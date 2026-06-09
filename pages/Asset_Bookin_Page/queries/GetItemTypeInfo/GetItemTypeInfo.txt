@@ -1,0 +1,3 @@
+SELECT is_data_bearing
+FROM item_types
+WHERE item_type_id = {{ ItemTypeDropdown.selectedOptionValue }};

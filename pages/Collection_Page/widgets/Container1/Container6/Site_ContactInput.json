@@ -1,0 +1,57 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "defaultText": "{{ CollectionTable.selectedRow.ste_contact }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "wmw9rajg3w",
+  "label": "Site Contact",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "17",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 17,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 7.9140625,
+  "parentId": "96usq2uwc2",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 56,
+  "showStepArrows": false,
+  "topRow": 10,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "noarg9fo0d",
+  "widgetName": "Site_ContactInput"
+}

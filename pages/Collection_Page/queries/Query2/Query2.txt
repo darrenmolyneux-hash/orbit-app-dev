@@ -1,0 +1,4 @@
+SELECT collectionid, collection_prefix
+FROM collections
+ORDER BY collectionid DESC
+LIMIT 1;

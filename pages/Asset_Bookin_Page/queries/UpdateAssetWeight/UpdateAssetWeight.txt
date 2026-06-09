@@ -1,0 +1,11 @@
+UPDATE assets
+SET kg = (
+    SELECT weight 
+    FROM models 
+    WHERE model_id = (
+        SELECT model_id 
+        FROM assets 
+        WHERE asset_id = {{ Number(insertAsset.data[0].asset_id) }}
+    )
+)
+WHERE asset_id = {{ Number(insertAsset.data[0].asset_id) }};

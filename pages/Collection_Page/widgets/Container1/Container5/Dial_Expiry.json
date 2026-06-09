@@ -1,0 +1,60 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultText": "{{ GetCustomerCompliance.data?.[0]?.dialexpiry || \"\" }}\n",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": false,
+  "key": "cznhk1ldc5",
+  "label": "DIAL Expiry",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelTextColor": "#71717a",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "10",
+  "leftColumn": 21,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 33,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 26,
+  "needsErrorInfo": false,
+  "originalBottomRow": 41,
+  "originalTopRow": 37,
+  "parentColumnSpace": 18.880859375,
+  "parentId": "kekssunu05",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 37,
+  "showStepArrows": false,
+  "topRow": 0,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "5xkqmpqy70",
+  "widgetName": "Dial_Expiry"
+}

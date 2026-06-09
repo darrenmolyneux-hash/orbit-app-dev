@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_9c77b993-d3dd-454c-9d02-1ed93366f91b",
+  "id": "SaleDetails_ProcessSale",
+  "unpublishedCollection": {
+    "name": "ProcessSale",
+    "pageId": "SaleDetails",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

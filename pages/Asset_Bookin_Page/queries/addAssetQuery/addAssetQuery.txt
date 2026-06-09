@@ -1,0 +1,22 @@
+INSERT INTO assets (
+  collection_id,
+	customer,
+  item_type,
+  make,
+  model,
+  serial_number,
+  assettag,
+  kg,
+  added_by
+)
+VALUES (
+  {{ appsmith.URL.queryParams.collection_id }},
+	{{ appsmith.URL.queryParams.customer_name }},
+  {{ ItemTypeDropdown.selectedOptionValue.selectedOptionLabel }},
+  {{ MakeInput.selectedOptionValue.selectedOptionLabel }},
+  {{ ModelInput.selectedOptionValue.selectedOptionLabel }},
+  {{ SerialInput.text }},
+  {{ AssetTagInput.text }},
+  {{ KgInput.text }},
+  {{ appsmith.user.email }}
+);

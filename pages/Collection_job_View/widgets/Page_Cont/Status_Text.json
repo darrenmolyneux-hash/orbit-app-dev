@@ -1,0 +1,61 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "Ubuntu",
+  "fontSize": "1.875rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "klfw76ljzp",
+  "leftColumn": 13,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 67,
+  "mobileLeftColumn": 29,
+  "mobileRightColumn": 45,
+  "mobileTopRow": 63,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentColumnSpace": 18.880859375,
+  "parentId": "wg91e07364",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 29,
+  "shouldScrollContents": true,
+  "shouldTruncate": false,
+  "text": "**{{ (StatusDropdown.selectedOptionLabel || '').toString().toUpperCase() }}**\n\n",
+  "textAlign": "CENTER",
+  "textColor": "{{\n  StatusDropdown.selectedOptionValue === \"BOOKED\"\n    ? \"#1E90FF\"\n    : StatusDropdown.selectedOptionValue === \"COLLECTED\"\n    ? \"#FF8C00\"\n    : StatusDropdown.selectedOptionValue === \"RECEIVED\"\n    ? \"#2E8B57\"\n    : \"#6A5ACD\"\n}}\n",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "z1axlgi117",
+  "widgetName": "Status_Text"
+}

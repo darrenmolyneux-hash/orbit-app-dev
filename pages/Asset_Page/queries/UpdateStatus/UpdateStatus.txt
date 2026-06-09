@@ -1,0 +1,3 @@
+UPDATE assets
+SET status_id = {{ StatusDropdown.selectedOptionValue }}
+WHERE asset_id = {{ appsmith.URL.queryParams.asset_id }};

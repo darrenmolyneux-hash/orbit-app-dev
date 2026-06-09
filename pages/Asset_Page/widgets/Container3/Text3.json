@@ -1,0 +1,69 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "{{\n  GetAssetById.data[0].erasure_status === 'E'\n    ? '#4da6ff'   // blue\n    : GetAssetById.data[0].data_bearing === 'Y'\n      ? '#ff4d4d' // red\n      : '#4dff4d' // green\n}}\n",
+  "borderColor": "#18181b",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "2",
+  "bottomRow": 5,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "backgroundColor"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "Poppins",
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "shvl0wng7b",
+  "leftColumn": 53,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 24,
+  "mobileRightColumn": 40,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 6,
+  "originalTopRow": 1,
+  "overflow": "NONE",
+  "parentColumnSpace": 19.1875,
+  "parentId": "4dmb8tygm6",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldTruncate": false,
+  "text": "{{\n  GetAssetById.data[0].erasure_status === 'E'\n    ? 'SANITISED'\n    : GetAssetById.data[0].data_bearing === 'Y'\n      ? 'DATA BEARING'\n      : 'NON-DATA'\n}}\n",
+  "textAlign": "CENTER",
+  "textColor": "{{\n  GetAssetById.data[0].erasure_status === 'E'\n    ? 'white'\n    : GetAssetById.data[0].data_bearing === 'Y'\n      ? 'white'\n      : 'black'\n}}\n",
+  "topRow": 1,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "vmuedfn48v",
+  "widgetName": "Text3"
+}

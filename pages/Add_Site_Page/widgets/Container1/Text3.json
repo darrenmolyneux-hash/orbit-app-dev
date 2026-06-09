@@ -1,0 +1,58 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 15,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.875rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "pihppxbxyj",
+  "leftColumn": 15,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 10,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 15,
+  "originalTopRow": 10,
+  "overflow": "NONE",
+  "parentColumnSpace": 19.5,
+  "parentId": "xgvjb501nc",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 47,
+  "shouldTruncate": false,
+  "text": "Adding site for: {{ GetCustomerForSite.data[0].customername }}\n",
+  "textAlign": "CENTER",
+  "textColor": "{{appsmith.theme.colors.primaryColor}}",
+  "topRow": 10,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "ipbkgnoyj7",
+  "widgetName": "Text3"
+}

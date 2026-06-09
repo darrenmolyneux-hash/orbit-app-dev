@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 7,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "tyh5j8hnlt",
+  "leftColumn": 40,
+  "maxDynamicHeight": 7,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "overflow": "NONE",
+  "parentColumnSpace": 19.5,
+  "parentId": "lrjwrk91kc",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldScrollContents": true,
+  "shouldTruncate": false,
+  "text": "Customer: {{ appsmith.URL.queryParams.customer_name }}\nCollection: {{ appsmith.URL.queryParams.collection_id }}\n",
+  "textAlign": "CENTER",
+  "textColor": "#858282",
+  "topRow": 1,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "dtbl110n7j",
+  "widgetName": "Text3"
+}

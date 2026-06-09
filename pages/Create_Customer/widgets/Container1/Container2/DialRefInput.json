@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "x694z0ilj6",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "DIAL Rating",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "12",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 27,
+  "mobileLeftColumn": 23,
+  "mobileRightColumn": 43,
+  "mobileTopRow": 20,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "parentColumnSpace": 19.5,
+  "parentId": "up2tqgbbn4",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 32,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  { \"name\": \"🟢 DIAL1\", \"code\": \"DIAL1\" },\n  { \"name\": \"🟠 DIAL2\", \"code\": \"DIAL2\" },\n  { \"name\": \"🔴 DIAL3\", \"code\": \"DIAL3\" }\n]\n",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "tnb0kh7m03",
+  "widgetName": "DialRefInput"
+}

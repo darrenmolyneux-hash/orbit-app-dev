@@ -1,0 +1,74 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "defaultText": "{{ GetAssetById.data[0].make }}\n",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": "{{ true }}\n",
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "nlfdoyi8vb",
+  "label": "Make",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{'black'}}",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 24,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 17,
+  "needsErrorInfo": false,
+  "originalBottomRow": 50,
+  "originalTopRow": 46,
+  "parentColumnSpace": 18.880859375,
+  "parentId": "dc4v6fjacj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": false,
+  "responsiveBehavior": "fill",
+  "rightColumn": 19,
+  "showStepArrows": false,
+  "topRow": 10,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "oe2g3guvo2",
+  "widgetName": "MakeInput"
+}

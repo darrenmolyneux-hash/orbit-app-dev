@@ -1,0 +1,6 @@
+SELECT *
+FROM assets
+WHERE 
+    asset_ref = {{ AssetRefSearch.text }}
+    OR serial_number = {{ SerialSearch.text }};
+    

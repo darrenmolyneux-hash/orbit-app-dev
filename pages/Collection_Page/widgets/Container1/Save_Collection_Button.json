@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 56,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "0lrjfspsiw",
+  "leftColumn": 47,
+  "minWidth": 120,
+  "mobileBottomRow": 42,
+  "mobileLeftColumn": 25,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 38,
+  "needsErrorInfo": false,
+  "onClick": "InsertCollection.run(() => {\n    GenerateCollectionPrefix.run(() => {\n        SetCollectionPrefix.run(() => {\n            showAlert(\"Collection created\", \"success\")\n            navigateTo(\"Home\", { collectionid: InsertCollection.data[0].collectionid })\n        })\n    })\n})\n",
+  "originalBottomRow": 55,
+  "originalTopRow": 51,
+  "parentColumnSpace": 16.7138671875,
+  "parentId": "wg91e07364",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "text": "Save collection",
+  "topRow": 52,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "dec52evsaz",
+  "widgetName": "Save_Collection_Button"
+}

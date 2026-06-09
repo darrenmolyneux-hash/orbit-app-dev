@@ -1,0 +1,33 @@
+INSERT INTO collections (
+    customerid,
+    siteid,
+    address1,
+    address2,
+    city,
+    postcode,
+    notes,
+    collectiondate,
+    jobtype,
+    createdby,
+    collectiondescription,
+    dial,
+    dial_expiry,
+    status
+)
+VALUES (
+    {{ Number(CustomerDropdown.selectedOptionValue) }},
+    {{ Number(CollectionTable.selectedRow.siteid) }},
+    '{{ Address1Input.text }}',
+    '{{ Address2Input.text }}',
+    '{{ CityInput.text }}',
+    '{{ PostcodeInput.text }}',
+    '{{ NotesInput.text.text }}',
+    '{{ CollectionDateInput.formattedDate }}',
+    '{{ JobTypeInput.selectedOptionValue }}',
+    '{{ CreatedByInput.text }}',
+    '{{ collectiondescription.text }}',
+    '{{ Dial_Input.text }}',
+    '{{ Dial_Expiry.text }}',
+    '{{ StatusDropdown.selectedOptionValue }}'
+)
+RETURNING collectionid;

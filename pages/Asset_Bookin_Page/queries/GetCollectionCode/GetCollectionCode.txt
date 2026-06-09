@@ -1,0 +1,3 @@
+SELECT *
+FROM collection_codes
+WHERE collection_id = {{ appsmith.URL.queryParams.collection_id }};

@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 13,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "knof9sn6lj",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 28,
+  "mobileRightColumn": 44,
+  "mobileTopRow": 43,
+  "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 9,
+  "overflow": "NONE",
+  "parentColumnSpace": 16.7138671875,
+  "parentId": "7vwxpe2imt",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldTruncate": false,
+  "text": "{{ CollectionTable.selectedRow.address1 }}",
+  "textAlign": "LEFT",
+  "textColor": "#71717a",
+  "topRow": 9,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "z1yclohy1w",
+  "widgetName": "Address2Input"
+}

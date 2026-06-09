@@ -1,0 +1,9 @@
+SELECT 
+    sale_id,
+    sale_ref,
+    customer,
+    sale_date,
+    total_price,
+    created_by
+FROM sales
+ORDER BY sale_date DESC;
