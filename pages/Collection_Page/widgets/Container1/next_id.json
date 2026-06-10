@@ -45,7 +45,7 @@
   "shouldTruncate": false,
   "text": "Collection: {{ appsmith.URL.queryParams.nextid }}\n",
   "textAlign": "CENTER",
-  "textColor": "#858282",
+  "textColor": "#231f20",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

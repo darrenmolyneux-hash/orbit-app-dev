@@ -9,7 +9,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1080,
+      "bottomRow": 1090,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -87,7 +87,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": false,
-  "topRow": 9,
+  "topRow": 8,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "7pkgu1tjbs",

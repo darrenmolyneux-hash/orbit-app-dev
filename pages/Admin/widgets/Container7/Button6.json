@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 60,
+  "bottomRow": 24,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -14,11 +14,6 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClick"
-    }
-  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -28,17 +23,15 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "v8ar258e9s",
-  "leftColumn": 34,
+  "key": "pc7qw0z4mp",
+  "leftColumn": 3,
   "minWidth": 120,
-  "mobileBottomRow": 74,
-  "mobileLeftColumn": 33,
-  "mobileRightColumn": 49,
-  "mobileTopRow": 70,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 15,
+  "mobileRightColumn": 31,
+  "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{ navigateTo('SalesRecords') }}\n",
-  "originalBottomRow": 65,
-  "originalTopRow": 61,
+  "onClick": "{{navigateTo(\"\", {}, 'SAME_WINDOW')}}",
   "parentColumnSpace": 19.5,
   "parentId": "6piwxyw44b",
   "parentRowSpace": 10,
@@ -47,11 +40,11 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 50,
-  "text": "Back to Sales\n",
-  "topRow": 56,
+  "rightColumn": 13,
+  "text": "Blancco Debug",
+  "topRow": 20,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "i5hboz9q63",
-  "widgetName": "Button1"
+  "widgetId": "yy9joo20dm",
+  "widgetName": "Button6"
 }
