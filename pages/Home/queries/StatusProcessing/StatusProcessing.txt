@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS processing_count
+FROM collections
+WHERE status = 'Processing';
