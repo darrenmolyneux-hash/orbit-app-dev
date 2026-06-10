@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 10,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  \"\" ))(ItemTypeDropdown.options, ItemTypeDropdown.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  Get_ItemTypes.data[0]?.make_id ))(ItemTypeDropdown.options, ItemTypeDropdown.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -63,7 +63,7 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 10,
+  "rightColumn": 12,
   "serverSideFiltering": false,
   "sourceData": "{{Get_ItemTypes.data}}",
   "topRow": 3,

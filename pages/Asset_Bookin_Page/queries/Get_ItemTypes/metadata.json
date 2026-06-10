@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT item_type_id, item_type_name\nFROM item_types\nORDER BY item_type_name;\n",
+      "body": "SELECT item_type_id, item_type_name\nFROM item_types\nORDER BY item_type_id;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

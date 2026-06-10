@@ -1,25 +1,19 @@
 INSERT INTO assets (
-  model_id,
   collection_id,
-  customer,
   item_type,
   make,
   model,
   serial_number,
   assettag,
-  added_by,
-  data_bearing
+  model_id
 )
 VALUES (
-  {{ ModelId.text }},                -- model_id
-  {{ appsmith.URL.queryParams.collection_id }},       -- collection_id
-  {{ appsmith.URL.queryParams.customer_name }},       -- customer
-  {{ ItemTypeDropdown.selectedOptionLabel }},         -- item_type
-  {{ MakeInput.selectedOptionLabel }},                -- make
-  {{ ModelInput.selectedOptionLabel }},               -- model (name)
-  {{ SerialInput.text }},                             -- serial_number
-  {{ AssetTagInput.text }},                           -- assettag
-  {{ appsmith.user.email }},                          -- added_by
-  {{ DatabearingSwitch.isSwitchedOn ? 'Y' : 'N' }}    -- data_bearing
+  {{ Number(appsmith.URL.queryParams.collectionid) }},
+  '{{ ItemTypeDropdown.selectedOptionLabel }}',
+  '{{ MakeInput.selectedOptionLabel }}',
+  (SELECT model_name FROM models WHERE model_id = {{ Number(ModelInput.selectedOptionValue) }}),
+  '{{ SerialInput.text }}',
+  '{{ AssetTagInput.text }}',
+  {{ Number(ModelInput.selectedOptionValue) }}
 )
-RETURNING asset_id;
+RETURNING *;

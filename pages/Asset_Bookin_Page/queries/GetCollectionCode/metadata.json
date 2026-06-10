@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM collection_codes\nWHERE collection_id = {{ appsmith.URL.queryParams.collection_id }};\n",
+      "body": "SELECT\n  collectionid,\n  collection_prefix AS collection_code\nFROM collections\nWHERE collectionid = {{ Number(appsmith.URL.queryParams.collectionid) }};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

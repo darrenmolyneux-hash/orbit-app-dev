@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO assets (\n  model_id,\n  collection_id,\n  customer,\n  item_type,\n  make,\n  model,\n  serial_number,\n  assettag,\n  added_by,\n  data_bearing\n)\nVALUES (\n  {{ ModelId.text }},                -- model_id\n  {{ appsmith.URL.queryParams.collection_id }},       -- collection_id\n  {{ appsmith.URL.queryParams.customer_name }},       -- customer\n  {{ ItemTypeDropdown.selectedOptionLabel }},         -- item_type\n  {{ MakeInput.selectedOptionLabel }},                -- make\n  {{ ModelInput.selectedOptionLabel }},               -- model (name)\n  {{ SerialInput.text }},                             -- serial_number\n  {{ AssetTagInput.text }},                           -- assettag\n  {{ appsmith.user.email }},                          -- added_by\n  {{ DatabearingSwitch.isSwitchedOn ? 'Y' : 'N' }}    -- data_bearing\n)\nRETURNING asset_id;\n",
+      "body": "INSERT INTO assets (\n  collection_id,\n  item_type,\n  make,\n  model,\n  serial_number,\n  assettag,\n  model_id\n)\nVALUES (\n  {{ Number(appsmith.URL.queryParams.collectionid) }},\n  '{{ ItemTypeDropdown.selectedOptionLabel }}',\n  '{{ MakeInput.selectedOptionLabel }}',\n  (SELECT model_name FROM models WHERE model_id = {{ Number(ModelInput.selectedOptionValue) }}),\n  '{{ SerialInput.text }}',\n  '{{ AssetTagInput.text }}',\n  {{ Number(ModelInput.selectedOptionValue) }}\n)\nRETURNING *;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
