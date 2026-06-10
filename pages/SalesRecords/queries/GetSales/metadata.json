@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    sale_id,\n    sale_ref,\n    customer,\n    sale_date,\n    total_price,\n    created_by\nFROM sales\nORDER BY sale_date DESC;\n",
+      "body": "SELECT \n    s.sale_id,\n    s.sale_ref,\n    s.customer AS customer_id,\n    c.customername AS customernamename,\n    s.sale_date,\n    s.total_price,\n    s.created_by\nFROM sales s\nLEFT JOIN customers c \n    ON c.customer_id = NULLIF(s.customer, '')::int\nORDER BY s.sale_date DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

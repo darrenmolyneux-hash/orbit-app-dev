@@ -1,44 +1,40 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 73,
+  "bottomRow": 34,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonColor": "green",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {
-      "key": "buttonColor"
+      "key": "borderRadius"
     },
     {
-      "key": "borderRadius"
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "onClick"
-    }
-  ],
-  "dynamicTriggerPathList": [
+      "key": "isVisible"
+    },
     {
-      "key": "onClick"
+      "key": "isDisabled"
     }
   ],
+  "dynamicTriggerPathList": [],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "false",
   "isLoading": false,
-  "isVisible": true,
-  "key": "v8ar258e9s",
-  "leftColumn": 33,
+  "isVisible": "{{ appsmith.store.assetBlocked === true }}\n",
+  "key": "4ra97hewlp",
+  "leftColumn": 44,
   "minWidth": 120,
-  "mobileBottomRow": 74,
-  "mobileLeftColumn": 33,
-  "mobileRightColumn": 49,
-  "mobileTopRow": 70,
+  "mobileBottomRow": 31,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 60,
+  "mobileTopRow": 27,
   "needsErrorInfo": false,
-  "onClick": "{{ navigateTo('SalesRecords') }}\n",
-  "originalBottomRow": 74,
-  "originalTopRow": 70,
   "parentColumnSpace": 19.5,
   "parentId": "6piwxyw44b",
   "parentRowSpace": 10,
@@ -47,11 +43,11 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 49,
-  "text": "Back to Sales\n",
-  "topRow": 69,
+  "rightColumn": 58,
+  "text": "Process Anyway",
+  "topRow": 30,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "i5hboz9q63",
-  "widgetName": "Button1"
+  "widgetId": "zkpuyo6xzh",
+  "widgetName": "Button2Copy"
 }

@@ -488,6 +488,60 @@
     },
     {
       "key": "schema.__root_schema__.children.sale_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.battery_health.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.battery_health.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.battery_health.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_model.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_model.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_model.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_serial.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_serial.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_serial.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_interface.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_interface.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.drive_interface.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.erasure_standard.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.erasure_standard.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.erasure_standard.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.blancco_last_fetch.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.blancco_last_fetch.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.blancco_last_fetch.accentColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -675,6 +729,48 @@
           "position": 26,
           "sourceData": ""
         },
+        "battery_health": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "battery_health",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.battery_health))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "battery_health",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Battery Health",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "battery_health",
+          "position": 41
+        },
+        "blancco_last_fetch": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "blancco_last_fetch",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.blancco_last_fetch))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "blancco_last_fetch",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Blancco Last Fetch",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "blancco_last_fetch",
+          "position": 46
+        },
         "cam": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "accessor": "cam",
@@ -847,6 +943,69 @@
           "position": 1,
           "sourceData": "2026-06-04T07:55:58Z"
         },
+        "drive_interface": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "drive_interface",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.drive_interface))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "drive_interface",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Drive Interface",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "drive_interface",
+          "position": 44
+        },
+        "drive_model": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "drive_model",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.drive_model))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "drive_model",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Drive Model",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "drive_model",
+          "position": 42
+        },
+        "drive_serial": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "drive_serial",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.drive_serial))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "drive_serial",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Drive Serial",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "drive_serial",
+          "position": 43
+        },
         "emc_no": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "accessor": "emc_no",
@@ -868,6 +1027,27 @@
           "originalIdentifier": "emc_no",
           "position": 32,
           "sourceData": ""
+        },
+        "erasure_standard": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "erasure_standard",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.erasure_standard))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "erasure_standard",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Erasure Standard",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "erasure_standard",
+          "position": 45
         },
         "erasure_status": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",

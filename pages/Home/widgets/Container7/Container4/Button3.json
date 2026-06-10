@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 29,
+  "bottomRow": 14,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -14,11 +14,6 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClick"
-    }
-  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -28,28 +23,28 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "jcs4wswhpv",
-  "leftColumn": 52,
+  "key": "kjnxodydwn",
+  "leftColumn": 2,
   "minWidth": 120,
-  "mobileBottomRow": 23,
-  "mobileLeftColumn": 28,
-  "mobileRightColumn": 44,
-  "mobileTopRow": 19,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 37,
+  "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "onClick": "{{ BlanccoAdmin.syncAllAssets() }}",
-  "parentColumnSpace": 19.5,
-  "parentId": "6piwxyw44b",
+  "onClick": "{{navigateTo('New_Sale_Page', {}, 'NEW_WINDOW');}}",
+  "parentColumnSpace": 2.734375,
+  "parentId": "c439339ha6",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 60,
-  "text": "Sync Blancco Data",
-  "topRow": 25,
+  "rightColumn": 62,
+  "text": "New Sale",
+  "topRow": 10,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "waokju69ck",
-  "widgetName": "Button2"
+  "widgetId": "uxow2rarqc",
+  "widgetName": "Button3"
 }

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_00a84737-ed43-4338-9b7b-c61d97f1a61a",
-  "id": "New_Sale_Page_Query2",
+  "gitSyncId": "6a27f57e40e83311173efe61_328408b9-4f26-4ea5-91e8-ded956bdd489",
+  "id": "New_Sale_Page_CheckAssetOnSale",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
+      "body": "SELECT \n    si.sale_id,\n    s.sale_ref\nFROM sale_items si\nLEFT JOIN sales s ON si.sale_id = s.sale_id\nWHERE si.asset_id = {{ Sales.selectedRow.asset_id }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,12 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "name": "Query2",
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
+    "name": "CheckAssetOnSale",
     "pageId": "New_Sale_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

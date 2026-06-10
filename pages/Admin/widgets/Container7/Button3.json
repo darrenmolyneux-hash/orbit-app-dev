@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 29,
+  "bottomRow": 9,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -14,11 +14,6 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClick"
-    }
-  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -28,15 +23,15 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "jcs4wswhpv",
-  "leftColumn": 52,
+  "key": "3ulb71p9fs",
+  "leftColumn": 3,
   "minWidth": 120,
-  "mobileBottomRow": 23,
-  "mobileLeftColumn": 28,
-  "mobileRightColumn": 44,
-  "mobileTopRow": 19,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 18,
+  "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "onClick": "{{ BlanccoAdmin.syncAllAssets() }}",
+  "onClick": "{{navigateTo('Customer_List', {}, 'NEW_WINDOW');}}",
   "parentColumnSpace": 19.5,
   "parentId": "6piwxyw44b",
   "parentRowSpace": 10,
@@ -45,11 +40,11 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 60,
-  "text": "Sync Blancco Data",
-  "topRow": 25,
+  "rightColumn": 13,
+  "text": "Customer list",
+  "topRow": 5,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "waokju69ck",
-  "widgetName": "Button2"
+  "widgetId": "8gxxg933ro",
+  "widgetName": "Button3"
 }

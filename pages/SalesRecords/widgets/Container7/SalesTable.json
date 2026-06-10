@@ -33,16 +33,21 @@
   },
   "columnOrder": [
     "sale_id",
+    "customernamename",
     "sale_ref",
-    "customer",
     "sale_date",
     "total_price",
     "created_by",
-    "customColumn1"
+    "customColumn1",
+    "customer_id"
   ],
-  "columnUpdatedAt": 1780927928574,
+  "columnUpdatedAt": 1781080598949,
   "columnWidthMap": {
-    "customer": 140
+    "created_by": 277,
+    "customer": 140,
+    "customernamename": 194,
+    "sale_date": 187,
+    "sale_ref": 186
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -72,9 +77,6 @@
       "key": "primaryColumns.sale_ref.computedValue"
     },
     {
-      "key": "primaryColumns.customer.computedValue"
-    },
-    {
       "key": "primaryColumns.sale_date.computedValue"
     },
     {
@@ -91,6 +93,12 @@
     },
     {
       "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customer_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.customernamename.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -126,7 +134,7 @@
   "isVisibleSearch": true,
   "key": "s5p9darz9t",
   "label": "Data",
-  "leftColumn": 7,
+  "leftColumn": 1,
   "minWidth": 450,
   "mobileBottomRow": 39,
   "mobileLeftColumn": 2,
@@ -159,7 +167,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "created_by",
+      "label": "Created By",
       "notation": "standard",
       "originalId": "created_by",
       "sticky": "",
@@ -170,7 +178,7 @@
       "width": 150
     },
     "customColumn1": {
-      "alias": "customColumn1",
+      "alias": "View",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "borderRadius": "{{SalesTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
@@ -196,7 +204,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "customColumn1",
+      "label": "View",
       "labelColor": "#FFFFFF",
       "notation": "standard",
       "onClick": "{{ navigateTo('SaleDetails', { sale_id: SalesTable.selectedRow.sale_id }) }}\n",
@@ -208,18 +216,20 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "customer": {
-      "alias": "customer",
+    "customer_id": {
+      "alias": "customer_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = SalesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer\"])) : customer })()}}",
+      "computedValue": "{{(() => { const tableData = SalesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer_id\"])) : customer_id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "customer",
+      "id": "customer_id",
       "index": 2,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -228,11 +238,46 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
-      "label": "customer",
+      "isVisible": false,
+      "label": "customer_id",
       "notation": "standard",
-      "originalId": "customer",
+      "originalId": "customer_id",
       "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customernamename": {
+      "alias": "customernamename",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = SalesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customernamename\"])) : customernamename })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "customernamename",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Customer",
+      "notation": "standard",
+      "originalId": "customernamename",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -260,7 +305,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "sale_date",
+      "label": "Sale Date",
       "notation": "standard",
       "originalId": "sale_date",
       "sticky": "",
@@ -322,7 +367,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "sale_ref",
+      "label": "Sales Ref",
       "notation": "standard",
       "originalId": "sale_ref",
       "sticky": "",
@@ -353,7 +398,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "total_price",
+      "label": "Total Price",
       "notation": "standard",
       "originalId": "total_price",
       "sticky": "",
@@ -366,7 +411,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 52,
+  "rightColumn": 63,
   "searchKey": "",
   "tableData": "{{ GetSales.data }}\n",
   "textSize": "0.875rem",

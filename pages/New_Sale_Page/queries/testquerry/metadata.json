@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_1ac7e577-f94e-4e0c-b942-40243fb34e78",
-  "id": "SalesRecords_Query2",
+  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_00a84737-ed43-4338-9b7b-c61d97f1a61a",
+  "id": "New_Sale_Page_testquerry",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
+      "body": "SELECT asset_id, status_id\nFROM assets\nWHERE status_id IS NULL\n   OR status_id = '';\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,8 +22,9 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "name": "Query2",
-    "pageId": "SalesRecords",
+    "dynamicBindingPathList": [],
+    "name": "testquerry",
+    "pageId": "New_Sale_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

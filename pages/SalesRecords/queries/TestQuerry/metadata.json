@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_d6c7c7a9-ea88-442f-80c4-566ff7c67b74",
-  "id": "SalesRecords_Query1",
+  "gitSyncId": "6a27f57e40e83311173efe61_b4d6a6d9-d297-4d29-9118-3b727a8a2ceb",
+  "id": "SalesRecords_TestQuerry",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
+      "body": "UPDATE sales\nSET customer = '19'\nWHERE customer = '1';\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,8 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "name": "Query1",
+    "dynamicBindingPathList": [],
+    "name": "TestQuerry",
     "pageId": "SalesRecords",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

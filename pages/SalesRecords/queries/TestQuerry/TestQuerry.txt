@@ -1,0 +1,3 @@
+UPDATE sales
+SET customer = '19'
+WHERE customer = '1';
