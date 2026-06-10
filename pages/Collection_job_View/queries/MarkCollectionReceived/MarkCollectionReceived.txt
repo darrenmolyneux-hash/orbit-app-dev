@@ -1,0 +1,4 @@
+UPDATE collections
+SET status = 'Received'
+WHERE collectionid = {{ Number(appsmith.URL.queryParams.collectionid) }}
+RETURNING collectionid, status;

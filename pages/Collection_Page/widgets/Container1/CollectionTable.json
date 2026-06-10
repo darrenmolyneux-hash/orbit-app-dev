@@ -35,7 +35,6 @@
   },
   "columnOrder": [
     "postcode",
-    "sitename",
     "address1",
     "address2",
     "city",
@@ -46,7 +45,7 @@
     "contact_number",
     "contact_email"
   ],
-  "columnUpdatedAt": 1780646519470,
+  "columnUpdatedAt": 1781115664170,
   "columnWidthMap": {
     "postcode": 106
   },
@@ -74,9 +73,6 @@
     },
     {
       "key": "primaryColumns.customerid.computedValue"
-    },
-    {
-      "key": "primaryColumns.sitename.computedValue"
     },
     {
       "key": "primaryColumns.address1.computedValue"
@@ -445,39 +441,6 @@
       "label": "siteid",
       "notation": "standard",
       "originalId": "siteid",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "sitename": {
-      "alias": "sitename",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = CollectionTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"sitename\"])) : sitename })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "sitename",
-      "index": 2,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "sitename",
-      "notation": "standard",
-      "originalId": "sitename",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,

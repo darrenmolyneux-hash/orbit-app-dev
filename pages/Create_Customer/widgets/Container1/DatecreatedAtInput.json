@@ -36,7 +36,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 67,
   "needsErrorInfo": false,
-  "onClick": "{{InsertCustomer.run(\n    () => InsertSite.run(\n        () => {\n            showAlert(\"Customer + Site created successfully\", \"success\");\n            navigateTo('Home');\n        }\n    )\n)}}\n",
+  "onClick": "{{\nInsertCustomer.run()\n  .then((data) => {\n    return storeValue(\"newCustomerId\", data[0].customer_id);\n  })\n  .then(() => {\n    return InsertSite.run();\n  })\n  .then(() => {\n    showAlert(\"Customer + Site created successfully\", \"success\");\n    navigateTo(\"Home\");\n  })\n  .catch((error) => {\n    showAlert(\"Error: \" + error.message, \"error\");\n  });\n}}",
   "originalBottomRow": 76,
   "originalTopRow": 72,
   "parentColumnSpace": 17.9521484375,

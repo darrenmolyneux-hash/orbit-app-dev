@@ -21,13 +21,13 @@ VALUES (
     '{{ Address2Input.text }}',
     '{{ CityInput.text }}',
     '{{ PostcodeInput.text }}',
-    '{{ NotesInput.text.text }}',
+    '{{ NotesInput.text }}',
     '{{ CollectionDateInput.formattedDate }}',
     '{{ JobTypeInput.selectedOptionValue }}',
     '{{ CreatedByInput.text }}',
     '{{ collectiondescription.text }}',
     '{{ Dial_Input.text }}',
     '{{ Dial_Expiry.text }}',
-    '{{ StatusDropdown.selectedOptionValue }}'
+    'Booked'
 )
 RETURNING collectionid;

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM collections\nWHERE collectionid = {{ Number(appsmith.URL.queryParams.collectionid) }};\n",
+      "body": "SELECT \n  c.*,\n  cu.customername\nFROM collections c\nLEFT JOIN customers cu ON cu.customer_id = c.customerid\nWHERE c.collectionid = {{ Number(appsmith.URL.queryParams.collectionid) }};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

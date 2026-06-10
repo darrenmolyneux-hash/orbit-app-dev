@@ -47,7 +47,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 58,
   "needsErrorInfo": false,
-  "onTextChanged": "{{ \n  (() => {\n    const t = ContactNameInput.text || \"\";\n    ContactNameInput.setValue(t.toLowerCase().replace(/\\b\\w/g, c => c.toUpperCase()));\n  })()\n}}\n",
+  "onTextChanged": "{{ ContactNameInput.setValue(TextFormat.titleCase(ContactNameInput.text)) }}",
   "parentColumnSpace": 19.8125,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,

@@ -1,16 +1,20 @@
 INSERT INTO sites (
   customerid,
-  sitename,
   address1,
   address2,
   city,
-  postcode
+  postcode,
+  ste_contact,
+  contact_number,
+  contact_email
 )
 VALUES (
-  {{InsertCustomer.data[0].customer_id}},
-  {{SiteNameInput.text}},
+  {{appsmith.store.newCustomerId}},
   {{Address1Input.text}},
   {{Address2Input.text}},
   {{CityInput.text}},
-  {{PostcodeInput.text}}
+  {{PostcodeInput.text}},
+  {{SiteContactName.text}},
+  {{ContactNumberInput.dialCode + ContactNumberInput.text}},
+  {{SiteContactEmail.text}}
 );

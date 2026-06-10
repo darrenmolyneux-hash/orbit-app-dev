@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 14,
   "boxShadow": "none",
-  "defaultOptionValue": "BOOKED",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  Load_Collection.data[0].status ))(StatusDropdown.options, StatusDropdown.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,6 +14,9 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -44,7 +47,7 @@
   "mobileTopRow": 29,
   "needsErrorInfo": false,
   "optionLabel": "label",
-  "optionValue": "value",
+  "optionValue": "label",
   "originalBottomRow": 48,
   "originalTopRow": 44,
   "parentColumnSpace": 18.880859375,
@@ -55,7 +58,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 44,
   "serverSideFiltering": false,
-  "sourceData": "{{StatusQuery.data}}",
+  "sourceData": "{{ StatusQuery.data }}",
   "topRow": 10,
   "type": "SELECT_WIDGET",
   "version": 1,

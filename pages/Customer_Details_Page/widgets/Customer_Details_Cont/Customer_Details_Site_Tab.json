@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 43,
+  "bottomRow": 23,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": false,
@@ -33,11 +33,10 @@
     }
   },
   "columnOrder": [
-    "sitename",
-    "address1",
-    "address2",
     "city",
     "postcode",
+    "address1",
+    "address2",
     "siteid",
     "customerid",
     "created_at",
@@ -45,7 +44,7 @@
     "contact_number",
     "contact_email"
   ],
-  "columnUpdatedAt": 1781039703218,
+  "columnUpdatedAt": 1781115479438,
   "columnWidthMap": {
     "address1": 171,
     "address2": 209,
@@ -77,9 +76,6 @@
     },
     {
       "key": "primaryColumns.customerid.computedValue"
-    },
-    {
-      "key": "primaryColumns.sitename.computedValue"
     },
     {
       "key": "primaryColumns.address1.computedValue"
@@ -126,7 +122,7 @@
   "isVisibleSearch": false,
   "key": "o6rxnqbwe9",
   "label": "Data",
-  "leftColumn": 37,
+  "leftColumn": 35,
   "minWidth": 450,
   "mobileBottomRow": 68,
   "mobileLeftColumn": 5,
@@ -445,40 +441,6 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "sitename": {
-      "alias": "sitename",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Customer_Details_Site_Tab.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"sitename\"])) : sitename })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "sitename",
-      "index": 2,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Site",
-      "notation": "standard",
-      "originalId": "sitename",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
     "ste_contact": {
       "alias": "ste_contact",
       "allowCellWrapping": false,
@@ -516,7 +478,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 60,
   "searchKey": "",
   "tableData": "{{GetCustomerSites.data}}",
   "textSize": "0.875rem",

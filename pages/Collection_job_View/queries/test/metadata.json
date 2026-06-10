@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM job_notes\nWHERE jobid = 75;\n",
+      "body": "UPDATE collections\nSET status = 'Booked'\nWHERE status = 'BOOKED';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -8,5 +8,5 @@ SELECT
 FROM collections c
 LEFT JOIN customers cu
     ON c.customerid = cu.customer_id
-WHERE c.status = 'BOOKED'
+WHERE c.status = 'Booked'
 ORDER BY c.collectiondate DESC;

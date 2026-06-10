@@ -47,7 +47,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 49,
   "needsErrorInfo": false,
-  "onTextChanged": "{{\n  (async () => {\n    // 1. Run your existing query\n    await SearchCustomers.run();\n\n    // 2. Apply title‑case formatting\n    const t = CustomerNameInput.text || \"\";\n    CustomerNameInput.setValue(\n      t.toLowerCase().replace(/\\b\\w/g, c => c.toUpperCase())\n    );\n  })()\n}}\n",
+  "onTextChanged": "{{ CustomerNameInput.setValue(TextFormat.titleCase(CustomerNameInput.text)) }}",
   "parentColumnSpace": 19.8125,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,

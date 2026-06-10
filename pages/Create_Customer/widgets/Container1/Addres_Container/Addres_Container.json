@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 62,
+  "bottomRow": 61,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -82,9 +82,9 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 24,
+  "rightColumn": 62,
   "shouldScrollContents": true,
-  "topRow": 34,
+  "topRow": 33,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "dw21fessyr",

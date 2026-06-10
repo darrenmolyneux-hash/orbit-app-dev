@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 6,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -10,10 +10,10 @@
       "key": "borderRadius"
     },
     {
-      "key": "text"
+      "key": "textColor"
     },
     {
-      "key": "textColor"
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -49,9 +49,9 @@
   "rightColumn": 21,
   "shouldScrollContents": true,
   "shouldTruncate": false,
-  "text": "**{{ (StatusDropdown.selectedOptionLabel || '').toString().toUpperCase() }}**\n\n",
+  "text": "{{ Load_Collection.data[0].status }}",
   "textAlign": "CENTER",
-  "textColor": "{{\n  StatusDropdown.selectedOptionValue === \"BOOKED\"\n    ? \"#1E90FF\"\n    : StatusDropdown.selectedOptionValue === \"COLLECTED\"\n    ? \"#FF8C00\"\n    : StatusDropdown.selectedOptionValue === \"RECEIVED\"\n    ? \"#2E8B57\"\n    : \"#6A5ACD\"\n}}\n",
+  "textColor": "{{\n  StatusDropdown.selectedOptionValue === \"Booked\"\n    ? \"#1E90FF\"\n    : StatusDropdown.selectedOptionValue === \"Received\"\n    ? \"#FF8C00\"\n    : StatusDropdown.selectedOptionValue === \"Processing\"\n    ? \"#2E8B57\"\n    : StatusDropdown.selectedOptionValue === \"Complete\"\n    ? \"#6A5ACD\"\n    : \"#808080\"\n}}",
   "topRow": 2,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

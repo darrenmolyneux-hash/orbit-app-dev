@@ -6,6 +6,7 @@ INSERT INTO customers (
   dialexpiry,
   msasigned,
   created_at,
+	
   createdby
 )
 VALUES (

@@ -1,3 +1,6 @@
-SELECT *
-FROM collections
-WHERE collectionid = {{ Number(appsmith.URL.queryParams.collectionid) }};
+SELECT 
+  c.*,
+  cu.customername
+FROM collections c
+LEFT JOIN customers cu ON cu.customer_id = c.customerid
+WHERE c.collectionid = {{ Number(appsmith.URL.queryParams.collectionid) }};

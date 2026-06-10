@@ -1,6 +1,6 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 54,
+  "bottomRow": 57,
   "counterClosewise": false,
   "dynamicBindingPathList": [
     {
@@ -8,6 +8,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "progress"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -26,14 +29,14 @@
   "parentColumnSpace": 19.5,
   "parentId": "3akfkv7ohh",
   "parentRowSpace": 10,
-  "progress": "0",
+  "progress": "{{\n(() => {\n  const status = Load_Collection.data[0]?.status;\n\n  switch(status) {\n  case \"Booked\":\n      return 25;\n    case \"Received\":\n      return 50;\n    case \"Processing\":\n      return 75;\n    case \"Complete\":\n      return 100;\n    default:\n      return 0;\n  }\n})()\n}}",
   "progressType": "circular",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "showResult": false,
   "steps": "4",
-  "topRow": 37,
+  "topRow": 40,
   "type": "PROGRESS_WIDGET",
   "version": 1,
   "widgetId": "ccgreambjz",

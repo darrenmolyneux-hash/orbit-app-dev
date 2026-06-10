@@ -1,0 +1,4 @@
+UPDATE collections
+SET status = 'Processing'
+WHERE collectionid = {{ Number(appsmith.URL.queryParams.collectionid) }}
+RETURNING *;

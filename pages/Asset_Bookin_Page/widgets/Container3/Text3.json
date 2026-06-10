@@ -42,7 +42,7 @@
   "rightColumn": 63,
   "shouldScrollContents": true,
   "shouldTruncate": false,
-  "text": "Customer: {{ appsmith.URL.queryParams.customer_name }}\nCollection: {{ appsmith.URL.queryParams.collection_id }}\n",
+  "text": "Customer: {{ appsmith.URL.queryParams.customername }}\nCollection: {{ appsmith.URL.queryParams.collectionid }}",
   "textAlign": "CENTER",
   "textColor": "#858282",
   "topRow": 1,
