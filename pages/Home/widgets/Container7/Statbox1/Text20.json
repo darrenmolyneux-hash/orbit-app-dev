@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "textColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -30,17 +33,17 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 4,
+  "originalBottomRow": 5,
   "originalTopRow": 0,
   "overflow": "NONE",
   "parentId": "gc9kz50ai2",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 37,
+  "rightColumn": 45,
   "shouldTruncate": false,
-  "text": "Collections",
+  "text": "Upcoming collections",
   "textAlign": "LEFT",
-  "textColor": "#999999",
+  "textColor": "{{appsmith.theme.colors.primaryColor}}",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

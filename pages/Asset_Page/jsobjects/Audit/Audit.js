@@ -1,9 +1,7 @@
 export default {
-  logChange: (field, oldVal, newVal) => {
-    return InsertAssetAuditLog.run({
-      fieldName: field,
-      oldValue: oldVal,
-      newValue: newVal
-    });
+  oldStatus: null,
+
+  init() {
+    this.oldStatus = getAssetById.data[0].status;
   }
 }

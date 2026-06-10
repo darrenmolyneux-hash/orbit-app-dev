@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "StatusQuery",
     "pageId": "Asset_Page",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
