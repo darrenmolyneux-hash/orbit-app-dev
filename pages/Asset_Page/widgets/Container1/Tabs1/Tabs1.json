@@ -234,6 +234,51 @@
       "version": 1,
       "widgetId": "onlm3me0uv",
       "widgetName": "Canvas13"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 810,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "9jfjf45pbx",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 850,
+      "minWidth": 450,
+      "mobileBottomRow": 851,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1248,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "22vdiaxhm2",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1248,
+      "tabId": "tabqryd0ghcdr",
+      "tabName": "Location",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "rw1nt0r2w0",
+      "widgetName": "Canvas17"
     }
   ],
   "defaultTab": "Asset",
@@ -304,11 +349,19 @@
     },
     "tabg70o296wng": {
       "id": "tabg70o296wng",
-      "index": 4,
+      "index": 5,
       "isDuplicateLabel": false,
       "isVisible": true,
       "label": "History",
       "widgetId": "wk1qz7r8y0"
+    },
+    "tabqryd0ghcdr": {
+      "id": "tabqryd0ghcdr",
+      "index": 4,
+      "isDuplicateLabel": false,
+      "isVisible": true,
+      "label": "Location",
+      "widgetId": "rw1nt0r2w0"
     },
     "tabu7ln1rooez": {
       "id": "tabu7ln1rooez",

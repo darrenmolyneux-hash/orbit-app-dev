@@ -848,7 +848,7 @@
       "label": "Fix Status",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{ navigateTo(\"Asset_Page\", { asset_id: currentRow.asset_id }) }}\n",
+      "onClick": "{{ navigateTo(\"Asset_Page\", { asset_id: currentRow.asset_id, from_sale: true }) }}\n",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
