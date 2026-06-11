@@ -568,7 +568,7 @@
   },
   "scrollContents": true,
   "showReset": true,
-  "sourceData": "{{_.omit(data_table.tableData[0], \"customColumn1\", \"asset_id\")}}",
+  "sourceData": "{{_.omit(AssetTable.tableData[0], \"customColumn1\", \"asset_id\")}}",
   "submitButtonLabel": "Submit",
   "submitButtonStyles": {
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",

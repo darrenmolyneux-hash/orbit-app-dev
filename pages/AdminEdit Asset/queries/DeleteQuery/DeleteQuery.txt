@@ -1,2 +1,2 @@
 DELETE FROM public."assets"
-  WHERE "asset_id" = {{data_table.triggeredRow.asset_id}};
+  WHERE "asset_id" = {{AssetTable.triggeredRow.asset_id}};

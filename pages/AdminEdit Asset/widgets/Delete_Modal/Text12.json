@@ -1,12 +1,16 @@
 {
   "borderRadius": "0px",
-  "bottomRow": 12,
+  "bottomRow": 24,
   "boxShadow": "none",
-  "dynamicBindingPathList": [],
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
   "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [],
   "fontFamily": "System Default",
-  "fontSize": "1rem",
+  "fontSize": "0.875rem",
   "fontStyle": "",
   "isLoading": false,
   "isVisible": "true",
@@ -19,10 +23,10 @@
   "parentId": "zi8fjakv8o",
   "parentRowSpace": 10,
   "rightColumn": 63,
-  "text": "Are you sure you want to delete this item?",
+  "text": "Are you sure you want to delete:\n\n{{ AssetTable.triggeredRow.make }}\n{{ AssetTable.triggeredRow.model }}\n\nSerial:\n{{ AssetTable.triggeredRow.serial_number }}\n\nThis action cannot be undone.",
   "textAlign": "LEFT",
-  "textColor": "#231F20",
-  "topRow": 8,
+  "textColor": "#dd4b34",
+  "topRow": 5,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "48uac29g6e",

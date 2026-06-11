@@ -43,7 +43,7 @@
   "shouldTruncate": false,
   "text": "{{ StatusProcessing.data[0].processing_count }}",
   "textAlign": "CENTER",
-  "textColor": "#231F20",
+  "textColor": "#eab308",
   "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

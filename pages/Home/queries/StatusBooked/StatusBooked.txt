@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS Booked_count
+FROM collections
+WHERE status = 'Booked';

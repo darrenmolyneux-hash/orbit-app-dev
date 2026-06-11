@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_fd6e2b45-8691-4045-ade2-8e8998e812da",
-  "id": "AdminEdit Asset_DeleteQuery",
+  "gitSyncId": "6a27f57e40e83311173efe61_f50f00df-6b51-47d1-9bcb-1e9009684bb4",
+  "id": "Home_StatusBooked",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "DELETE FROM public.\"assets\"\n  WHERE \"asset_id\" = {{AssetTable.triggeredRow.asset_id}};",
+      "body": "SELECT COUNT(*) AS Booked_count\nFROM collections\nWHERE status = 'Booked';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,14 +22,10 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "DeleteQuery",
-    "pageId": "AdminEdit Asset",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "dynamicBindingPathList": [],
+    "name": "StatusBooked",
+    "pageId": "Home",
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.\"assets\"\nWHERE \"added_by\" ilike '%{{data_table.searchText || \"\"}}%'\nORDER BY \"{{data_table.sortOrder.column || 'asset_id'}}\" {{data_table.sortOrder.order || 'ASC'}}\nLIMIT {{data_table.pageSize}}\nOFFSET {{(data_table.pageNo - 1) * data_table.pageSize}};",
+      "body": "SELECT * FROM public.\"assets\"\nWHERE \"added_by\" ilike '%{{AssetTable.searchText || \"\"}}%'\nORDER BY \"{{AssetTable.sortOrder.column || 'asset_id'}}\" {{AssetTable.sortOrder.order || 'ASC'}}\nLIMIT {{AssetTable.pageSize}}\nOFFSET {{(AssetTable.pageNo - 1) * AssetTable.pageSize}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

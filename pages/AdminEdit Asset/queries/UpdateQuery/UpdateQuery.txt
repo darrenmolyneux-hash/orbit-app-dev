@@ -10,4 +10,4 @@ UPDATE public."assets" SET
 		"model" = '{{update_form.fieldState.model.isVisible ? update_form.formData.model : update_form.sourceData.model}}',
 		"serial_number" = '{{update_form.fieldState.serial_number.isVisible ? update_form.formData.serial_number : update_form.sourceData.serial_number}}',
 		"colour" = '{{update_form.fieldState.colour.isVisible ? update_form.formData.colour : update_form.sourceData.colour}}'
-	WHERE "asset_id" = {{data_table.selectedRow.asset_id}};
+	WHERE "asset_id" = {{AssetTable.selectedRow.asset_id}};

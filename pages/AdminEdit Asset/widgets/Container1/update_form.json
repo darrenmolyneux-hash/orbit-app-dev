@@ -572,7 +572,7 @@
   "hideCard": false,
   "iconSVG": "/static/media/icon.6bacf7df.svg",
   "isLoading": false,
-  "isVisible": "{{!!data_table.selectedRow.asset_id}}",
+  "isVisible": "{{!!AssetTable.selectedRow.asset_id}}",
   "key": "h9l9ozr8op",
   "labelTextSize": "0.875rem",
   "leftColumn": 0,
@@ -1632,7 +1632,7 @@
   },
   "scrollContents": true,
   "showReset": true,
-  "sourceData": "{{_.omit(data_table.selectedRow, \"customColumn1\", \"__originalIndex__\", \"asset_id\")}}",
+  "sourceData": "{{_.omit(AssetTable.selectedRow, \"customColumn1\", \"__originalIndex__\", \"asset_id\")}}",
   "submitButtonLabel": "Update",
   "submitButtonStyles": {
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -1640,7 +1640,7 @@
     "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
     "buttonVariant": "PRIMARY"
   },
-  "title": "Update Row asset_id: {{data_table.selectedRow.asset_id}}",
+  "title": "Update Row asset_id: {{AssetTable.selectedRow.asset_id}}",
   "topRow": 41,
   "type": "JSON_FORM_WIDGET",
   "version": 1,
