@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"filter\": {\n    \"date\": {\n      \"gte\": \"2026-06-10T00:00:00Z\",\n\"lt\": \"2026-06-11T00:00:00Z\"\n\n    },\n    \"fields\": [\n      {\n        \"name\": \"@system_serial\",\n        \"like\": \"{{ SerialInput.text }}\"\n      }\n    ]\n  },\n  \"format\": \"XML\",\n  \"container\": \"NONE\"\n}",
+      "body": "{\n  \"filter\": {\n    \"date\": {\n      \"gte\": \"2026-06-01T00:00:00Z\",\n\"lt\": \"2026-06-11T00:00:00Z\"\n\n    },\n    \"fields\": [\n      {\n        \"name\": \"@system_serial\",\n        \"like\": \"{{ SerialInput.text }}\"\n      }\n    ]\n  },\n  \"format\": \"XML\",\n  \"container\": \"NONE\"\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

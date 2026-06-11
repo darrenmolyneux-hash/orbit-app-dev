@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 25,
   "boxShadow": "none",
-  "defaultText": "{{ BlanccoParser.parseBlancco().product_name }}\n",
+  "defaultText": "{{ BlanccoParser.parseBlancco().product_name }}\n{{ BlanccoParser.parseBlancco().model }}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -59,7 +59,7 @@
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 14,
+  "rightColumn": 20,
   "showStepArrows": false,
   "topRow": 21,
   "type": "INPUT_WIDGET_V2",

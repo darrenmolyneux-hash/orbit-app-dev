@@ -8,16 +8,13 @@
   "boxShadow": "none",
   "decimals": 0,
   "defaultCurrencyCode": "GBP",
-  "defaultText": "{{ GetAssetById.data[0].sell_price }}\n",
+  "defaultText": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",

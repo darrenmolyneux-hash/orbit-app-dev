@@ -36,7 +36,7 @@
   "mobileRightColumn": 49,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onClick": "{{ openUrl(getAssetById.data[0].blancco_cert_url) }}",
+  "onClick": "{{\n  BlanccoParser.parseBlancco().blancco_cert_url\n    ? navigateTo(BlanccoParser.parseBlancco().blancco_cert_url, {}, \"NEW_WINDOW\")\n    : showAlert(\"No Blancco certificate URL found\", \"warning\")\n}}",
   "originalBottomRow": 29,
   "originalTopRow": 25,
   "parentColumnSpace": 19.1875,
