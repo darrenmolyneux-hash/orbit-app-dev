@@ -13,43 +13,46 @@
       "key": "borderRadius"
     },
     {
-      "key": "text"
+      "key": "fontSize"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "fontSize"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1rem",
+  "fontSize": "{{ \"8px\" }}",
   "fontStyle": "BOLD",
   "isLoading": false,
-  "isVisible": false,
-  "key": "dpfli37asm",
-  "leftColumn": 0,
+  "isVisible": true,
+  "key": "sbh8481u1h",
+  "leftColumn": 7,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 19,
-  "mobileLeftColumn": 2,
-  "mobileRightColumn": 18,
-  "mobileTopRow": 15,
+  "mobileBottomRow": 20,
+  "mobileLeftColumn": 8,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 16,
   "needsErrorInfo": false,
-  "originalBottomRow": 20,
-  "originalTopRow": 15,
   "overflow": "NONE",
   "parentColumnSpace": 6.9375,
   "parentId": "2vyhur4k8d",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 2,
+  "rightColumn": 56,
   "shouldTruncate": false,
-  "text": "{{ MakeInput.selectedOptionValue }}\n",
+  "text": "Enter the full model number of the asset and the weight.Determine the weight either by weighing on scales or getting the weight from Google must be entered in kg ",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 18,
+  "topRow": 17,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "wweyb1lxfr",
-  "widgetName": "Text5"
+  "widgetId": "leh1xt8ko6",
+  "widgetName": "Text8"
 }

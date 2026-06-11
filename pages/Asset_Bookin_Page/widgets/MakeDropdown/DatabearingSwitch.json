@@ -4,7 +4,7 @@
   "animateLoading": true,
   "bottomRow": 10,
   "boxShadow": "none",
-  "defaultSwitchState": "{{ GetItemTypeInfo.data[0]?.is_data_bearing }}\n",
+  "defaultSwitchState": "{{ appsmith.store.isDataBearing === true }}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
