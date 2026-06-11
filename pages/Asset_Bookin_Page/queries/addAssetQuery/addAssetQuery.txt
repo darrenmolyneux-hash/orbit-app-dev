@@ -1,22 +1,25 @@
 INSERT INTO assets (
   collection_id,
-	customer,
+  customer,
   item_type,
   make,
   model,
   serial_number,
   assettag,
   kg,
+  data_bearing,
   added_by
 )
 VALUES (
-  {{ appsmith.URL.queryParams.collection_id }},
-	{{ appsmith.URL.queryParams.customer_name }},
-  {{ ItemTypeDropdown.selectedOptionValue.selectedOptionLabel }},
-  {{ MakeInput.selectedOptionValue.selectedOptionLabel }},
-  {{ ModelInput.selectedOptionValue.selectedOptionLabel }},
+  {{ Number(appsmith.URL.queryParams.collection_id) }},
+  {{ appsmith.URL.queryParams.customer_name }},
+  {{ ItemTypeDropdown.selectedOptionLabel }},
+  {{ MakeInput.selectedOptionLabel }},
+  {{ ModelInput.selectedOptionLabel }},
   {{ SerialInput.text }},
   {{ AssetTagInput.text }},
-  {{ KgInput.text }},
+  {{ ModelWeightInput.text }},
+  {{ DatabearingSwitch.isSwitchedOn === true }},
   {{ appsmith.user.email }}
-);
+)
+RETURNING *;

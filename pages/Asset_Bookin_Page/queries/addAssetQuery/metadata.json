@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO assets (\n  collection_id,\n\tcustomer,\n  item_type,\n  make,\n  model,\n  serial_number,\n  assettag,\n  kg,\n  added_by\n)\nVALUES (\n  {{ appsmith.URL.queryParams.collection_id }},\n\t{{ appsmith.URL.queryParams.customer_name }},\n  {{ ItemTypeDropdown.selectedOptionValue.selectedOptionLabel }},\n  {{ MakeInput.selectedOptionValue.selectedOptionLabel }},\n  {{ ModelInput.selectedOptionValue.selectedOptionLabel }},\n  {{ SerialInput.text }},\n  {{ AssetTagInput.text }},\n  {{ KgInput.text }},\n  {{ appsmith.user.email }}\n);\n",
+      "body": "INSERT INTO assets (\n  collection_id,\n  customer,\n  item_type,\n  make,\n  model,\n  serial_number,\n  assettag,\n  kg,\n  data_bearing,\n  added_by\n)\nVALUES (\n  {{ Number(appsmith.URL.queryParams.collection_id) }},\n  {{ appsmith.URL.queryParams.customer_name }},\n  {{ ItemTypeDropdown.selectedOptionLabel }},\n  {{ MakeInput.selectedOptionLabel }},\n  {{ ModelInput.selectedOptionLabel }},\n  {{ SerialInput.text }},\n  {{ AssetTagInput.text }},\n  {{ ModelWeightInput.text }},\n  {{ DatabearingSwitch.isSwitchedOn === true }},\n  {{ appsmith.user.email }}\n)\nRETURNING *;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

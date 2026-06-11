@@ -83,9 +83,10 @@
     "drive_interface",
     "erasure_standard",
     "blancco_last_fetch",
+    "blancco_cert_url",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781125026049,
+  "columnUpdatedAt": 1781207432613,
   "columnWidthMap": {
     "customColumn1": 130,
     "kg": 162,
@@ -388,6 +389,9 @@
     },
     {
       "key": "primaryColumns.blancco_last_fetch.computedValue"
+    },
+    {
+      "key": "primaryColumns.blancco_cert_url.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -742,6 +746,40 @@
       "label": "battery_health",
       "notation": "standard",
       "originalId": "battery_health",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "blancco_cert_url": {
+      "alias": "blancco_cert_url",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = AddedAssetsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"blancco_cert_url\"])) : blancco_cert_url })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "blancco_cert_url",
+      "index": 48,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "blancco_cert_url",
+      "notation": "standard",
+      "originalId": "blancco_cert_url",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

@@ -542,6 +542,15 @@
     },
     {
       "key": "schema.__root_schema__.children.blancco_last_fetch.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.blancco_cert_url.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.blancco_cert_url.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.blancco_cert_url.accentColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -749,6 +758,28 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "battery_health",
           "position": 41
+        },
+        "blancco_cert_url": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "blancco_cert_url",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.blancco_cert_url))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "blancco_cert_url",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Blancco Cert Url",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "blancco_cert_url",
+          "position": 47,
+          "sourceData": null
         },
         "blancco_last_fetch": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",

@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "backgroundColor": "{{\n  GetAssetById.data[0].erasure_status === 'E'\n    ? '#4da6ff'   // blue\n    : GetAssetById.data[0].data_bearing === 'Y'\n      ? '#ff4d4d' // red\n      : '#4dff4d' // green\n}}\n",
+  "backgroundColor": "{{\n  (() => {\n    const asset = GetAssetById.data?.[0];\n\n    if (!asset) return \"#cccccc\";\n\n    const erasureStatus = (asset.erasure_status || \"\").toString().trim().toLowerCase();\n\n    const isErased =\n      erasureStatus === \"e\" ||\n      erasureStatus === \"erased\" ||\n      erasureStatus === \"sanitised\" ||\n      erasureStatus === \"sanitized\" ||\n      erasureStatus === \"successful\" ||\n      erasureStatus === \"success\";\n\n    const isDataBearing =\n      asset.data_bearing === true ||\n      asset.data_bearing === \"true\" ||\n      asset.data_bearing === \"t\" ||\n      asset.data_bearing === 1;\n\n    if (isErased) return \"#4dff4d\";       // green\n    if (isDataBearing) return \"#ff4d4d\";  // red\n    return \"#4dff4d\";                     // green\n  })()\n}}",
   "borderColor": "#18181b",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "2",
@@ -57,7 +57,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{\n  GetAssetById.data[0].erasure_status === 'E'\n    ? 'SANITISED'\n    : GetAssetById.data[0].data_bearing === 'Y'\n      ? 'DATA BEARING'\n      : 'NON-DATA'\n}}\n",
+  "text": "{{\n  (() => {\n    const asset = GetAssetById.data?.[0];\n\n    if (!asset) return \"\";\n\n    const erasureStatus = (asset.erasure_status || \"\").toLowerCase();\n    const hddValue = (asset.hdd || \"\").trim().toLowerCase();\n\n    const isErased =\n      erasureStatus === \"e\" ||\n      erasureStatus === \"erased\" ||\n      erasureStatus === \"sanitised\" ||\n      erasureStatus === \"successful\";\n\n    const noHardDrive =\n      hddValue === \"no hard drive\" ||\n      hddValue === \"no hdd\";\n\n    if (isErased) return \"SANITISED\";\n\n    if (noHardDrive) return \"NON-DATA\";\n\n    if (asset.data_bearing === true) return \"DATA BEARING\";\n\n    return \"NON-DATA\";\n  })()\n}}",
   "textAlign": "CENTER",
   "textColor": "{{\n  GetAssetById.data[0].erasure_status === 'E'\n    ? 'white'\n    : GetAssetById.data[0].data_bearing === 'Y'\n      ? 'white'\n      : 'black'\n}}\n",
   "topRow": 1,
