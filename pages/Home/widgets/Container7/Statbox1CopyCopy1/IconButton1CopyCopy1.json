@@ -17,7 +17,7 @@
       "key": "onClick"
     }
   ],
-  "iconName": "arrow-top-right",
+  "iconName": "arrow-bottom-right",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
@@ -30,13 +30,13 @@
   "mobileTopRow": 2,
   "needsErrorInfo": false,
   "onClick": "{{navigateTo('Processing View', {}, 'SAME_WINDOW');}}",
-  "parentId": "4shpoz3f2m",
+  "parentId": "nk2pxews67",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 62,
   "topRow": 6,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "yz0okmx18r",
-  "widgetName": "IconButton1Copy"
+  "widgetId": "h0tawt2100",
+  "widgetName": "IconButton1CopyCopy1"
 }

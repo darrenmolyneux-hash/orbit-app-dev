@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO Job_Notes (jobid, note_text, created_by)\nVALUES (\n    {{ Number(appsmith.URL.queryParams.collectionid) }},\n    '{{ NotesInput.text }}',\n    '{{ appsmith.user.email }}'\n);\n",
+      "body": "INSERT INTO job_notes (jobid, note_text, created_by)\nVALUES (\n  {{ Number(appsmith.URL.queryParams.nextid) }},\n  {{ NotesInput.text }},\n  {{ appsmith.user.email }}\n)\nRETURNING *;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

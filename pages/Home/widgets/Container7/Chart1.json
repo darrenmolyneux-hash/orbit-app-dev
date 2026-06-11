@@ -3,12 +3,12 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 44,
+  "bottomRow": 48,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   "chartData": {
     "gto685ynpx": {
       "color": "#86efac",
-      "data": "[\n  {\n    \"x\": \"Macbook\",\n    \"y\": 20000\n  },\n  {\n    \"x\": \"Laptop\",\n    \"y\": 22000\n  },\n  {\n    \"x\": \"Mobile\",\n    \"y\": 32000 },\n  {\n     \"x\": \"Tablet\",\n    \"y\": 32000\n  }\n]",
+      "data": "{{ \nGetAssetTypeCounts.data.map(row => ({\n    x: row.asset_type,\n    y: row.total\n}))\n}}\n",
       "seriesName": "2026"
     }
   },
@@ -74,6 +74,9 @@
     },
     {
       "key": "fontFamily"
+    },
+    {
+      "key": "chartData.gto685ynpx.data"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -83,23 +86,23 @@
   "isVisible": true,
   "key": "4fqzpucid7",
   "labelOrientation": "auto",
-  "leftColumn": 23,
+  "leftColumn": 37,
   "minWidth": 450,
   "mobileBottomRow": 51,
   "mobileLeftColumn": 23,
   "mobileRightColumn": 47,
   "mobileTopRow": 19,
   "needsErrorInfo": true,
-  "originalBottomRow": 44,
-  "originalTopRow": 19,
+  "originalBottomRow": 48,
+  "originalTopRow": 28,
   "parentColumnSpace": 19.5,
   "parentId": "6piwxyw44b",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 48,
+  "rightColumn": 62,
   "showDataPointLabel": false,
-  "topRow": 19,
+  "topRow": 28,
   "type": "CHART_WIDGET",
   "version": 1,
   "widgetId": "on717t3hce",

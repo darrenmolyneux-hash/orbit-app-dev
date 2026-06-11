@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a0eb4c70281dcff620d4402_59810634-1aff-4981-831c-df8a82169002",
-  "id": "Collection_Page_Query1",
+  "gitSyncId": "6a27f57e40e83311173efe61_b44e85a1-37e3-4872-8029-39fdbedea9bf",
+  "id": "Home_GetAssetTypeCounts",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT customer_id, customername\nFROM customers\nORDER BY customername;\n",
+      "body": "SELECT \n  item_type,\n  COUNT(*) AS total\nFROM assets\nGROUP BY item_type\nORDER BY item_type;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "Query1",
-    "pageId": "Collection_Page",
-    "runBehaviour": "MANUAL",
+    "name": "GetAssetTypeCounts",
+    "pageId": "Home",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

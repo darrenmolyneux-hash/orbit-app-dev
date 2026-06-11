@@ -1,2 +1,5 @@
-SELECT COALESCE(MAX(collectionid), 0) + 1 AS next_id
+SELECT GREATEST(
+  COALESCE(MAX(collectionid), 0),
+  2499
+) + 1 AS nextid
 FROM collections;

@@ -14,11 +14,14 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
     }
   ],
+  "iconAlign": "left",
+  "iconName": "box",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,

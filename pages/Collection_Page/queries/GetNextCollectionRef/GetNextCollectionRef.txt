@@ -1,6 +1,5 @@
-SELECT LPAD(
-  GREATEST(COALESCE(MAX(collection_ref), 2499) + 1, 2500)::text,
-  4,
-  '0'
-) AS next_ref
+SELECT GREATEST(
+  COALESCE(MAX(collectionid), 0),
+  2499
+) + 1 AS next_id
 FROM collections;

@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{ moment(currentItem.created_at).format(\"DD MMM YYYY HH:mm\") }}\n - {{ currentItem.created_by }}\n",
+  "text": "{{ moment(currentItem.created_at).format(\"DD MMM YYYY HH:mm\") }}\n By {{ currentItem.created_by }}\n",
   "textAlign": "LEFT",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
   "textStyle": "HEADING",

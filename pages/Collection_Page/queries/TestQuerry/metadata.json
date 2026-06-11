@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a0eb4c70281dcff620d4402_da53a4c4-6d7c-4a87-948c-c270b97796db",
-  "id": "Asset_Bookin_Page_Query1",
+  "gitSyncId": "6a0eb4c70281dcff620d4402_59810634-1aff-4981-831c-df8a82169002",
+  "id": "Collection_Page_TestQuerry",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM sites\nORDER BY siteid DESC;\n",
+      "body": "INSERT INTO job_notes (jobid, note_text, created_by)\nVALUES (\n  {{ Number(appsmith.URL.queryParams.nextid) }},\n  {{ NotesInput.text }},\n  {{ appsmith.user.email }}\n)\nRETURNING *;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,9 +22,13 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
-    "name": "Query1",
-    "pageId": "Asset_Bookin_Page",
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
+    "name": "TestQuerry",
+    "pageId": "Collection_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

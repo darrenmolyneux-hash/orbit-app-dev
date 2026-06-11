@@ -11,9 +11,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -41,7 +38,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 13,
   "shouldTruncate": false,
-  "text": "{{GetCollectionsThisMonth.data[0].total\n}}",
+  "text": "0",
   "textAlign": "CENTER",
   "textColor": "#231f20",
   "topRow": 4,
