@@ -2,26 +2,35 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignWidget": "LEFT",
   "animateLoading": true,
-  "bottomRow": 13,
+  "bottomRow": 9,
   "boxShadow": "none",
-  "defaultSwitchState": "false",
+  "defaultSwitchState": "{{\n  !BlanccoParser.parseBlancco().ram\n}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
+    },
+    {
+      "key": "defaultSwitchState"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "defaultSwitchState"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{\n  !BlanccoParser.parseBlancco().ram\n}}",
   "key": "d2iiwwpkv8",
-  "label": "Missing",
+  "label": "No Ram",
   "labelPosition": "Left",
   "leftColumn": 37,
   "maxDynamicHeight": 9000,
@@ -31,17 +40,17 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 38,
   "needsErrorInfo": false,
-  "originalBottomRow": 13,
-  "originalTopRow": 9,
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
   "parentColumnSpace": 19.1875,
   "parentId": "dc4v6fjacj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 42,
-  "topRow": 9,
+  "topRow": 5,
   "type": "SWITCH_WIDGET",
   "version": 1,
-  "widgetId": "sk86b4e1ao",
+  "widgetId": "h0wzu5w6hk",
   "widgetName": "RamSwitch"
 }

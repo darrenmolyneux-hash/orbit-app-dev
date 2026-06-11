@@ -3,15 +3,18 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 28,
+  "bottomRow": 25,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{ BlanccoParser.parseBlancco().product_name }}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -58,7 +61,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 14,
   "showStepArrows": false,
-  "topRow": 24,
+  "topRow": 21,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "f9ckx05h13",

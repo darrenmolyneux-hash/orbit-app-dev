@@ -5,7 +5,7 @@
   "borderColor": "#fff",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 87,
+  "bottomRow": 88,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -1414,7 +1414,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "sale_id",
           "position": 40,
-          "sourceData": 2
+          "sourceData": 3
         },
         "screen_size": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1457,7 +1457,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "sell_price",
           "position": 18,
-          "sourceData": 800
+          "sourceData": 300
         },
         "serial_number": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1520,7 +1520,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "sold",
           "position": 38,
-          "sourceData": false
+          "sourceData": true
         },
         "sold_date": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1641,7 +1641,7 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "Update Row asset_id: {{AssetTable.selectedRow.asset_id}}",
-  "topRow": 41,
+  "topRow": 42,
   "type": "JSON_FORM_WIDGET",
   "version": 1,
   "widgetId": "y5cjzuxnb3",

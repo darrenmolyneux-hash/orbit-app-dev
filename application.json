@@ -100,6 +100,10 @@
     {
       "id": "Admin",
       "isDefault": false
+    },
+    {
+      "id": "Processing View",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

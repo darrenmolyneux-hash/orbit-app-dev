@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 13,
   "boxShadow": "none",
-  "defaultText": "{{ RamSwitch.isSwitchedOn ? \"No RAM Installed\" : \"\" }}\n",
+  "defaultText": "{{\n  BlanccoParser.parseBlancco().drive_capacity\n    ? BlanccoParser.parseBlancco().drive_capacity\n    : RamSwitch.isSwitchedOn\n      ? \"No Hard Drive\"\n      : \"\"\n}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

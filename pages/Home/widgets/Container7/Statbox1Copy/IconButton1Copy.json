@@ -29,7 +29,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('Upcoming _Collection', {}, 'NEW_WINDOW');}}",
+  "onClick": "{{navigateTo('Processing View', {}, 'SAME_WINDOW');}}",
   "parentId": "4shpoz3f2m",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",

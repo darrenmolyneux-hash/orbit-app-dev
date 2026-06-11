@@ -31,7 +31,7 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('AdminEdit Asset', {}, 'NEW_WINDOW');}}",
+  "onClick": "{{navigateTo('AdminEdit Asset', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 19.5,
   "parentId": "6piwxyw44b",
   "parentRowSpace": 10,

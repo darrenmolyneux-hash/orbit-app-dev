@@ -34,7 +34,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('Create_Customer', {}, 'NEW_WINDOW');}}",
+  "onClick": "{{navigateTo('Create_Customer', {}, 'SAME_WINDOW');}}",
   "originalBottomRow": 43,
   "originalTopRow": 39,
   "parentColumnSpace": 19.8125,

@@ -31,7 +31,7 @@
   "mobileRightColumn": 18,
   "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('Customer_List', {}, 'NEW_WINDOW');}}",
+  "onClick": "{{navigateTo('Customer_List', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 19.5,
   "parentId": "6piwxyw44b",
   "parentRowSpace": 10,

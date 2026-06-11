@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a0eb4c70281dcff620d4402_438da2ec-7b1f-4528-bec4-c031e617a52b",
-  "id": "Asset_Page_Query1",
+  "gitSyncId": "6a27f57e40e83311173efe61_85faaad5-59fe-4dde-a480-e0a56d69afe9",
+  "id": "Admin_GetCustomerCout",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM sites\nORDER BY siteid DESC;\n",
+      "body": "SELECT COUNT(*) AS total FROM customers;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "Query1",
-    "pageId": "Asset_Page",
-    "runBehaviour": "MANUAL",
+    "name": "GetCustomerCout",
+    "pageId": "Admin",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

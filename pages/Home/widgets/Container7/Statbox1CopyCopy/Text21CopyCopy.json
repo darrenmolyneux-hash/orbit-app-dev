@@ -43,7 +43,7 @@
   "shouldTruncate": false,
   "text": "{{GetCollectionsThisMonth.data[0].total\n}}",
   "textAlign": "CENTER",
-  "textColor": "#03b365",
+  "textColor": "#231f20",
   "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

@@ -1,10 +1,25 @@
 {
-  "accentColor": "#22c55e",
+  "accentColor": "{{\nNumber((BlanccoParser.parseBlancco().battery_health || \"0\").replace(\"%\",\"\")) >= 80\n  ? \"#00C853\"\n  : \"#D50000\"\n}}",
   "animateLoading": true,
   "bottomRow": 44,
-  "defaultEndValue": 100,
-  "defaultStartValue": "0",
-  "dynamicBindingPathList": [],
+  "defaultEndValue": "{{\nNumber((BlanccoParser.parseBlancco().battery_health || \"0\").replace(\"%\",\"\"))\n}}",
+  "defaultStartValue": "{{0}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "defaultStartValue"
+    },
+    {
+      "key": "defaultEndValue"
+    },
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isLoading": false,
@@ -50,7 +65,7 @@
   "shouldTruncate": false,
   "showMarksLabel": true,
   "sliderSize": "m",
-  "step": "25",
+  "step": "1",
   "tooltipAlwaysOn": false,
   "topRow": 36,
   "type": "RANGE_SLIDER_WIDGET",
