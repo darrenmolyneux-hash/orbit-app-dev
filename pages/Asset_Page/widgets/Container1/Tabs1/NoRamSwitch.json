@@ -2,27 +2,40 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignWidget": "LEFT",
   "animateLoading": true,
-  "bottomRow": 14,
+  "bottomRow": 9,
   "boxShadow": "none",
-  "defaultSwitchState": "",
+  "defaultSwitchState": "{{\n  (GetAssetById.data?.[0]?.ram || \"\").trim().toLowerCase() === \"no ram\"\n}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
+    },
+    {
+      "key": "defaultSwitchState"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
+      "key": "defaultSwitchState"
+    },
+    {
       "key": "isVisible"
     },
     {
-      "key": "defaultSwitchState"
+      "key": "onChange"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "",
+  "isVisible": "{{\n  (() => {\n    const ram = (RamInput.text || \"\").trim().toLowerCase();\n\n    if (!ram) return false;\n\n    if (ram === \"no ram\") return false;\n\n    return true;\n  })()\n}}",
   "key": "d2iiwwpkv8",
   "label": "No Ram",
   "labelPosition": "Left",
@@ -34,17 +47,18 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 38,
   "needsErrorInfo": false,
-  "originalBottomRow": 14,
-  "originalTopRow": 10,
+  "onChange": "{{\n  NoRamSwitch.isSwitchedOn\n    ? RAMInput.setValue(\"No RAM\")\n    : RAMInput.setValue(\"\")\n}}",
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
   "parentColumnSpace": 19.1875,
   "parentId": "dc4v6fjacj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 42,
-  "topRow": 10,
+  "topRow": 5,
   "type": "SWITCH_WIDGET",
   "version": 1,
-  "widgetId": "2ufxvk5s3x",
-  "widgetName": "HDDSWITCH"
+  "widgetId": "h0wzu5w6hk",
+  "widgetName": "NoRamSwitch"
 }

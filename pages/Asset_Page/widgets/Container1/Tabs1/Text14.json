@@ -17,12 +17,18 @@
     },
     {
       "key": "textColor"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "textColor"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -30,7 +36,7 @@
   "fontSize": "1.25rem",
   "fontStyle": "BOLD",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{\n  !!BlanccoParser.parseBlancco()?.erasure_status\n}}",
   "key": "opleefbdkj",
   "leftColumn": 26,
   "maxDynamicHeight": 9000,

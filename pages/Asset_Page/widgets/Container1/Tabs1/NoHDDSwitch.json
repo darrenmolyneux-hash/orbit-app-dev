@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignWidget": "LEFT",
   "animateLoading": true,
-  "bottomRow": 9,
+  "bottomRow": 14,
   "boxShadow": "none",
-  "defaultSwitchState": "{{\n  !BlanccoParser.parseBlancco().ram\n}}",
+  "defaultSwitchState": "{{\n  [\"no hard drive\", \"no hdd\"].includes(\n    (GetAssetById.data?.[0]?.hdd || \"\").trim().toLowerCase()\n  )\n}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -19,16 +19,23 @@
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
+      "key": "isVisible"
+    },
+    {
       "key": "defaultSwitchState"
     },
     {
-      "key": "isVisible"
+      "key": "onChange"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{\n  !BlanccoParser.parseBlancco().ram\n}}",
+  "isVisible": "{{\n  (() => {\n    const hdd = (HDDInput.text || \"\").trim().toLowerCase();\n\n    if (!hdd) return false;\n\n    if (hdd === \"no hard drive\" || hdd === \"no hdd\") return false;\n\n    return true;\n  })()\n}}",
   "key": "d2iiwwpkv8",
   "label": "No Ram",
   "labelPosition": "Left",
@@ -40,17 +47,18 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 38,
   "needsErrorInfo": false,
-  "originalBottomRow": 9,
-  "originalTopRow": 5,
+  "onChange": "{{\n  NoHDDSwitch.isSwitchedOn\n    ? HDDInput.setValue(\"No Hard Drive\")\n    : HDDInput.setValue(\"\")\n}}",
+  "originalBottomRow": 14,
+  "originalTopRow": 10,
   "parentColumnSpace": 19.1875,
   "parentId": "dc4v6fjacj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 42,
-  "topRow": 5,
+  "topRow": 10,
   "type": "SWITCH_WIDGET",
   "version": 1,
-  "widgetId": "h0wzu5w6hk",
-  "widgetName": "RamSwitch"
+  "widgetId": "2ufxvk5s3x",
+  "widgetName": "NoHDDSwitch"
 }
