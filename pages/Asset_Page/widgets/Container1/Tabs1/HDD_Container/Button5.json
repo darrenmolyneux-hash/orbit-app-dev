@@ -37,6 +37,8 @@
   "mobileTopRow": 5,
   "needsErrorInfo": false,
   "onClick": "{{ openUrl(getAssetById.data[0].blancco_cert_url) }}",
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
   "parentColumnSpace": 19.1875,
   "parentId": "ow7gqoogn9",
   "parentRowSpace": 10,
