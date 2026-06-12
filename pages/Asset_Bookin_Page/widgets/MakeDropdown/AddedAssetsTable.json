@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 121,
-  "boxShadow": "none",
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": false,
   "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
@@ -392,6 +392,9 @@
     },
     {
       "key": "primaryColumns.blancco_cert_url.computedValue"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

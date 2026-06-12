@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO customers (\n  customername,\n  contactname,\n  contactnumber,\n  dialref,\n  dialexpiry,\n  msasigned,\n  created_at,\n\t\n  createdby\n)\nVALUES (\n  '{{ CustomerNameInput.text }}',\n  '{{ ContactNameInput.text }}',\n  '{{ ContactNumberInput.text }}',\n  '{{ DialRefInput.selectedOptionValue }}',\n  '{{ DialExpiryDate.formattedDate }}',\n  '{{ MSASignedDropdown.selectedOptionValue }}',\n  '{{ DatecreatedAtInput.formattedDate }}',\n  '{{ appsmith.user.email.split(\"@\")[0] }}'\n)\nRETURNING customer_id;\n",
+      "body": "INSERT INTO customers (\n  customername,\n  contactname,\n  contactnumber,\n  dialref,\n  dialexpiry,\n  msasigned,\n  created_at,\n  createdby\n)\nVALUES (\n  '{{ CustomerNameInput.text }}',\n  '{{ ContactNameInput.text }}',\n  '{{ ContactNumberInput.text }}',\n  '{{ DialRefInput.selectedOptionValue }}',\n  '{{ DialExpiryDate.formattedDate }}',\n  '{{ MSASignedDropdown.selectedOptionValue }}',\n  NOW(),\n  '{{ appsmith.user.email.split(\"@\")[0] }}'\n)\nRETURNING customer_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

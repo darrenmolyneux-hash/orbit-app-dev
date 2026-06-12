@@ -33,7 +33,7 @@
         "Ubuntu"
       ]
     },
-    "order": 8.0
+    "order": 8
   },
   "displayName": "Moon",
   "isSystemTheme": false,
@@ -43,14 +43,14 @@
       "appBorderRadius": "1.5rem"
     },
     "boxShadow": {
-      "appBoxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+      "appBoxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
     },
     "colors": {
-      "backgroundColor": "#f4f4f5",
-      "primaryColor": "#3b82f6"
+      "backgroundColor": "#F4F6F8",
+      "primaryColor": "#1A5C3A"
     },
     "fontFamily": {
-      "appFont": "Roboto"
+      "appFont": "Inter"
     }
   },
   "stylesheet": {

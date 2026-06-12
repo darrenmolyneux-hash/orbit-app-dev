@@ -6,7 +6,6 @@ INSERT INTO customers (
   dialexpiry,
   msasigned,
   created_at,
-	
   createdby
 )
 VALUES (
@@ -16,7 +15,7 @@ VALUES (
   '{{ DialRefInput.selectedOptionValue }}',
   '{{ DialExpiryDate.formattedDate }}',
   '{{ MSASignedDropdown.selectedOptionValue }}',
-  '{{ DatecreatedAtInput.formattedDate }}',
+  NOW(),
   '{{ appsmith.user.email.split("@")[0] }}'
 )
 RETURNING customer_id;
