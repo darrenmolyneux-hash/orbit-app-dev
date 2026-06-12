@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 25,
+  "bottomRow": 15,
   "boxShadow": "none",
   "defaultImage": "https://www.mbhglobal.co.uk/wp-content/uploads/2026/06/ChatGPT-Image-Jun-2-2026-01_47_26-PM.png",
   "dynamicBindingPathList": [
@@ -18,7 +18,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "qlhrpuycdv",
-  "leftColumn": 21,
+  "leftColumn": 18,
   "maxZoomLevel": 1,
   "mobileBottomRow": 29,
   "mobileLeftColumn": 26,
@@ -32,8 +32,8 @@
   "parentId": "7vbr3ot281",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 41,
-  "topRow": 14,
+  "rightColumn": 43,
+  "topRow": 1,
   "type": "IMAGE_WIDGET",
   "version": 1,
   "widgetId": "bqr70f18rw",

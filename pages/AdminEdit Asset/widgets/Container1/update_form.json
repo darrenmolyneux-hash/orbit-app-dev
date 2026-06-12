@@ -778,8 +778,7 @@
           "label": "Blancco Cert Url",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "blancco_cert_url",
-          "position": 47,
-          "sourceData": null
+          "position": 47
         },
         "blancco_last_fetch": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -864,7 +863,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "collection_id",
           "position": 4,
-          "sourceData": 75
+          "sourceData": 2500
         },
         "colour": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1344,9 +1343,9 @@
           "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "boxShadow": "none",
           "children": {},
-          "dataType": "number",
+          "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.original_cost))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Number Input",
+          "fieldType": "Text Input",
           "iconAlign": "left",
           "identifier": "original_cost",
           "isCustomField": false,
@@ -1358,7 +1357,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "original_cost",
           "position": 17,
-          "sourceData": 20
+          "sourceData": ""
         },
         "ram": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1431,9 +1430,9 @@
           "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "boxShadow": "none",
           "children": {},
-          "dataType": "number",
+          "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.sale_id))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Number Input",
+          "fieldType": "Text Input",
           "iconAlign": "left",
           "identifier": "sale_id",
           "isCustomField": false,
@@ -1445,7 +1444,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "sale_id",
           "position": 40,
-          "sourceData": 3
+          "sourceData": ""
         },
         "screen_size": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1474,9 +1473,9 @@
           "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "boxShadow": "none",
           "children": {},
-          "dataType": "number",
+          "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.sell_price))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Number Input",
+          "fieldType": "Text Input",
           "iconAlign": "left",
           "identifier": "sell_price",
           "isCustomField": false,
@@ -1488,7 +1487,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "sell_price",
           "position": 18,
-          "sourceData": 300
+          "sourceData": ""
         },
         "serial_number": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1551,7 +1550,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "sold",
           "position": 38,
-          "sourceData": true
+          "sourceData": false
         },
         "sold_date": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -1581,9 +1580,9 @@
           "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "boxShadow": "none",
           "children": {},
-          "dataType": "number",
+          "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.status_id))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Number Input",
+          "fieldType": "Text Input",
           "iconAlign": "left",
           "identifier": "status_id",
           "isCustomField": false,
@@ -1595,7 +1594,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "status_id",
           "position": 25,
-          "sourceData": 1
+          "sourceData": ""
         },
         "stock_condition": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",

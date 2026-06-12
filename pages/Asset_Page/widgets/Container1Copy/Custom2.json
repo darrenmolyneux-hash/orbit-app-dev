@@ -1,0 +1,69 @@
+{
+  "backgroundColor": "\"transparent\"",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "0px",
+  "borderWidth": "1",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultModel": "{\n  \"assetsLabel\": \"Assets\",\n  \"collectionId\": \"{{GetAssetById.data[0]?.collection_id}}\",\n  \"customerName\": \"{{GetAssetById.data[0]?.customername}}\",\n  \"barcode\": \"{{GetAssetById.data[0]?.asset_ref}}\"\n}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "xt2uojq801",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 31,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 4,
+  "originalTopRow": 0,
+  "parentColumnSpace": 19.5,
+  "parentId": "uvpsp2brmt",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  background: transparent;\n  display: flex;\n  align-items: center;\n  height: 100%;\n  font-family: Inter, system-ui, sans-serif;\n  overflow: hidden;\n}\n\n#bc {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 20px;\n}\n\n.bc-link {\n  color: #1A5C3A;\n  cursor: pointer;\n  font-weight: 500;\n  padding: 2px 0;\n}\n\n.bc-link:hover {\n  text-decoration: underline;\n}\n\n.bc-sep {\n  color: #9CA3AF;\n}\n\n.bc-current {\n  color: #1A1A2E;\n  font-weight: 600;\n}",
+    "html": "<nav id=\"bc\"></nav>",
+    "js": "appsmith.onReady(function () {\n  render();\n});\nappsmith.onModelChange(function () {\n  render();\n});\nfunction render() {\n  var model = appsmith.model;\n  var collectionId = model.collectionId || '';\n  var customerName = model.customerName || '';\n  var barcode = model.barcode || '';\n  var assetsLabel = model.assetsLabel || 'Assets';\n  var bc = document.getElementById('bc');\n  bc.innerHTML = '<span class=\"bc-link\" onclick=\"goAssets()\">' + assetsLabel + '</span>' + '<span class=\"bc-sep\">›</span>' + '<span class=\"bc-link\" onclick=\"goCollection()\">Collection ' + collectionId + ' · ' + customerName + '</span>' + '<span class=\"bc-sep\">›</span>' + '<span class=\"bc-current\">' + barcode + '</span>';\n}\nfunction goAssets() {\n  appsmith.triggerEvent('goAssets');\n}\nfunction goCollection() {\n  appsmith.triggerEvent('goCollection');\n}"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  background: transparent;\n  display: flex;\n  align-items: center;\n  height: 100%;\n  font-family: Inter, system-ui, sans-serif;\n  overflow: hidden;\n}\n\n#bc {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 20px;\n}\n\n.bc-link {\n  color: #1A5C3A;\n  cursor: pointer;\n  font-weight: 500;\n  padding: 2px 0;\n}\n\n.bc-link:hover {\n  text-decoration: underline;\n}\n\n.bc-sep {\n  color: #9CA3AF;\n}\n\n.bc-current {\n  color: #1A1A2E;\n  font-weight: 600;\n}",
+    "html": "<nav id=\"bc\"></nav>",
+    "js": "appsmith.onReady(function () {\n  render();\n});\n\nappsmith.onModelChange(function () {\n  render();\n});\n\nfunction render() {\n  var model = appsmith.model;\n\n  var collectionId   = model.collectionId   || '';\n  var customerName   = model.customerName   || '';\n  var barcode        = model.barcode        || '';\n  var assetsLabel    = model.assetsLabel    || 'Assets';\n\n  var bc = document.getElementById('bc');\n\n  bc.innerHTML =\n    '<span class=\"bc-link\" onclick=\"goAssets()\">' + assetsLabel + '</span>' +\n    '<span class=\"bc-sep\">›</span>' +\n    '<span class=\"bc-link\" onclick=\"goCollection()\">Collection ' + collectionId + ' · ' + customerName + '</span>' +\n    '<span class=\"bc-sep\">›</span>' +\n    '<span class=\"bc-current\">' + barcode + '</span>';\n}\n\nfunction goAssets() {\n  appsmith.triggerEvent('goAssets');\n}\n\nfunction goCollection() {\n  appsmith.triggerEvent('goCollection');\n}"
+  },
+  "version": 1,
+  "widgetId": "zz7ky2qcbx",
+  "widgetName": "Custom2"
+}

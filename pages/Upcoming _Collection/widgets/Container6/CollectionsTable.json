@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderColor": "#ffffff",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "0.375rem",
   "borderWidth": "0",
   "bottomRow": 65,
   "boxShadow": "none",
@@ -64,9 +64,6 @@
       "key": "accentColor"
     },
     {
-      "key": "borderRadius"
-    },
-    {
       "key": "tableData"
     },
     {
@@ -83,9 +80,6 @@
     },
     {
       "key": "primaryColumns.status.computedValue"
-    },
-    {
-      "key": "headerRowColor"
     },
     {
       "key": "primaryColumns.customername.computedValue"
@@ -116,8 +110,8 @@
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
-  "headerRowColor": "{{appsmith.theme.colors.backgroundColor}}",
-  "headerTextColor": "#18181b",
+  "headerRowColor": "#22c55e",
+  "headerTextColor": "#ffffff",
   "horizontalAlignment": "LEFT",
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,

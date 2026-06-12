@@ -26,6 +26,7 @@
   "key": "fsyzeavvxz",
   "label": "Data",
   "labelPosition": "Right",
+  "labelTextColor": "#231f20",
   "leftColumn": 49,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,

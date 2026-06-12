@@ -386,7 +386,7 @@
   "searchKey": "",
   "tableData": "{{GetProcessing.data}}",
   "textSize": "0.875rem",
-  "topRow": 4,
+  "topRow": 2,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",

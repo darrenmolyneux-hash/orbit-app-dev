@@ -26,6 +26,10 @@
   "evaluationVersion": 2,
   "pages": [
     {
+      "id": "Login_Page",
+      "isDefault": false
+    },
+    {
       "id": "Home",
       "isDefault": true
     },
@@ -46,14 +50,6 @@
       "isDefault": false
     },
     {
-      "id": "Asset_Page",
-      "isDefault": false
-    },
-    {
-      "id": "Asset_Bookin_Page",
-      "isDefault": false
-    },
-    {
       "id": "Collection_Page",
       "isDefault": false
     },
@@ -62,15 +58,31 @@
       "isDefault": false
     },
     {
-      "id": "Login_Page",
-      "isDefault": false
-    },
-    {
       "id": "Upcoming _Collection",
       "isDefault": false
     },
     {
-      "id": "Upcoming _Collection Copy",
+      "id": "Asset_Bookin_Page",
+      "isDefault": false
+    },
+    {
+      "id": "Asset_Page",
+      "isDefault": false
+    },
+    {
+      "id": "AdminEdit Asset",
+      "isDefault": false
+    },
+    {
+      "id": "Admin_Console",
+      "isDefault": false
+    },
+    {
+      "id": "Admin",
+      "isDefault": false
+    },
+    {
+      "id": "Blancco Debug",
       "isDefault": false
     },
     {
@@ -87,18 +99,6 @@
     },
     {
       "id": "NewPageTemplate",
-      "isDefault": false
-    },
-    {
-      "id": "AdminEdit Asset",
-      "isDefault": false
-    },
-    {
-      "id": "Blancco Debug",
-      "isDefault": false
-    },
-    {
-      "id": "Admin",
       "isDefault": false
     },
     {

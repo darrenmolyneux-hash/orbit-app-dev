@@ -25,6 +25,7 @@
       "key": "onSubmit"
     }
   ],
+  "errorMessage": "Ref Not Found",
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,

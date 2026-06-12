@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 121,
+  "bottomRow": 129,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": false,
@@ -355,9 +355,6 @@
       "key": "primaryColumns.sale_id.computedValue"
     },
     {
-      "key": "headerRowColor"
-    },
-    {
       "key": "primaryColumns.EditActions1.saveButtonColor"
     },
     {
@@ -420,7 +417,8 @@
   "endOfData": false,
   "flexVerticalAlignment": "start",
   "fontStyle": "",
-  "headerRowColor": "{{appsmith.theme.colors.backgroundColor}}",
+  "headerRowColor": "#1a2e3b",
+  "headerTextColor": "#ffffff",
   "horizontalAlignment": "CENTER",
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
@@ -2241,7 +2239,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{ getAssetsQuery.data }}\n",
   "textSize": "0.875rem",
-  "topRow": 18,
+  "topRow": 26,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",

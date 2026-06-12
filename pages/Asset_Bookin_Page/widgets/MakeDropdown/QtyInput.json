@@ -2,16 +2,13 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "autoFocus": false,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "0.375rem",
   "bottomRow": 10,
   "boxShadow": "none",
   "defaultText": "1",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -27,6 +24,7 @@
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelStyle": "",
+  "labelTextColor": "#231f20",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 54,
