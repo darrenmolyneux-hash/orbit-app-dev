@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT collectionid\nFROM collections\nWHERE collectionid = {{ CollectionRefSearch.text }};\n",
+      "body": "SELECT \n  c.collection_id,\n  cu.customer_name\nFROM collections c\nJOIN customers cu ON cu.customer_id = c.customer_id\nWHERE c.collection_id::text = {{inp_search_collection.text}}\nLIMIT 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 2,
   "shouldTruncate": false,
-  "text": "{{ MakeInput.selectedOptionValue }}\n",
+  "text": "{{ sel_make.selectedOptionValue }}\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 18,

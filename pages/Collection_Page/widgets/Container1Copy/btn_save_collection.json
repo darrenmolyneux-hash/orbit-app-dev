@@ -24,6 +24,8 @@
       "key": "onClick"
     }
   ],
+  "iconAlign": "left",
+  "iconName": "tick-circle",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,

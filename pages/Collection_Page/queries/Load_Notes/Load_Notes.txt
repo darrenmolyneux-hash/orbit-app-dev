@@ -1,4 +1,0 @@
-SELECT noteid, note_text, created_by, created_at
-FROM job_notes
-WHERE jobid = {{ Number(appsmith.URL.queryParams.nextid) }}
-ORDER BY created_at DESC;

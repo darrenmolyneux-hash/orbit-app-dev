@@ -1,3 +1,7 @@
-SELECT collectionid
-FROM collections
-WHERE collectionid = {{ CollectionRefSearch.text }};
+SELECT 
+  c.collection_id,
+  cu.customer_name
+FROM collections c
+JOIN customers cu ON cu.customer_id = c.customer_id
+WHERE c.collection_id::text = {{inp_search_collection.text}}
+LIMIT 1;

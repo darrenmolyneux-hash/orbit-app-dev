@@ -1,10 +1,10 @@
 export default {
   addMultipleAssets: async () => {
-    const qty = Number(QtyInput.text || 1);
+    const qty = Number(inp_qty.text || 1);
 
-    await GetCollectionCode.run();
+    await qry_collection_code_get.run();
 
-    const codeData = GetCollectionCode.data;
+    const codeData = qry_collection_code_get.data;
 
     if (!codeData || codeData.length === 0) {
       showAlert("No collection code found for this booking", "error");
@@ -17,30 +17,30 @@ export default {
       const insertResult = await insertAsset.run();
       const newAssetId = insertResult[0].asset_id;
 
-      const globalNumber = (await GetGlobalAssetNumber.run())[0].global_number;
+      const globalNumber = (await qry_global_asset_number.run())[0].global_number;
 
       const padded = String(globalNumber).padStart(5, "0");
       const assetRef = `${collectionCode}-${padded}`;
 
-      await UpdateAssetRef.run({
+      await qry_asset_ref_update.run({
         asset_ref: assetRef,
         asset_id: newAssetId
       });
     }
 
-    await getAssetsQuery.run();
+    await qry_booked_assets.run();
 
     // Clear text inputs
-    await SerialInput.setValue("");
-    await AssetTagInput.setValue("");
-    await QtyInput.setValue("");
+    await inp_serial.setValue("");
+    await inp_asset_tag.setValue("");
+    await inp_qty.setValue("");
 
     // Reset dropdowns
     resetWidget("ItemTypeDropdown", true);
     resetWidget("MakeInput", true);
     resetWidget("ModelInput", true);
 
-    await getAssetsQuery.run();
+    await qry_booked_assets.run();
 
     showAlert(qty + " asset(s) added", "success");
   }

@@ -1,2 +1,0 @@
-SELECT COALESCE(MAX(collection_ref), 0) + 1 AS next_ref
-FROM collections;

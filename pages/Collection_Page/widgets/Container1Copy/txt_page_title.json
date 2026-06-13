@@ -11,9 +11,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -44,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 28,
   "shouldTruncate": false,
-  "text": "{{\"Create new collection\"}}",
+  "text": "collection details",
   "textAlign": "LEFT",
   "textColor": "#1a1a2e",
   "topRow": 0,

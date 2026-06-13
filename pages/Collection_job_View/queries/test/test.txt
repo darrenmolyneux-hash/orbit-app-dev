@@ -1,3 +1,0 @@
-UPDATE collections
-SET status = 'Booked'
-WHERE status = 'BOOKED';

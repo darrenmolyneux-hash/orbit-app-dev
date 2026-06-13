@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 24,
   "shouldTruncate": false,
-  "text": "Collection: {{ appsmith.URL.queryParams.customername }}",
+  "text": "{{\"Created \" + collectionQuery.data[0]?.created_date + \" · by \" + collectionQuery.data[0]?.created_by}}",
   "textAlign": "LEFT",
   "textColor": "#6b7280",
   "topRow": 5,

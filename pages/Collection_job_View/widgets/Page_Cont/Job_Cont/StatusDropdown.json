@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 14,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  Load_Collection.data[0].status ))(StatusDropdown.options, StatusDropdown.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  Get_Collection_Record.data[0].status ))(StatusDropdown.options, StatusDropdown.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -37,7 +37,7 @@
   "labelText": "Status",
   "labelTextSize": "0.875rem",
   "labelWidth": "15",
-  "leftColumn": 2,
+  "leftColumn": 22,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -56,9 +56,9 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 44,
+  "rightColumn": 64,
   "serverSideFiltering": false,
-  "sourceData": "{{ StatusQuery.data }}",
+  "sourceData": "{{ qry_status_types_all.data }}",
   "topRow": 10,
   "type": "SELECT_WIDGET",
   "version": 1,

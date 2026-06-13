@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 37,
   "shouldTruncate": false,
-  "text": "Model value: {{ ModelInput.selectedOptionValue }}",
+  "text": "Model value: {{ sel_model.selectedOptionValue }}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 134,

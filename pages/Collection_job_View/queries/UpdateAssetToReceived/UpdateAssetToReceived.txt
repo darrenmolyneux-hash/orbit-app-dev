@@ -1,3 +1,0 @@
-UPDATE assets
-SET status_id = 1
-WHERE asset_id = {{ collections.selectedRow.asset_id }};

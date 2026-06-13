@@ -30,6 +30,6 @@
     "name": "qry_sites_for_customer",
     "pageId": "Collection_Page",
     "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

@@ -28,12 +28,18 @@
   ],
   "dynamicTriggerPathList": [
     {
-      "key": "onResetClick"
+      "key": "goHome"
+    },
+    {
+      "key": "goCollections"
     }
   ],
   "events": [
-    "onResetClick"
+    "goHome",
+    "goCollections"
   ],
+  "goCollections": "{{navigateTo('Collection_Page', {}, 'SAME_WINDOW');}}",
+  "goHome": "{{navigateTo('Home', {}, 'SAME_WINDOW');}}",
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
@@ -47,7 +53,6 @@
   "mobileRightColumn": 35,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "parentColumnSpace": 19.5,
   "parentId": "razqsvmfxj",
   "parentRowSpace": 10,

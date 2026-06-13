@@ -1,3 +1,0 @@
-SELECT customer_id, customername
-FROM customers
-WHERE customer_id = {{ Get_Collection_Record.data[0]?.customerid }}

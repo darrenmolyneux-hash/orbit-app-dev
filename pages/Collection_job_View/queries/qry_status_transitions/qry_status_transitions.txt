@@ -1,0 +1,4 @@
+SELECT to_status
+FROM status_transitions
+WHERE from_status = {{qry_collection_get.data[0]?.status}}
+ORDER BY to_status;

@@ -1,3 +1,0 @@
-UPDATE collections
-SET collection_prefix = {{ GenerateCollectionPrefix.data[0].prefix }}
-WHERE collectionid = {{ InsertCollection.data[0].collectionid }};

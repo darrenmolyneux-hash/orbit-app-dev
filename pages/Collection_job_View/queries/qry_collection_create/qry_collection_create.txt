@@ -1,0 +1,48 @@
+-- DEBUG:
+-- {{ JSON.stringify({
+--   address1: Address1Input.text,
+--   address2: Address2Input.text,
+--   city: CityInput.text,
+--   postcode: PostcodeInput.text,
+--   notes: CollectionNotesInput_.text.text,
+--   jobtype: JobTypeInput.text,
+--   createdby: CreatedByInput.text,
+--   description: collectiondescription.text.text,
+--   dial: Dial_Input.text,
+--   expiry: Dial_Expiry.text,
+--   status: StatusDropdown.selectedOptionValue
+-- }) }}INSERT INTO collections (
+    collection_ref,
+    customerid,
+    siteid,
+    address1,
+    address2,
+    city,
+    postcode,
+    notes,
+    collectiondate,
+    jobtype,
+    createdby,
+    collectiondescription,
+    dial,
+    dial_expiry,
+    status
+)
+VALUES (
+    {{ qry_next_collection_ref.data[0].next_id }},
+    {{ Number(CustomerDropdown.selectedOptionValue) }},
+    {{ Number(CollectionTable.selectedRow.siteid) }},
+    '{{ Address1Input.text }}',
+    '{{ Address2Input.text }}',
+    '{{ CityInput.text }}',
+    '{{ PostcodeInput.text }}',
+    '{{ inp_note_text.text.text }}',
+    '{{ CollectionDateInput.text }}',
+    '{{ JobTypeInput.text }}',
+    '{{ txt_created_by.text }}',
+    '{{ collectiondescription.text.text }}',
+    '{{ txt_dial.text }}',
+    '{{ txt_dial_expiry.text }}',
+    '{{ StatusDropdown.selectedOptionValue }}'
+)
+RETURNING collectionid, collection_ref;

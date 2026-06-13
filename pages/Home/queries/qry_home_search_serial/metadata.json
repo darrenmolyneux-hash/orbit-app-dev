@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT asset_id\nFROM assets\nWHERE serial_number = {{ SerialRefSearch.text }};\n",
+      "body": "SELECT asset_id, serial_number\nFROM assets\nWHERE serial_number ILIKE {{inp_search_serial.text}}\nLIMIT 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

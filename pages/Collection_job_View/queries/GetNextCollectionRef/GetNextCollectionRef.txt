@@ -1,2 +1,0 @@
-SELECT LPAD((COALESCE(MAX(collection_ref), 999) + 1)::text, 4, '0') AS next_ref
-FROM collections;

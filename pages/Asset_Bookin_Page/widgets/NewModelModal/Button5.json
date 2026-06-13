@@ -37,7 +37,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{\n  InsertNewModel.run(() => {\n      storeValue(\"newModelId\", InsertNewModel.data[0].model_id);   // ⭐ store the ID\n      QueryModelsByMake.run();                                     // refresh dropdown list\n      showAlert(\"Model added successfully\", \"success\");\n      closeModal(\"NewModelModal\");\n      navigateTo(\"Asset_Bookin_Page\", {\n          collection_id: appsmith.URL.queryParams.collection_id,\n          customer_name: appsmith.URL.queryParams.customer_name\n      }, \"SAME_WINDOW\");\n  });\n}}\n",
+  "onClick": "{{\n  qry_model_insert.run(() => {\n      storeValue(\"newModelId\", qry_model_insert.data[0].model_id);   // ⭐ store the ID\n      qry_models_list.run();                                     // refresh dropdown list\n      showAlert(\"Model added successfully\", \"success\");\n      closeModal(\"NewModelModal\");\n      navigateTo(\"Asset_Bookin_Page\", {\n          collection_id: appsmith.URL.queryParams.collection_id,\n          customer_name: appsmith.URL.queryParams.customer_name\n      }, \"SAME_WINDOW\");\n  });\n}}\n",
   "originalBottomRow": 30,
   "originalTopRow": 26,
   "parentId": "2vyhur4k8d",

@@ -1,5 +1,0 @@
-SELECT make_id, make_name
-FROM makes
-WHERE item_type_id = {{ Number(ItemTypeDropdown.selectedOptionValue) }}
-
-ORDER BY make_name;

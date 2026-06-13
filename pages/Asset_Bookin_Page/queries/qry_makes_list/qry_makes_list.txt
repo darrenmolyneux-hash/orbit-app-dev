@@ -1,0 +1,5 @@
+SELECT make_id, make_name
+FROM makes
+WHERE item_type_id = {{ Number(sel_item_type.selectedOptionValue) }}
+
+ORDER BY make_name;

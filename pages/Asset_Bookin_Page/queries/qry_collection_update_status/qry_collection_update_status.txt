@@ -1,0 +1,3 @@
+UPDATE collections
+SET status = 'Booking complete'
+WHERE collection_id = {{appsmith.URL.queryParams.collectionId}};

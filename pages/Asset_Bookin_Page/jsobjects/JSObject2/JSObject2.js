@@ -1,8 +1,8 @@
 export default {
   async getItemTypes() {
-    await Get_ItemTypes.run();
+    await qry_item_types_list.run();
 
-    return Get_ItemTypes.data.map(d => ({
+    return qry_item_types_list.data.map(d => ({
       label: d.item_type_name,
       value: d.item_type_id + ""
     }));
@@ -11,7 +11,7 @@ export default {
   async selectItemType(value) {
     await storeValue("selectedItemType", value);
 
-    const selectedType = Get_ItemTypes.data.find(
+    const selectedType = qry_item_types_list.data.find(
       d => String(d.item_type_id) === String(value)
     );
 
@@ -20,8 +20,8 @@ export default {
       selectedType?.is_data_bearing === true || selectedType?.is_data_bearing === "true"
     );
 
-    await Get_Makes.run();
+    await qry_makes_list.run();
 
-    return Get_Makes.data;
+    return qry_makes_list.data;
   }
 }

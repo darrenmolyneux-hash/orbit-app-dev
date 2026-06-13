@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 35,
+  "bottomRow": 41,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 37,
   "needsErrorInfo": false,
-  "originalBottomRow": 35,
-  "originalTopRow": 31,
+  "originalBottomRow": 41,
+  "originalTopRow": 37,
   "overflow": "NONE",
   "parentColumnSpace": 16.7138671875,
   "parentId": "wg91e07364",
@@ -43,7 +43,7 @@
   "text": "Chain of Custody\n",
   "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 31,
+  "topRow": 37,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

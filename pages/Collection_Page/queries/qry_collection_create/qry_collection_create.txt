@@ -31,4 +31,4 @@ INSERT INTO collections (
   NOW(),
   'Booked'
 )
-RETURNING collection_id, collection_ref;
+RETURNING collection_id ;

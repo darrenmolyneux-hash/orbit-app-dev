@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignWidget": "LEFT",
   "animateLoading": true,
-  "bottomRow": 14,
+  "bottomRow": 16,
   "boxShadow": "none",
   "defaultSwitchState": "{{\n  [\"no hard drive\", \"no hdd\"].includes(\n    (GetAssetById.data?.[0]?.hdd || \"\").trim().toLowerCase()\n  )\n}}",
   "dynamicBindingPathList": [
@@ -56,7 +56,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 42,
-  "topRow": 10,
+  "topRow": 11,
   "type": "SWITCH_WIDGET",
   "version": 1,
   "widgetId": "2ufxvk5s3x",

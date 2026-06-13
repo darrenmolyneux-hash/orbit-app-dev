@@ -1,7 +1,0 @@
-INSERT INTO job_notes (jobid, note_text, created_by)
-VALUES (
-  {{ Number(appsmith.URL.queryParams.nextid) }},
-  {{ inp_notes.text }},
-  {{ appsmith.user.email }}
-)
-RETURNING *;
