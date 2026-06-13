@@ -48,7 +48,7 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onSubmit": "{{ \n  SearchByAssetRef.run(() => {\n    if (SearchByAssetRef.data.length > 0) {\n      navigateTo(\"Asset_Page\", { asset_id: SearchByAssetRef.data[0].asset_id });\n    } else {\n      showAlert(\"No asset found\", \"warning\");\n    }\n  });\n}}\n",
+  "onSubmit": "{{ \n  SearchByAssetRef.run(() => {\n    if (SearchByAssetRef.data.length > 0) {\n     cladeSearchByAssetRef.data[0].asset_id });\n    } else {\n      showAlert(\"No asset found\", \"warning\");\n    }\n  });\n}}\n",
   "originalBottomRow": 11,
   "originalTopRow": 7,
   "parentColumnSpace": 7,

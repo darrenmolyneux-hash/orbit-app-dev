@@ -3,4 +3,4 @@ SELECT
   dialexpiry,
   msasigned
 FROM customers
-WHERE customer_id = {{ CustomerDropdown.selectedOptionValue }};
+WHERE customer_id = {{ sel_customer.selectedOptionValue }};

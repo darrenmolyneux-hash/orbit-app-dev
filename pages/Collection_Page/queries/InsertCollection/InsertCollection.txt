@@ -15,19 +15,19 @@ INSERT INTO collections (
     status
 )
 VALUES (
-    {{ Number(CustomerDropdown.selectedOptionValue) }},
-    {{ Number(CollectionTable.selectedRow.siteid) }},
+    {{ Number(sel_customer.selectedOptionValue) }},
+    {{ Number(tbl_sites.selectedRow.siteid) }},
     '{{ Address1Input.text }}',
     '{{ Address2Input.text }}',
     '{{ CityInput.text }}',
     '{{ PostcodeInput.text }}',
-    '{{ NotesInput.text }}',
-    '{{ CollectionDateInput.formattedDate }}',
-    '{{ JobTypeInput.selectedOptionValue }}',
+    '{{ inp_notes.text }}',
+    '{{ dp_collection_date.formattedDate }}',
+    '{{ sel_job_type.selectedOptionValue }}',
     '{{ CreatedByInput.text }}',
-    '{{ collectiondescription.text }}',
-    '{{ Dial_Input.text }}',
-    '{{ Dial_Expiry.text }}',
+    '{{ inp_description.text }}',
+    '{{ inp_dial.text }}',
+    '{{ inp_dial_expiry.text }}',
     'Booked'
 )
 RETURNING collectionid;

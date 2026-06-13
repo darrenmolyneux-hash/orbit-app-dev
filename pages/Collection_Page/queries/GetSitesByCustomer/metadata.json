@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT siteid, customerid, sitename, address1, address2, city, postcode\nFROM sites\nWHERE customerid = {{ CustomerDropdown.selectedOptionValue }};\n\n",
+      "body": "SELECT siteid, customerid, sitename, address1, address2, city, postcode\nFROM sites\nWHERE customerid = {{ sel_customer.selectedOptionValue }};\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

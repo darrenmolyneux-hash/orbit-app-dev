@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 57,
   "shouldTruncate": false,
-  "text": "{{ CollectionTable.selectedRow.postcode }}",
+  "text": "{{ tbl_sites.selectedRow.postcode }}",
   "textAlign": "LEFT",
   "textColor": "#71717a",
   "topRow": 13,

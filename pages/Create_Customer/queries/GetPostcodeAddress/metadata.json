@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/postcodes/{{ encodeURIComponent(PostcodeInput.text.replace(\" \", \"\").toUpperCase()) }}\n\n\n\n\n\n",
+      "path": "/postcodes/{{ encodeURIComponent(inp_postcode.text.replace(\" \", \"\").toUpperCase()) }}\n\n\n\n\n\n",
       "pluginSpecifiedTemplates": [
         {
           "value": true

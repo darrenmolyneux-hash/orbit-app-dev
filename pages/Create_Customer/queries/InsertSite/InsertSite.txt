@@ -10,11 +10,11 @@ INSERT INTO sites (
 )
 VALUES (
   {{appsmith.store.newCustomerId}},
-  {{Address1Input.text}},
-  {{Address2Input.text}},
-  {{CityInput.text}},
-  {{PostcodeInput.text}},
-  {{SiteContactName.text}},
-  {{ContactNumberInput.dialCode + ContactNumberInput.text}},
-  {{SiteContactEmail.text}}
+  {{inp_address1.text}},
+  {{inp_address2.text}},
+  {{inp_city.text}},
+  {{inp_postcode.text}},
+  {{inp_site_contact.text}},
+  {{inp_contact_number.dialCode + inp_contact_number.text}},
+  {{inp_site_email.text}}
 );

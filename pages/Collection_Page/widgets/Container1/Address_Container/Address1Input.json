@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{ CollectionTable.selectedRow.address1 }}",
+  "text": "{{ tbl_sites.selectedRow.address1 }}",
   "textAlign": "LEFT",
   "textColor": "#71717a",
   "topRow": 5,

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM sites\nWHERE customerid = {{ CustomerDropdown.selectedOptionValue }};\n",
+      "body": "SELECT *\nFROM sites\nWHERE customerid = {{ sel_customer.selectedOptionValue }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "GetCustomerSites",
     "pageId": "Collection_Page",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

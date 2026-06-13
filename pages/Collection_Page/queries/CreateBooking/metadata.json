@@ -31,7 +31,7 @@
           "data": ""
         },
         "rowObjects": {
-          "data": "{\n  \"Booking ID\": \"\",\n  \"Collection Number\": \"{{ JobIDInput.text }}\",\n  \"Collection Date\": \"{{ CollectionDateInput.selectedDate }}\",\n  \"Collection Time\": \"\",\n  \"Company Name\": \"{{ CustomerDropdown.selectedOptionValue }}\",\n  \"Collection Address\": \"{{ Text7.text }}\",\n  \"House Number\": \"{{ Address1Input.text }}\",\n  \"Site Contact\": \"\",\n  \"Contact Number\": \"\",\n  \"Dial Rating\": \"{{ Dial_Input.text }}\"\n}\n"
+          "data": "{\n  \"Booking ID\": \"\",\n  \"Collection Number\": \"{{ JobIDInput.text }}\",\n  \"Collection Date\": \"{{ dp_collection_date.selectedDate }}\",\n  \"Collection Time\": \"\",\n  \"Company Name\": \"{{ sel_customer.selectedOptionValue }}\",\n  \"Collection Address\": \"{{ Text7.text }}\",\n  \"House Number\": \"{{ Address1Input.text }}\",\n  \"Site Contact\": \"\",\n  \"Contact Number\": \"\",\n  \"Dial Rating\": \"{{ inp_dial.text }}\"\n}\n"
         },
         "sheetName": {
           "data": "Booking"

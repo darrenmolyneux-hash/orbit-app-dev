@@ -1,4 +1,0 @@
-SELECT note_id, note_text, created_at, created_by
-FROM asset_notes
-WHERE asset_id = {{ appsmith.URL.queryParams.asset_id }}
-ORDER BY created_at DESC;

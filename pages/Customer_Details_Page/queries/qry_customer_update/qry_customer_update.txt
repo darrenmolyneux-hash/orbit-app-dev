@@ -1,0 +1,8 @@
+UPDATE customers SET
+  customer_name        = {{inp_customer_name.text}},
+  contact_name         = {{inp_contact_name.text}},
+  contact_number       = {{inp_contact_number.text}},
+  dial_ref             = {{_qry_customer_get_data_0_dial_.text}},
+  dial_expiry          = {{dp_dial_expiry.selectedDate}},
+  msa_signed           = {{sel_msa.selectedOptionValue}}
+WHERE customer_id = {{appsmith.URL.queryParams.customerId}};

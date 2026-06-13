@@ -1,3 +1,3 @@
 SELECT *
 FROM sites
-WHERE customerid = {{ CustomerDropdown.selectedOptionValue }};
+WHERE customerid = {{ sel_customer.selectedOptionValue }};

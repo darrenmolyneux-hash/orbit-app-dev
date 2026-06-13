@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/v1/postcodes/{{ PostcodeInput.text.replace(\" \", \"\") }}",
+      "path": "/v1/postcodes/{{ inp_postcode.text.replace(\" \", \"\") }}",
       "pluginSpecifiedTemplates": [
         {
           "value": true

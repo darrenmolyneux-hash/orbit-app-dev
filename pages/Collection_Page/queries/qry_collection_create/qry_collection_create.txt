@@ -1,0 +1,34 @@
+INSERT INTO collections (
+  customer_id,
+  site_id,
+  job_type,
+  collection_date,
+  description,
+  notes,
+  dial,
+  dial_expiry,
+  msa_signed,
+  site_contact,
+  contact_number,
+  contact_email,
+  created_by,
+  created_at,
+  status
+) VALUES (
+  {{sel_customer.selectedOptionValue}},
+  {{tbl_sites.selectedRow.site_id}},
+  {{sel_job_type.selectedOptionValue}},
+  {{dp_collection_date.selectedDate}},
+  {{inp_description.text}},
+  {{inp_notes.text}},
+  {{inp_dial.text}},
+  {{inp_dial_expiry.text}},
+  {{inp_msa_signed.text}},
+  {{inp_site_contact.text}},
+  {{inp_contact_number.text}},
+  {{inp_contact_email.text}},
+  {{appsmith.user.name}},
+  NOW(),
+  'Booked'
+)
+RETURNING collection_id, collection_ref;

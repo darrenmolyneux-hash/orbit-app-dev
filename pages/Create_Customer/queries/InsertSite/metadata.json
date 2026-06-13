@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO sites (\n  customerid,\n  address1,\n  address2,\n  city,\n  postcode,\n  ste_contact,\n  contact_number,\n  contact_email\n)\nVALUES (\n  {{appsmith.store.newCustomerId}},\n  {{Address1Input.text}},\n  {{Address2Input.text}},\n  {{CityInput.text}},\n  {{PostcodeInput.text}},\n  {{SiteContactName.text}},\n  {{ContactNumberInput.dialCode + ContactNumberInput.text}},\n  {{SiteContactEmail.text}}\n);",
+      "body": "INSERT INTO sites (\n  customerid,\n  address1,\n  address2,\n  city,\n  postcode,\n  ste_contact,\n  contact_number,\n  contact_email\n)\nVALUES (\n  {{appsmith.store.newCustomerId}},\n  {{inp_address1.text}},\n  {{inp_address2.text}},\n  {{inp_city.text}},\n  {{inp_postcode.text}},\n  {{inp_site_contact.text}},\n  {{inp_contact_number.dialCode + inp_contact_number.text}},\n  {{inp_site_email.text}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

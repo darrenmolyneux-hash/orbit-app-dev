@@ -1,4 +1,4 @@
 SELECT siteid, customerid, sitename, address1, address2, city, postcode
 FROM sites
-WHERE customerid = {{ CustomerDropdown.selectedOptionValue }};
+WHERE customerid = {{ sel_customer.selectedOptionValue }};
 

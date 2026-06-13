@@ -1,0 +1,17 @@
+SELECT
+  c.collection_id,
+  c.collection_ref,
+  c.collection_date,
+  c.job_type,
+  c.status,
+  c.city,
+  c.postcode,
+  c.dial,
+  COUNT(a.asset_id) AS asset_count
+FROM collections c
+LEFT JOIN assets a ON a.collection_id = c.collection_id
+WHERE c.customer_id = {{appsmith.URL.queryParams.customerId}}
+GROUP BY
+  c.collection_id, c.collection_ref, c.collection_date,
+  c.job_type, c.status, c.city, c.postcode, c.dial
+ORDER BY c.created_at DESC;

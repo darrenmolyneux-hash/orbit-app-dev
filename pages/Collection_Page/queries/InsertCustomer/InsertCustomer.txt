@@ -14,7 +14,7 @@ VALUES (
   {{ContactNumberInput.text}},
   {{DialRefInput.text}},
   {{DialExpiryDate.formattedDate}},
-  {{MSA_Signed.text.selectedOptionValue}},
+  {{inp_msa_signed.text.selectedOptionValue}},
   {{DatecreatedAtInput.formattedDate}},
   {{appsmith.user.username}}
 )

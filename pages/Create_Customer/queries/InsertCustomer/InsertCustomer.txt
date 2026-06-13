@@ -9,12 +9,12 @@ INSERT INTO customers (
   createdby
 )
 VALUES (
-  '{{ CustomerNameInput.text }}',
-  '{{ ContactNameInput.text }}',
-  '{{ ContactNumberInput.text }}',
-  '{{ DialRefInput.selectedOptionValue }}',
-  '{{ DialExpiryDate.formattedDate }}',
-  '{{ MSASignedDropdown.selectedOptionValue }}',
+  '{{ inp_customer_name.text }}',
+  '{{ inp_contact_name.text }}',
+  '{{ inp_contact_number.text }}',
+  '{{ sel_dial_rating.selectedOptionValue }}',
+  '{{ dp_dial_expiry.formattedDate }}',
+  '{{ sel_msa.selectedOptionValue }}',
   NOW(),
   '{{ appsmith.user.email.split("@")[0] }}'
 )
