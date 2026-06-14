@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT GREATEST(\n  COALESCE(MAX(collectionid), 0),\n  2499\n) + 1 AS nextid\nFROM collections;",
+      "body": "SELECT GREATEST(\n  COALESCE(MAX(collection_id), 0),\n  2499\n) + 1 AS nextid\nFROM collections;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

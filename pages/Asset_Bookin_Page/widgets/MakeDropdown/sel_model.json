@@ -62,7 +62,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 36,
   "serverSideFiltering": false,
-  "sourceData": "{{qry_models_list.data.map(r => ({label: r.model_name, value: r.model_name}))}}",
+  "sourceData": "{{qry_models_list.data.map(r => ({label: r.model_name, value: r.model_id}))}}",
   "topRow": 3,
   "type": "SELECT_WIDGET",
   "version": 1,

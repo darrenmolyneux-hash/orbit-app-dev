@@ -16,9 +16,6 @@
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
-      "key": "onOptionChange"
-    },
-    {
       "key": "sourceData"
     }
   ],
@@ -49,7 +46,7 @@
   "mobileRightColumn": 11,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onOptionChange": "{{\n  (function() {\n    qry_makes_list.run();\n    var item = qry_item_types_list.data.find(\n      r => r.item_type_name === sel_item_type.selectedOptionValue\n    );\n    storeValue('itemIsData', item ? item.is_data_bearing : true);\n  })()\n}}",
+  "onOptionChange": "{{qry_makes_list.run()}}",
   "optionLabel": "label",
   "optionValue": "value",
   "parentColumnSpace": 19.5,
@@ -60,7 +57,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 12,
   "serverSideFiltering": false,
-  "sourceData": "{{qry_item_types_list.data.map(r => ({label: r.item_type_name, value: r.item_type_name}))}}",
+  "sourceData": "{{qry_item_types_list.data.map(r => ({label: r.item_type_name, value: r.item_type_id}))}}",
   "topRow": 3,
   "type": "SELECT_WIDGET",
   "version": 1,

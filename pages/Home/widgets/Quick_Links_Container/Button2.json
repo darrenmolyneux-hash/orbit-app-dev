@@ -45,7 +45,7 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 29,
+  "rightColumn": 33,
   "text": "Add New Customer",
   "topRow": 6,
   "type": "BUTTON_WIDGET",

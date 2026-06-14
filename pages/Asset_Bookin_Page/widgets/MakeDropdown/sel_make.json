@@ -4,16 +4,13 @@
   "borderRadius": "0.375rem",
   "bottomRow": 10,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  qry_makes_list.data[0]?.make_id ))(sel_make.options, sel_make.serverSideFiltering) }}",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "sourceData"
-    },
-    {
-      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -52,8 +49,8 @@
   "mobileTopRow": 5,
   "needsErrorInfo": false,
   "onOptionChange": "{{qry_models_list.run()}}",
-  "optionLabel": "make_name",
-  "optionValue": "make_id",
+  "optionLabel": "label",
+  "optionValue": "value",
   "parentColumnSpace": 19.5,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,
@@ -62,7 +59,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 22,
   "serverSideFiltering": false,
-  "sourceData": "{{qry_makes_list.data.map(r => ({label: r.make_name, value: r.make_name}))}}",
+  "sourceData": "{{qry_makes_list.data.map(r => ({label: r.make_name, value: r.make_id}))}}",
   "topRow": 3,
   "type": "SELECT_WIDGET",
   "version": 1,

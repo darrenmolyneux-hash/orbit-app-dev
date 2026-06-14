@@ -3,7 +3,7 @@ INSERT INTO collections (
   site_id,
   job_type,
   collection_date,
-  description,
+  instructions,
   notes,
   dial,
   dial_expiry,
@@ -11,9 +11,14 @@ INSERT INTO collections (
   site_contact,
   contact_number,
   contact_email,
+  address1,
+  address2,
+  city,
+  postcode,
   created_by,
   created_at,
-  status
+  status,
+  expected_assets
 ) VALUES (
   {{sel_customer.selectedOptionValue}},
   {{tbl_sites.selectedRow.site_id}},
@@ -21,14 +26,19 @@ INSERT INTO collections (
   {{dp_collection_date.selectedDate}},
   {{inp_description.text}},
   {{inp_notes.text}},
-  {{inp_dial.text}},
-  {{inp_dial_expiry.text}},
-  {{inp_msa_signed.text}},
-  {{inp_site_contact.text}},
-  {{inp_contact_number.text}},
-  {{inp_contact_email.text}},
+  {{qry_compliance.data[0]?.dial_ref}},
+  {{qry_compliance.data[0]?.dial_expiry}},
+  {{qry_compliance.data[0]?.msa_signed}},
+  {{tbl_sites.selectedRow.site_contact}},
+  {{tbl_sites.selectedRow.contact_number}},
+  {{tbl_sites.selectedRow.contact_email}},
+  {{tbl_sites.selectedRow.address1}},
+  {{tbl_sites.selectedRow.address2}},
+  {{tbl_sites.selectedRow.city}},
+  {{tbl_sites.selectedRow.postcode}},
   {{appsmith.user.name}},
   NOW(),
-  'Booked'
+  'Booked',
+  '{{JSON.stringify(Custom_ExpectedAssets.model.expected_assets)}}'::jsonb
 )
-RETURNING collection_id ;
+RETURNING collection_id;

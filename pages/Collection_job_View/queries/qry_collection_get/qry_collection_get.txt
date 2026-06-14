@@ -3,7 +3,7 @@ SELECT
   c.job_type,
   c.collection_date,
   c.status,
-  c.description,
+  c.instructions,
   c.dial,
   c.dial_expiry,
   c.msa_signed,

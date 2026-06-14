@@ -29,7 +29,7 @@
     ],
     "name": "qry_compliance",
     "pageId": "Collection_Page",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

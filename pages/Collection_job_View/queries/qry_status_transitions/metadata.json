@@ -29,7 +29,7 @@
     ],
     "name": "qry_status_transitions",
     "pageId": "Collection_job_View",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": true
   }
 }

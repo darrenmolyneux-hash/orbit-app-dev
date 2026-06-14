@@ -50,7 +50,7 @@
   "mobileRightColumn": 47,
   "mobileTopRow": 30,
   "needsErrorInfo": false,
-  "onOptionChange": "{{\n  qry_sites_for_customer.run();\n  qry_customer_get.run();\n}}",
+  "onOptionChange": "{{\n  qry_sites_for_customer.run();\n  qry_compliance.run();\n}}",
   "optionLabel": "label",
   "optionValue": "value",
   "originalBottomRow": 14,

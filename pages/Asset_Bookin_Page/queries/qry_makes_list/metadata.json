@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT make_id, make_name\nFROM makes\nWHERE item_type_id = {{ Number(sel_item_type.selectedOptionValue) }}\n\nORDER BY make_name;\n",
+      "body": "SELECT make_id, make_name\nFROM makes\nWHERE item_type_id = {{ Number(sel_item_type.selectedOptionValue) }}\nORDER BY make_name;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

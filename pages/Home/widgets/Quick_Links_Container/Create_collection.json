@@ -35,7 +35,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
-  "onClick": "{{\n  GetNextCollectionRef.run()\n    .then((data) => {\n      navigateTo(\"Collection_Page\", {\n        mode: \"new\",\n        nextid: data[0].nextid\n      }, \"SAME_WINDOW\");\n    })\n}}",
+  "onClick": "{{\n  qry_collection_next_ref.run()\n    .then((data) => {\n      navigateTo(\"Collection_Page\", {\n        mode: \"new\",\n        nextid: data[0].nextid\n      }, \"SAME_WINDOW\");\n    })\n}}",
   "originalBottomRow": 39,
   "originalTopRow": 35,
   "parentColumnSpace": 17.5,

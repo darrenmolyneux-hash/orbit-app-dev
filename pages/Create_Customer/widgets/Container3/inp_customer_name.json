@@ -45,7 +45,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 49,
   "needsErrorInfo": false,
-  "onTextChanged": "{{ inp_customer_name.setValue(TextFormat.titleCase(inp_customer_name.text)) }}",
+  "onTextChanged": "(function() {\n  if (!inp_customer_name.text) {\n    showAlert('Customer name is required', 'warning');\n    return;\n  }\n\n  qry_customer_create.run()\n    .then(function(result) {\n      \n      // Run site contact query if those fields are filled\n      if (inp_site_contact.text || inp_site_phone.text || inp_site_email.text) {\n        qry_site_create.run()\n          .then(function() {\n            showAlert(inp_customer_name.text + ' created successfully', 'success');\n            navigateTo('Customers', {}, 'SAME_WINDOW');\n          })\n          .catch(function() {\n            showAlert('Customer saved but site contact failed', 'warning');\n            navigateTo('Customers', {}, 'SAME_WINDOW');\n          });\n      } else {\n        showAlert(inp_customer_name.text + ' created successfully', 'success');\n        navigateTo('Customers', {}, 'SAME_WINDOW');\n      }\n\n    })\n    .catch(function(error) {\n      showAlert('Failed to create customer — ' + error.message, 'error');\n    });\n})();",
   "originalBottomRow": 11,
   "originalTopRow": 7,
   "parentColumnSpace": 19.8125,
