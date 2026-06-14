@@ -1,4 +1,4 @@
-SELECT asset_id, asset_tag
+SELECT asset_id, asset_ref
 FROM assets
-WHERE asset_tag ILIKE {{inp_search_barcode.text}}
+WHERE asset_ref ILIKE {{inp_search_barcode.text}}
 LIMIT 1;

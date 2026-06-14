@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT to_status\nFROM status_transitions\nWHERE from_status = (\n  SELECT status FROM collections \n  WHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}\n)\nORDER BY to_status;",
+      "body": "SELECT * FROM global_asset_counter;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,11 +22,7 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "name": "Query1",
     "pageId": "Collection_job_View",
     "runBehaviour": "MANUAL",

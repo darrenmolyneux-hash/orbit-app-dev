@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO models (model_name, make_id, weight)\nVALUES (\n    {{ ModelNameInput.text }},\n    {{ sel_make.selectedOptionValue }},\n    {{ Number(NewModelWeightInput.text) }}\n)\nRETURNING model_id, weight;\n",
+      "body": "INSERT INTO models (model_name, make_id, weight)\nVALUES (\n  {{ inp_new_model_name.text }},\n  {{ sel_make.selectedOptionValue }},\n  {{ Number(inp_new_model_weight.text) }}\n)\nRETURNING model_id, model_name, weight;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "WITH nextval AS (\n    UPDATE collection_asset_refs\n    SET next_ref = next_ref + 1\n    WHERE collection_id = {{ collectionId }}\n    RETURNING next_ref - 1 AS ref\n)\nSELECT \n    {{ collectionId }} || '-' || LPAD(ref::text, 4, '0') AS asset_ref\nFROM nextval;\n",
+      "body": "WITH ref_prefix AS (\n    SELECT next_ref FROM collection_asset_refs WHERE collection_id = {{appsmith.URL.queryParams.collectionId}}\n),\nseq AS (\n    UPDATE global_asset_counter\n    SET next_number = next_number + 1\n    WHERE id = 1\n    RETURNING next_number - 1 AS num\n)\nSELECT \n    ref_prefix.next_ref || '-' || LPAD(seq.num::text, 5, '0') AS asset_ref\nFROM ref_prefix, seq;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

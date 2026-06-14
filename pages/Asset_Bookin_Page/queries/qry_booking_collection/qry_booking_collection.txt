@@ -1,6 +1,5 @@
 SELECT
   c.collection_id,
-  c.collection_ref,
   c.collection_date,
   c.status,
   c.job_type,
@@ -8,4 +7,4 @@ SELECT
   cu.customer_name
 FROM collections c
 JOIN customers cu ON cu.customer_id = c.customer_id
-WHERE c.collection_id = {{appsmith.URL.queryParams.collectionId}};
+WHERE c.collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};

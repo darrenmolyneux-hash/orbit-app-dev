@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "qry_item_types_list",
     "pageId": "Asset_Bookin_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

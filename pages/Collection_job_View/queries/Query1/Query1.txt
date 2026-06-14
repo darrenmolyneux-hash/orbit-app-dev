@@ -1,7 +1,1 @@
-SELECT to_status
-FROM status_transitions
-WHERE from_status = (
-  SELECT status FROM collections 
-  WHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}
-)
-ORDER BY to_status;
+SELECT * FROM global_asset_counter;

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE assets\nSET status_id = {{ StatusDropdown.selectedOptionValue }}\nWHERE asset_id = {{ GetAssetById.data[0].id }};\n",
+      "body": "UPDATE assets\nSET status_id = {{ StatusDropdown.selectedOptionValue }}\nWHERE asset_id = {{ qry_GetAssetById.data[0].id }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

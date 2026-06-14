@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 4,
   "boxShadow": "none",
-  "defaultModel": "{\n  \"assetsLabel\": \"Assets\",\n  \"collectionId\": \"{{GetAssetById.data[0]?.collection_id}}\",\n  \"customerName\": \"{{GetAssetById.data[0]?.customername}}\",\n  \"barcode\": \"{{GetAssetById.data[0]?.asset_ref}}\"\n}",
+  "defaultModel": "{\n  \"assetsLabel\": \"Assets\",\n  \"collectionId\": \"{{qry_GetAssetById.data[0]?.collection_id}}\",\n  \"customerName\": \"{{qry_GetAssetById.data[0]?.customername}}\",\n  \"barcode\": \"{{qry_GetAssetById.data[0]?.asset_ref}}\"\n}",
   "dynamicBindingPathList": [
     {
       "key": "theme"

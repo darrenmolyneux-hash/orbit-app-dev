@@ -908,7 +908,7 @@ export default {
     const saved = await this.saveToDb(parsed);
     if (!saved) return;
 
-    await GetAssetById.run();
+    await qry_GetAssetById.run();
 
     showAlert(
       `Saved — ${parsed.product_name || parsed.model} (${parsed.serial})`,

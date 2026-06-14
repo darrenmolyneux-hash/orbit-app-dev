@@ -1,3 +1,3 @@
 UPDATE assets
 SET status_id = {{ StatusDropdown.selectedOptionValue }}
-WHERE asset_id = {{ GetAssetById.data[0].id }};
+WHERE asset_id = {{ qry_GetAssetById.data[0].id }};

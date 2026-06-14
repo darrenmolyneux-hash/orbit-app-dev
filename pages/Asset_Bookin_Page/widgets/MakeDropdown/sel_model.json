@@ -1,13 +1,16 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderRadius": "0.375rem",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 10,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  appsmith.store.newModelId ))(sel_model.options, sel_model.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.autoSelectModelId || undefined))(sel_model.options, sel_model.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
     },
     {
       "key": "sourceData"
@@ -35,25 +38,24 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "uaavglwcko",
+  "key": "b1zw9mxhvg",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Model",
-  "labelTextColor": "#231f20",
+  "labelText": "Label",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 22,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 19,
-  "mobileLeftColumn": 13,
-  "mobileRightColumn": 33,
-  "mobileTopRow": 12,
+  "mobileBottomRow": 18,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ sel_model.selectedOptionValue === \"add_new\" && showModal(\"NewModelModal\") }}\n",
-  "optionLabel": "label",
-  "optionValue": "value",
+  "onOptionChange": "",
+  "optionLabel": "model_name",
+  "optionValue": "model_id",
   "parentColumnSpace": 19.5,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,
@@ -62,10 +64,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 36,
   "serverSideFiltering": false,
-  "sourceData": "{{qry_models_list.data.map(r => ({label: r.model_name, value: r.model_id}))}}",
+  "sourceData": "{{qry_models_list.data}}",
   "topRow": 3,
   "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "n77hparasx",
+  "widgetId": "wnjjrks2mr",
   "widgetName": "sel_model"
 }

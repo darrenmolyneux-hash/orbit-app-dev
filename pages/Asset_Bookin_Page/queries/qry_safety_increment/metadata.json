@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "CREATE OR REPLACE FUNCTION get_next_global_asset_number()\nRETURNS INT AS $$\nDECLARE\n    new_number INT;\nBEGIN\n    UPDATE global_asset_counter\n    SET next_number = next_number + 1\n    RETURNING next_number INTO new_number;\n\n    RETURN new_number;\nEND;\n$$ LANGUAGE plpgsql;\n",
+      "body": "INSERT INTO assets (\n  collection_id,\n  customer,\n  item_type,\n  make,\n  model,\n  serial_number,\n  asset_ref,\n  data_bearing,\n  added_by,\n  date_added,\n  status_id\n)\nSELECT\n  {{appsmith.URL.queryParams.collectionId}},\n  (SELECT cu.customer_name FROM customers cu\n   JOIN collections c ON c.customer_id = cu.customer_id\n   WHERE c.collection_id = {{appsmith.URL.queryParams.collectionId}}),\n  '{{appsmith.store.pendingItemType}}',\n  '{{appsmith.store.pendingMake}}',\n  '{{appsmith.store.pendingModel}}',\n  serial.value,\n  ref.value,\n  {{appsmith.store.pendingDataBearing}},\n  '{{appsmith.user.name}}',\n  NOW(),\n  (SELECT status_id FROM status_types WHERE status_name = 'Received')\nFROM jsonb_array_elements_text('{{JSON.stringify(appsmith.store.pendingSerials || [])}}'::jsonb) WITH ORDINALITY AS serial(value, idx)\nJOIN jsonb_array_elements_text('{{JSON.stringify(appsmith.store.pendingAssetRefs || [])}}'::jsonb) WITH ORDINALITY AS ref(value, idx2)\n  ON serial.idx = ref.idx2\nRETURNING asset_id, asset_ref, item_type, make, model, serial_number;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "qry_safety_increment",
     "pageId": "Asset_Bookin_Page",
     "runBehaviour": "MANUAL",

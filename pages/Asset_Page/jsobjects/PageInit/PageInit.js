@@ -1,7 +1,7 @@
 export default {
   async init() {
     // Run the query
-    const res = await GetAssetById.run();
+    const res = await qry_GetAssetById.run();
 
     // Make sure we actually got a row back
     if (res && Array.isArray(res) && res.length > 0) {

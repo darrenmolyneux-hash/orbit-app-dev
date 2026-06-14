@@ -1,4 +1,4 @@
 SELECT *
 FROM assets
-WHERE collection_id = {{ Number(appsmith.URL.queryParams.collectionid) }}
+WHERE collection_id = {{ Number(appsmith.URL.queryParams.collectionId) }}
 ORDER BY asset_id DESC;
