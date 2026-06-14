@@ -5,7 +5,7 @@ export default {
   },
 
   async changeStatus() {
-    await UpdateAssetStatus.run();
+    await qry_UpdateAssetStatus.run();
     await InsertAssetAuditLog.run();
     AssetState.oldStatus = qry_GetAssetById.data[0].status;
     await GetAssetAuditLog.run();
