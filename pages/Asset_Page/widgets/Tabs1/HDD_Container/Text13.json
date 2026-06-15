@@ -1,8 +1,8 @@
 {
   "animateLoading": true,
-  "backgroundColor": "{{appsmith.theme.colors.backgroundColor}}",
+  "backgroundColor": "#ffffff",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 22,
+  "bottomRow": 25,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -18,9 +18,6 @@
     },
     {
       "key": "textColor"
-    },
-    {
-      "key": "backgroundColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -57,7 +54,7 @@
   "shouldTruncate": false,
   "text": "{{ BlanccoParser.parseBlancco().erasure_status }}",
   "textAlign": "CENTER",
-  "textColor": "{{ qry_GetAssetById.data[0].erasure_status === \"Successful\" ? \"#2ecc71\" : getAssetById.data[0].erasure_status === \"Failed\" ? \"#d9151e\" : \"#888888\" }}",
+  "textColor": "{{ qry_GetAssetById.data[0].erasure_status === \"Successful\" ? \"#86efac\" : qry_GetAssetById.data[0].erasure_status === \"Failed\" ? \"#d9151e\" : \"#888888\" }}",
   "topRow": 18,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

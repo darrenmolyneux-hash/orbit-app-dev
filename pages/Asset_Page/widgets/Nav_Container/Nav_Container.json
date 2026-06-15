@@ -56,7 +56,7 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
@@ -72,8 +72,6 @@
   "mobileRightColumn": 26,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 10,
-  "originalTopRow": 0,
   "parentColumnSpace": 19.8125,
   "parentId": "0",
   "parentRowSpace": 10,

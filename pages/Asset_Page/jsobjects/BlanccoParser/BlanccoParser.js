@@ -14,17 +14,14 @@ export default {
       .replace(/&amp;/g, "&");
   },
 
-  getRequestedSerial() {
-    try {
-      return SerialInput.text || DebugSerialInput.text || "";
-    } catch (e) {
-      try {
-        return DebugSerialInput.text || "";
-      } catch (e2) {
-        return "";
-      }
-    }
-  },
+getRequestedSerial() {
+  try {
+    return qry_GetAssetById.data?.[0]?.serial_number || "";
+  } catch (e) {
+    return "";
+  }
+},
+  
 
   getMatchingReportXml() {
     const xml = this.getXml();

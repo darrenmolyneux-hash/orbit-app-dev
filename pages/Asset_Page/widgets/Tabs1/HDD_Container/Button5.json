@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 29,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -49,7 +49,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 48,
   "text": "View Certificate",
-  "topRow": 22,
+  "topRow": 25,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "nvuee0qug9",

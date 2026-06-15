@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_0735d96d-231c-41b0-8f73-8af588741754",
-  "id": "Asset_Page_GetModelDetails",
+  "gitSyncId": "6a27f57e40e83311173efe61_098fd8d2-8992-4095-b79e-32081ba225de",
+  "id": "Asset List_qry_update_asset",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM models\nWHERE model_id = {{ HiddenModelIdInput.text }};\n",
+      "body": "UPDATE assets\nSET serial_number = {{ CollectionsTable.updatedRow.serial_number }}\nWHERE asset_id = {{ CollectionsTable.updatedRow.asset_id }};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "GetModelDetails",
-    "pageId": "Asset_Page",
+    "name": "qry_update_asset",
+    "pageId": "Asset List",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
