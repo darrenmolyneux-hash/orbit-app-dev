@@ -576,7 +576,7 @@
       "key": "onSubmit"
     }
   ],
-  "fieldLimitExceeded": false,
+  "fieldLimitExceeded": true,
   "fixedFooter": true,
   "hideCard": false,
   "iconSVG": "/static/media/icon.6bacf7df.svg",

@@ -1,1 +1,0 @@
-SELECT * FROM global_asset_counter;

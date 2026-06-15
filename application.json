@@ -100,6 +100,10 @@
     {
       "id": "Processing View",
       "isDefault": false
+    },
+    {
+      "id": "Asset List",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

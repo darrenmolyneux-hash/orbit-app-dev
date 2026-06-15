@@ -1,17 +1,4 @@
--- DEBUG:
--- {{ JSON.stringify({
---   address1: Address1Input.text,
---   address2: Address2Input.text,
---   city: CityInput.text,
---   postcode: PostcodeInput.text,
---   notes: CollectionNotesInput_.text.text,
---   jobtype: JobTypeInput.text,
---   createdby: CreatedByInput.text,
---   description: collectiondescription.text.text,
---   dial: Dial_Input.text,
---   expiry: Dial_Expiry.text,
---   status: StatusDropdown.selectedOptionValue
--- }) }}INSERT INTO collections (
+INSERT INTO collections (
     collection_ref,
     customerid,
     siteid,
@@ -43,6 +30,6 @@ VALUES (
     '{{ collectiondescription.text.text }}',
     '{{ txt_dial.text }}',
     '{{ txt_dial_expiry.text }}',
-    '{{ StatusDropdown.selectedOptionValue }}'
+    'Booked'
 )
 RETURNING collectionid, collection_ref;

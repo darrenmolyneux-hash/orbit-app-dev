@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE collections\nSET status = {{appsmith.store.newStatus}}\nWHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};\n\nINSERT INTO job_notes (\n  collection_id,\n  note_text,\n  note_type,\n  is_system,\n  created_by,\n  created_at\n) VALUES (\n  {{Number(appsmith.URL.queryParams.collectionId)}},\n  {{\"Status changed from '\" + qry_collection_get.data[0]?.status + \"' to '\" + appsmith.store.newStatus + \"'\"}},\n  'status_change',\n  true,\n  {{appsmith.user.name}},\n  NOW()\n);",
+      "body": "UPDATE collections\nSET status = '{{appsmith.store.newStatus}}'\nWHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};\n\nINSERT INTO job_notes (\n  collection_id,\n  note_text,\n  note_type,\n  is_system,\n  created_by,\n  created_at\n) VALUES (\n  {{Number(appsmith.URL.queryParams.collectionId)}},\n  '{{\"Status changed from \" + qry_collection_get.data[0]?.status + \" to \" + appsmith.store.newStatus}}',\n  'status_change',\n  true,\n  '{{appsmith.user.name}}',\n  NOW()\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -14,6 +14,9 @@
     },
     {
       "key": "text"
+    },
+    {
+      "key": "textColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -45,7 +48,7 @@
   "shouldTruncate": false,
   "text": "{{new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}}",
   "textAlign": "LEFT",
-  "textColor": "#6b7280",
+  "textColor": "{{appsmith.theme.colors.primaryColor}}",
   "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

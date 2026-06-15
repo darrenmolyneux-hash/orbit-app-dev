@@ -1,0 +1,1 @@
+SELECT 562 || '-' || LPAD((163 - 1)::text, 5, '0') AS asset_ref;

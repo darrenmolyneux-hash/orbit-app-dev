@@ -29,7 +29,7 @@
     ],
     "name": "GetAssetAuditLog",
     "pageId": "Asset_Page",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

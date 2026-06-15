@@ -1,1 +1,0 @@
-ERROR: insert or update on table "assets" violates foreign key constraint "assets_sale_id_fkey" (SQLSTATE 23503)

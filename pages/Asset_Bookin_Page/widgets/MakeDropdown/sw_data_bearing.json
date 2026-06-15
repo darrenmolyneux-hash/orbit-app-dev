@@ -4,7 +4,7 @@
   "animateLoading": true,
   "bottomRow": 10,
   "boxShadow": "none",
-  "defaultSwitchState": "{{appsmith.store.itemIsData ?? true}}",
+  "defaultSwitchState": "{{ qry_item_types_list.data.find(t => t.item_type_id === sel_item_type.selectedOptionValue)?.is_data_bearing ?? false }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -17,9 +17,16 @@
   "dynamicPropertyPathList": [
     {
       "key": "defaultSwitchState"
+    },
+    {
+      "key": "onChange"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
@@ -35,6 +42,7 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
+  "onChange": "{{\n  (function() {\n    const itemType = qry_item_types.data.find(t => t.item_type_id === sel_item_type.selectedOptionValue);\n    setWidgetState('sw_data_bearing', 'isSwitchedOn', itemType?.is_data_bearing ?? false);\n  })()\n}}",
   "parentColumnSpace": 19.5,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,

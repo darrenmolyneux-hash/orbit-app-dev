@@ -4,11 +4,11 @@
   "borderColor": "#ffffff",
   "borderRadius": "0.375rem",
   "borderWidth": "0",
-  "bottomRow": 65,
+  "bottomRow": 96,
   "boxShadow": "none",
   "cachedTableData": {},
   "canFreezeColumn": true,
-  "cellBackground": "#dcfce7",
+  "cellBackground": "#ffffff",
   "childStylesheet": {
     "button": {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -33,15 +33,15 @@
     }
   },
   "columnOrder": [
-    "collectionid",
-    "customername",
-    "collectiondate",
+    "collection_id",
+    "customer_name",
     "address1",
+    "collection_date",
+    "status",
     "customColumn1",
-    "customerid",
-    "status"
+    "customer_id"
   ],
-  "columnUpdatedAt": 1781101866542,
+  "columnUpdatedAt": 1781445818257,
   "columnWidthMap": {
     "address1": 194,
     "collection_ref": 80,
@@ -64,25 +64,10 @@
       "key": "accentColor"
     },
     {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.collectionid.computedValue"
-    },
-    {
-      "key": "primaryColumns.customerid.computedValue"
-    },
-    {
       "key": "primaryColumns.address1.computedValue"
     },
     {
-      "key": "primaryColumns.collectiondate.computedValue"
-    },
-    {
       "key": "primaryColumns.status.computedValue"
-    },
-    {
-      "key": "primaryColumns.customername.computedValue"
     },
     {
       "key": "primaryColumns.customColumn1.buttonColor"
@@ -92,6 +77,24 @@
     },
     {
       "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "headerRowColor"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.collection_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.collection_date.computedValue"
+    },
+    {
+      "key": "primaryColumns.customer_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.customer_name.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -110,9 +113,9 @@
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
-  "headerRowColor": "#22c55e",
+  "headerRowColor": "{{appsmith.theme.colors.primaryColor}}",
   "headerTextColor": "#ffffff",
-  "horizontalAlignment": "LEFT",
+  "horizontalAlignment": "CENTER",
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
   "isSortable": true,
@@ -120,7 +123,7 @@
   "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": false,
-  "isVisibleSearch": false,
+  "isVisibleSearch": true,
   "key": "w73pdnieew",
   "label": "Data",
   "leftColumn": 1,
@@ -141,14 +144,14 @@
       "alias": "address1",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
+      "cellBackground": "#ffffff",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"address1\"])) : address1 })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
+      "horizontalAlignment": "CENTER",
       "id": "address1",
       "index": 4,
       "isCellEditable": false,
@@ -169,21 +172,22 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "collectiondate": {
-      "alias": "collectiondate",
+    "collection_date": {
+      "alias": "collection_date",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( moment(currentRow[\"collectiondate\"]).format(\"DD MMMM YYYY\") )) :  moment(currentRow[\"collectiondate\"]).format(\"DD MMMM YYYY\")  })()}}",
+      "cellBackground": "#ffffff",
+      "columnType": "date",
+      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"collection_date\"])) : collection_date })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "collectiondate",
-      "index": 8,
-      "inputFormat": "MM/DD/YY",
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "collection_date",
+      "index": 1,
+      "inputFormat": "Do MMM YYYY",
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -192,30 +196,32 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Date",
+      "label": "collection_date",
       "notation": "standard",
-      "originalId": "collectiondate",
-      "outputFormat": "DD/MM/YYYY",
+      "originalId": "collection_date",
+      "outputFormat": "Do MMM YYYY",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "collectionid": {
-      "alias": "collectionid",
+    "collection_id": {
+      "alias": "collection_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
+      "cellBackground": "#ffffff",
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"collectionid\"])) : collectionid })()}}",
+      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"collection_id\"])) : collection_id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "collectionid",
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "collection_id",
       "index": 0,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -225,10 +231,11 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Ref",
+      "label": "collection_id",
       "notation": "standard",
-      "originalId": "collectionid",
+      "originalId": "collection_id",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -243,7 +250,7 @@
       "boxShadow": "{{CollectionsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
       "buttonColor": "{{CollectionsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonStyle": "rgb(3, 179, 101)",
-      "cellBackground": "#dcfce7",
+      "cellBackground": "#ffffff",
       "columnType": "iconButton",
       "computedValue": "",
       "currencyCode": "USD",
@@ -251,7 +258,7 @@
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
+      "horizontalAlignment": "CENTER",
       "iconName": "direction-right",
       "id": "customColumn1",
       "index": 10,
@@ -266,7 +273,7 @@
       "label": "GoTo:",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "navigateTo('Collection_job_View', {\n  collectionid: currentRow.collectionid,\n  customerid: currentRow.customerid\n})\n",
+      "onClick": "{{ navigateTo('Collection_job_View', { collectionId: currentRow.collection_id, customerId: currentRow.customer_id }) }}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
@@ -275,19 +282,20 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "customerid": {
-      "alias": "customerid",
+    "customer_id": {
+      "alias": "customer_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
+      "cellBackground": "#ffffff",
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( getCustomerName.data[0].customer_name )) :  getCustomerName.data[0].customer_name  })()}}",
+      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer_id\"])) : customer_id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "customerid",
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "customer_id",
       "index": 2,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -297,30 +305,31 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": false,
-      "label": "customerid",
+      "label": "customer_id",
       "notation": "standard",
-      "originalId": "customerid",
+      "originalId": "customer_id",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "customername": {
-      "alias": "customername",
+    "customer_name": {
+      "alias": "customer_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
+      "cellBackground": "#ffffff",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customername\"])) : customername })()}}",
+      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer_name\"])) : customer_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "customername",
+      "horizontalAlignment": "CENTER",
+      "id": "customer_name",
       "index": 3,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -330,9 +339,9 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Customer",
+      "label": "customer_name",
       "notation": "standard",
-      "originalId": "customername",
+      "originalId": "customer_name",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -345,14 +354,15 @@
       "alias": "status",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "#dcfce7",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : status })()}}",
+      "cellBackground": "#ffffff",
+      "columnType": "html",
+      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.status === 'Booked' ? '<span style=\"background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Booked</span>' : currentRow.status === 'Booking In' ? '<span style=\"background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Booking In</span>' : currentRow.status === 'Booked In' ? '<span style=\"background:#fef3c7;color:#92400e;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Booked In</span>' : currentRow.status === 'Collected' ? '<span style=\"background:#fef3c7;color:#92400e;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Collected</span>' : currentRow.status === 'Processing/Pricing' ? '<span style=\"background:#ede9fe;color:#6d28d9;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Processing/Pricing</span>' : currentRow.status === 'Complete' ? '<span style=\"background:#dcfce7;color:#15803d;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Complete</span>' : currentRow.status )) :  currentRow.status === 'Booked' ? '<span style=\"background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Booked</span>' : currentRow.status === 'Booking In' ? '<span style=\"background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Booking In</span>' : currentRow.status === 'Booked In' ? '<span style=\"background:#fef3c7;color:#92400e;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Booked In</span>' : currentRow.status === 'Collected' ? '<span style=\"background:#fef3c7;color:#92400e;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Collected</span>' : currentRow.status === 'Processing/Pricing' ? '<span style=\"background:#ede9fe;color:#6d28d9;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Processing/Pricing</span>' : currentRow.status === 'Complete' ? '<span style=\"background:#dcfce7;color:#15803d;padding:4px 10px;border-radius:6px;font-weight:600;font-size:13px;\">Complete</span>' : currentRow.status  })()}}",
       "currencyCode": "USD",
+      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
+      "horizontalAlignment": "CENTER",
       "id": "status",
       "index": 14,
       "isCellEditable": false,
@@ -366,6 +376,8 @@
       "label": "Status",
       "notation": "standard",
       "originalId": "status",
+      "selectOptions": "",
+      "sortBy": "label",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -378,7 +390,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "searchKey": "",
-  "tableData": "{{ getBookedCollections.data }}",
+  "tableData": "{{ qry_upcoming_collections.data }}",
   "textSize": "0.875rem",
   "topRow": 4,
   "totalRecordsCount": 0,

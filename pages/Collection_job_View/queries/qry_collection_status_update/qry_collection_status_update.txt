@@ -1,5 +1,5 @@
 UPDATE collections
-SET status = {{appsmith.store.newStatus}}
+SET status = '{{appsmith.store.newStatus}}'
 WHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};
 
 INSERT INTO job_notes (
@@ -11,9 +11,9 @@ INSERT INTO job_notes (
   created_at
 ) VALUES (
   {{Number(appsmith.URL.queryParams.collectionId)}},
-  {{"Status changed from '" + qry_collection_get.data[0]?.status + "' to '" + appsmith.store.newStatus + "'"}},
+  '{{"Status changed from " + qry_collection_get.data[0]?.status + " to " + appsmith.store.newStatus}}',
   'status_change',
   true,
-  {{appsmith.user.name}},
+  '{{appsmith.user.name}}',
   NOW()
 );

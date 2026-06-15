@@ -45,7 +45,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 58,
   "needsErrorInfo": false,
-  "onTextChanged": "{{ inp_contact_name.setValue(TextFormat.titleCase(inp_contact_name.text)) }}",
+  "onTextChanged": "{{ inp_job_title.setValue(TextFormat.titleCase(inp_job_title.text)) }}",
   "originalBottomRow": 15,
   "originalTopRow": 11,
   "parentColumnSpace": 19.8125,

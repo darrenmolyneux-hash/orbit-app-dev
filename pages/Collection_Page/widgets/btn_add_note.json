@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 137,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "vsp011kjfu",
+  "leftColumn": 24,
+  "minWidth": 120,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 39,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  Add_Note.run(() => {\n    showAlert(\"Note added\", \"success\");\n    Load_Notes.run();\n    resetWidget(\"NotesInput\", true);\n  })\n}}",
+  "originalBottomRow": 137,
+  "originalTopRow": 132,
+  "parentColumnSpace": 19.5,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 30,
+  "text": "add note",
+  "topRow": 132,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "jlvqb9mgxd",
+  "widgetName": "btn_add_note"
+}

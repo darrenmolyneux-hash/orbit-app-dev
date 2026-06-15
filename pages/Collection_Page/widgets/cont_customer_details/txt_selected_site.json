@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "\"transparent\"",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 44,
+  "bottomRow": 46,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"

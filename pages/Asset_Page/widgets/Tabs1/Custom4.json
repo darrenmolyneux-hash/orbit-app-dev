@@ -29,7 +29,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": true,
+  "isVisible": false,
   "key": "0oi3afkdgb",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,

@@ -1,19 +1,12 @@
 {
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 66,
+  "borderRadius": "0px",
+  "bottomRow": 61,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonColor": "#22c55e",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
-  "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    },
-    {
-      "key": "borderRadius"
-    }
-  ],
+  "dynamicBindingPathList": [],
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
@@ -29,14 +22,14 @@
   "isLoading": false,
   "isVisible": true,
   "key": "18dgxs7otw",
-  "leftColumn": 24,
+  "leftColumn": 1,
   "minWidth": 120,
   "mobileBottomRow": 88,
   "mobileLeftColumn": 8,
   "mobileRightColumn": 24,
   "mobileTopRow": 84,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('Asset_Bookin_Page', { collectionId: appsmith.URL.queryParams.collectionId }, 'SAME_WINDOW')}}",
+  "onClick": "{{\n  (function() {\n    const newStatus = wf_status_changer_widget.model.next_status;\n    if (!newStatus) {\n      navigateTo('Asset_Bookin_Page', { collectionId: appsmith.URL.queryParams.collectionId }, 'SAME_WINDOW');\n      return;\n    }\n    storeValue('newStatus', newStatus).then(() => {\n      qry_collection_status_update.run(\n        function() {\n          qry_collection_get.run();\n          navigateTo('Asset_Bookin_Page', { collectionId: appsmith.URL.queryParams.collectionId }, 'SAME_WINDOW');\n        },\n        function(error) {\n          showAlert('Failed to update status — ' + error.message, 'error');\n        }\n      );\n    });\n  })()\n}}",
   "parentColumnSpace": 10.3515625,
   "parentId": "3akfkv7ohh",
   "parentRowSpace": 10,
@@ -45,9 +38,9 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 40,
-  "text": "Book Assets",
-  "topRow": 62,
+  "rightColumn": 64,
+  "text": "Start booking process",
+  "topRow": 57,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "r1xjyv6d1h",

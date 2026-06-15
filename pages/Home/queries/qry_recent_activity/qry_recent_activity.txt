@@ -19,11 +19,9 @@ UNION ALL
 SELECT
   'asset' AS activity_type,
   a.asset_id AS record_id,
-  a.asset_tag AS title_detail,
+  a.asset_ref AS title_detail,
   st.status_name AS status,
   a.added_by AS created_by,
   a.date_added AS created_at
 FROM assets a
 LEFT JOIN status_types st ON a.status_id = st.status_id
-ORDER BY created_at DESC
-LIMIT 10;

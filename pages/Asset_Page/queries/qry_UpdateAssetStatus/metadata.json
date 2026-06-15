@@ -29,7 +29,7 @@
     ],
     "name": "qry_UpdateAssetStatus",
     "pageId": "Asset_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
