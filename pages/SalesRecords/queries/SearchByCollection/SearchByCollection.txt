@@ -1,3 +1,0 @@
-SELECT collectionid
-FROM collections
-WHERE collectionid = {{ CollectionRefSearch.text }};

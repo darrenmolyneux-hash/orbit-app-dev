@@ -33,15 +33,15 @@
   },
   "columnOrder": [
     "sale_id",
-    "customernamename",
     "sale_ref",
     "sale_date",
     "total_price",
     "created_by",
     "customColumn1",
-    "customer_id"
+    "customer_id",
+    "customer_name"
   ],
-  "columnUpdatedAt": 1781603723434,
+  "columnUpdatedAt": 1781633127370,
   "columnWidthMap": {
     "created_by": 277,
     "customer": 140,
@@ -89,7 +89,7 @@
       "key": "primaryColumns.customer_id.computedValue"
     },
     {
-      "key": "primaryColumns.customernamename.computedValue"
+      "key": "primaryColumns.customer_name.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -239,21 +239,21 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "customernamename": {
-      "alias": "customernamename",
+    "customer_name": {
+      "alias": "customer_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = SalesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customernamename\"])) : customernamename })()}}",
+      "computedValue": "{{(() => { const tableData = SalesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer_name\"])) : customer_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "customernamename",
-      "index": 6,
+      "id": "customer_name",
+      "index": 3,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -262,9 +262,9 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Customer",
+      "label": "customer_name",
       "notation": "standard",
-      "originalId": "customernamename",
+      "originalId": "customer_name",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

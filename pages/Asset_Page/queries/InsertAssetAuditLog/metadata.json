@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO asset_audit_log\n(asset_id, field_name, old_value, new_value, changed_by)\nVALUES\n(\n  {{ qry_GetAssetById.data[0].asset_id }},\n  'status',\n  {{ AssetState.oldStatus }},\n  {{ StatusDropdown.selectedOptionValue }},\n  {{ appsmith.user.email }}\n);\n",
+      "body": "INSERT INTO asset_audit_log\n(asset_id, field_name, old_value, new_value, changed_by)\nVALUES\n(\n  {{qry_GetAssetById.data[0]?.asset_id}},\n  'status',\n  {{AssetState.oldStatus}},\n  {{Custom5.model.selectedStatusId}},\n  {{appsmith.user.email}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

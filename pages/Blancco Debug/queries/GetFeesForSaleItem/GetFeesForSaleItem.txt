@@ -1,4 +1,0 @@
-SELECT *
-FROM sales_fee
-WHERE sale_item_id = {{ GetSaleItemByAsset.data[0].sale_item_id }}
-ORDER BY fee_id DESC;

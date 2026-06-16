@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    sale_id,\n    sale_ref,\n    customer,\n    sale_date,\n    total_price,\n    created_by\nFROM sales\nWHERE \n    sale_date >= {{ StartDate.selectedDate }}\nAND \n    sale_date <= {{ EndDate.selectedDate }}\nAND\n    (customer ILIKE '%' || {{ CustomerFilter.text }} || '%' OR {{ CustomerFilter.text === \"\" }})\nAND\n    (sale_ref ILIKE '%' || {{ RefFilter.text }} || '%' OR {{ RefFilter.text === \"\" }})\nORDER BY sale_date DESC;\n",
+      "body": "SELECT \n    sale_id,\n    sale_ref,\n    customer,\n    sale_date,\n    total_price,\n    created_by\nFROM sales\nWHERE \n    sale_date >= {{StartDate.selectedDate}}\nAND \n    sale_date <= {{EndDate.selectedDate}}\nAND\n    (customer ILIKE '%' || {{sel_sale_customer.selectedOptionValue}} || '%' OR {{sel_sale_customer.selectedOptionValue === null}})\nAND\n    (sale_ref ILIKE '%' || {{RefFilter.text}} || '%' OR {{RefFilter.text === \"\"}})\nORDER BY sale_date DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

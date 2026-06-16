@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a27f57e40e83311173efe61_50871db1-bb5b-49bd-a2a7-c688538f0ac3",
+  "gitSyncId": "6a305b9e0882adc7e482e226_4c40163e-9c29-48fb-b125-723774533a94",
   "id": "Asset_Bookin_Page_Query1",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM collection_asset_refs WHERE collection_id = 2500;",
+      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,6 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
     "name": "Query1",
     "pageId": "Asset_Bookin_Page",
     "runBehaviour": "MANUAL",

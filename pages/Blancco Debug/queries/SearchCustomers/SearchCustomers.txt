@@ -1,3 +1,0 @@
-SELECT customer_id, customername
-FROM customers
-WHERE LOWER(customername) LIKE LOWER('%' || {{ CustomerNameInput.text }} || '%');

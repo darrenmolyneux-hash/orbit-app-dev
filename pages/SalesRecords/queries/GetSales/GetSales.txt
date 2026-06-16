@@ -2,11 +2,10 @@ SELECT
     s.sale_id,
     s.sale_ref,
     s.customer AS customer_id,
-    c.customername AS customernamename,
+    sc.customer_name,
     s.sale_date,
     s.total_price,
     s.created_by
 FROM sales s
-LEFT JOIN customers c 
-    ON c.customer_id = NULLIF(s.customer, '')::int
+LEFT JOIN sale_customers sc ON sc.customer_id = NULLIF(s.customer, '')::int
 ORDER BY s.sale_date DESC;

@@ -6,15 +6,6 @@
     "pageId": "Asset_Bookin_Page",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": [
-      {
-        "name": "addedAssets",
-        "value": "[]"
-      },
-      {
-        "name": "currentItem",
-        "value": "{}"
-      }
-    ]
+    "variables": []
   }
 }

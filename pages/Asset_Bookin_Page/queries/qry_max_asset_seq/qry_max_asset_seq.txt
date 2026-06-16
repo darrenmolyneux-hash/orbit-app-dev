@@ -1,9 +1,0 @@
-SELECT 
-  COALESCE(
-    MAX(
-      CAST(SUBSTRING(CAST(asset_id AS TEXT), 5, 4) AS INTEGER)
-    ),
-  0) AS maxseq
-FROM assets
-WHERE SUBSTRING(CAST(asset_id AS TEXT), 1, 3) = 
-  '{{ JSObject1.generateGroupCode(appsmith.URL.queryParams.collection ?? "0") }}';

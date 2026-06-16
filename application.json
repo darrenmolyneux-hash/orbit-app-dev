@@ -62,15 +62,7 @@
       "isDefault": false
     },
     {
-      "id": "AdminEdit Asset",
-      "isDefault": false
-    },
-    {
       "id": "Admin_Console",
-      "isDefault": false
-    },
-    {
-      "id": "Blancco Debug",
       "isDefault": false
     },
     {

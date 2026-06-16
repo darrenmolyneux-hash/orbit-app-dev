@@ -1,2 +1,0 @@
-DELETE FROM public."assets"
-  WHERE "asset_id" = {{AssetTable.triggeredRow.asset_id}};

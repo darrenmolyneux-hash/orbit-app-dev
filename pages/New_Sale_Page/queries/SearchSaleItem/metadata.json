@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  a.*,\n  st.status_name,\n  it.item_type_name,\n  mk.make_name,\n  mo.model_name\nFROM assets a\nLEFT JOIN status_types st ON st.status_id = a.status_id\nLEFT JOIN item_types it ON it.item_type_id::text = a.item_type\nLEFT JOIN makes mk ON mk.make_id::text = a.make\nLEFT JOIN models mo ON mo.model_id::text = a.model\nWHERE \n  a.asset_ref = {{AssetRefSearch.text}}\n  OR a.serial_number = {{SerialSearch.text}}",
+      "body": "SELECT \n\n  a.asset_ref,\n  a.serial_number,\n  a.sell_price,\n  a.status_id,\n  it.item_type_name,\n  mk.make_name,\n  md.model_name\nFROM assets a\nLEFT JOIN item_types it ON it.item_type_id = a.item_type::integer\nLEFT JOIN makes mk ON mk.make_id = a.make::integer\nLEFT JOIN models md ON md.model_id = a.model::integer\nWHERE \n  a.asset_ref ILIKE {{'%' + AssetRefSearch.text + '%'}}\n  OR a.serial_number ILIKE {{'%' + AssetRefSearch.text + '%'}}\nLIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

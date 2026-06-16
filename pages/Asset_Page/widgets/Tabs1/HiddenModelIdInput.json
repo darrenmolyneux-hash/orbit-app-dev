@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 120,
   "boxShadow": "none",
-  "defaultText": "{{qry_GetAssetById.data.model_id}}",
+  "defaultText": "{{qry_GetAssetById.data[0]?.model_id ?? ''}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

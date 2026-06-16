@@ -1,3 +1,0 @@
-SELECT asset_id
-FROM assets
-WHERE serial_number = {{ SerialRefSearch.text }};

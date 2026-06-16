@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    si.sale_id,\n    s.sale_ref\nFROM sale_items si\nLEFT JOIN sales s ON si.sale_id = s.sale_id\nWHERE si.asset_id = {{ Sales.selectedRow.asset_id }};\n",
+      "body": "SELECT \n    si.sale_id,\n    s.sale_ref\nFROM sale_items si\nLEFT JOIN sales s ON si.sale_id = s.sale_id\nWHERE si.asset_id = {{SearchResultTable.selectedRow.asset_id}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

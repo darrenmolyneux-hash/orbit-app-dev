@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 32,
+  "bottomRow": 34,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{ { asset: qry_GetAssetById.data[0], statusTypes: qry_GetStatusTypes.data } }}",
   "dynamicBindingPathList": [
@@ -20,7 +20,7 @@
       "key": "defaultModel"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
@@ -39,7 +39,7 @@
   "isSearchWildcard": true,
   "isVisible": true,
   "key": "h7t2uy2vec",
-  "leftColumn": 0,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "mobileBottomRow": 31,
@@ -47,13 +47,11 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 31,
-  "originalTopRow": 1,
   "parentColumnSpace": 19.5,
   "parentId": "gszvgh90hy",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "shouldScrollContents": true,
   "srcDoc": {
     "css": ".app {\n  width: 100%;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 20px 24px;\n  border: 1px solid #e2e8f0;\n}\n\n.header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n\n.identity {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n}\n\n.icon-box {\n  width: 44px;\n  height: 44px;\n  border-radius: 8px;\n  background: #f1f5f9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  font-size: 22px;\n}\n\n.label-sm {\n  font-size: 13px;\n  color: #64748b;\n  margin: 0 0 2px;\n}\n\n.title-md {\n  font-size: 17px;\n  font-weight: 600;\n  margin: 0;\n  color: #0f172a;\n}\n\n.title-lg {\n  font-size: 22px;\n  font-weight: 600;\n  margin: 0;\n  color: #0f172a;\n}\n\n.serial-sm {\n  font-size: 13px;\n  color: #94a3b8;\n  margin: 4px 0 0;\n}\n\n.text-right {\n  text-align: right;\n}\n\n.value-md {\n  font-size: 14px;\n  font-weight: 600;\n  margin: 0;\n  color: #0f172a;\n}\n\n.dial-row {\n  margin-top: 12px;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.dial-label {\n  font-size: 12px;\n  color: #94a3b8;\n}\n\n.dial-value {\n  font-size: 13px;\n  color: #64748b;\n}\n\n.divider {\n  border-top: 1px solid #e2e8f0;\n  margin: 16px 0;\n}\n\n.tile-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1.3fr;\n  gap: 12px;\n}\n\n.tile-grid-4 {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 12px;\n}\n\n.status-badge {\n  display: inline-block;\n  font-size: 14px;\n  font-weight: 600;\n  padding: 4px 10px;\n  border-radius: 6px;\n}\n\n.status-select-inline {\n  font-size: 13px;\n  font-weight: 500;\n  color: #0f172a;\n  padding: 6px 10px;\n  border-radius: 8px;\n  border: 1px solid #cbd5e1;\n  background: #ffffff;\n}\n\n.tile {\n  border-radius: 8px;\n  padding: 12px 14px;\n}\n\n.tile-label {\n  font-size: 12px;\n  margin: 0 0 6px;\n  font-weight: 600;\n}\n\n.tile-value-lg {\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.tile-value-md {\n  font-size: 14px;\n  font-weight: 600;\n  color: #0f172a;\n}\n\n.tile-sub {\n  font-size: 11px;\n  color: #94a3b8;\n  margin: 6px 0 0;\n}\n\n.grade-tile {\n  background: #eef2ff;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n\n.grade-circle {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  background: #ffffff;\n  border: 3px solid #4338ca;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n\n.grade-text {\n  font-size: 22px;\n  font-weight: 600;\n  color: #4338ca;\n  line-height: 1;\n}\n\n.grade-label {\n  font-size: 12px;\n  color: #4338ca;\n  margin: 0 0 6px;\n  font-weight: 600;\n}\n\n.grade-sub {\n  font-size: 11px;\n  color: #4338ca;\n  margin: 0;\n  opacity: 0.85;\n}\n\n.status-row {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n  align-items: center;\n}\n\n.status-label {\n  font-size: 12px;\n  color: #64748b;\n  margin-right: 4px;\n}\n\n.status-tag {\n  font-size: 12px;\n  padding: 4px 10px;\n  border-radius: 8px;\n  font-weight: 600;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.btn {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 14px;\n  border-radius: 8px;\n  border: 1px solid #cbd5e1;\n  background: #ffffff;\n  color: #0f172a;\n  cursor: pointer;\n  font-size: 13px;\n  font-weight: 500;\n}\n\n.btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}",

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    c.collectionid,\n    c.collectiondate,\n    c.customerid,\n    cu.customername,\n    c.address1,\n    c.status\nFROM collections c\nLEFT JOIN customers cu\n    ON c.customerid = cu.customer_id\nWHERE c.status = 'Processing'\nORDER BY c.collectiondate DESC;\n",
+      "body": "SELECT \n    c.collection_id,\n    c.collection_date,\n    c.customer_id,\n    cu.customer_name,\n    c.address1,\n    c.status\nFROM collections c\nLEFT JOIN customers cu\n    ON c.customer_id = cu.customer_id\nWHERE c.status = 'Processing'\nORDER BY c.collection_date DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

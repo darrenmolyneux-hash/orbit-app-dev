@@ -332,7 +332,7 @@
       "label": "GoTo:",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{ navigateTo('Asset_Page', { asset_id: currentRow.asset_id, collectionId: currentRow.collection_id, customerId: currentRow.customer_id }) }}",
+      "onClick": "{{navigateTo('Asset_Page', { asset_id: currentRow.asset_id, collectionId: currentRow.collection_id, customerId: currentRow.customer_id }, 'SAME_WINDOW')}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",

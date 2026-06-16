@@ -94,9 +94,10 @@
     "repairs_completed",
     "sale_channel",
     "disposition",
+    "carriage_cost_allocated",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781602367301,
+  "columnUpdatedAt": 1781646967532,
   "columnWidthMap": {
     "customColumn1": 130,
     "data_bearing": 133,
@@ -449,6 +450,9 @@
     },
     {
       "key": "primaryColumns.disposition.computedValue"
+    },
+    {
+      "key": "primaryColumns.carriage_cost_allocated.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -924,6 +928,40 @@
       "label": "cam",
       "notation": "standard",
       "originalId": "cam",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "carriage_cost_allocated": {
+      "alias": "carriage_cost_allocated",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#F4F6F8",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"carriage_cost_allocated\"])) : carriage_cost_allocated })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "carriage_cost_allocated",
+      "index": 56,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "carriage_cost_allocated",
+      "notation": "standard",
+      "originalId": "carriage_cost_allocated",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

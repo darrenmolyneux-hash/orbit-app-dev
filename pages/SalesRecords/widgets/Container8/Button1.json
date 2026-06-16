@@ -36,7 +36,7 @@
   "mobileRightColumn": 42,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "onClick": "{{\n    CustomerFilter.setValue(\"\");\n    RefFilter.setValue(\"\");\n    StartDate.setValue(moment().startOf(\"month\"));\n    EndDate.setValue(moment().endOf(\"month\"));\n    GetSales.run();\n}}\n",
+  "onClick": "{{\n    resetWidget(\"sel_sale_customer\");\n    RefFilter.setValue(\"\");\n    StartDate.setValue(moment().startOf(\"month\"));\n    EndDate.setValue(moment().endOf(\"month\"));\n    GetSales.run();\n}}",
   "parentColumnSpace": 19.5,
   "parentId": "qz6uonpsco",
   "parentRowSpace": 10,

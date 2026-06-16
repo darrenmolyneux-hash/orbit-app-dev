@@ -9,7 +9,7 @@ INSERT INTO sites (
   contact_email,
   created_at
 ) VALUES (
-  {{qry_customer_create.data[0]?.customer_id}},
+  {{appsmith.store.new_customer_id}},
   {{inp_address1.text}},
   {{inp_address2.text}},
   {{inp_city.text}},
@@ -18,4 +18,5 @@ INSERT INTO sites (
   {{inp_site_phone.text}},
   {{inp_site_email.text}},
   NOW()
-);
+)
+RETURNING site_id, customer_id;
