@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 27,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -53,7 +53,7 @@
   "rightColumn": 50,
   "serverSideFiltering": false,
   "sourceData": "[\n  {\n    \"name\": \"Amazon Renewed\",\n    \"code\": \"AMAZON RENEWED\"\n  },\n  {\n    \"name\": \"Used Good\",\n    \"code\": \"USED GOOD\"\n  },\n  {\n    \"name\": \"Used Acceptable\",\n    \"code\": \"USED ACCEPTABLE\"\n  }\n]",
-  "topRow": 22,
+  "topRow": 23,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "obm3mfgd24",

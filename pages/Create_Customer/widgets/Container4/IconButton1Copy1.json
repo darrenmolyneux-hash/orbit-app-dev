@@ -3,15 +3,16 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 5,
   "boxShadow": "none",
-  "buttonColor": "#ef4444",
-  "buttonVariant": "TERTIARY",
+  "buttonColor": "#fef3c7",
+  "buttonVariant": "PRIMARY",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
-  "iconName": "pin",
+  "iconName": "map-marker",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,

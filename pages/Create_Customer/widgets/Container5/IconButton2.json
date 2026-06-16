@@ -3,18 +3,15 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 5,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonVariant": "TERTIARY",
+  "buttonColor": "#eff6ff",
+  "buttonVariant": "PRIMARY",
   "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    },
     {
       "key": "borderRadius"
     }
   ],
   "dynamicTriggerPathList": [],
-  "iconName": "people",
+  "iconName": "user",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,

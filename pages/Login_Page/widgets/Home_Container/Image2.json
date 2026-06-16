@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 73,
+  "bottomRow": 91,
   "boxShadow": "none",
   "defaultImage": "https://www.mbhglobal.co.uk/wp-content/uploads/2024/05/logo.svg",
   "dynamicBindingPathList": [
@@ -33,7 +33,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 35,
-  "topRow": 66,
+  "topRow": 84,
   "type": "IMAGE_WIDGET",
   "version": 1,
   "widgetId": "q3n32gj7tg",

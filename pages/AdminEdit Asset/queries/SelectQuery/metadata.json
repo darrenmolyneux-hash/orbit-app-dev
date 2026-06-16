@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.\"assets\"\nWHERE \"added_by\" ilike '%{{AssetTable.searchText || \"\"}}%'\nORDER BY \"{{AssetTable.sortOrder.column || 'asset_id'}}\" {{AssetTable.sortOrder.order || 'ASC'}}\nLIMIT {{AssetTable.pageSize}}\nOFFSET {{(AssetTable.pageNo - 1) * AssetTable.pageSize}};",
+      "body": "SELECT \n  a.*,\n  it.item_type_name,\n  mk.make_name,\n  mo.model_name\nFROM public.assets a\nLEFT JOIN item_types it ON it.item_type_id::text = a.item_type\nLEFT JOIN makes mk ON mk.make_id::text = a.make\nLEFT JOIN models mo ON mo.model_id::text = a.model\nWHERE a.added_by ILIKE '%{{AssetTable.searchText || \"\"}}%'\nORDER BY \"{{AssetTable.sortOrder.column || 'asset_id'}}\" {{AssetTable.sortOrder.order || 'ASC'}}\nLIMIT {{AssetTable.pageSize}}\nOFFSET {{(AssetTable.pageNo - 1) * AssetTable.pageSize}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -3,8 +3,8 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
-  "boxShadow": "none",
+  "bottomRow": 21,
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultText": "",
   "dynamicBindingPathList": [
     {
@@ -12,6 +12,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -26,6 +29,7 @@
     }
   ],
   "iconAlign": "left",
+  "iconName": "barcode",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
@@ -34,11 +38,12 @@
   "key": "3vv9chv950",
   "label": "Serial",
   "labelAlignment": "left",
-  "labelPosition": "Top",
-  "labelStyle": "",
-  "labelTextSize": "0.875rem",
-  "labelWidth": "16",
-  "leftColumn": 5,
+  "labelPosition": "Left",
+  "labelStyle": "BOLD",
+  "labelTextColor": "{{appsmith.theme.colors.primaryColor}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "12",
+  "leftColumn": 4,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -48,8 +53,8 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  (function() {\n    if (!inp_search_serial.text) return;\n\n    qry_search_by_serial.run(\n      function() {\n        if (qry_search_by_serial.data.length > 0) {\n          navigateTo(\n            'AssetView',\n            { assetId: qry_search_by_serial.data[0].asset_id },\n            'SAME_WINDOW'\n          );\n        } else {\n          showAlert(\n            'No asset found for serial \"' + inp_search_serial.text + '\"',\n            'warning'\n          );\n          resetWidget('inp_search_serial');\n        }\n      },\n      function() {\n        showAlert('Search failed — try again', 'error');\n      }\n    );\n  })()\n}}",
-  "originalBottomRow": 15,
-  "originalTopRow": 11,
+  "originalBottomRow": 21,
+  "originalTopRow": 17,
   "parentColumnSpace": 7,
   "parentId": "cb1hkr9v82",
   "parentRowSpace": 10,
@@ -57,9 +62,9 @@
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 56,
+  "rightColumn": 55,
   "showStepArrows": false,
-  "topRow": 15,
+  "topRow": 17,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "kw39wyua8e",

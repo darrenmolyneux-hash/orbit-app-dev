@@ -1,5 +1,13 @@
-SELECT * FROM public."assets"
-WHERE "added_by" ilike '%{{AssetTable.searchText || ""}}%'
+SELECT 
+  a.*,
+  it.item_type_name,
+  mk.make_name,
+  mo.model_name
+FROM public.assets a
+LEFT JOIN item_types it ON it.item_type_id::text = a.item_type
+LEFT JOIN makes mk ON mk.make_id::text = a.make
+LEFT JOIN models mo ON mo.model_id::text = a.model
+WHERE a.added_by ILIKE '%{{AssetTable.searchText || ""}}%'
 ORDER BY "{{AssetTable.sortOrder.column || 'asset_id'}}" {{AssetTable.sortOrder.order || 'ASC'}}
 LIMIT {{AssetTable.pageSize}}
-OFFSET {{(AssetTable.pageNo - 1) * AssetTable.pageSize}};
+OFFSET {{(AssetTable.pageNo - 1) * AssetTable.pageSize}}

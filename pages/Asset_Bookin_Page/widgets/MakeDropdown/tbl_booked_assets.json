@@ -60,8 +60,8 @@
     "forecast_grade",
     "stock_condition",
     "notes",
-    "status_id",
     "data_bearing",
+    "status_id",
     "customColumn1",
     "customColumn2",
     "model_id",
@@ -96,7 +96,7 @@
     "disposition",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781434537409,
+  "columnUpdatedAt": 1781602367301,
   "columnWidthMap": {
     "customColumn1": 130,
     "data_bearing": 133,
@@ -1327,7 +1327,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "data_bearing",
+      "label": "Data Bearing",
       "notation": "standard",
       "originalId": "data_bearing",
       "sticky": "",

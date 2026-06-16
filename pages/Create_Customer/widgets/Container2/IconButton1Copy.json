@@ -2,16 +2,16 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 5,
-  "boxShadow": "none",
-  "buttonColor": "#fde047",
-  "buttonVariant": "TERTIARY",
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "buttonColor": "#f5f3ff",
+  "buttonVariant": "PRIMARY",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
     }
   ],
   "dynamicTriggerPathList": [],
-  "iconName": "document",
+  "iconName": "shield",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,

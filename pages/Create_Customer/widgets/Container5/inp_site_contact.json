@@ -23,7 +23,6 @@
     }
   ],
   "iconAlign": "left",
-  "iconName": "person",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,

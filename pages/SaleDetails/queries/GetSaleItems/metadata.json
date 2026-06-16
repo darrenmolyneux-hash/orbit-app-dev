@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    si.sell_price,\n    a.asset_ref,\n    a.serial_number,\n    a.make,\n    a.model\nFROM sale_items si\nJOIN assets a ON si.asset_id = a.asset_id\nWHERE si.sale_id = {{ appsmith.URL.queryParams.sale_id }};\n",
+      "body": "SELECT \n    si.sell_price,\n    a.asset_ref,\n    a.serial_number,\n    a.make,\n    a.model\nFROM sale_items si\nJOIN assets a ON si.asset_id = a.asset_id\nWHERE si.sale_id = {{appsmith.URL.queryParams.sale_id}}::integer;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

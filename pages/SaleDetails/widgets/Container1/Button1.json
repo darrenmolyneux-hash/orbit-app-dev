@@ -24,6 +24,8 @@
       "key": "onClick"
     }
   ],
+  "iconAlign": "left",
+  "iconName": "fast-backward",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,

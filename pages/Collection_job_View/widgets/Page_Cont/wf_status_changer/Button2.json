@@ -3,14 +3,10 @@
   "borderRadius": "0px",
   "bottomRow": 66,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonColor": "#e8f2ec",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
-  "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    }
-  ],
+  "dynamicBindingPathList": [],
   "dynamicPropertyPathList": [
     {
       "key": "onClick"

@@ -1,15 +1,12 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 15,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonVariant": "SECONDARY",
+  "buttonColor": "#3b82f6",
+  "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    },
     {
       "key": "borderRadius"
     }
@@ -21,13 +18,13 @@
     }
   ],
   "iconAlign": "left",
-  "iconName": "box",
+  "iconName": "shopping-cart",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "kjnxodydwn",
-  "leftColumn": 36,
+  "leftColumn": 38,
   "minWidth": 120,
   "mobileBottomRow": 15,
   "mobileLeftColumn": 21,
@@ -35,6 +32,8 @@
   "mobileTopRow": 11,
   "needsErrorInfo": false,
   "onClick": "{{navigateTo('New_Sale_Page', {}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
   "parentColumnSpace": 2.734375,
   "parentId": "c439339ha6",
   "parentRowSpace": 10,
@@ -43,9 +42,9 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 64,
+  "rightColumn": 60,
   "text": "New Sale",
-  "topRow": 0,
+  "topRow": 11,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "uxow2rarqc",

@@ -59,7 +59,7 @@
     ],
     "name": "BlanccoSearch",
     "pageId": "Blancco Debug",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

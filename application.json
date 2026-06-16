@@ -42,10 +42,6 @@
       "isDefault": false
     },
     {
-      "id": "Customer_Details_Page",
-      "isDefault": false
-    },
-    {
       "id": "Collection_Page",
       "isDefault": false
     },
@@ -71,10 +67,6 @@
     },
     {
       "id": "Admin_Console",
-      "isDefault": false
-    },
-    {
-      "id": "Admin",
       "isDefault": false
     },
     {

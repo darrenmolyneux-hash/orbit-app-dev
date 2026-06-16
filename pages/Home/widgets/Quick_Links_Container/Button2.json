@@ -1,17 +1,17 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 15,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {
-      "key": "buttonColor"
+      "key": "borderRadius"
     },
     {
-      "key": "borderRadius"
+      "key": "buttonColor"
     }
   ],
   "dynamicPropertyPathList": [],
@@ -20,14 +20,14 @@
       "key": "onClick"
     }
   ],
-  "iconAlign": "right",
-  "iconName": "add",
+  "iconAlign": "left",
+  "iconName": "new-person",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "a4e29wxhhg",
-  "leftColumn": 2,
+  "leftColumn": 3,
   "minWidth": 120,
   "mobileBottomRow": 23,
   "mobileLeftColumn": 6,
@@ -35,8 +35,8 @@
   "mobileTopRow": 19,
   "needsErrorInfo": false,
   "onClick": "{{navigateTo('Create_Customer', {}, 'SAME_WINDOW');}}",
-  "originalBottomRow": 43,
-  "originalTopRow": 39,
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
   "parentColumnSpace": 19.8125,
   "parentId": "c439339ha6",
   "parentRowSpace": 10,
@@ -45,9 +45,9 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 35,
+  "rightColumn": 27,
   "text": "Add New Customer",
-  "topRow": 0,
+  "topRow": 11,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "6zrdxvkwsx",

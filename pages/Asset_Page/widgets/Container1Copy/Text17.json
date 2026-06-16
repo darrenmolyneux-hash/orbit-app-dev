@@ -41,7 +41,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 59,
+  "rightColumn": 46,
   "shouldTruncate": false,
   "text": "{{(qry_GetAssetById.data[0]?.asset_ref || \"\") + \" — \" + (qry_GetAssetById.data[0]?.customer_name || \"\") + \" — Collection \" + (qry_GetAssetById.data[0]?.collection_id || \"\")}}",
   "textAlign": "LEFT",

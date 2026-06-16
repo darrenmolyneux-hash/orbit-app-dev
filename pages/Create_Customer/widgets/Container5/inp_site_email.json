@@ -23,7 +23,6 @@
     }
   ],
   "iconAlign": "left",
-  "iconName": "send-to-map",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,

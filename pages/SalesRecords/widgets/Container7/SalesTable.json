@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 31,
+  "bottomRow": 87,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -41,7 +41,7 @@
     "customColumn1",
     "customer_id"
   ],
-  "columnUpdatedAt": 1781080598949,
+  "columnUpdatedAt": 1781603723434,
   "columnWidthMap": {
     "created_by": 277,
     "customer": 140,
@@ -84,15 +84,6 @@
     },
     {
       "key": "primaryColumns.created_by.computedValue"
-    },
-    {
-      "key": "primaryColumns.customColumn1.buttonColor"
-    },
-    {
-      "key": "primaryColumns.customColumn1.borderRadius"
-    },
-    {
-      "key": "primaryColumns.customColumn1.boxShadow"
     },
     {
       "key": "primaryColumns.customer_id.computedValue"
@@ -181,9 +172,6 @@
       "alias": "View",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "borderRadius": "{{SalesTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
-      "boxShadow": "{{SalesTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
-      "buttonColor": "{{SalesTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonLabel": "View Sale",
       "buttonStyle": "rgb(3, 179, 101)",
       "columnType": "button",
@@ -194,6 +182,7 @@
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
+      "iconName": "flow-review",
       "id": "customColumn1",
       "index": 6,
       "isCellEditable": false,
