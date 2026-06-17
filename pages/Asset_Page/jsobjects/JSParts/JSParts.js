@@ -1,6 +1,6 @@
 export default {
 
- init() {
+async init() {
     storeValue('stock_type_filter', '');
     storeValue('stock_grade_filter', '');
     storeValue('hp_part_type_id', '');
@@ -14,15 +14,15 @@ export default {
     storeValue('hp_is_battery', false);
     storeValue('hp_signature', '');
     this.initPreInventory();
-    qry_get_part_types.run().then(() => {
-      CustomPreInventory.updateModel({
-        partTypes: qry_get_part_types.data,
-        asset: qry_GetAssetById.data[0]
-      });
+    await qry_GetAssetById.run();
+    await qry_get_part_types.run();
+    await qry_get_asset_parts.run();
+    await qry_get_parts_stock.run();
+    await qry_get_locations.run();
+    CustomPreInventory.updateModel({
+      partTypes: qry_get_part_types.data,
+      asset: qry_GetAssetById.data[0]
     });
-    qry_get_asset_parts.run();
-    qry_get_parts_stock.run();
-    qry_get_locations.run();
   },
 
   initPreInventory() {

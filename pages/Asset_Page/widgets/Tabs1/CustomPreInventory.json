@@ -18,7 +18,11 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onPartAssessed"
@@ -30,7 +34,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": true,
+  "isVisible": "false",
   "key": "af1n28l6vs",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
