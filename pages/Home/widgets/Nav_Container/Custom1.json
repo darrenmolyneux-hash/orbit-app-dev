@@ -39,7 +39,7 @@
     "goCollections"
   ],
   "goCollections": "{{navigateTo('Upcoming _Collection', {}, 'SAME_WINDOW');}}",
-  "goHome": "{{navigateTo('Home', {}, 'SAME_WINDOW');}}",
+  "goHome": "{{JSObject2.Custom1goHome();}}",
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
