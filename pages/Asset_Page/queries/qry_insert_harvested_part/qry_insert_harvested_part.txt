@@ -3,11 +3,21 @@ INSERT INTO harvested_parts (
   source_asset_id,
   part_type_id,
   spec,
+  part_make,
+  part_model,
   serial_number,
   condition_grade,
+  is_battery,
+  battery_chemistry,
+  battery_wh,
   removed_by,
   removed_at,
   removal_notes,
+  technician_signature,
+  destination_type,
+  current_location_id,
+  installed_in_asset_id,
+  date_added_to_stock,
   disposition_due,
   status
 ) VALUES (
@@ -15,11 +25,28 @@ INSERT INTO harvested_parts (
   {{appsmith.URL.queryParams.asset_id}},
   {{appsmith.store.hp_part_type_id}},
   '{{appsmith.store.hp_spec}}',
+  '{{appsmith.store.hp_part_make}}',
+  '{{appsmith.store.hp_part_model}}',
   '{{appsmith.store.hp_serial}}',
   '{{appsmith.store.hp_condition_grade}}',
+  {{appsmith.store.hp_is_battery}},
+  '{{appsmith.store.hp_battery_chem}}',
+  {{appsmith.store.hp_battery_wh || 'NULL'}},
   '{{appsmith.store.hp_removed_by}}',
   NOW(),
   '{{appsmith.store.hp_notes}}',
-  CURRENT_DATE + INTERVAL '12 months',
-  'IN_STOCK'
+  '{{appsmith.store.hp_signature}}',
+  '{{appsmith.store.hp_dest_type}}',
+  {{appsmith.store.hp_dest_location_id}},
+  {{appsmith.store.hp_dest_type === 'asset' ? appsmith.store.hp_dest_asset_id : 'NULL'}},
+  CASE WHEN '{{appsmith.store.hp_dest_type}}' != 'asset' 
+       THEN NOW() ELSE NULL END,
+  CASE WHEN '{{appsmith.store.hp_dest_type}}' != 'asset'
+       THEN (CURRENT_DATE + INTERVAL '12 months') ELSE NULL END,
+  CASE 
+    WHEN '{{appsmith.store.hp_dest_type}}' = 'asset' THEN 'in_asset'
+    WHEN '{{appsmith.store.hp_dest_type}}' IN ('scrap_weee','scrap_metal','scrap_general') 
+         THEN 'scrapped'
+    ELSE 'in_stock'
+  END
 );

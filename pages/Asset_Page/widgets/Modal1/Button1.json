@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 22,
+  "bottomRow": 32,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonStyle": "PRIMARY",
@@ -15,6 +15,11 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -25,23 +30,25 @@
   "isLoading": false,
   "isVisible": true,
   "key": "ixkxhsa1p9",
-  "leftColumn": 31,
+  "leftColumn": 0,
   "minWidth": 120,
   "mobileBottomRow": 22,
   "mobileLeftColumn": 31,
   "mobileRightColumn": 47,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(Modal1.name);}}",
+  "onClick": "{{closeModal('Modal1'); JSObject1.cancelHarvest()}}",
+  "originalBottomRow": 32,
+  "originalTopRow": 28,
   "parentId": "2rzqsz0lwr",
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 47,
-  "text": "Close",
-  "topRow": 18,
+  "rightColumn": 33,
+  "text": "Cancel — keep current status",
+  "topRow": 28,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "7jn56kmhw3",

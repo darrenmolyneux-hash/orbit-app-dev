@@ -1,0 +1,25 @@
+INSERT INTO battery_inspections (
+  audit_log_id,
+  part_id,
+  check_no_swelling,
+  check_no_leakage,
+  check_no_physical_damage,
+  check_voltage_measured,
+  voltage_reading_v,
+  check_fire_safe_storage,
+  check_weee_stream_confirmed,
+  inspected_by,
+  technician_signature
+) VALUES (
+  {{appsmith.store.pal_new_audit_id}},
+  {{appsmith.store.pal_part_id}},
+  {{appsmith.store.hp_c1}},
+  {{appsmith.store.hp_c2}},
+  {{appsmith.store.hp_c3}},
+  {{appsmith.store.hp_c4}},
+  {{appsmith.store.hp_voltage || 'NULL'}},
+  {{appsmith.store.hp_c5}},
+  {{appsmith.store.hp_c6}},
+  '{{appsmith.user.name}}',
+  '{{appsmith.store.hp_signature}}'
+);

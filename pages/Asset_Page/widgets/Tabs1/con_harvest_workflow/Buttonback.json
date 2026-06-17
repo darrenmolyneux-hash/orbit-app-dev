@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 157,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "h9cvk2664q",
+  "leftColumn": 6,
+  "minWidth": 120,
+  "mobileBottomRow": 157,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 153,
+  "needsErrorInfo": false,
+  "onClick": "{{storeValue('harvest_step', 3)}}",
+  "originalBottomRow": 157,
+  "originalTopRow": 153,
+  "parentColumnSpace": 19.1875,
+  "parentId": "7j45draovv",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 22,
+  "text": "← Back",
+  "topRow": 153,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "bv8evwwroe",
+  "widgetName": "Buttonback"
+}

@@ -1,0 +1,9 @@
+SELECT 
+  location_id,
+  location_code,
+  location_name,
+  location_type,
+  is_weee_registered
+FROM locations
+WHERE is_active = true
+ORDER BY location_type, location_code;

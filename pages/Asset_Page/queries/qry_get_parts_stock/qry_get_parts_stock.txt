@@ -2,13 +2,22 @@ SELECT
   hp.id,
   hp.part_ref,
   pt.name AS part_type,
+  pt.is_battery,
   hp.spec,
+  hp.part_make,
+  hp.part_model,
   hp.serial_number,
   hp.condition_grade,
   hp.status,
+  hp.is_battery,
   hp.removed_at::date AS in_stock_since,
   hp.disposition_due,
+  hp.date_added_to_stock::date AS stock_date,
+  l.location_code AS stock_location_code,
+  l.location_name AS stock_location_name,
   a.asset_ref AS source_asset_ref,
+  a.make AS source_make,
+  a.model AS source_model,
   CASE 
     WHEN hp.disposition_due < CURRENT_DATE THEN true 
     ELSE false 
@@ -16,7 +25,8 @@ SELECT
 FROM harvested_parts hp
 LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
 LEFT JOIN assets a ON a.asset_id = hp.source_asset_id
-WHERE hp.status = 'IN_STOCK'
+LEFT JOIN locations l ON l.location_id = hp.current_location_id
+WHERE hp.status = 'in_stock'
 AND hp.source_asset_id != {{appsmith.URL.queryParams.asset_id}}
 AND (
   '{{appsmith.store.stock_type_filter}}' = '' 
@@ -26,4 +36,4 @@ AND (
   '{{appsmith.store.stock_grade_filter}}' = '' 
   OR POSITION(hp.condition_grade IN '{{appsmith.store.stock_grade_filter}}') > 0
 )
-ORDER BY hp.removed_at ASC;
+ORDER BY hp.date_added_to_stock ASC;

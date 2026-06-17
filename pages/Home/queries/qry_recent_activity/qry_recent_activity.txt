@@ -25,3 +25,5 @@ SELECT
   a.date_added AS created_at
 FROM assets a
 LEFT JOIN status_types st ON a.status_id = st.status_id
+ORDER BY created_at DESC
+LIMIT 50;

@@ -1,5 +1,7 @@
 UPDATE harvested_parts
 SET 
-  status = 'INSTALLED',
-  installed_in_asset_id = {{appsmith.URL.queryParams.asset_id}}
+  status = 'in_asset',
+  installed_in_asset_id = {{appsmith.URL.queryParams.asset_id}},
+  current_location_id = NULL,
+  date_added_to_stock = NULL
 WHERE id = {{appsmith.store.hp_install_id}};

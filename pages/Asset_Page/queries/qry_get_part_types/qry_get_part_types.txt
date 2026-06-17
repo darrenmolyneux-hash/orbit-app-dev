@@ -1,1 +1,11 @@
-SELECT part_type_id, name FROM part_types ORDER BY name;
+SELECT 
+  pt.part_type_id,
+  pt.name,
+  pt.is_battery,
+  pt.requires_weee
+FROM part_types pt
+JOIN part_type_item_types ptit ON ptit.part_type_id = pt.part_type_id
+JOIN item_types it ON it.item_type_id = ptit.item_type_id
+JOIN assets a ON a.item_type = it.item_type_name
+WHERE a.asset_id = {{appsmith.URL.queryParams.asset_id}}
+ORDER BY pt.name;

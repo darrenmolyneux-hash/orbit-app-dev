@@ -1,0 +1,28 @@
+INSERT INTO parts_audit_log (
+  part_id,
+  action,
+  movement_type,
+  from_asset_id,
+  to_asset_id,
+  from_location_id,
+  to_location_id,
+  performed_by,
+  condition_at_movement,
+  notes,
+  technician_signature,
+  created_at
+) VALUES (
+  {{appsmith.store.pal_part_id}},
+  '{{appsmith.store.pal_action}}',
+  '{{appsmith.store.pal_movement_type}}',
+  {{appsmith.store.pal_from_asset_id}},
+  {{appsmith.store.pal_to_asset_id}},
+  {{appsmith.store.pal_from_location_id}},
+  {{appsmith.store.pal_to_location_id}},
+  '{{appsmith.user.name}}',
+  '{{appsmith.store.hp_condition_grade}}',
+  '{{appsmith.store.hp_notes}}',
+  '{{appsmith.store.hp_signature}}',
+  NOW()
+)
+RETURNING id;

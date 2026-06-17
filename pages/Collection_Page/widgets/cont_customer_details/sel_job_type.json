@@ -52,7 +52,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 28,
   "serverSideFiltering": false,
-  "sourceData": "[\n  {\"label\": \"ITAD\", \"value\": \"ITAD\"},\n  {\"label\": \"Repair\", \"value\": \"Repair\"},\n  {\"label\": \"Recycling\", \"value\": \"Recycling\"},\n  {\"label\": \"Data destruction\", \"value\": \"Data destruction\"},\n  {\"label\": \"Collection only\", \"value\": \"Collection only\"}\n]",
+  "sourceData": "[\n  {\"label\": \"ITAD\", \"value\": \"ITAD\"},  {\"label\": \"RetrieveNow\", \"value\": \"RetrieveNow\"}, {\"label\": \"Data destruction\", \"value\": \"Data destruction\"},\n  {\"label\": \"Repair\", \"value\": \"Repair\"},\n  {\"label\": \"Recycling\", \"value\": \"Recycling\"},\n\n  {\"label\": \"Collection only\", \"value\": \"Collection only\"}\n]",
   "topRow": 48,
   "type": "SELECT_WIDGET",
   "version": 1,
