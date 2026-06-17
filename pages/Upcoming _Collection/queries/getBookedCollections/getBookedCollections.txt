@@ -1,12 +1,12 @@
 SELECT 
-    c.collectionid,
-    c.collectiondate,
-    c.customerid,
-    cu.customername,
+    c.collection_id,
+    c.collection_date,
+    c.customer_id,
+    cu.customer_name,
     c.address1,
     c.status
 FROM collections c
 LEFT JOIN customers cu
-    ON c.customerid = cu.customer_id
-WHERE c.status = 'Booked'
-ORDER BY c.collectiondate DESC;
+    ON c.customer_id = cu.customer_id
+WHERE c.status NOT IN ('Complete', 'Cancelled')
+ORDER BY c.collection_date DESC;
