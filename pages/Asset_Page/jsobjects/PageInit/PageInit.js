@@ -6,5 +6,6 @@ export default {
     } else {
       AssetState.oldStatus = null;
     }
+    await qry_pre_inventory_summary.run();
   }
 }
