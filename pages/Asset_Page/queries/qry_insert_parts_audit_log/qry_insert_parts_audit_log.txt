@@ -12,13 +12,13 @@ INSERT INTO parts_audit_log (
   technician_signature,
   created_at
 ) VALUES (
-  {{appsmith.store.pal_part_id}},
+  {{Number(appsmith.store.pal_part_id)}},
   '{{appsmith.store.pal_action}}',
   '{{appsmith.store.pal_movement_type}}',
-  {{appsmith.store.pal_from_asset_id}},
-  {{appsmith.store.pal_to_asset_id}},
-  {{appsmith.store.pal_from_location_id}},
-  {{appsmith.store.pal_to_location_id}},
+  {{appsmith.store.pal_from_asset_id || 'NULL'}},
+  {{appsmith.store.pal_to_asset_id || 'NULL'}},
+  {{appsmith.store.pal_from_location_id || 'NULL'}},
+  {{appsmith.store.pal_to_location_id || 'NULL'}},
   '{{appsmith.user.name}}',
   '{{appsmith.store.hp_condition_grade}}',
   '{{appsmith.store.hp_notes}}',

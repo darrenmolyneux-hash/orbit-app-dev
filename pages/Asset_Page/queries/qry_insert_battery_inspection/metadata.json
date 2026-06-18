@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO battery_inspections (\n  audit_log_id,\n  part_id,\n  check_no_swelling,\n  check_no_leakage,\n  check_no_physical_damage,\n  check_voltage_measured,\n  voltage_reading_v,\n  check_fire_safe_storage,\n  check_weee_stream_confirmed,\n  inspected_by,\n  technician_signature\n) VALUES (\n  {{appsmith.store.pal_new_audit_id}},\n  {{appsmith.store.pal_part_id}},\n  {{appsmith.store.hp_c1}},\n  {{appsmith.store.hp_c2}},\n  {{appsmith.store.hp_c3}},\n  {{appsmith.store.hp_c4}},\n  {{appsmith.store.hp_voltage || 'NULL'}},\n  {{appsmith.store.hp_c5}},\n  {{appsmith.store.hp_c6}},\n  '{{appsmith.user.name}}',\n  '{{appsmith.store.hp_signature}}'\n);\n",
+      "body": "INSERT INTO battery_inspections (\n  audit_log_id,\n  part_id,\n  check_no_swelling,\n  check_no_leakage,\n  check_no_physical_damage,\n  check_voltage_measured,\n  voltage_reading_v,\n  check_fire_safe_storage,\n  check_weee_stream_confirmed,\n  inspected_by,\n  technician_signature\n) VALUES (\n  {{Number(appsmith.store.pal_new_audit_id)}},\n  {{Number(appsmith.store.pal_part_id)}},\n  {{appsmith.store.hp_c1}},\n  {{appsmith.store.hp_c2}},\n  {{appsmith.store.hp_c3}},\n  {{appsmith.store.hp_c4}},\n  {{appsmith.store.hp_voltage || 'NULL'}},\n  {{appsmith.store.hp_c5}},\n  {{appsmith.store.hp_c6}},\n  '{{appsmith.user.name}}',\n  '{{appsmith.store.hp_signature}}'\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

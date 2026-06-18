@@ -28,5 +28,5 @@ FROM harvested_parts hp
 LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
 LEFT JOIN assets a ON a.asset_id = hp.installed_in_asset_id
 LEFT JOIN locations l ON l.location_id = hp.current_location_id
-WHERE hp.source_asset_id = {{appsmith.URL.queryParams.asset_id}}
+WHERE hp.source_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
 ORDER BY hp.removed_at DESC;

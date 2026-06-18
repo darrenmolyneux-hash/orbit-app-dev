@@ -22,8 +22,8 @@ INSERT INTO harvested_parts (
   status
 ) VALUES (
   '{{qry_get_next_part_ref.data[0].next_part_ref}}',
-  {{appsmith.URL.queryParams.asset_id}},
-  {{appsmith.store.hp_part_type_id}},
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(appsmith.store.hp_part_type_id)}},
   '{{appsmith.store.hp_spec}}',
   '{{appsmith.store.hp_part_make}}',
   '{{appsmith.store.hp_part_model}}',
@@ -37,8 +37,8 @@ INSERT INTO harvested_parts (
   '{{appsmith.store.hp_notes}}',
   '{{appsmith.store.hp_signature}}',
   '{{appsmith.store.hp_dest_type}}',
-  {{appsmith.store.hp_dest_location_id}},
-  {{appsmith.store.hp_dest_type === 'asset' ? appsmith.store.hp_dest_asset_id : 'NULL'}},
+  {{Number(appsmith.store.hp_dest_location_id) || 'NULL'}},
+  {{appsmith.store.hp_dest_type === 'asset' ? Number(appsmith.store.hp_dest_asset_id) : 'NULL'}},
   CASE WHEN '{{appsmith.store.hp_dest_type}}' != 'asset' 
        THEN NOW() ELSE NULL END,
   CASE WHEN '{{appsmith.store.hp_dest_type}}' != 'asset'

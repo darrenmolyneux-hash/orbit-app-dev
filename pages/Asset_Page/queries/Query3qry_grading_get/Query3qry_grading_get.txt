@@ -5,8 +5,8 @@ SELECT gc.id AS category_id, gc.category_name, gc.display_order AS cat_order, gc
        aga.calculated_grade, aga.override_grade, aga.override_reason, aga.disposition, aga.notes
 FROM grading_categories gc
 JOIN grading_options go ON go.category_id = gc.id
-LEFT JOIN asset_grading_answers aga ON aga.asset_id = {{appsmith.URL.queryParams.asset_id}}
+LEFT JOIN asset_grading_answers aga ON aga.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
 WHERE gc.item_type_id = (
-  SELECT item_type::integer FROM assets WHERE asset_id = {{appsmith.URL.queryParams.asset_id}}
+  SELECT item_type FROM assets WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
 )
 ORDER BY gc.display_order, go.display_order;

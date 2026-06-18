@@ -1,21 +1,19 @@
 SELECT 
-    c.collectionid,
-    c.collection_ref,
-    c.customerid,
-    cust.customername,
-    c.siteid,
+    c.collection_id,
+    c.customer_id,
+    cu.customer_name,
+    c.site_id,
     c.address1,
     c.address2,
     c.city,
     c.postcode,
-    c.collectiondate,
-    c.jobtype,
-    c.createdby,
-    c.collectiondescription,
+    c.collection_date,
+    c.job_type,
+    c.created_by,
+    c.instructions,
     c.notes,
     c.status
 FROM collections c
-LEFT JOIN customers cust
-    ON c.customerid = cust.customer_id
+LEFT JOIN customers cu ON cu.customer_id = c.customer_id
 WHERE c.status = 'Booked'
-ORDER BY c.collectionid DESC;
+ORDER BY c.collection_id DESC;

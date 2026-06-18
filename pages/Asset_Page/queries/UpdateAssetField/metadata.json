@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE assets\nSET {{ this.params.column }} = {{ this.params.value }}\nWHERE asset_id = {{ this.params.asset_id }};\n",
+      "body": "UPDATE assets\nSET {{this.params.column}} = '{{this.params.value}}'\nWHERE asset_id = {{Number(this.params.asset_id)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

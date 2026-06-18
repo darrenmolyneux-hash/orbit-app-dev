@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO asset_status_history (asset_id, status_id, changed_by)\nVALUES (\n  {{qry_GetAssetById.data[0].asset_id}},\n  {{Custom5.model.selectedStatusId}},\n  '{{appsmith.user.email}}'\n);",
+      "body": "INSERT INTO asset_status_history (asset_id, status_id, changed_by)\nVALUES (\n  {{Number(qry_GetAssetById.data[0].asset_id)}},\n  {{Number(Custom5.model.selectedStatusId)}},\n  '{{appsmith.user.email}}'\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

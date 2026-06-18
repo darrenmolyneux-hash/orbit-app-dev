@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT asset_id \nFROM assets \nWHERE asset_ref = {{ AssetRefSearch.text }};\n",
+      "body": "SELECT asset_id \nFROM assets \nWHERE asset_ref = '{{AssetRefSearch.text}}';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -11,8 +11,8 @@ INSERT INTO battery_inspections (
   inspected_by,
   technician_signature
 ) VALUES (
-  {{appsmith.store.pal_new_audit_id}},
-  {{appsmith.store.pal_part_id}},
+  {{Number(appsmith.store.pal_new_audit_id)}},
+  {{Number(appsmith.store.pal_part_id)}},
   {{appsmith.store.hp_c1}},
   {{appsmith.store.hp_c2}},
   {{appsmith.store.hp_c3}},

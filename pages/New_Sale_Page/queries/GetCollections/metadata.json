@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    c.collectionid,\n    c.collection_ref,\n    c.customerid,\n    cust.customername,\n    c.siteid,\n    c.address1,\n    c.address2,\n    c.city,\n    c.postcode,\n    c.collectiondate,\n    c.jobtype,\n    c.createdby,\n    c.collectiondescription,\n    c.notes,\n    c.status\nFROM collections c\nLEFT JOIN customers cust\n    ON c.customerid = cust.customer_id\nWHERE c.status = 'Booked'\nORDER BY c.collectionid DESC;\n",
+      "body": "SELECT \n    c.collection_id,\n    c.customer_id,\n    cu.customer_name,\n    c.site_id,\n    c.address1,\n    c.address2,\n    c.city,\n    c.postcode,\n    c.collection_date,\n    c.job_type,\n    c.created_by,\n    c.instructions,\n    c.notes,\n    c.status\nFROM collections c\nLEFT JOIN customers cu ON cu.customer_id = c.customer_id\nWHERE c.status = 'Booked'\nORDER BY c.collection_id DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

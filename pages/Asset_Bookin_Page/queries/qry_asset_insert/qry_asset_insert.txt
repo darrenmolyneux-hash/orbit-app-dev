@@ -12,16 +12,16 @@ INSERT INTO assets (
   status_id
 )
 SELECT
-  {{appsmith.URL.queryParams.collectionId}},
-  (SELECT cu.customer_name FROM customers cu
+  {{Number(appsmith.URL.queryParams.collectionId)}},
+  (SELECT cu.customer_id::integer FROM customers cu
    JOIN collections c ON c.customer_id = cu.customer_id
-   WHERE c.collection_id = {{appsmith.URL.queryParams.collectionId}}),
-  '{{appsmith.store.pendingItemType}}',
-  '{{appsmith.store.pendingMake}}',
-  '{{appsmith.store.pendingModel}}',
+   WHERE c.collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}),
+  {{Number(appsmith.store.pendingItemType)}},
+  {{Number(appsmith.store.pendingMake)}},
+  {{Number(appsmith.store.pendingModel)}},
   serial.value,
   ref.value,
-  {{appsmith.store.pendingDataBearing}},
+  {{appsmith.store.pendingDataBearing === true}},
   '{{appsmith.user.name}}',
   NOW(),
   (SELECT status_id FROM status_types WHERE status_name = 'Received')

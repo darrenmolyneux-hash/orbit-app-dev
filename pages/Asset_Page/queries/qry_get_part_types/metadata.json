@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  pt.part_type_id,\n  pt.name,\n  pt.is_battery,\n  pt.requires_weee\nFROM part_types pt\nJOIN part_type_item_types ptit ON ptit.part_type_id = pt.part_type_id\nJOIN item_types it ON it.item_type_id = ptit.item_type_id\nJOIN assets a ON a.item_type = it.item_type_name\nWHERE a.asset_id = {{appsmith.URL.queryParams.asset_id}}\nORDER BY pt.name;",
+      "body": "SELECT \n  pt.part_type_id,\n  pt.name,\n  pt.is_battery,\n  pt.requires_weee\nFROM part_types pt\nJOIN part_type_item_types ptit ON ptit.part_type_id = pt.part_type_id\nJOIN item_types it ON it.item_type_id = ptit.item_type_id\nJOIN assets a ON a.item_type = it.item_type_id\nWHERE a.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\nORDER BY pt.name;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

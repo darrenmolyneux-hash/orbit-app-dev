@@ -3,4 +3,4 @@ SELECT
     s.sale_ref
 FROM sale_items si
 LEFT JOIN sales s ON si.sale_id = s.sale_id
-WHERE si.asset_id = {{SearchResultTable.selectedRow.asset_id}};
+WHERE si.asset_id = {{Number(SearchResultTable.selectedRow.asset_id)}};

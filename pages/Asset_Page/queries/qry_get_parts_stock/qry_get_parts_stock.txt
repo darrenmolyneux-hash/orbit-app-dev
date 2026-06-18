@@ -16,8 +16,8 @@ SELECT
   l.location_code AS stock_location_code,
   l.location_name AS stock_location_name,
   a.asset_ref AS source_asset_ref,
-  a.make AS source_make,
-  a.model AS source_model,
+  mk.make_name AS source_make,
+  mo.model_name AS source_model,
   CASE 
     WHEN hp.disposition_due < CURRENT_DATE THEN true 
     ELSE false 
@@ -25,9 +25,11 @@ SELECT
 FROM harvested_parts hp
 LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
 LEFT JOIN assets a ON a.asset_id = hp.source_asset_id
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
 LEFT JOIN locations l ON l.location_id = hp.current_location_id
 WHERE hp.status = 'in_stock'
-AND hp.source_asset_id != {{appsmith.URL.queryParams.asset_id}}
+AND hp.source_asset_id != {{Number(appsmith.URL.queryParams.asset_id)}}
 AND (
   '{{appsmith.store.stock_type_filter}}' = '' 
   OR pt.name = '{{appsmith.store.stock_type_filter}}'

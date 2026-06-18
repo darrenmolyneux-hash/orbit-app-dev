@@ -8,5 +8,5 @@ SELECT
   contact_number,
   contact_email
 FROM sites
-WHERE customer_id = {{sel_customer.selectedOptionValue}}
+WHERE customer_id = {{Number(sel_customer.selectedOptionValue)}}
 ORDER BY site_id;

@@ -9,10 +9,10 @@ INSERT INTO parts_audit_log (
   notes,
   created_at
 ) VALUES (
-  {{appsmith.store.pi_new_part_id}},
+  {{Number(appsmith.store.pi_new_part_id)}},
   'assessed as scrap at pre-inventory',
   'asset_to_scrap',
-  {{appsmith.URL.queryParams.asset_id}},
+  {{Number(appsmith.URL.queryParams.asset_id)}},
   (SELECT location_id FROM locations WHERE location_code = 'SCRAP-W01' LIMIT 1),
   '{{appsmith.user.name}}',
   '{{appsmith.store.pi_condition}}',

@@ -1,6 +1,7 @@
 SELECT 
-  item_type,
+  it.item_type_name,
   COUNT(*) AS total
-FROM assets
-GROUP BY item_type
-ORDER BY item_type;
+FROM assets a
+JOIN item_types it ON it.item_type_id = a.item_type
+GROUP BY it.item_type_name
+ORDER BY it.item_type_name;

@@ -1,18 +1,18 @@
 SELECT 
   'asset' AS result_type,
   asset_ref AS ref,
-  COALESCE(make || ' ' || model, 'Unknown') AS detail,
-  asset_id::text AS record_id
-FROM assets
+  COALESCE(mk.make_name || ' ' || mo.model_name, 'Unknown') AS detail,
+  a.asset_id::text AS record_id
+FROM assets a
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
 WHERE (
-    asset_ref        ILIKE '%' || {{inp_search.text}}::text || '%'
-    OR serial_number ILIKE '%' || {{inp_search.text}}::text || '%'
-    OR make          ILIKE '%' || {{inp_search.text}}::text || '%'
-    OR model         ILIKE '%' || {{inp_search.text}}::text || '%'
+    a.asset_ref        ILIKE '%' || {{inp_search.text}}::text || '%'
+    OR a.serial_number ILIKE '%' || {{inp_search.text}}::text || '%'
+    OR mk.make_name    ILIKE '%' || {{inp_search.text}}::text || '%'
+    OR mo.model_name   ILIKE '%' || {{inp_search.text}}::text || '%'
   )
-
 UNION ALL
-
 SELECT 
   'collection' AS result_type,
   'COL-' || c.collection_id::text AS ref,
@@ -26,9 +26,7 @@ WHERE (
     OR c.address1            ILIKE '%' || {{inp_search.text}}::text || '%'
     OR c.collection_id::text ILIKE '%' || {{inp_search.text}}::text || '%'
   )
-
 UNION ALL
-
 SELECT 
   'customer' AS result_type,
   customer_name AS ref,
@@ -40,6 +38,5 @@ WHERE (
     OR contact_name ILIKE '%' || {{inp_search.text}}::text || '%'
     OR email        ILIKE '%' || {{inp_search.text}}::text || '%'
   )
-
 ORDER BY result_type, ref
-LIMIT 15
+LIMIT 15;

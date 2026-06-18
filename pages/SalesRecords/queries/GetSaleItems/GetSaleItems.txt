@@ -7,11 +7,11 @@ SELECT
     created_by
 FROM sales
 WHERE 
-    sale_date >= {{StartDate.selectedDate}}
+    sale_date >= '{{StartDate.selectedDate}}'
 AND 
-    sale_date <= {{EndDate.selectedDate}}
+    sale_date <= '{{EndDate.selectedDate}}'
 AND
-    (customer ILIKE '%' || {{sel_sale_customer.selectedOptionValue}} || '%' OR {{sel_sale_customer.selectedOptionValue === null}})
+    (customer ILIKE '%' || '{{sel_sale_customer.selectedOptionValue}}' || '%' OR {{sel_sale_customer.selectedOptionValue === null}})
 AND
-    (sale_ref ILIKE '%' || {{RefFilter.text}} || '%' OR {{RefFilter.text === ""}})
+    (sale_ref ILIKE '%' || '{{RefFilter.text}}' || '%' OR {{RefFilter.text === ""}})
 ORDER BY sale_date DESC;

@@ -1,2 +1,2 @@
-SELECT COALESCE(MAX(collectionid), 0) + 1 AS next_id
+SELECT COALESCE(MAX(collection_id), 0) + 1 AS next_id
 FROM collections;

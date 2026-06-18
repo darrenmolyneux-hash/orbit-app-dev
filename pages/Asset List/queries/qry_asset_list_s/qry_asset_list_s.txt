@@ -13,9 +13,9 @@ SELECT
   a.sale_id,
   a.date_added
 FROM assets a
-LEFT JOIN item_types it ON it.item_type_id = a.item_type::integer
-LEFT JOIN makes mk ON mk.make_id = a.make::integer
-LEFT JOIN models md ON md.model_id = a.model::integer
+LEFT JOIN item_types it ON it.item_type_id = a.item_type
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models md ON md.model_id = a.model
 LEFT JOIN status_types st ON st.status_id = a.status_id
 WHERE (
   {{appsmith.URL.queryParams.collectionId ? Number(appsmith.URL.queryParams.collectionId) : 0}} = 0

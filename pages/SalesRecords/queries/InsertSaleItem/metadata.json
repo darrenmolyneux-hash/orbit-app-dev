@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO sale_items (sale_id, asset_id, sell_price)\nVALUES (\n    {{ this.params.sale_id }},\n    {{ this.params.asset_id }},\n    {{ this.params.sell_price }}\n);\n",
+      "body": "INSERT INTO sale_items (sale_id, asset_id, sell_price)\nVALUES (\n    {{Number(this.params.sale_id)}},\n    {{Number(this.params.asset_id)}},\n    {{Number(this.params.sell_price)}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  site_id,\n  address1,\n  address2,\n  city,\n  postcode,\n  site_contact,\n  contact_number,\n  contact_email\nFROM sites\nWHERE customer_id = {{sel_customer.selectedOptionValue}}\nORDER BY site_id;",
+      "body": "SELECT\n  site_id,\n  address1,\n  address2,\n  city,\n  postcode,\n  site_contact,\n  contact_number,\n  contact_email\nFROM sites\nWHERE customer_id = {{Number(sel_customer.selectedOptionValue)}}\nORDER BY site_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

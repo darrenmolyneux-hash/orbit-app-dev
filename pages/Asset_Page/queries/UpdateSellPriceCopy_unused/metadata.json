@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE assets\nSET cost = NULLIF(\n  regexp_replace({{ Inputoriginalcost.value || \"\" }}, '[^0-9.\\-]', '', 'g'),\n  ''\n)::numeric\nWHERE assetid = {{ Number(appsmith.URL.queryParams.assetid) }}\nRETURNING assetid, original_costcost;",
+      "body": "UPDATE assets\nSET cost = NULLIF(\n  regexp_replace('{{Inputoriginalcost.text || \"\"}}', '[^0-9.\\-]', '', 'g'),\n  ''\n)::numeric\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\nRETURNING asset_id, cost;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

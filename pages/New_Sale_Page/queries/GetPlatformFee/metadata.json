@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT fee_percentage\nFROM platform_fee\nWHERE platform_name = {{ SalePlatformSelect.selectedOptionValue }};\n",
+      "body": "SELECT fee_percentage\nFROM platform_fee\nWHERE platform_name = '{{SalePlatformSelect.selectedOptionValue}}';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

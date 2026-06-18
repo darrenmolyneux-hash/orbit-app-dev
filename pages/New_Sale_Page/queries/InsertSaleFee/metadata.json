@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO sales_fee (sale_item_id, fee_type, fee_amount)\nVALUES (\n    {{ this.params.sale_item_id }},\n    {{ this.params.fee_type }},\n    {{ this.params.fee_amount }}\n);\n",
+      "body": "INSERT INTO sales_fee (sale_item_id, fee_type, fee_amount)\nVALUES (\n    {{Number(this.params.sale_item_id)}},\n    '{{this.params.fee_type}}',\n    {{Number(this.params.fee_amount)}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

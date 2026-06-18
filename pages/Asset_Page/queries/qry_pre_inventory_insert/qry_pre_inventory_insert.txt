@@ -15,8 +15,8 @@ INSERT INTO harvested_parts (
   removal_notes
 ) VALUES (
   '{{qry_get_next_part_ref.data[0].next_part_ref}}',
-  {{appsmith.URL.queryParams.asset_id}},
-  {{appsmith.store.pi_part_type_id}},
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(appsmith.store.pi_part_type_id)}},
   '{{appsmith.store.pi_make}}',
   '{{appsmith.store.pi_model}}',
   NULL,

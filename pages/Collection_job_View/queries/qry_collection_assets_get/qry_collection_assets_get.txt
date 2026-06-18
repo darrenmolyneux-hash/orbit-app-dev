@@ -1,10 +1,10 @@
 SELECT
   a.asset_id,
   a.asset_tag,
-	a.asset_ref,
-  a.item_type,
-  a.make,
-  a.model,
+  a.asset_ref,
+  it.item_type_name,
+  mk.make_name,
+  mo.model_name,
   a.serial_number,
   a.data_bearing,
   a.grade,
@@ -12,5 +12,8 @@ SELECT
   st.status_name AS status
 FROM assets a
 LEFT JOIN status_types st ON st.status_id = a.status_id
+LEFT JOIN item_types it ON it.item_type_id = a.item_type
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
 WHERE a.collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}
 ORDER BY a.date_added DESC;

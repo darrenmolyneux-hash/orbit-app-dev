@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT gc.id, gc.component_name, gc.display_order, acg.grade\nFROM grading_components gc\nLEFT JOIN asset_component_grades acg \n  ON acg.component_name = gc.component_name \n  AND acg.asset_id = {{appsmith.URL.queryParams.asset_id}}\nWHERE gc.item_type_id = (\n  SELECT item_type::integer FROM assets WHERE asset_id = {{appsmith.URL.queryParams.asset_id}}\n)\nORDER BY gc.display_order;",
+      "body": "SELECT gc.id, gc.component_name, gc.display_order, acg.grade\nFROM grading_components gc\nLEFT JOIN asset_component_grades acg \n  ON acg.component_name = gc.component_name \n  AND acg.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\nWHERE gc.item_type_id = (\n  SELECT item_type FROM assets WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\n)\nORDER BY gc.display_order;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

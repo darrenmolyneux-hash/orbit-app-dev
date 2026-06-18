@@ -40,9 +40,10 @@
     "sell_price",
     "status_id",
     "customColumn1",
+    "asset_id",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781632579553,
+  "columnUpdatedAt": 1781777306000,
   "columnWidthMap": {
     "asset_ref": 114,
     "item_type": 97,
@@ -114,6 +115,9 @@
     },
     {
       "key": "primaryColumns.model_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.asset_id.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -218,6 +222,40 @@
       "sticky": "right",
       "thousandSeparator": true,
       "validation": {},
+      "width": 150
+    },
+    "asset_id": {
+      "alias": "asset_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = SearchResultTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"asset_id\"])) : asset_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "asset_id",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "asset_id",
+      "notation": "standard",
+      "originalId": "asset_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
       "width": 150
     },
     "asset_ref": {

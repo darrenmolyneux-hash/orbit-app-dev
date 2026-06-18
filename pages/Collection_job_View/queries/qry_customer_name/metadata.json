@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT customer_id, customername\nFROM customers\nWHERE customer_id = {{ qry_collection_get.data[0]?.customerid }}\n",
+      "body": "SELECT customer_id, customer_name\nFROM customers\nWHERE customer_id = {{Number(qry_collection_get.data[0]?.customer_id)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

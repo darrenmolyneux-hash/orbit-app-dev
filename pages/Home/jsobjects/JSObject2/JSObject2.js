@@ -1,3 +1,5 @@
-Custom1goHome: () => {
-  btn_navHome.click();
+export default {
+  goHome: () => {
+    btn_navHome.click();
+  }
 }

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "CREATE OR REPLACE FUNCTION generate_sale_ref()\nRETURNS TEXT AS $$\nDECLARE\n    next_id INTEGER;\nBEGIN\n    SELECT COALESCE(MAX(sale_id), 0) + 1 INTO next_id FROM sales;\n    RETURN 'SALE-INV-' || LPAD(next_id::text, 6, '0');\nEND;\n$$ LANGUAGE plpgsql;\n",
+      "body": "SELECT generate_sale_ref() AS sale_ref;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

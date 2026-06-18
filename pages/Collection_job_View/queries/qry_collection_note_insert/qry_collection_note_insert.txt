@@ -7,9 +7,9 @@ INSERT INTO job_notes (
   created_at
 ) VALUES (
   {{Number(appsmith.URL.queryParams.collectionId)}},
-  {{appsmith.store.noteText}},
-  {{appsmith.store.noteType || 'general'}},
+  '{{appsmith.store.noteText}}',
+  '{{appsmith.store.noteType || "general"}}',
   false,
-  {{appsmith.user.name}},
+  '{{appsmith.user.name}}',
   NOW()
 );

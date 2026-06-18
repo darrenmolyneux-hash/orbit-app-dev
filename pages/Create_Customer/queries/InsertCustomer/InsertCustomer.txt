@@ -1,21 +1,21 @@
 INSERT INTO customers (
-  customername,
-  contactname,
-  contactnumber,
-  dialref,
-  dialexpiry,
-  msasigned,
+  customer_name,
+  contact_name,
+  contact_number,
+  dial_ref,
+  dial_expiry,
+  msa_signed,
   created_at,
-  createdby
+  created_by
 )
 VALUES (
-  '{{ inp_customer_name.text }}',
-  '{{ inp_contact_name.text }}',
-  '{{ inp_contact_number.text }}',
-  '{{ sel_dial_rating.selectedOptionValue }}',
-  '{{ dp_dial_expiry.formattedDate }}',
-  '{{ sel_msa.selectedOptionValue }}',
+  '{{inp_customer_name.text}}',
+  '{{inp_contact_name.text}}',
+  '{{inp_contact_number.text}}',
+  '{{sel_dial_rating.selectedOptionValue}}',
+  '{{dp_dial_expiry.formattedDate}}',
+  '{{sel_msa.selectedOptionValue}}',
   NOW(),
-  '{{ appsmith.user.email.split("@")[0] }}'
+  '{{appsmith.user.email.split("@")[0]}}'
 )
 RETURNING customer_id;

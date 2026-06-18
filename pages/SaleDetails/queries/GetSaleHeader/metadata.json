@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM sales\nWHERE sale_id = {{ appsmith.URL.queryParams.sale_id }};\n",
+      "body": "SELECT *\nFROM sales\nWHERE sale_id = {{Number(appsmith.URL.queryParams.sale_id)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

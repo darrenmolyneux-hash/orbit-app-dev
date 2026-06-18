@@ -13,18 +13,18 @@ INSERT INTO asset_grading_answers (
   notes
 )
 VALUES (
-  {{appsmith.URL.queryParams.asset_id}}::integer,
-  {{Custom_Grading.model.selections[1] || null}},
-  {{Custom_Grading.model.selections[2] || null}},
-  {{Custom_Grading.model.selections[3] || null}},
-  {{Custom_Grading.model.selections[4] || null}},
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(Custom_Grading.model.selections[1]) || null}},
+  {{Number(Custom_Grading.model.selections[2]) || null}},
+  {{Number(Custom_Grading.model.selections[3]) || null}},
+  {{Number(Custom_Grading.model.selections[4]) || null}},
   {{Custom_Grading.model.locks['BIOS Lock'] || false}},
   {{Custom_Grading.model.locks['MDM Lock'] || false}},
   {{Custom_Grading.model.locks['EFI Lock'] || false}},
   {{Custom_Grading.model.locks['iCloud Lock'] || false}},
   {{Custom_Grading.model.locks['inTune'] || false}},
-  {{Custom_Grading.model.overallGrade || null}},
-  {{Custom_Grading.model.notes || ''}}
+  '{{Custom_Grading.model.overallGrade || ""}}',
+  '{{Custom_Grading.model.notes || ""}}'
 )
 ON CONFLICT (asset_id) DO UPDATE SET
   cosmetics_option_id = EXCLUDED.cosmetics_option_id,
