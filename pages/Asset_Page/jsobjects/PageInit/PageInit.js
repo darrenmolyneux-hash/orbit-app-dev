@@ -7,5 +7,6 @@ export default {
       AssetState.oldStatus = null;
     }
     await qry_pre_inventory_summary.run();
+		storeValue('summaryTimestamp', Date.now());
   }
 }
