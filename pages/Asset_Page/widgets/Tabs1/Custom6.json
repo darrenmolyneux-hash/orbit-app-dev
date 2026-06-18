@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 409,
+  "bottomRow": 438,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{\n  \"assetParts\": [],\n  \"stockParts\": []\n}",
   "dynamicBindingPathList": [
@@ -47,7 +47,7 @@
   "needsErrorInfo": false,
   "onInstallPart": "{{qry_install_part.run().then(() => {\n  qry_get_asset_parts.run();\n  qry_get_parts_stock.run();\n});}}",
   "onLogRemoval": "{{qry_get_parts_stock.run()}}",
-  "originalBottomRow": 409,
+  "originalBottomRow": 438,
   "originalTopRow": 405,
   "parentColumnSpace": 17.796875,
   "parentId": "onlm3me0uv",

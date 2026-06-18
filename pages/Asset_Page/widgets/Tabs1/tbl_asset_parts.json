@@ -615,7 +615,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "is_overdue",
+      "label": "Overdue",
       "notation": "standard",
       "originalId": "is_overdue",
       "sticky": "",

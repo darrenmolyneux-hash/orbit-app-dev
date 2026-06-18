@@ -1,0 +1,11 @@
+SELECT
+  COUNT(*) AS total,
+  COUNT(*) FILTER (WHERE is_salvageable = true) AS salvageable,
+  COUNT(*) FILTER (WHERE is_salvageable = false) AS scrapped,
+  COUNT(*) FILTER (WHERE disposition_due < CURRENT_DATE) AS overdue,
+  COUNT(*) FILTER (WHERE disposition_due BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '30 days') AS due_soon,
+  MIN(assessed_at) AS assessed_at,
+  MAX(assessed_by) AS assessed_by
+FROM harvested_parts
+WHERE source_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+AND assessed_at IS NOT NULL;

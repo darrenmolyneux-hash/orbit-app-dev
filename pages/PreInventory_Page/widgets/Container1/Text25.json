@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -40,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 24,
   "shouldTruncate": false,
-  "text": "First Select sales platform to assign sales fees ",
+  "text": "{{qry_GetAssetById.data[0]?.item_type_name}} — Pre-Inventory Assessment",
   "textAlign": "LEFT",
   "textColor": "#6b7280",
   "topRow": 5,
