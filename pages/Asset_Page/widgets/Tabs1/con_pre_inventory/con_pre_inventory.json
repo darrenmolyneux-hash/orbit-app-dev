@@ -57,22 +57,15 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [
-    {
-      "key": "isVisible"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": "{{qry_GetAssetById.data[0].status_id === 15}}",
+  "isVisible": false,
   "key": "p51vy16sb1",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
