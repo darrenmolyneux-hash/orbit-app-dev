@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 21,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{\n  \"partTypes\": {{qry_get_part_types.data}},\n  \"asset\": {{qry_GetAssetById.data[0]}}\n}",
+  "defaultModel": "{{qry_GetAssetById.data[0].status_id === 15}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
@@ -33,7 +33,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": false,
+  "isVisible": true,
   "key": "af1n28l6vs",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
