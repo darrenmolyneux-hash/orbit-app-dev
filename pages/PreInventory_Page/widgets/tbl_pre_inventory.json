@@ -278,7 +278,7 @@
       "allowSameOptionsInNewRow": true,
       "borderRadius": "{{tbl_pre_inventory.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
       "boxShadow": "{{tbl_pre_inventory.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
-      "buttonColor": "{{(() => { const tableData = tbl_pre_inventory.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.is_scrap ? \"red\" : \"#94a3b8\")) : currentRow.is_scrap ? \"red\" : \"#94a3b8\" })()}}",
+      "buttonColor": "{{(() => { const tableData = tbl_pre_inventory.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (appsmith.store['scrap_' + currentRow.part_type_id] ? 'red' : '#94a3b8')) : appsmith.store['scrap_' + currentRow.part_type_id] ? 'red' : '#94a3b8' })()}}",
       "buttonStyle": "rgb(3, 179, 101)",
       "columnType": "iconButton",
       "computedValue": "",
