@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_315bc3ce-0f6b-4da1-b077-f2b82ecf580f",
+  "id": "PreInventory_Page_JSPreInventory",
+  "unpublishedCollection": {
+    "name": "JSPreInventory",
+    "pageId": "PreInventory_Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

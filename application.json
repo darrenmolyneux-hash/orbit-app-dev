@@ -88,6 +88,10 @@
     {
       "id": "Asset List",
       "isDefault": false
+    },
+    {
+      "id": "PreInventory_Page",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

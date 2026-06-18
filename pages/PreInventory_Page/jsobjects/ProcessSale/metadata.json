@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_67e9b81c-819e-4c87-b475-29127f433e44",
+  "id": "PreInventory_Page_ProcessSale",
+  "unpublishedCollection": {
+    "name": "ProcessSale",
+    "pageId": "PreInventory_Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
