@@ -14,15 +14,10 @@ async init() {
     storeValue('hp_is_battery', false);
     storeValue('hp_signature', '');
     this.initPreInventory();
-    await qry_GetAssetById.run();
     await qry_get_part_types.run();
     await qry_get_asset_parts.run();
     await qry_get_parts_stock.run();
     await qry_get_locations.run();
-    CustomPreInventory.updateModel({
-      partTypes: qry_get_part_types.data,
-      asset: qry_GetAssetById.data[0]
-    });
   },
 
   initPreInventory() {

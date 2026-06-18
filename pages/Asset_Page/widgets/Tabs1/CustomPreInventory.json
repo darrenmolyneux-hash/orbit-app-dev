@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 21,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{\n  \"partTypes\": [],\n  \"asset\": {}\n}",
+  "defaultModel": "{\n  \"partTypes\": {{qry_get_part_types.data}},\n  \"asset\": {{qry_GetAssetById.data[0]}}\n}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
@@ -17,7 +17,7 @@
       "key": "boxShadow"
     },
     {
-      "key": "isVisible"
+      "key": "defaultModel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -37,7 +37,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": "{{qry_GetAssetById.data[0].status_id === 15}}",
+  "isVisible": "CustomPreInventory.updateModel is not a function",
   "key": "af1n28l6vs",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
