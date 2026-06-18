@@ -37,7 +37,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{JSObject1.confirmHarvest()}}",
+  "onClick": "{{AssetActions.confirmHarvest()}}",
   "originalBottomRow": 32,
   "originalTopRow": 28,
   "parentId": "2rzqsz0lwr",

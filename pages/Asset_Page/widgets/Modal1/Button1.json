@@ -37,7 +37,7 @@
   "mobileRightColumn": 47,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal('Modal1'); JSObject1.cancelHarvest()}}",
+  "onClick": "{{closeModal('Modal1'); AssetActions.cancelHarvest()}}",
   "originalBottomRow": 32,
   "originalTopRow": 28,
   "parentId": "2rzqsz0lwr",

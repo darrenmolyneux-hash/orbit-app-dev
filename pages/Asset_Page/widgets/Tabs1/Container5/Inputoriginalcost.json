@@ -45,7 +45,7 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "onTextChanged": "{{JSObject1.saveCost();}}",
+  "onTextChanged": "{{AssetActions.saveCost();}}",
   "parentColumnSpace": 6.767822265625,
   "parentId": "q34ac66bp9",
   "parentRowSpace": 10,

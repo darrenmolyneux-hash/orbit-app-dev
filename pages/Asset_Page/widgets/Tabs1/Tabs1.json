@@ -314,7 +314,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "onTabSelected": "{{JSObject1.onTabChange();\nJSParts.init();}}",
+  "onTabSelected": "{{AssetActions.onTabChange();\nJSParts.init();}}",
   "originalBottomRow": 398,
   "originalTopRow": 63,
   "parentColumnSpace": 19.5,
