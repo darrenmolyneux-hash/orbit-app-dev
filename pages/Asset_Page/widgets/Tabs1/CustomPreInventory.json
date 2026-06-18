@@ -15,6 +15,9 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -34,7 +37,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": "false",
+  "isVisible": "{{qry_GetAssetById.data[0].status_id === 15}}",
   "key": "af1n28l6vs",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
