@@ -4,33 +4,40 @@ export default {
     await qry_get_part_types.run();
   },
 
-  async savePreInventory(assessedParts) {
-    if (!assessedParts || assessedParts.length === 0) {
+  async savePreInventory() {
+    const parts = qry_get_part_types.data;
+    if (!parts || parts.length === 0) {
       showAlert('No parts to save.', 'error');
       return;
     }
     let savedCount = 0;
     let errorCount = 0;
-    for (const part of assessedParts) {
+    for (const part of parts) {
       try {
+        const isScrap = appsmith.store['scrap_' + part.part_type_id] || false;
+        const condition = appsmith.store['condition_' + part.part_type_id] || 'B';
+        const make = appsmith.store['make_' + part.part_type_id] || '';
+        const model = appsmith.store['modelspec_' + part.part_type_id] || '';
+        const notes = appsmith.store['notes_' + part.part_type_id] || '';
+
         storeValue('pi_part_type_id', part.part_type_id);
-        storeValue('pi_make',         part.make);
-        storeValue('pi_model',        part.model);
-        storeValue('pi_condition',    part.condition);
+        storeValue('pi_make',         make);
+        storeValue('pi_model',        model);
+        storeValue('pi_condition',    condition);
         storeValue('pi_is_battery',   part.is_battery);
-        storeValue('pi_salvageable',  part.is_salvageable);
-        storeValue('pi_notes',        part.notes);
+        storeValue('pi_salvageable',  !isScrap);
+        storeValue('pi_notes',        notes);
         await qry_get_next_part_ref.run();
         await qry_pre_inventory_insert.run();
         const newId = qry_pre_inventory_insert.data[0]?.id;
-        if (newId && !part.is_salvageable) {
+        if (newId && isScrap) {
           storeValue('pi_new_part_id', newId);
           await qry_pre_inventory_scrap_log.run();
         }
         savedCount++;
       } catch (err) {
         errorCount++;
-        console.log('Part save error:', part.part_type_name, err.message);
+        console.log('Part save error:', part.name, err.message);
       }
     }
     if (errorCount > 0) {
