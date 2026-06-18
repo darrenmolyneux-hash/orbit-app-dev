@@ -15,6 +15,7 @@ async init() {
     storeValue('hp_signature', '');
     this.initPreInventory();
     await qry_get_part_types.run();
+	storeValue('partTypesData', qry_get_part_types.data);
     await qry_get_asset_parts.run();
     await qry_get_parts_stock.run();
     await qry_get_locations.run();

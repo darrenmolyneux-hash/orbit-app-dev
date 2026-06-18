@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 21,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{{qry_GetAssetById.data[0].status_id === 15}}",
+  "defaultModel": "{\n  \"partTypes\": {{appsmith.store.partTypesData || []}},\n  \"asset\": {{qry_GetAssetById.data[0] || {}}}\n}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
