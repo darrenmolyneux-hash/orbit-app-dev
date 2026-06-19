@@ -50,10 +50,10 @@ export default {
       storeValue('pendingSerial', row.serial);
       storeValue('pendingDataBearing', itemType.is_data_bearing);
 
-      await qry_next_asset_ref.run();
-      var ref = qry_next_asset_ref.data[0].asset_ref;
-      bookedRefs.push(ref);
-      await qry_upload_asset_insert.run();
+    await qry_next_asset_ref.run();
+var ref = qry_next_asset_ref.data[0].asset_ref;
+bookedRefs.push(ref);
+await qry_upload_asset_insert.run({ assetRef: ref });
     }
 
     storeValue('bookedRefs', bookedRefs);

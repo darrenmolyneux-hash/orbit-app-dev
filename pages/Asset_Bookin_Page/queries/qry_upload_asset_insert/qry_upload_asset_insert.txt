@@ -20,7 +20,7 @@ SELECT
   {{Number(appsmith.store.pendingMake)}},
   {{Number(appsmith.store.pendingModel)}},
   '{{appsmith.store.pendingSerial}}',
-  '{{qry_next_asset_ref.data[0].asset_ref}}',
+  '{{this.params.assetRef}}',
   {{appsmith.store.pendingDataBearing === true}},
   '{{appsmith.user.name}}',
   NOW(),
