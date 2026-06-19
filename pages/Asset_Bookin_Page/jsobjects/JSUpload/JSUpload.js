@@ -8,56 +8,78 @@ export default {
     await qry_models_list.run();
 
     const itemTypes = qry_item_types_list.data;
+    var bookedRows = [];
 
-    var bookedRefs = [];
     for (var i = 0; i < rows.length; i++) {
       var row = rows[i];
+      var needsReview = false;
 
-      // Look up item_type_id from name
-      const itemType = itemTypes.find(it => 
+      // Look up item_type_id from name — null if not found
+      const itemType = itemTypes.find(it =>
         it.item_type_name.toLowerCase() === row.item_type.toLowerCase()
       );
-      if (!itemType) {
-        showAlert('Unknown item type: ' + row.item_type, 'error');
-        continue;
+      var itemTypeId = itemType ? itemType.item_type_id : null;
+      var isDataBearing = itemType ? itemType.is_data_bearing : false;
+      if (!itemType) needsReview = true;
+
+      // Run makes for this item type (only meaningful if item type matched)
+      var makeId = null;
+      if (itemType) {
+        await storeValue('selectedItemType', itemType.item_type_id);
+        await qry_makes_list.run();
+        const make = qry_makes_list.data.find(m =>
+          m.make_name.toLowerCase() === row.make.toLowerCase()
+        );
+        makeId = make ? make.make_id : null;
+        if (!make) needsReview = true;
+      } else {
+        needsReview = true;
       }
 
-      // Run makes for this item type
-      await storeValue('selectedItemType', itemType.item_type_id);
-      await qry_makes_list.run();
-      const make = qry_makes_list.data.find(m => 
-        m.make_name.toLowerCase() === row.make.toLowerCase()
-      );
-      if (!make) {
-        showAlert('Unknown make: ' + row.make + ' for ' + row.item_type, 'error');
-        continue;
+      // Run models for this make (only meaningful if make matched)
+      var modelId = null;
+      if (makeId) {
+        await storeValue('selectedMake', makeId);
+        await qry_models_list.run();
+        const model = qry_models_list.data.find(mo =>
+          mo.model_name.toLowerCase() === row.model.toLowerCase()
+        );
+        modelId = model ? model.model_id : null;
+        if (!model) needsReview = true;
+      } else {
+        needsReview = true;
       }
 
-      // Run models for this make
-      await storeValue('selectedMake', make.make_id);
-      await qry_models_list.run();
-      const model = qry_models_list.data.find(mo => 
-        mo.model_name.toLowerCase() === row.model.toLowerCase()
-      );
-      if (!model) {
-        showAlert('Unknown model: ' + row.model + ' for ' + row.make, 'error');
-        continue;
-      }
+      // Generate ref and insert — every row, regardless of match status
+      await qry_next_asset_ref.run();
+      var ref = qry_next_asset_ref.data[0].asset_ref;
 
-      storeValue('pendingItemType', itemType.item_type_id);
-      storeValue('pendingMake', make.make_id);
-      storeValue('pendingModel', model.model_id);
-      storeValue('pendingSerial', row.serial);
-      storeValue('pendingDataBearing', itemType.is_data_bearing);
+      await qry_upload_asset_insert.run({
+        itemTypeId: itemTypeId,
+        makeId: makeId,
+        modelId: modelId,
+        serial: row.serial,
+        assetRef: ref,
+        dataBearing: isDataBearing,
+        needsReview: needsReview
+      });
 
-    await qry_next_asset_ref.run();
-var ref = qry_next_asset_ref.data[0].asset_ref;
-bookedRefs.push(ref);
-await qry_upload_asset_insert.run({ assetRef: ref });
+      bookedRows.push({
+        serial: row.serial,
+        asset_ref: ref,
+        needs_review: needsReview
+      });
     }
 
-    storeValue('bookedRefs', bookedRefs);
-    showAlert('Booked ' + bookedRefs.length + ' assets successfully', 'success');
+    await storeValue('bookedRows', bookedRows);
+
+    var flaggedCount = bookedRows.filter(function(r) { return r.needs_review; }).length;
+    showAlert(
+      'Booked ' + bookedRows.length + ' assets' +
+      (flaggedCount ? ' — ' + flaggedCount + ' flagged for review' : ''),
+      flaggedCount ? 'warning' : 'success'
+    );
+
     await new Promise(resolve => setTimeout(resolve, 500));
     qry_booked_assets.run();
   }

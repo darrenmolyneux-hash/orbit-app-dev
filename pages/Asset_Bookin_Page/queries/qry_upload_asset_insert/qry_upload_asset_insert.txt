@@ -9,19 +9,21 @@ INSERT INTO assets (
   data_bearing,
   added_by,
   date_added,
-  status_id
+  status_id,
+  needs_review
 )
 SELECT
   {{Number(appsmith.URL.queryParams.collectionId)}},
   (SELECT cu.customer_id::integer FROM customers cu
    JOIN collections c ON c.customer_id = cu.customer_id
    WHERE c.collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}),
-  {{Number(appsmith.store.pendingItemType)}},
-  {{Number(appsmith.store.pendingMake)}},
-  {{Number(appsmith.store.pendingModel)}},
-  '{{appsmith.store.pendingSerial}}',
+  {{this.params.itemTypeId === null ? null : Number(this.params.itemTypeId)}},
+  {{this.params.makeId === null ? null : Number(this.params.makeId)}},
+  {{this.params.modelId === null ? null : Number(this.params.modelId)}},
+  '{{this.params.serial}}',
   '{{this.params.assetRef}}',
-  {{appsmith.store.pendingDataBearing === true}},
+  {{this.params.dataBearing === true}},
   '{{appsmith.user.name}}',
   NOW(),
-  (SELECT status_id FROM status_types WHERE status_name = 'Received');
+  (SELECT status_id FROM status_types WHERE status_name = 'Received'),
+  {{this.params.needsReview === true}};

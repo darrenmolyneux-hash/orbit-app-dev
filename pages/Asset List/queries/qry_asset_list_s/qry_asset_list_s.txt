@@ -11,7 +11,8 @@ SELECT
   st.status_name,
   st.category AS status_category,
   a.sale_id,
-  a.date_added
+  a.date_added,
+  a.needs_review
 FROM assets a
 LEFT JOIN item_types it ON it.item_type_id = a.item_type
 LEFT JOIN makes mk ON mk.make_id = a.make

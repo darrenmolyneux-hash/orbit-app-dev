@@ -33,6 +33,7 @@
     }
   },
   "columnOrder": [
+    "customColumn2",
     "asset_ref",
     "asset_id",
     "item_type_name",
@@ -47,15 +48,17 @@
     "status_category",
     "sale_id",
     "date_added",
+    "needs_review",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781534152740,
+  "columnUpdatedAt": 1781877338975,
   "columnWidthMap": {
     "address1": 194,
     "collection_ref": 80,
     "collectiondate": 198,
     "collectionid": 60,
     "customColumn1": 213,
+    "customColumn2": 124,
     "customername": 221
   },
   "compactMode": "SHORT",
@@ -139,6 +142,21 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.customColumn2.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn2.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn2.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn2.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.needs_review.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -153,6 +171,9 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.customColumn2.buttonColor"
     }
   ],
   "dynamicTriggerPathList": [
@@ -174,7 +195,7 @@
   "isSortable": true,
   "isVisible": true,
   "isVisibleDownload": false,
-  "isVisibleFilters": false,
+  "isVisibleFilters": true,
   "isVisiblePagination": false,
   "isVisibleSearch": true,
   "key": "w73pdnieew",
@@ -220,7 +241,7 @@
       "isEditable": false,
       "isSaveDisabled": "{{CollectionsTable.processedTableData.map((currentRow, currentIndex) => ( !CollectionsTable.updatedRowIndices.includes(currentIndex)))}}",
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Save / Discard",
       "notation": "standard",
       "originalId": "EditActions1",
@@ -341,6 +362,46 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "customColumn2": {
+      "alias": "Needs Review",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{CollectionsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{CollectionsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.needs_review ? \"#791F1F\" : \"#085041\")) : currentRow.needs_review ? \"#791F1F\" : \"#085041\" })()}}",
+      "buttonLabel": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.needs_review ? \"Unmatched\" : \"Matched\")) : currentRow.needs_review ? \"Unmatched\" : \"Matched\" })()}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "SECONDARY",
+      "cellBackground": "#ffffff",
+      "columnType": "button",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "customColumn2",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Needs Review",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "originalId": "customColumn2",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "data_bearing": {
       "alias": "data_bearing",
       "allowCellWrapping": false,
@@ -363,7 +424,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "data_bearing",
       "notation": "standard",
       "originalId": "data_bearing",
@@ -431,7 +492,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "erasure_status",
       "notation": "standard",
       "originalId": "erasure_status",
@@ -537,6 +598,40 @@
       "label": "Model",
       "notation": "standard",
       "originalId": "model_name",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "needs_review": {
+      "alias": "needs_review",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#ffffff",
+      "columnType": "checkbox",
+      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"needs_review\"])) : needs_review })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "needs_review",
+      "index": 13,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "needs_review",
+      "notation": "standard",
+      "originalId": "needs_review",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -704,7 +799,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "status_name",
       "notation": "standard",
       "originalId": "status_name",

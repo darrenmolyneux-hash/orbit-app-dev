@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 129,
+  "bottomRow": 78,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": false,
@@ -33,6 +33,7 @@
     }
   },
   "columnOrder": [
+    "needs_review",
     "asset_ref",
     "asset_id",
     "added_by",
@@ -97,11 +98,15 @@
     "carriage_cost_allocated",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781646967532,
+  "columnUpdatedAt": 1781875980997,
   "columnWidthMap": {
+    "asset_ref": 129,
     "customColumn1": 130,
     "data_bearing": 133,
+    "item_type": 115,
     "kg": 162,
+    "make": 134,
+    "needs_review": 123,
     "serial_number": 237
   },
   "compactMode": "SHORT",
@@ -453,6 +458,21 @@
     },
     {
       "key": "primaryColumns.carriage_cost_allocated.computedValue"
+    },
+    {
+      "key": "primaryColumns.needs_review.computedValue"
+    },
+    {
+      "key": "primaryColumns.needs_review.boxShadow"
+    },
+    {
+      "key": "primaryColumns.needs_review.borderRadius"
+    },
+    {
+      "key": "primaryColumns.needs_review.buttonColor"
+    },
+    {
+      "key": "primaryColumns.needs_review.buttonLabel"
     }
   ],
   "dynamicPropertyPathList": [
@@ -479,6 +499,9 @@
     },
     {
       "key": "primaryColumns.customColumn5.onClick"
+    },
+    {
+      "key": "primaryColumns.needs_review.buttonColor"
     }
   ],
   "dynamicTriggerPathList": [
@@ -1858,7 +1881,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"item_type\"])) : sel_item_type })()}}",
+      "computedValue": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"item_type\"] + '/')) : currentRow[\"item_type\"] + '/' })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -2015,6 +2038,46 @@
       "label": "model_id",
       "notation": "standard",
       "originalId": "model_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "needs_review": {
+      "alias": "needs_review",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{tbl_booked_assets.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{tbl_booked_assets.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.needs_review ? \"#791F1F\" : \"#085041\")) : currentRow.needs_review ? \"#791F1F\" : \"#085041\" })()}}",
+      "buttonLabel": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.needs_review ? \"Unmatched\" : \"Matched\")) : currentRow.needs_review ? \"Unmatched\" : \"Matched\" })()}}",
+      "buttonVariant": "SECONDARY",
+      "cellBackground": "#F4F6F8",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"needs_review\"])) : needs_review })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "needs_review",
+      "index": 57,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "needs_review",
+      "notation": "standard",
+      "originalId": "needs_review",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
