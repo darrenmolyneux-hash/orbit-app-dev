@@ -1,0 +1,42 @@
+export default {
+  handleLogin: async () => {
+    var email = Custom1.model.loginEmail;
+    var password = Custom1.model.loginPassword;
+
+    if (!email || !password) {
+      return;
+    }
+
+    try {
+      const result = await LoginAPI.run();
+
+      // Supabase returns an error object (with error/error_description or
+      // msg) on failed login, rather than throwing — so we need to check
+      // the response shape, not just rely on try/catch.
+      if (result.error || result.error_description || result.msg) {
+        var message = result.error_description || result.msg || 'Invalid email or password.';
+        await Custom1.setModel({ loginErrorMessage: message });
+        return;
+      }
+
+      if (!result.access_token) {
+        await Custom1.setModel({ loginErrorMessage: 'Login failed — no session returned.' });
+        return;
+      }
+
+      // Store the session. access_token is the JWT used to authenticate
+      // future requests; persisted via storeValue so it survives page
+      // navigation within the app.
+      await storeValue('supabaseAccessToken', result.access_token);
+      await storeValue('supabaseRefreshToken', result.refresh_token);
+      await storeValue('supabaseUserEmail', result.user ? result.user.email : email);
+      await storeValue('isLoggedIn', true);
+
+      // Navigate to the actual app home page now that login succeeded.
+      navigateTo('Home', {}, 'SAME_WINDOW');
+
+    } catch (e) {
+      await Custom1.setModel({ loginErrorMessage: 'Something went wrong — please try again.' });
+    }
+  }
+}
