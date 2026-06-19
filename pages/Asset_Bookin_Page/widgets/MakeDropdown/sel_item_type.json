@@ -46,7 +46,7 @@
   "mobileRightColumn": 11,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onOptionChange": "{{qry_makes_list.run()}}",
+  "onOptionChange": "{{JSObject2.selectItemType(sel_item_type.selectedOptionValue);}}",
   "optionLabel": "label",
   "optionValue": "value",
   "parentColumnSpace": 19.5,

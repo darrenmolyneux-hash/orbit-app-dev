@@ -23,9 +23,6 @@
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
-    },
-    {
-      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -53,18 +50,18 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "onOptionChange": "",
+  "onOptionChange": "{{JSObject2.checkAddNewModel();}}",
   "optionLabel": "model_name",
   "optionValue": "model_id",
   "parentColumnSpace": 19.5,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,
-  "placeholderText": "Select option",
+  "placeholderText": "",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 36,
   "serverSideFiltering": false,
-  "sourceData": "{{qry_models_list.data}}",
+  "sourceData": "{{[{ model_name: \"+ Add New Model\", model_id: \"__add_new__\" }, ...qry_models_list.data]}}",
   "topRow": 3,
   "type": "SELECT_WIDGET",
   "version": 1,

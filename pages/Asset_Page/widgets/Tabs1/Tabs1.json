@@ -323,7 +323,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "shouldScrollContents": true,
+  "shouldScrollContents": false,
   "shouldShowTabs": true,
   "tabsObj": {
     "tab1": {

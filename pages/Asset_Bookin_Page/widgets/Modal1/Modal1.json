@@ -1,5 +1,6 @@
 {
   "animateLoading": true,
+  "backgroundColor": "#daca16",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 374,
   "boxShadow": "none",
@@ -57,6 +58,7 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
   "height": 240,
   "isCanvas": true,
   "isLoading": false,

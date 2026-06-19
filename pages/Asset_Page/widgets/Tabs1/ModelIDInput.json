@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
-  "defaultText": "{{ BlanccoParser.parseBlancco().product_name }}\n{{ BlanccoParser.parseBlancco().model }}\n",
+  "defaultText": "{{ qry_GetAssetById.data[0].model_id }}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

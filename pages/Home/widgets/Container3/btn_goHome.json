@@ -22,7 +22,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": false,
   "key": "wxmrce5osk",
   "leftColumn": 19,
   "minWidth": 120,
