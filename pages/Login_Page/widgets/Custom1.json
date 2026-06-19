@@ -37,7 +37,7 @@
   "mobileRightColumn": 38,
   "mobileTopRow": 22,
   "needsErrorInfo": false,
-  "onLoginSubmit": "{{JSAuth_handleLogin.Custom1onLoginSubmit();}}",
+  "onLoginSubmit": "{{JSAuth.handleLogin();}}",
   "originalBottomRow": 71,
   "originalTopRow": 0,
   "parentColumnSpace": 19.8125,

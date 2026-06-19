@@ -4,6 +4,7 @@ export default {
     var password = Custom1.model.loginPassword;
 
     if (!email || !password) {
+      showAlert('Please enter both email and password.', 'warning');
       return;
     }
 
@@ -15,12 +16,12 @@ export default {
       // the response shape, not just rely on try/catch.
       if (result.error || result.error_description || result.msg) {
         var message = result.error_description || result.msg || 'Invalid email or password.';
-        await Custom1.setModel({ loginErrorMessage: message });
+        showAlert(message, 'error');
         return;
       }
 
       if (!result.access_token) {
-        await Custom1.setModel({ loginErrorMessage: 'Login failed — no session returned.' });
+        showAlert('Login failed — no session returned.', 'error');
         return;
       }
 
@@ -36,7 +37,7 @@ export default {
       navigateTo('Home', {}, 'SAME_WINDOW');
 
     } catch (e) {
-      await Custom1.setModel({ loginErrorMessage: 'Something went wrong — please try again.' });
+      showAlert('Something went wrong — please try again.', 'error');
     }
   }
 }
