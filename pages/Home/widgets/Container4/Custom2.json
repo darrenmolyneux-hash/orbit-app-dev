@@ -45,7 +45,7 @@
   "needsErrorInfo": false,
   "onPageLoad": "{{qry_recent_activity.run()}}",
   "originalBottomRow": 76,
-  "originalTopRow": 6,
+  "originalTopRow": 7,
   "parentColumnSpace": 12.9990234375,
   "parentId": "pi5367wwx0",
   "parentRowSpace": 10,
