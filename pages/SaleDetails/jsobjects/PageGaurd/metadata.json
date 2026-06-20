@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_65c89f11-296c-4705-b825-055311aae202",
+  "id": "SaleDetails_PageGaurd",
+  "unpublishedCollection": {
+    "name": "PageGaurd",
+    "pageId": "SaleDetails",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

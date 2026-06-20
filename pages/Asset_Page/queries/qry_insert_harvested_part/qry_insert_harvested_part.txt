@@ -50,3 +50,4 @@ INSERT INTO harvested_parts (
     ELSE 'in_stock'
   END
 );
+RETURNING id;
