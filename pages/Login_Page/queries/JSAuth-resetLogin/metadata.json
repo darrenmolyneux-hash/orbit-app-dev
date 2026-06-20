@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_74400097-ee22-48ae-b91a-c4694ed8daf4",
-  "id": "Login_Page_JSAuth.handleLogin",
+  "gitSyncId": "6a305b9e0882adc7e482e226_25678717-f11e-47d1-8ff1-534526cc3408",
+  "id": "Login_Page_JSAuth.resetLogin",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "JSAuth.handleLogin",
-    "name": "handleLogin",
+    "fullyQualifiedName": "JSAuth.resetLogin",
+    "name": "resetLogin",
     "pageId": "Login_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

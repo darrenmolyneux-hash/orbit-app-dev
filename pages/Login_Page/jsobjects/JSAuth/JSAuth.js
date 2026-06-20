@@ -1,4 +1,8 @@
 export default {
+  resetLogin: () => {
+    storeValue('isLoggedIn', false);
+  },
+
   handleLogin: async () => {
     var email = Custom1.model.loginEmail;
     var password = Custom1.model.loginPassword;
@@ -38,6 +42,14 @@ export default {
 
     } catch (e) {
       showAlert('Something went wrong — please try again.', 'error');
+    }
+  },
+
+  // Call this from every page's onPageLoad (except Login_Page itself).
+  // Redirects to Login_Page if there's no valid session.
+  checkAuth: () => {
+    if (!appsmith.store.isLoggedIn) {
+      navigateTo('Login_Page', {}, 'SAME_WINDOW');
     }
   }
 }

@@ -1,4 +1,4 @@
 {
   "email": "{{Custom1.model.loginEmail}}",
-  "password": "{{Custom1.model.password}}"
+  "password": "{{Custom1.model.loginPassword}}"
 }
