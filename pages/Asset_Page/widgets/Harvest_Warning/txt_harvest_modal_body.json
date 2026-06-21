@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
+  "bottomRow": 17,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,7 +33,7 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 19,
+  "originalBottomRow": 17,
   "originalTopRow": 6,
   "overflow": "NONE",
   "parentColumnSpace": 6.9375,
@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{qry_GetAssetById.data[0].make}} {{qry_GetAssetById.data[0].model}} ({{qry_GetAssetById.data[0].asset_tag}}) will be marked as Stripped for Parts. This should only be done if the device cannot be repaired or resold as a whole unit.\n\nOnce confirmed, you will be taken to the parts assessment screen.",
+  "text": "{{qry_GetAssetById.data[0].make_name}} {{qry_GetAssetById.data[0].model_name}} ({{qry_GetAssetById.data[0].asset_ref}}) will be marked as Stripped for Parts. This should only be done if the device cannot be repaired or resold as a whole unit.\nOnce confirmed, you will be taken to the parts assessment screen.",
   "textAlign": "CENTER",
   "textColor": "#666666",
   "topRow": 6,

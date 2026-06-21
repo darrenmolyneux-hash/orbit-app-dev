@@ -1,6 +1,6 @@
 export default {
 
-async init() {
+  async init() {
     storeValue('stock_type_filter', '');
     storeValue('stock_grade_filter', '');
     storeValue('hp_part_type_id', '');
@@ -17,7 +17,7 @@ async init() {
     await qry_get_part_types.run();
     storeValue('partTypesData', qry_get_part_types.data);
     storeValue('partTypesTimestamp', Date.now());
-    await qry_get_asset_parts.run();
+    await qry_get_asset_parts_combined.run();
     await qry_get_parts_stock.run();
     await qry_get_locations.run();
   },
@@ -117,6 +117,11 @@ async init() {
     this.signed = true;
   },
 
+  // submit() — UPDATED: links the new harvested_parts row back to its
+  // originating pre_inventory_assessments row via
+  // qry_link_assessment_to_removal, and refreshes
+  // qry_get_asset_parts_combined (the new combined view) instead of the
+  // old qry_get_asset_parts.
   async submit() {
     if (!appsmith.store.harvest_signed) {
       showAlert('Please sign off before submitting.', 'error');
@@ -130,7 +135,13 @@ async init() {
         showAlert('Part insert failed — no ID returned.', 'error');
         return;
       }
-      storeValue('pal_part_id',         newPartId);
+      storeValue('pal_part_id', newPartId);
+
+      // Link this removal back to its originating pre-inventory
+      // assessment row, so the combined parts view can show this part
+      // as "Removed" rather than "still in asset".
+      await qry_link_assessment_to_removal.run();
+
       storeValue('pal_action',          'harvest');
       storeValue('pal_movement_type',   'harvest');
       storeValue('pal_from_asset_id',   appsmith.URL.queryParams.asset_id);
@@ -157,7 +168,7 @@ async init() {
       }
       storeValue('harvest_step', 5);
       showAlert('Part removed and R2V3 audit record created ✓', 'success');
-      await qry_get_asset_parts.run();
+      await qry_get_asset_parts_combined.run();
     } catch (err) {
       showAlert('Error: ' + err.message, 'error');
       console.log('JSParts.submit error:', err);
@@ -182,7 +193,7 @@ async init() {
       await qry_install_part.run();
       await qry_insert_parts_audit_log.run();
       showAlert('Part installed and movement logged ✓', 'success');
-      await qry_get_asset_parts.run();
+      await qry_get_asset_parts_combined.run();
       await qry_get_parts_stock.run();
     } catch (err) {
       showAlert('Install failed: ' + err.message, 'error');
@@ -200,7 +211,7 @@ async init() {
     storeValue('hp_notes',           data.hp_notes || '');
     return qry_get_next_part_ref.run().then(() => {
       return qry_insert_harvested_part.run().then(() => {
-        return qry_get_asset_parts.run();
+        return qry_get_asset_parts_combined.run();
       });
     });
   },
@@ -254,7 +265,7 @@ async init() {
   },
 
   async savePreInventory() {
-    const parts = CustomPreInventory.model.assessedParts;
+    const parts = qry_get_part_types.data;
     if (!parts || parts.length === 0) {
       showAlert('No parts to save.', 'error');
       return;
@@ -263,33 +274,30 @@ async init() {
     let errorCount = 0;
     for (const part of parts) {
       try {
+        const isScrap = appsmith.store['scrap_' + part.part_type_id] || false;
+        const notes = appsmith.store['notes_' + part.part_type_id] || '';
         storeValue('pi_part_type_id', part.part_type_id);
-        storeValue('pi_make',         part.make);
-        storeValue('pi_model',        part.model);
-        storeValue('pi_condition',    part.condition);
-        storeValue('pi_is_battery',   part.is_battery);
-        storeValue('pi_salvageable',  part.is_salvageable);
-        storeValue('pi_notes',        part.notes);
+        storeValue('pi_salvageable',  !isScrap);
+        storeValue('pi_notes',        notes);
         await qry_get_next_part_ref.run();
         await qry_pre_inventory_insert.run();
         const newId = qry_pre_inventory_insert.data[0]?.id;
-        if (newId && !part.is_salvageable) {
+        if (newId && isScrap) {
           storeValue('pi_new_part_id', newId);
           await qry_pre_inventory_scrap_log.run();
         }
         savedCount++;
       } catch (err) {
         errorCount++;
-        console.log('Part save error:', part.part_type_name, err.message);
+        console.log('Part save error:', part.name, err.message);
       }
-    }
-    if (savedCount > 0) {
-      showAlert(savedCount + ' parts logged successfully ✓', 'success');
-      await qry_get_asset_parts.run();
     }
     if (errorCount > 0) {
       showAlert(errorCount + ' parts failed to save. Check browser console.', 'error');
+      return;
     }
+    showAlert(savedCount + ' parts logged successfully ✓', 'success');
+    navigateTo('Asset_Page', { asset_id: appsmith.URL.queryParams.asset_id }, 'SAME_WINDOW');
   }
 
 }

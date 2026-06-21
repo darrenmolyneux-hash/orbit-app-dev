@@ -3,7 +3,7 @@ export default {
     const newStatusId = Custom5.model.selectedStatusId;
     storeValue('pending_status_id', newStatusId);
     if (newStatusId === 15) {
-      showModal('Modal1');
+      showModal('Harvest_Warning');
       return;
     }
     await UpdateAssetStatus.run();
@@ -21,7 +21,7 @@ export default {
       await UpdateAssetStatus.run();
       await InsertAssetAuditLog.run();
       await qry_insert_status_history.run();
-      closeModal('Modal1');
+      closeModal('Harvest_Warning');
       storeValue('pending_status_id', null);
       showAlert('Asset status updated. Starting pre-inventory...', 'success');
       navigateTo('PreInventory_Page', { asset_id: appsmith.URL.queryParams.asset_id }, 'SAME_WINDOW');

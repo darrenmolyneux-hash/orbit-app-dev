@@ -1,0 +1,45 @@
+
+
+SELECT
+  pia.id AS assessment_id,
+  pia.part_type_id,
+  pt.name AS part_type,
+  pt.is_battery,
+  pia.is_salvageable,
+  pia.notes AS assessment_notes,
+  pia.assessed_by,
+  pia.assessed_at,
+
+  hp.id AS harvested_part_id,
+  hp.part_ref,
+  hp.serial_number,
+  hp.condition_grade,
+  hp.removed_by,
+  hp.removed_at::date AS removed_date,
+  hp.destination_type,
+  hp.disposition_due,
+  hp.removal_notes,
+  hp.current_location_id,
+  hp.installed_in_asset_id,
+  a.asset_ref AS installed_in_ref,
+  l.location_code AS current_location_code,
+  l.location_name AS current_location_name,
+
+  CASE
+    WHEN hp.id IS NOT NULL THEN 'removed'
+    WHEN pia.is_salvageable = true THEN 'in_asset_salvageable'
+    ELSE 'in_asset_scrap'
+  END AS row_status,
+
+  CASE
+    WHEN hp.disposition_due IS NOT NULL AND hp.disposition_due < CURRENT_DATE THEN true
+    ELSE false
+  END AS is_overdue
+
+FROM pre_inventory_assessments pia
+LEFT JOIN part_types pt ON pt.part_type_id = pia.part_type_id
+LEFT JOIN harvested_parts hp ON hp.id = pia.harvested_part_id
+LEFT JOIN assets a ON a.asset_id = hp.installed_in_asset_id
+LEFT JOIN locations l ON l.location_id = hp.current_location_id
+WHERE pia.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+ORDER BY pt.name;

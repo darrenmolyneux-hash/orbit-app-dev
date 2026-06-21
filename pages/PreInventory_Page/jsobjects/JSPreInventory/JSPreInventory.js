@@ -3,7 +3,6 @@ export default {
     await qry_GetAssetById.run();
     await qry_get_part_types.run();
   },
-
   async savePreInventory() {
     const parts = qry_get_part_types.data;
     if (!parts || parts.length === 0) {
@@ -15,16 +14,8 @@ export default {
     for (const part of parts) {
       try {
         const isScrap = appsmith.store['scrap_' + part.part_type_id] || false;
-        const condition = appsmith.store['condition_' + part.part_type_id] || 'B';
-        const make = appsmith.store['make_' + part.part_type_id] || '';
-        const model = appsmith.store['modelspec_' + part.part_type_id] || '';
         const notes = appsmith.store['notes_' + part.part_type_id] || '';
-
         storeValue('pi_part_type_id', part.part_type_id);
-        storeValue('pi_make',         make);
-        storeValue('pi_model',        model);
-        storeValue('pi_condition',    condition);
-        storeValue('pi_is_battery',   part.is_battery);
         storeValue('pi_salvageable',  !isScrap);
         storeValue('pi_notes',        notes);
         await qry_get_next_part_ref.run();

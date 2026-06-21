@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_e03492cf-a4d0-437b-8289-bbcf7433c6aa",
-  "id": "Asset_Page_qry_get_locations",
+  "gitSyncId": "6a305b9e0882adc7e482e226_e4de37df-d424-4d48-8b07-c3b97b483bbd",
+  "id": "Asset_Page_qry_link_assessment_to_removal",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  location_id,\n  location_code,\n  location_name,\n  location_type,\n  is_weee_registered\nFROM locations\nWHERE is_active = true\nORDER BY location_type, location_code;",
+      "body": "\nUPDATE pre_inventory_assessments\nSET harvested_part_id = {{Number(appsmith.store.pal_part_id)}}\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\n  AND part_type_id = {{Number(appsmith.store.hp_part_type_id)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,8 +22,12 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
-    "name": "qry_get_locations",
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
+    "name": "qry_link_assessment_to_removal",
     "pageId": "Asset_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

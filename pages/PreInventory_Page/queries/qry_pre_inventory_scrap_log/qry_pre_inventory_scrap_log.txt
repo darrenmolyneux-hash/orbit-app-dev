@@ -1,21 +1,22 @@
-INSERT INTO parts_audit_log (
-  part_id,
-  action,
-  movement_type,
-  from_asset_id,
-  to_location_id,
-  performed_by,
-  condition_at_movement,
-  notes,
-  created_at
+-- qry_pre_inventory_insert — SIMPLIFIED
+-- Pre-inventory now only records the salvageable/scrap decision.
+
+INSERT INTO pre_inventory_assessments (
+  asset_id,
+  part_type_id,
+  is_salvageable,
+  assessed_by,
+  assessed_at
 ) VALUES (
-  {{Number(appsmith.store.pi_new_part_id)}},
-  'assessed as scrap at pre-inventory',
-  'asset_to_scrap',
   {{Number(appsmith.URL.queryParams.asset_id)}},
-  (SELECT location_id FROM locations WHERE location_code = 'SCRAP-W01' LIMIT 1),
+  {{Number(appsmith.store.pi_part_type_id)}},
+  {{appsmith.store.pi_salvageable}},
   '{{appsmith.user.name}}',
-  '{{appsmith.store.pi_condition}}',
-  '{{appsmith.store.pi_notes}}',
   NOW()
-);
+)
+ON CONFLICT (asset_id, part_type_id)
+DO UPDATE SET
+  is_salvageable   = EXCLUDED.is_salvageable,
+  assessed_by      = EXCLUDED.assessed_by,
+  assessed_at      = EXCLUDED.assessed_at
+RETURNING id;

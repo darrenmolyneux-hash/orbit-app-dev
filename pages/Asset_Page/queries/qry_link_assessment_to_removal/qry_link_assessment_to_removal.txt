@@ -1,0 +1,5 @@
+
+UPDATE pre_inventory_assessments
+SET harvested_part_id = {{Number(appsmith.store.pal_part_id)}}
+WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+  AND part_type_id = {{Number(appsmith.store.hp_part_type_id)}};

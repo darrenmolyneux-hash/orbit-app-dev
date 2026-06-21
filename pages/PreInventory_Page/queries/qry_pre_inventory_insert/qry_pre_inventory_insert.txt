@@ -1,34 +1,26 @@
-INSERT INTO harvested_parts (
-  part_ref,
-  source_asset_id,
+-- qry_pre_inventory_insert — SIMPLIFIED (with notes kept)
+-- Pre-inventory records the salvageable/scrap decision plus an
+-- optional quick reason note.
+
+INSERT INTO pre_inventory_assessments (
+  asset_id,
   part_type_id,
-  part_make,
-  part_model,
-  serial_number,
-  condition_grade,
-  is_battery,
-  status,
   is_salvageable,
+  notes,
   assessed_by,
-  assessed_at,
-  fully_serialised,
-  removal_notes
+  assessed_at
 ) VALUES (
-  '{{qry_get_next_part_ref.data[0].next_part_ref}}',
   {{Number(appsmith.URL.queryParams.asset_id)}},
   {{Number(appsmith.store.pi_part_type_id)}},
-  '{{appsmith.store.pi_make}}',
-  '{{appsmith.store.pi_model}}',
-  NULL,
-  '{{appsmith.store.pi_condition}}',
-  {{appsmith.store.pi_is_battery}},
-  CASE WHEN {{appsmith.store.pi_salvageable}} = true 
-       THEN 'in_asset' 
-       ELSE 'scrapped' END,
   {{appsmith.store.pi_salvageable}},
+  '{{appsmith.store.pi_notes}}',
   '{{appsmith.user.name}}',
-  NOW(),
-  false,
-  '{{appsmith.store.pi_notes}}'
+  NOW()
 )
+ON CONFLICT (asset_id, part_type_id)
+DO UPDATE SET
+  is_salvageable   = EXCLUDED.is_salvageable,
+  notes            = EXCLUDED.notes,
+  assessed_by      = EXCLUDED.assessed_by,
+  assessed_at      = EXCLUDED.assessed_at
 RETURNING id;
