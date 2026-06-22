@@ -15,11 +15,17 @@
     },
     {
       "key": "text"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -30,7 +36,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{appsmith.store.harvest_step === 0 || appsmith.store.harvest_step === undefined}}",
   "key": "hwwemchvo9",
   "leftColumn": 0,
   "minWidth": 120,
@@ -39,7 +45,7 @@
   "mobileRightColumn": 30,
   "mobileTopRow": 22,
   "needsErrorInfo": false,
-  "onClick": "{{\n  (function() {\n    qry_get_asset_parts_combined.run();\n    showModal('ModalParts');\n  })()\n}}",
+  "onClick": "{{\n  (function() {\n    qry_get_asset_parts_combined.run();\n    storeValue('showPartsTable', true);\n    showModal('ModalParts');\n  })()\n}}",
   "parentColumnSpace": 19.5,
   "parentId": "onlm3me0uv",
   "parentRowSpace": 10,

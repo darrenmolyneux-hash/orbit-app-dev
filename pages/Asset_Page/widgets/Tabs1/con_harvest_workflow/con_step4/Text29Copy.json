@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 21,
   "shouldTruncate": false,
-  "text": "Source asset: {{appsmith.URL.queryParams.asset_id}}",
+  "text": "Source asset: {{qry_GetAssetById.data[0]?.asset_ref || ''}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 9,

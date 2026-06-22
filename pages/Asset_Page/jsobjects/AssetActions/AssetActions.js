@@ -21,6 +21,7 @@ export default {
       await UpdateAssetStatus.run();
       await InsertAssetAuditLog.run();
       await qry_insert_status_history.run();
+      await qry_set_stripped_date.run();
       closeModal('Harvest_Warning');
       storeValue('pending_status_id', null);
       showAlert('Asset status updated. Starting pre-inventory...', 'success');
@@ -46,7 +47,7 @@ export default {
     if (Tabs1.selectedTab === 'Grading') {
       await Query3qry_grading_get.run();
     }
-    if (Tabs1.selectedTab === 'Add/Remove parts') {
+    if (Tabs1.selectedTab === 'Add/Remove parts' && appsmith.store.harvest_step === 0) {
       await JSParts.init();
     }
   },

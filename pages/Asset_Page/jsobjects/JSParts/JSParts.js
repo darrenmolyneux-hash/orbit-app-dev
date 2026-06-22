@@ -41,6 +41,7 @@ export default {
     storeValue('hp_part_make',        row.part_make || '');
     storeValue('hp_part_model',       row.part_model || '');
     storeValue('hp_part_type_id',     row.part_type_id || '');
+    storeValue('hp_part_type',        row.part_type || '');
     storeValue('hp_is_battery',       row.is_battery || false);
     storeValue('hp_battery_chem',     row.battery_chemistry || '');
     storeValue('hp_battery_wh',       row.battery_wh || null);
@@ -50,6 +51,7 @@ export default {
     storeValue('hp_signature',        '');
     storeValue('hp_dest_type',        row.is_battery ? 'scrap_weee' : '');
     storeValue('hp_dest_location_id', null);
+    storeValue('hp_dest_location_label', '');
     storeValue('hp_dest_asset_id',    null);
     storeValue('hp_voltage',          null);
     storeValue('hp_c1', false);
@@ -117,11 +119,6 @@ export default {
     this.signed = true;
   },
 
-  // submit() — UPDATED: links the new harvested_parts row back to its
-  // originating pre_inventory_assessments row via
-  // qry_link_assessment_to_removal, and refreshes
-  // qry_get_asset_parts_combined (the new combined view) instead of the
-  // old qry_get_asset_parts.
   async submit() {
     if (!appsmith.store.harvest_signed) {
       showAlert('Please sign off before submitting.', 'error');
@@ -136,12 +133,7 @@ export default {
         return;
       }
       storeValue('pal_part_id', newPartId);
-
-      // Link this removal back to its originating pre-inventory
-      // assessment row, so the combined parts view can show this part
-      // as "Removed" rather than "still in asset".
       await qry_link_assessment_to_removal.run();
-
       storeValue('pal_action',          'harvest');
       storeValue('pal_movement_type',   'harvest');
       storeValue('pal_from_asset_id',   appsmith.URL.queryParams.asset_id);
@@ -233,13 +225,13 @@ export default {
       && appsmith.store.harvest_step === 2;
   },
 
-  get disposeByDate() {
+  disposeByDate() {
     const d = new Date();
     d.setFullYear(d.getFullYear() + 1);
     return d.toLocaleDateString('en-GB');
   },
 
-  get locationOptions() {
+  locationOptions() {
     const type = appsmith.store.hp_dest_type || '';
     const all  = qry_get_locations.data || [];
     return all
@@ -250,7 +242,7 @@ export default {
       })
       .map(l => ({
         label: l.location_code + ' — ' + l.location_name,
-        value: l.location_id
+        value: String(l.location_id)
       }));
   },
 
@@ -258,7 +250,7 @@ export default {
     return !appsmith.store.harvest_signed;
   },
 
-  get signOffLabel() {
+  signOffLabel() {
     return appsmith.store.harvest_signed
       ? '✓ Signed: ' + appsmith.user.name
       : 'Sign off as technician';

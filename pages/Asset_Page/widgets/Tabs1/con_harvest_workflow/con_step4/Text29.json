@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 21,
   "shouldTruncate": false,
-  "text": "Part type: {{appsmith.store.hp_part_make}} {{appsmith.store.hp_part_model}}",
+  "text": "Part type: {{appsmith.store.hp_part_type}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 5,

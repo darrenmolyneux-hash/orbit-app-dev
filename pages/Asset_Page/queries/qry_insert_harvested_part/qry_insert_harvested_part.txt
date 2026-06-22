@@ -31,14 +31,14 @@ INSERT INTO harvested_parts (
   '{{appsmith.store.hp_condition_grade}}',
   {{appsmith.store.hp_is_battery}},
   '{{appsmith.store.hp_battery_chem}}',
-  {{appsmith.store.hp_battery_wh || 'NULL'}},
+{{appsmith.store.hp_battery_wh ? appsmith.store.hp_battery_wh : null}},
   '{{appsmith.store.hp_removed_by}}',
   NOW(),
   '{{appsmith.store.hp_notes}}',
   '{{appsmith.store.hp_signature}}',
   '{{appsmith.store.hp_dest_type}}',
-  {{Number(appsmith.store.hp_dest_location_id) || 'NULL'}},
-  {{appsmith.store.hp_dest_type === 'asset' ? Number(appsmith.store.hp_dest_asset_id) : 'NULL'}},
+{{appsmith.store.hp_dest_location_id ? Number(appsmith.store.hp_dest_location_id) : null}},
+ {{appsmith.store.hp_dest_type === 'asset' ? Number(appsmith.store.hp_dest_asset_id) : null}},
   CASE WHEN '{{appsmith.store.hp_dest_type}}' != 'asset' 
        THEN NOW() ELSE NULL END,
   CASE WHEN '{{appsmith.store.hp_dest_type}}' != 'asset'
@@ -47,7 +47,6 @@ INSERT INTO harvested_parts (
     WHEN '{{appsmith.store.hp_dest_type}}' = 'asset' THEN 'in_asset'
     WHEN '{{appsmith.store.hp_dest_type}}' IN ('scrap_weee','scrap_metal','scrap_general') 
          THEN 'scrapped'
-    ELSE 'in_stock'
+ELSE 'in_stock'
   END
-);
-RETURNING id;
+) RETURNING id;

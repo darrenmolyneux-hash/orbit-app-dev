@@ -4,7 +4,7 @@
   "borderColor": "#e0e0e0",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 143,
+  "bottomRow": 140,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -92,7 +92,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": true,
-  "topRow": 104,
+  "topRow": 101,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "xhulu4312o",

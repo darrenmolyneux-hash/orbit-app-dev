@@ -18,9 +18,17 @@
     },
     {
       "key": "defaultModel"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onResetClick"
@@ -32,7 +40,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": true,
+  "isVisible": "{{appsmith.store.harvest_step === 0 || appsmith.store.harvest_step === undefined}}",
   "key": "teofv4vv0i",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
