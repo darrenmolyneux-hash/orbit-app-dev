@@ -290,6 +290,55 @@ export default {
     }
     showAlert(savedCount + ' parts logged successfully ✓', 'success');
     navigateTo('Asset_Page', { asset_id: appsmith.URL.queryParams.asset_id }, 'SAME_WINDOW');
+  },
+
+  async confirmAddPart() {
+    const row = Table2.selectedRow;
+    const cost = inp_part_cost.text ? parseFloat(inp_part_cost.text) : null;
+
+    if (!row || !row.part_type) {
+      showAlert('Please select a part first.', 'error');
+      return;
+    }
+
+    if (row.availability === 'in_stock') {
+      storeValue('hp_install_id',        row.harvested_part_id);
+      storeValue('pal_part_id',          row.harvested_part_id);
+      storeValue('pal_action',           'stock_to_asset');
+      storeValue('pal_movement_type',    'stock_to_asset');
+      storeValue('pal_from_asset_id',    null);
+      storeValue('pal_from_location_id', null);
+      storeValue('pal_to_asset_id',      Number(appsmith.URL.queryParams.asset_id));
+      storeValue('pal_to_location_id',   null);
+      storeValue('hp_condition_grade',   row.condition_grade);
+      storeValue('hp_notes',             'Installed from stock');
+      storeValue('hp_part_cost',         cost);
+      storeValue('hp_signature',
+        appsmith.user.name + ' | ' + new Date().toISOString()
+      );
+      try {
+        await qry_install_part.run();
+        await qry_install_part_pia.run();
+        await qry_update_part_cost.run();
+        await qry_insert_parts_audit_log.run();
+        await qry_get_asset_parts_combined.run();
+        closeModal('ModalAddPart');
+        showAlert('Part installed successfully ✓', 'success');
+      } catch (err) {
+        showAlert('Install failed: ' + err.message, 'error');
+      }
+
+    } else {
+      storeValue('hp_dest_asset_id',  Number(appsmith.URL.queryParams.asset_id));
+      storeValue('hp_dest_type',      'asset');
+      storeValue('donor_pia_id',      row.donor_pia_id);
+      closeModal('ModalAddPart');
+      showAlert('Navigating to donor asset to complete removal...', 'info');
+      navigateTo('Asset_Page', {
+        asset_id: row.donor_asset_id,
+        dest_asset_id: appsmith.URL.queryParams.asset_id
+      }, 'SAME_WINDOW');
+    }
   }
 
 }

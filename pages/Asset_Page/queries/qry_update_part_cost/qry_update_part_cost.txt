@@ -1,0 +1,3 @@
+UPDATE harvested_parts
+SET part_cost = {{appsmith.store.hp_part_cost}}
+WHERE id = {{Number(appsmith.store.hp_install_id)}};

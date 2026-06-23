@@ -6,6 +6,10 @@ export default {
       showModal('Harvest_Warning');
       return;
     }
+    if (newStatusId === 13) {
+      showModal('Repair_Warning');
+      return;
+    }
     await UpdateAssetStatus.run();
     await InsertAssetAuditLog.run();
     await qry_insert_status_history.run();
@@ -29,6 +33,24 @@ export default {
     } catch (err) {
       showAlert('Error updating status: ' + err.message, 'error');
       console.log('confirmHarvest error:', err);
+    }
+  },
+  cancelRepair: () => {
+    storeValue('pending_status_id', null);
+    qry_GetAssetById.run();
+  },
+  confirmRepair: async () => {
+    try {
+      await UpdateAssetStatus.run();
+      await InsertAssetAuditLog.run();
+      await qry_insert_status_history.run();
+      closeModal('Repair_Warning');
+      storeValue('pending_status_id', null);
+      showAlert('Asset marked as In Repair. Select a part to add...', 'success');
+      showModal('ModalAddPart');
+    } catch (err) {
+      showAlert('Error updating status: ' + err.message, 'error');
+      console.log('confirmRepair error:', err);
     }
   },
   viewSale: () => {
