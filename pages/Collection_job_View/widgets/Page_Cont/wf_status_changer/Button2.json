@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "0px",
-  "bottomRow": 66,
+  "bottomRow": 64,
   "boxShadow": "none",
   "buttonColor": "#e8f2ec",
   "buttonVariant": "PRIMARY",
@@ -40,7 +40,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 64,
   "text": "View all related assets",
-  "topRow": 62,
+  "topRow": 60,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "dgaevbszih",

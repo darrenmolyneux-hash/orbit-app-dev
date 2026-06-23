@@ -1,0 +1,48 @@
+SELECT
+  COALESCE((
+    SELECT SUM((item->>'qty')::integer)
+    FROM jsonb_array_elements(c.expected_assets) AS item
+  ), 0) AS expected_units,
+
+  COUNT(DISTINCT a.asset_id) AS received,
+
+  COUNT(DISTINCT CASE WHEN a.sold = true THEN a.asset_id END) AS sold_count,
+
+  COUNT(DISTINCT CASE WHEN a.status_id = 16 THEN a.asset_id END) AS available_for_sale,
+
+  COUNT(DISTINCT CASE WHEN a.status_id = 20 THEN a.asset_id END) AS recycled,
+
+  COALESCE((
+    SELECT SUM(si2.sell_price)
+    FROM sale_items si2
+    JOIN assets a2 ON a2.asset_id = si2.asset_id
+    WHERE a2.collection_id = c.collection_id
+  ), 0) AS sales_total,
+
+  COALESCE((
+    SELECT SUM(sf.fee_amount)
+    FROM sale_items si3
+    JOIN sales_fee sf ON sf.sale_item_id = si3.sale_item_id
+    JOIN assets a3 ON a3.asset_id = si3.asset_id
+    WHERE a3.collection_id = c.collection_id
+  ), 0) AS sales_fees,
+
+  COALESCE(SUM(a.original_cost), 0) AS total_cost,
+
+  COALESCE((
+    SELECT SUM(hp.part_cost)
+    FROM harvested_parts hp
+    JOIN assets a4 ON a4.asset_id = hp.installed_in_asset_id
+    WHERE a4.collection_id = c.collection_id
+  ), 0) AS parts_cost,
+
+  COALESCE((
+    SELECT SUM(a5.carriage_cost_allocated)
+    FROM assets a5
+    WHERE a5.collection_id = c.collection_id
+  ), 0) AS carriage_cost
+
+FROM collections c
+LEFT JOIN assets a ON a.collection_id = c.collection_id
+WHERE c.collection_id = {{Number(appsmith.URL.queryParams.collection_id)}}
+GROUP BY c.collection_id, c.expected_assets;

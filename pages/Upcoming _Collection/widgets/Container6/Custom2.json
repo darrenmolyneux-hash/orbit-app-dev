@@ -21,17 +21,26 @@
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onGoTo"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onResetClick"
     },
     {
       "key": "onPageLoad"
+    },
+    {
+      "key": "onGoTo"
     }
   ],
   "events": [
     "onResetClick",
-    "onPageLoad"
+    "onPageLoad",
+    "onGoTo"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -46,6 +55,7 @@
   "mobileRightColumn": 35,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
+  "onGoTo": "{{navigateTo('Collection_job_View', { collection_id: Custom2.model.collectionId }, 'SAME_WINDOW')}}",
   "onPageLoad": "{{JSCollections.init();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "parentColumnSpace": 19.171875,

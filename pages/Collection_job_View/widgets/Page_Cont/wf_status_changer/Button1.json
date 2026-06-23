@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "0px",
-  "bottomRow": 61,
+  "bottomRow": 53,
   "boxShadow": "none",
   "buttonColor": "#e8f2ec",
   "buttonVariant": "PRIMARY",
@@ -42,7 +42,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 64,
   "text": "Start booking process",
-  "topRow": 57,
+  "topRow": 49,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "r1xjyv6d1h",
