@@ -534,7 +534,7 @@
       "label": "Remove Part",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n  (function() {\n    JSParts.start(currentRow);\n    closeModal('ModalParts');\n  })()\n}}",
+      "onClick": "{{\n  (function() {\n    JSParts.start(currentRow);\n    closeModal('ModalParts');\n    appsmith.utils.scrollTo('con_step2', 'start');\n  })()\n}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
