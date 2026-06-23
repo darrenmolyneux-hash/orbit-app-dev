@@ -1,7 +1,7 @@
 {
   "appIsExample": false,
   "appLayout": {
-    "type": "DESKTOP"
+    "type": "TABLET_LARGE"
   },
   "applicationDetail": {
     "navigationSetting": {
@@ -92,10 +92,14 @@
     {
       "id": "PreInventory_Page",
       "isDefault": false
+    },
+    {
+      "id": "Driver_Job_Sheet",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
-    "type": "DESKTOP"
+    "type": "TABLET_LARGE"
   },
   "unpublishedApplicationDetail": {
     "navigationSetting": {

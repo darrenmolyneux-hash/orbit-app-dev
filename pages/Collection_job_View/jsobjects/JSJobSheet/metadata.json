@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_62910f60-ccdc-466e-b806-1a4564947d62",
+  "id": "Collection_job_View_JSJobSheet",
+  "unpublishedCollection": {
+    "name": "JSJobSheet",
+    "pageId": "Collection_job_View",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

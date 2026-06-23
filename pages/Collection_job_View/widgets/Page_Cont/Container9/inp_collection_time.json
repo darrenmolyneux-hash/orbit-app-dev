@@ -3,15 +3,18 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 9,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store.js_collection_time || qry_collection_get.data[0]?.collection_time || ''}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -23,7 +26,7 @@
   "isRequired": false,
   "isVisible": true,
   "key": "vf04vpfrk1",
-  "label": "Collection Vehicle",
+  "label": "Time",
   "labelAlignment": "right",
   "labelPosition": "Left",
   "labelStyle": "",
@@ -46,9 +49,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "showStepArrows": false,
-  "topRow": 9,
+  "topRow": 5,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "9io4gmelvq",
-  "widgetName": "Input3Copy5Copy"
+  "widgetId": "tlqa4vfwvs",
+  "widgetName": "inp_collection_time"
 }

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a27f57e40e83311173efe61_af15c72e-92f7-40b2-80d7-2ada90360d18",
-  "id": "Collection_job_View_qry_asset_summary_total",
+  "gitSyncId": "6a305b9e0882adc7e482e226_7c0f12de-b8e8-410b-a46b-f154a4c08723",
+  "id": "Collection_job_View_qry_sync_from_appsheet",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) AS total_booked\nFROM assets\nWHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};",
+      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,12 +22,7 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_asset_summary_total",
+    "name": "qry_sync_from_appsheet",
     "pageId": "Collection_job_View",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

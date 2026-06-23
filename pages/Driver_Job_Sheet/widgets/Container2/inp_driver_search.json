@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 21,
+  "bottomRow": 9,
   "boxShadow": "none",
   "defaultText": "",
   "dynamicBindingPathList": [
@@ -15,40 +15,51 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "vf04vpfrk1",
-  "label": "Driver",
-  "labelAlignment": "right",
-  "labelPosition": "Left",
+  "key": "pph727bopg",
+  "label": "Label",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
-  "labelWidth": "15",
+  "labelWidth": 5,
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 8,
+  "mobileBottomRow": 9,
   "mobileLeftColumn": 1,
   "mobileRightColumn": 21,
-  "mobileTopRow": 1,
+  "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "parentColumnSpace": 8.21875,
-  "parentId": "4bixrz6ptx",
+  "onTextChanged": "{{qry_driver_collections.run()}}",
+  "parentColumnSpace": 16.375,
+  "parentId": "wrv1lvo6rn",
   "parentRowSpace": 10,
+  "placeholderText": "Search by customer or collection number",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 21,
   "showStepArrows": false,
-  "topRow": 17,
+  "topRow": 2,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "qdcfkpelqe",
-  "widgetName": "Input3Copy5"
+  "widgetId": "sb8qmps94o",
+  "widgetName": "inp_driver_search"
 }

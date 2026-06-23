@@ -3,15 +3,18 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 21,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store.js_driver || qry_collection_get.data[0]?.driver || ''}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -23,7 +26,7 @@
   "isRequired": false,
   "isVisible": true,
   "key": "vf04vpfrk1",
-  "label": "Collection Date",
+  "label": "Driver",
   "labelAlignment": "right",
   "labelPosition": "Left",
   "labelStyle": "",
@@ -46,9 +49,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "showStepArrows": false,
-  "topRow": 0,
+  "topRow": 17,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "n6mjuy41gv",
-  "widgetName": "Input3"
+  "widgetId": "qdcfkpelqe",
+  "widgetName": "inp_driver"
 }
