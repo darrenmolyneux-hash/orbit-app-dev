@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 47,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{\n  \"current_status\": \"{{qry_collection_get.data[0]?.status}}\",\n  \"summary\": \"{{qry_collection_summary.data[0]}}\"\n}",
+  "defaultModel": "{\n  \"current_status\": \"{{qry_collection_get.data[0]?.status}}\",\n  \"summary\": \"{{qry_collection_summary.data[0]}}\",\n  \"ts\": \"{{qry_collection_summary.data[0]?.received + '_' + Date.now()}}\"\n}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
