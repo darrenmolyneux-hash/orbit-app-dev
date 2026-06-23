@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 39,
+  "bottomRow": 28,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -47,10 +47,13 @@
     "availability",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1782197893491,
+  "columnUpdatedAt": 1782209297366,
   "columnWidthMap": {
+    "condition_grade": 81,
     "donor_make": 110,
-    "part_type": 123
+    "part_cost": 108,
+    "part_type": 123,
+    "serial_number": 168
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -252,7 +255,7 @@
       "label": "col_select",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n  (function() {\n    storeValue('selected_part', Table2.triggeredRow);\n    showModal('ModalAddPart');\n  })()\n}}",
+      "onClick": "{{JSParts.confirmAddPart()}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
@@ -609,7 +612,7 @@
   "searchKey": "",
   "tableData": "{{qry_search_available_parts.data}}",
   "textSize": "0.875rem",
-  "topRow": 11,
+  "topRow": 8,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

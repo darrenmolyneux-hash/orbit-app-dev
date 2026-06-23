@@ -20,6 +20,7 @@ export default {
     await qry_get_asset_parts_combined.run();
     await qry_get_parts_stock.run();
     await qry_get_locations.run();
+    await qry_get_installed_parts_cost.run();
   },
 
   initPreInventory() {
@@ -137,17 +138,9 @@ export default {
       storeValue('pal_action',          'harvest');
       storeValue('pal_movement_type',   'harvest');
       storeValue('pal_from_asset_id',   appsmith.URL.queryParams.asset_id);
-      storeValue('pal_to_asset_id',
-        appsmith.store.hp_dest_type === 'asset'
-          ? appsmith.store.hp_dest_asset_id
-          : null
-      );
+      storeValue('pal_to_asset_id',     null);
       storeValue('pal_from_location_id', null);
-      storeValue('pal_to_location_id',
-        appsmith.store.hp_dest_type !== 'asset'
-          ? appsmith.store.hp_dest_location_id
-          : null
-      );
+      storeValue('pal_to_location_id',  appsmith.store.hp_dest_location_id);
       await qry_insert_parts_audit_log.run();
       const auditId = qry_insert_parts_audit_log.data[0]?.id;
       if (!auditId) {
@@ -237,9 +230,18 @@ export default {
     return all
       .filter(l => {
         if (type === 'stock') return l.location_type === 'stock';
-        if (type === 'asset') return false;
-        return ['scrap_weee','scrap_metal','scrap_general'].includes(l.location_type);
+        return ['scrap_weee', 'scrap_general'].includes(l.location_type);
       })
+      .map(l => ({
+        label: l.location_code + ' — ' + l.location_name,
+        value: String(l.location_id)
+      }));
+  },
+
+  donorLocationOptions() {
+    const all = qry_get_locations.data || [];
+    return all
+      .filter(l => l.location_type === 'stock')
       .map(l => ({
         label: l.location_code + ' — ' + l.location_name,
         value: String(l.location_id)
@@ -293,8 +295,8 @@ export default {
   },
 
   async confirmAddPart() {
-    const row = Table2.selectedRow;
-    const cost = inp_part_cost.text ? parseFloat(inp_part_cost.text) : null;
+    const row = Table2.triggeredRow;
+    const cost = appsmith.store.hp_part_cost || null;
 
     if (!row || !row.part_type) {
       showAlert('Please select a part first.', 'error');
@@ -322,6 +324,7 @@ export default {
         await qry_update_part_cost.run();
         await qry_insert_parts_audit_log.run();
         await qry_get_asset_parts_combined.run();
+        await qry_get_installed_parts_cost.run();
         closeModal('ModalAddPart');
         showAlert('Part installed successfully ✓', 'success');
       } catch (err) {
@@ -329,15 +332,69 @@ export default {
       }
 
     } else {
-      storeValue('hp_dest_asset_id',  Number(appsmith.URL.queryParams.asset_id));
-      storeValue('hp_dest_type',      'asset');
-      storeValue('donor_pia_id',      row.donor_pia_id);
+      storeValue('donor_pia_id',     row.donor_pia_id);
+      storeValue('donor_asset_id',   row.donor_asset_id);
+      storeValue('donor_part_type',  row.part_type);
+      storeValue('donor_make',       row.donor_make);
+      storeValue('donor_model',      row.donor_model);
+      storeValue('donor_asset_ref',  row.donor_asset_ref);
+      storeValue('donor_is_battery', row.is_battery);
+      storeValue('add_part_step',    'removal_wizard');
+      showAlert('Complete the removal details below to pull this part.', 'info');
+    }
+  },
+
+  async confirmDonorRemoval() {
+    if (!appsmith.store.inp_donor_serial) {
+      showAlert('Serial number is required.', 'error');
+      return;
+    }
+    if (!appsmith.store.inp_donor_condition) {
+      showAlert('Condition grade is required.', 'error');
+      return;
+    }
+    try {
+      storeValue('hp_part_type_id',     appsmith.store.donor_pia_id);
+      storeValue('hp_serial',           appsmith.store.inp_donor_serial);
+      storeValue('hp_condition_grade',  appsmith.store.inp_donor_condition);
+      storeValue('hp_notes',            appsmith.store.inp_donor_notes || 'Removed for install on repair asset');
+      storeValue('hp_removed_by',       appsmith.user.name);
+      storeValue('hp_dest_type',        'stock');
+      storeValue('hp_dest_location_id', appsmith.store.inp_donor_location_id);
+      storeValue('hp_signature',        appsmith.user.name + ' | ' + new Date().toISOString());
+
+      await qry_get_next_part_ref.run();
+      await qry_insert_harvested_part_dono.run();
+      const newPartId = qry_insert_harvested_part_dono.data[0]?.id;
+      if (!newPartId) {
+        showAlert('Part removal failed — no ID returned.', 'error');
+        return;
+      }
+
+      storeValue('hp_install_id', newPartId);
+      await qry_link_donor_pia.run();
+
+      storeValue('pal_part_id',          newPartId);
+      storeValue('pal_action',           'donor_to_asset');
+      storeValue('pal_movement_type',    'stock_to_asset');
+      storeValue('pal_from_asset_id',    appsmith.store.donor_asset_id);
+      storeValue('pal_from_location_id', null);
+      storeValue('pal_to_asset_id',      Number(appsmith.URL.queryParams.asset_id));
+      storeValue('pal_to_location_id',   null);
+      storeValue('hp_part_cost',         appsmith.store.inp_donor_cost || null);
+
+      await qry_install_part.run();
+      await qry_install_part_pia.run();
+      await qry_update_part_cost.run();
+      await qry_insert_parts_audit_log.run();
+      await qry_get_asset_parts_combined.run();
+      await qry_get_installed_parts_cost.run();
+
+      storeValue('add_part_step', null);
       closeModal('ModalAddPart');
-      showAlert('Navigating to donor asset to complete removal...', 'info');
-      navigateTo('Asset_Page', {
-        asset_id: row.donor_asset_id,
-        dest_asset_id: appsmith.URL.queryParams.asset_id
-      }, 'SAME_WINDOW');
+      showAlert('Part removed from donor and installed successfully ✓', 'success');
+    } catch (err) {
+      showAlert('Donor removal failed: ' + err.message, 'error');
     }
   }
 

@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_517819ee-ffce-4e8f-908a-3daecf60c59f",
-  "id": "Asset_Page_JSParts.confirmAddPart",
+  "gitSyncId": "6a305b9e0882adc7e482e226_17fb673d-f807-4ef5-9ca5-4e2efc43c5d1",
+  "id": "Asset_Page_JSParts.init",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "JSParts.confirmAddPart",
-    "name": "confirmAddPart",
+    "fullyQualifiedName": "JSParts.init",
+    "name": "init",
     "pageId": "Asset_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

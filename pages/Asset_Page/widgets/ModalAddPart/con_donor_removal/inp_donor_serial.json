@@ -3,18 +3,15 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 7,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "{{Table2.selectedRow.part_cost}}",
+  "defaultText": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -26,32 +23,34 @@
   "isRequired": false,
   "isVisible": true,
   "key": "28lqfq4a7w",
-  "label": "Cost (£)",
+  "label": "Serial Number",
   "labelAlignment": "left",
-  "labelPosition": "Left",
+  "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 28,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 31,
-  "mobileLeftColumn": 23,
-  "mobileRightColumn": 43,
-  "mobileTopRow": 24,
+  "mobileBottomRow": 17,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "parentColumnSpace": 17.6181640625,
-  "parentId": "ykqedclmc8",
+  "originalBottomRow": 17,
+  "originalTopRow": 10,
+  "parentColumnSpace": 17.912109375,
+  "parentId": "xd90a35bj6",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 48,
+  "rightColumn": 17,
   "showStepArrows": false,
-  "topRow": 0,
+  "topRow": 10,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "gdly8cacm3",
-  "widgetName": "inp_part_cost"
+  "widgetId": "6vinh7obg1",
+  "widgetName": "inp_donor_serial"
 }

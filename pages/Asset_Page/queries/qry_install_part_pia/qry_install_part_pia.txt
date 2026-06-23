@@ -18,4 +18,11 @@ SELECT
 FROM harvested_parts hp
 LEFT JOIN pre_inventory_assessments pia_src 
   ON pia_src.harvested_part_id = hp.id
-WHERE hp.id = {{Number(appsmith.store.hp_install_id)}};
+WHERE hp.id = {{Number(appsmith.store.hp_install_id)}}
+ON CONFLICT (asset_id, part_type_id)
+DO UPDATE SET
+  harvested_part_id = EXCLUDED.harvested_part_id,
+  is_salvageable    = EXCLUDED.is_salvageable,
+  assessed_by       = EXCLUDED.assessed_by,
+  assessed_at       = EXCLUDED.assessed_at,
+  notes             = EXCLUDED.notes;

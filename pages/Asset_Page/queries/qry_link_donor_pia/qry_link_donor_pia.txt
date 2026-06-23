@@ -1,0 +1,3 @@
+UPDATE pre_inventory_assessments
+SET harvested_part_id = {{Number(appsmith.store.hp_install_id)}}
+WHERE id = {{Number(appsmith.store.donor_pia_id)}};

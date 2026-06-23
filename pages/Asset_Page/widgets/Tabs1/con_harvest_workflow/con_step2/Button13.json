@@ -42,7 +42,7 @@
   "mobileRightColumn": 61,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "onClick": "{{\n  (function() {\n    JSParts.step2to3();\n    scrollTo(0, 'smooth');\n  })()\n}}",
+  "onClick": "{{\n  (function() {\n    JSParts.step2to3();\n  })()\n}}",
   "parentColumnSpace": 18.265625,
   "parentId": "dvh4v3de8o",
   "parentRowSpace": 10,
