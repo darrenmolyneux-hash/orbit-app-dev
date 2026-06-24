@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 46,
+  "bottomRow": 47,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{\n  \"matched_count\": {{qry_booked_assets.data.filter(r => !r.needs_review).length}},\n  \"unmatched_count\": {{qry_booked_assets.data.filter(r => r.needs_review).length}}\n}",
   "dynamicBindingPathList": [
@@ -54,7 +54,7 @@
   "mobileTopRow": 21,
   "needsErrorInfo": false,
   "onReviewClick": "{{\n  (async function() {\n    await qry_unmatched_assets.run();\n    showModal('ModalUnmatchedRows');\n  })()\n}}",
-  "originalBottomRow": 45,
+  "originalBottomRow": 46,
   "originalTopRow": 21,
   "parentColumnSpace": 14.5,
   "parentId": "xgvjb501nc",

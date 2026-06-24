@@ -1,7 +1,7 @@
 {
   "accentColor": "{{\nNumber((BlanccoParser.parseBlancco().battery_health || \"0\").replace(\"%\",\"\")) >= 80\n  ? \"#00C853\"\n  : \"#D50000\"\n}}",
   "animateLoading": true,
-  "bottomRow": 38,
+  "bottomRow": 40,
   "defaultEndValue": "{{\nNumber((BlanccoParser.parseBlancco().battery_health || \"0\").replace(\"%\",\"\"))\n}}",
   "defaultStartValue": "{{0}}",
   "dynamicBindingPathList": [
@@ -67,7 +67,7 @@
   "sliderSize": "m",
   "step": "1",
   "tooltipAlwaysOn": false,
-  "topRow": 30,
+  "topRow": 32,
   "type": "RANGE_SLIDER_WIDGET",
   "version": 1,
   "widgetId": "4mjimeappi",

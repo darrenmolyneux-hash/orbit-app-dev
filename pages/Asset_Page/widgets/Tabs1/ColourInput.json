@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 28,
+  "bottomRow": 30,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -61,7 +61,7 @@
   "rightColumn": 15,
   "serverSideFiltering": false,
   "sourceData": "[\n  { \"name\": \"Silver\", \"code\": \"SILVER\" },\n  { \"name\": \"Space Grey\", \"code\": \"SPACE_GREY\" },\n  { \"name\": \"Midnight\", \"code\": \"MIDNIGHT\" },\n  { \"name\": \"Starlight\", \"code\": \"STARLIGHT\" },\n  { \"name\": \"Black\", \"code\": \"BLACK\" },\n  { \"name\": \"Graphite\", \"code\": \"GRAPHITE\" },\n  { \"name\": \"Platinum\", \"code\": \"PLATINUM\" },\n  { \"name\": \"Carbon Black\", \"code\": \"CARBON_BLACK\" },\n  { \"name\": \"Storm Grey\", \"code\": \"STORM_GREY\" },\n  { \"name\": \"Blue\", \"code\": \"BLUE\" },\n  { \"name\": \"Dark Blue\", \"code\": \"DARK_BLUE\" },\n  { \"name\": \"Gold\", \"code\": \"GOLD\" },\n  { \"name\": \"Rose Gold\", \"code\": \"ROSE_GOLD\" },\n  { \"name\": \"White\", \"code\": \"WHITE\" }\n]\n",
-  "topRow": 24,
+  "topRow": 26,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "jdryp0khqu",
