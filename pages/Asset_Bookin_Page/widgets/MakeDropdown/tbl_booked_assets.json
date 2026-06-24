@@ -755,7 +755,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "needs_review",
+      "label": "RevModel",
       "notation": "standard",
       "originalId": "needs_review",
       "sticky": "",
