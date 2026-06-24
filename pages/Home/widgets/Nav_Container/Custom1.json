@@ -1,6 +1,4 @@
 {
-  "GoAssets": "{{navigateTo('Asset List', {}, 'SAME_WINDOW');}}",
-  "GoCustomers": "{{navigateTo('Customer_List', {}, 'SAME_WINDOW');}}",
   "backgroundColor": "\"transparent\"",
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -28,38 +26,8 @@
       "key": "backgroundColor"
     }
   ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "goHome"
-    },
-    {
-      "key": "goCollections"
-    },
-    {
-      "key": "goSales"
-    },
-    {
-      "key": "goAdmin"
-    },
-    {
-      "key": "GoAssets"
-    },
-    {
-      "key": "GoCustomers"
-    }
-  ],
-  "events": [
-    "goHome",
-    "goCollections",
-    "goSales",
-    "goAdmin",
-    "GoAssets",
-    "GoCustomers"
-  ],
-  "goAdmin": "{{navigateTo('Admin_Console', {}, 'SAME_WINDOW');}}",
-  "goCollections": "{{navigateTo('Upcoming _Collection', {}, 'SAME_WINDOW');}}",
-  "goHome": "{{JSObject2.Custom1goHome();}}",
-  "goSales": "{{navigateTo('SalesRecords', {}, 'SAME_WINDOW');}}",
+  "dynamicTriggerPathList": [],
+  "events": [],
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
