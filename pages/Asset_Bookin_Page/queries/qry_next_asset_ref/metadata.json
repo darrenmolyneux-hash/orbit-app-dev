@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE global_asset_counter\nSET next_number = next_number + 1\nWHERE id = 1\nRETURNING \n    (SELECT next_ref FROM collection_asset_refs WHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}})\n    || '-' ||\n    LPAD((next_number - 1)::text, 5, '0') AS asset_ref;",
+      "body": "UPDATE global_asset_counter\nSET next_number = next_number + 1\nWHERE id = 1\nRETURNING \n    LPAD(\n        (SELECT next_ref FROM collection_asset_refs \n         WHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}})::text, \n        3, '0'\n    )\n    || '-' ||\n    LPAD((next_number - 1)::text, 5, '0') AS asset_ref;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
