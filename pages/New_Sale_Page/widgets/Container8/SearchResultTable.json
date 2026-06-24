@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "0.375rem",
   "borderWidth": "1",
-  "bottomRow": 17,
+  "bottomRow": 21,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -32,18 +32,19 @@
     }
   },
   "columnOrder": [
+    "status_name",
+    "status_id",
     "asset_ref",
     "item_type_name",
     "make_name",
     "model_name",
     "serial_number",
     "sell_price",
-    "status_id",
     "customColumn1",
     "asset_id",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781777306000,
+  "columnUpdatedAt": 1782326947157,
   "columnWidthMap": {
     "asset_ref": 114,
     "item_type": 97,
@@ -118,6 +119,15 @@
     },
     {
       "key": "primaryColumns.asset_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.status_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.status_name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.status_name.textColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -141,6 +151,12 @@
     },
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "primaryColumns.status_name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.status_name.textColor"
     }
   ],
   "dynamicTriggerPathList": [
@@ -495,7 +511,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = SearchResultTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.status_name)) : currentRow.status_name })()}}",
+      "computedValue": "{{(() => { const tableData = SearchResultTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.status_id)) : currentRow.status_id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -510,11 +526,45 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "status",
       "notation": "standard",
       "originalId": "status_id",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "status_name": {
+      "alias": "status_name",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = SearchResultTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.status_name === 'Available for Sale' ? '#E1F5EE' : \n  currentRow.status_name === 'Sold' ? '#FCEBEB' :\n  currentRow.status_name === 'Under Offer' ? '#FFF4E0' :\n  currentRow.status_name === 'Received' ? '#EEF2FF' :\n  currentRow.status_name === 'Data Erasure' ? '#FFF4E0' :\n  '#F1EFE8')) : currentRow.status_name === 'Available for Sale' ? '#E1F5EE' : \n  currentRow.status_name === 'Sold' ? '#FCEBEB' :\n  currentRow.status_name === 'Under Offer' ? '#FFF4E0' :\n  currentRow.status_name === 'Received' ? '#EEF2FF' :\n  currentRow.status_name === 'Data Erasure' ? '#FFF4E0' :\n  '#F1EFE8' })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = SearchResultTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.status_name)) : currentRow.status_name })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "status_name",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Status",
+      "notation": "standard",
+      "originalId": "status_name",
+      "sticky": "",
+      "textColor": "{{(() => { const tableData = SearchResultTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.status_name === 'Available for Sale' ? '#085041' :\n  currentRow.status_name === 'Sold' ? '#791F1F' :\n  currentRow.status_name === 'Under Offer' ? '#8A5A00' :\n  currentRow.status_name === 'Received' ? '#3730A3' :\n  currentRow.status_name === 'Data Erasure' ? '#8A5A00' :\n  '#5F5E5A')) : currentRow.status_name === 'Available for Sale' ? '#085041' :\n  currentRow.status_name === 'Sold' ? '#791F1F' :\n  currentRow.status_name === 'Under Offer' ? '#8A5A00' :\n  currentRow.status_name === 'Received' ? '#3730A3' :\n  currentRow.status_name === 'Data Erasure' ? '#8A5A00' :\n  '#5F5E5A' })()}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -527,7 +577,7 @@
   "rightColumn": 64,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{ SearchSaleItem.data }}\n",
+  "tableData": "{{ SearchSaleItem.data}}\n",
   "textSize": "0.875rem",
   "topRow": 5,
   "totalRecordsCount": 0,

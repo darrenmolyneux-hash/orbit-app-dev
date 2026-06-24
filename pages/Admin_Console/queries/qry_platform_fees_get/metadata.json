@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_0303ae84-edc3-49cb-beee-e856e63530e3",
-  "id": "SalesRecords_GetSales",
+  "gitSyncId": "6a305b9e0882adc7e482e226_9e2adfe3-86e5-4a4d-8d3e-dfd10d15fc52",
+  "id": "Admin_Console_qry_platform_fees_get",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    s.sale_id,\n    s.sale_ref,\n    s.customer AS customer_id,\n    COALESCE(sc.customer_name, s.customer) AS customer_name,\n    s.sale_date,\n    s.total_price,\n    s.created_by\nFROM sales s\nLEFT JOIN sale_customers sc ON sc.customer_id::text = s.customer\nORDER BY s.sale_date DESC;",
+      "body": "SELECT platform_fee_id, platform, fee_percentage, effective_from, active\nFROM platform_fees\nORDER BY platform;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,8 +23,8 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "GetSales",
-    "pageId": "SalesRecords",
+    "name": "qry_platform_fees_get",
+    "pageId": "Admin_Console",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }

@@ -1,0 +1,7 @@
+UPDATE platform_fees
+SET 
+  platform = '{{this.params.platform}}',
+  fee_percentage = {{this.params.fee_percentage}},
+  effective_from = '{{this.params.effective_from}}',
+  active = {{this.params.active}}
+WHERE platform_fee_id = {{this.params.platform_fee_id}};

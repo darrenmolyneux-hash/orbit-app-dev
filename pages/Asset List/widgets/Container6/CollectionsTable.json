@@ -36,11 +36,11 @@
     "customColumn2",
     "asset_ref",
     "asset_id",
+    "customColumn1",
     "item_type_name",
     "make_name",
     "model_name",
     "serial_number",
-    "customColumn1",
     "data_bearing",
     "erasure_status",
     "overall_grade",
@@ -51,7 +51,7 @@
     "needs_review",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1781877338975,
+  "columnUpdatedAt": 1782329647410,
   "columnWidthMap": {
     "address1": 194,
     "collection_ref": 80,

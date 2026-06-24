@@ -1,0 +1,3 @@
+SELECT platform_fee_id, platform, fee_percentage, effective_from, active
+FROM platform_fees
+ORDER BY platform;

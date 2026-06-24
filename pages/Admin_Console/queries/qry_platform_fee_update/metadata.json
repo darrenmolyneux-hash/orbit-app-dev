@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_cbdfac65-a8c4-4fc8-9cc0-411c8a7ea6d7",
-  "id": "New_Sale_Page_GetPlatformFee",
+  "gitSyncId": "6a305b9e0882adc7e482e226_302f04de-dc0e-4f53-af06-7a07da2668a9",
+  "id": "Admin_Console_qry_platform_fee_update",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT fee_percentage\nFROM platform_fees\nWHERE platform = '{{SalePlatformSelect.selectedOptionValue}}';",
+      "body": "UPDATE platform_fees\nSET \n  platform = '{{this.params.platform}}',\n  fee_percentage = {{this.params.fee_percentage}},\n  effective_from = '{{this.params.effective_from}}',\n  active = {{this.params.active}}\nWHERE platform_fee_id = {{this.params.platform_fee_id}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "GetPlatformFee",
-    "pageId": "New_Sale_Page",
+    "name": "qry_platform_fee_update",
+    "pageId": "Admin_Console",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

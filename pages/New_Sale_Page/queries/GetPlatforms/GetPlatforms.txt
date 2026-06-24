@@ -1,3 +1,4 @@
-SELECT platform_name, fee_percentage
-FROM platform_fee
-ORDER BY platform_name;
+SELECT platform, fee_percentage
+FROM platform_fees
+WHERE active = true
+ORDER BY platform;

@@ -1,0 +1,8 @@
+INSERT INTO platform_fees (platform, fee_percentage, effective_from, active)
+VALUES (
+  '{{this.params.platform}}',
+  {{this.params.fee_percentage}},
+  CURRENT_DATE,
+  true
+)
+RETURNING *;

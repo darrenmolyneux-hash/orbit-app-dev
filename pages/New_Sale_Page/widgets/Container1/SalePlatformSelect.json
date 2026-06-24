@@ -60,7 +60,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 59,
   "serverSideFiltering": false,
-  "sourceData": "{{ GetPlatforms.data.map(p => ({\n  label: p.platform_name,\n  value: p.platform_name\n})) }}\n",
+  "sourceData": "{{GetPlatforms.data.map(p => ({ label: p.platform, value: p.platform }))}}",
   "topRow": 2,
   "type": "SELECT_WIDGET",
   "version": 1,

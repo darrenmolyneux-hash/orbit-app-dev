@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 20,
   "boxShadow": "none",
   "buttonColor": "#1a5c3a",
   "buttonVariant": "PRIMARY",
@@ -48,7 +48,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 60,
   "text": "Create New Job",
-  "topRow": 12,
+  "topRow": 15,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "milbyusbh8",

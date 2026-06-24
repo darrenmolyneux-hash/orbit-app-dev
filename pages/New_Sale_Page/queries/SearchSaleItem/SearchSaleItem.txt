@@ -4,6 +4,7 @@ SELECT
   a.serial_number,
   a.sell_price,
   a.status_id,
+  st.status_name,
   it.item_type_name,
   mk.make_name,
   md.model_name
@@ -11,7 +12,9 @@ FROM assets a
 LEFT JOIN item_types it ON it.item_type_id = a.item_type
 LEFT JOIN makes mk ON mk.make_id = a.make
 LEFT JOIN models md ON md.model_id = a.model
+LEFT JOIN status_types st ON st.status_id = a.status_id
 WHERE 
-  a.asset_ref ILIKE {{'%' + AssetRefSearch.text + '%'}}
-  OR a.serial_number ILIKE {{'%' + AssetRefSearch.text + '%'}}
+  (a.asset_ref ILIKE {{'%' + AssetRefSearch.text + '%'}}
+  OR a.serial_number ILIKE {{'%' + AssetRefSearch.text + '%'}})
+  AND a.status_id = 16
 LIMIT 10;
