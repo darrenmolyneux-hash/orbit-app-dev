@@ -629,7 +629,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"item_type\"] + '/')) : currentRow[\"item_type\"] + '/' })()}}",
+      "computedValue": "{{(() => { const tableData = tbl_booked_assets.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"item_type\"])) : currentRow[\"item_type\"] })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
