@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    s.sale_id,\n    s.sale_ref,\n    s.customer AS customer_id,\n    COALESCE(sc.customer_name, s.customer) AS customer_name,\n    s.sale_date,\n    s.total_price,\n    s.created_by\nFROM sales s\nLEFT JOIN sale_customers sc ON sc.customer_id::text = s.customer\nORDER BY s.sale_date DESC;",
+      "body": "SELECT \n    s.sale_id,\n    s.sale_ref,\n    s.customer AS platform,\n    s.sale_date,\n    s.total_price,\n    s.created_by,\n    STRING_AGG(a.asset_ref, ', ') AS asset_refs,\n    STRING_AGG(DISTINCT mo.model_name, ', ') AS models\nFROM sales s\nLEFT JOIN sale_items si ON si.sale_id = s.sale_id\nLEFT JOIN assets a ON a.asset_id = si.asset_id\nLEFT JOIN models mo ON mo.model_id = a.model\nGROUP BY s.sale_id, s.sale_ref, s.customer, s.sale_date, s.total_price, s.created_by\nORDER BY s.sale_date DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "GetSales",
     "pageId": "SalesRecords",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

@@ -1,6 +1,6 @@
 INSERT INTO sales (customer, sale_date, total_price, created_by, sale_ref)
 VALUES (
-    '{{sel_sale_customer.selectedOptionValue}}',
+    '{{SalePlatformSelect.selectedOptionValue}}',
     NOW(),
     {{Number(this.params.total_price)}},
     '{{appsmith.user.email}}',

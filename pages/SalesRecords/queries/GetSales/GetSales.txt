@@ -1,11 +1,15 @@
 SELECT 
     s.sale_id,
     s.sale_ref,
-    s.customer AS customer_id,
-    COALESCE(sc.customer_name, s.customer) AS customer_name,
+    s.customer AS platform,
     s.sale_date,
     s.total_price,
-    s.created_by
+    s.created_by,
+    STRING_AGG(a.asset_ref, ', ') AS asset_refs,
+    STRING_AGG(DISTINCT mo.model_name, ', ') AS models
 FROM sales s
-LEFT JOIN sale_customers sc ON sc.customer_id::text = s.customer
+LEFT JOIN sale_items si ON si.sale_id = s.sale_id
+LEFT JOIN assets a ON a.asset_id = si.asset_id
+LEFT JOIN models mo ON mo.model_id = a.model
+GROUP BY s.sale_id, s.sale_ref, s.customer, s.sale_date, s.total_price, s.created_by
 ORDER BY s.sale_date DESC;
