@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM assets\nWHERE collection_id = {{ Number(appsmith.URL.queryParams.collectionId) }}\nORDER BY asset_id DESC;",
+      "body": "SELECT \n  a.asset_id,\n  a.needs_review,\n  a.asset_ref,\n  a.serial_number,\n  a.data_bearing,\n  it.item_type_name AS item_type,\n  mk.make_name AS make,\n  mo.model_name AS model\nFROM assets a\nLEFT JOIN item_types it ON it.item_type_id = a.item_type\nLEFT JOIN makes mk ON mk.make_id = a.make\nLEFT JOIN models mo ON mo.model_id = a.model\nWHERE a.collection_id = {{ Number(appsmith.URL.queryParams.collectionId) }}\nORDER BY a.asset_id DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

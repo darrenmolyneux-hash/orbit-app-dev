@@ -1,4 +1,15 @@
-SELECT *
-FROM assets
-WHERE collection_id = {{ Number(appsmith.URL.queryParams.collectionId) }}
-ORDER BY asset_id DESC;
+SELECT 
+  a.asset_id,
+  a.needs_review,
+  a.asset_ref,
+  a.serial_number,
+  a.data_bearing,
+  it.item_type_name AS item_type,
+  mk.make_name AS make,
+  mo.model_name AS model
+FROM assets a
+LEFT JOIN item_types it ON it.item_type_id = a.item_type
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
+WHERE a.collection_id = {{ Number(appsmith.URL.queryParams.collectionId) }}
+ORDER BY a.asset_id DESC;
