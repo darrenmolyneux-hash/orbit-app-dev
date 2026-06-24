@@ -1,0 +1,17 @@
+SELECT 
+  a.asset_id,
+  a.asset_ref,
+  a.serial_number,
+  a.item_type,
+  a.make,
+  a.model,
+  it.item_type_name,
+  mk.make_name,
+  mo.model_name
+FROM assets a
+LEFT JOIN item_types it ON it.item_type_id = a.item_type
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
+WHERE a.collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}
+AND a.needs_review = true
+ORDER BY a.asset_id;

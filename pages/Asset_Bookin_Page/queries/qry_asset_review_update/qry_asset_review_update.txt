@@ -1,0 +1,7 @@
+UPDATE assets
+SET 
+  item_type = {{this.params.itemTypeId}},
+  make = {{this.params.makeId}},
+  model = {{this.params.modelId}},
+  needs_review = false
+WHERE asset_id = {{this.params.assetId}};

@@ -1,15 +1,12 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonColor": "#22c55e",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    },
     {
       "key": "borderRadius"
     },
@@ -35,7 +32,7 @@
   "isLoading": false,
   "isVisible": "{{qry_booked_assets.data.length > 0}}",
   "key": "6d9xbwpp8k",
-  "leftColumn": 23,
+  "leftColumn": 47,
   "minWidth": 120,
   "mobileBottomRow": 23,
   "mobileLeftColumn": 47,
@@ -51,9 +48,9 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 39,
+  "rightColumn": 63,
   "text": "✓ Al Assets Recorded Confirm",
-  "topRow": 22,
+  "topRow": 13,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "wrd4vaje5k",

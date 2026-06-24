@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_df78d317-77d1-48ce-b2ca-2331d2a291e7",
-  "id": "Asset_Bookin_Page_qry_model_insert",
+  "gitSyncId": "6a305b9e0882adc7e482e226_8acfec7d-e5e3-45c9-be16-055b2e19182b",
+  "id": "Asset_Bookin_Page_qry_asset_review_update",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO models (model_name, make_id, weight)\nVALUES (\n  '{{FormatUtils.titleCase(inp_new_model_name.text)}}',\n  {{Number(appsmith.store.reviewContext?.make_id || sel_make.selectedOptionValue)}},\n  {{Number(inp_new_model_weight.text)}}\n)\nRETURNING model_id, model_name, weight;",
+      "body": "UPDATE assets\nSET \n  item_type = {{this.params.itemTypeId}},\n  make = {{this.params.makeId}},\n  model = {{this.params.modelId}},\n  needs_review = false\nWHERE asset_id = {{this.params.assetId}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "qry_model_insert",
+    "name": "qry_asset_review_update",
     "pageId": "Asset_Bookin_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
