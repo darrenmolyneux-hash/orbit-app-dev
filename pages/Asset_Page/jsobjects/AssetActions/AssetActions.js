@@ -69,8 +69,12 @@ export default {
     if (Tabs1.selectedTab === 'Grading') {
       await Query3qry_grading_get.run();
     }
-    if (Tabs1.selectedTab === 'Add/Remove parts' && appsmith.store.harvest_step === 0) {
+    if (Tabs1.selectedTab === 'Remove Parts' && appsmith.store.harvest_step === 0) {
       await JSParts.init();
+    }
+    if (Tabs1.selectedTab === 'Add Parts') {
+      await qry_get_asset_parts_combined.run();
+      await qry_get_parts_stock.run();
     }
   },
   saveGrading: async () => {

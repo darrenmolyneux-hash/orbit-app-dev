@@ -1,5 +1,5 @@
 {
-  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "accentColor": "#1a5c3a",
   "animateLoading": true,
   "backgroundColor": "#ffffff",
   "borderColor": "#E0DEDE",
@@ -228,7 +228,7 @@
       "responsiveBehavior": "fill",
       "rightColumn": 1248,
       "tabId": "tabu7ln1rooez",
-      "tabName": "Add/Remove parts",
+      "tabName": "Remove parts",
       "topRow": 1,
       "type": "CANVAS_WIDGET",
       "version": 1,
@@ -279,13 +279,55 @@
       "version": 1,
       "widgetId": "rw1nt0r2w0",
       "widgetName": "Canvas17"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 3310,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "nnuok9uds4",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 3350,
+      "minWidth": 450,
+      "mobileBottomRow": 3351,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1228.5,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "22vdiaxhm2",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1228.5,
+      "tabId": "tabr9uf74qbkp",
+      "tabName": "Add parts",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "fshtnlp6od",
+      "widgetName": "Canvas33"
     }
   ],
   "defaultTab": "Asset",
   "dynamicBindingPathList": [
-    {
-      "key": "accentColor"
-    },
     {
       "key": "borderRadius"
     },
@@ -354,7 +396,7 @@
     },
     "tabg70o296wng": {
       "id": "tabg70o296wng",
-      "index": 5,
+      "index": 6,
       "isDuplicateLabel": false,
       "isVisible": true,
       "label": "History",
@@ -362,18 +404,26 @@
     },
     "tabqryd0ghcdr": {
       "id": "tabqryd0ghcdr",
-      "index": 4,
+      "index": 5,
       "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Location",
       "widgetId": "rw1nt0r2w0"
+    },
+    "tabr9uf74qbkp": {
+      "id": "tabr9uf74qbkp",
+      "index": 4,
+      "isDuplicateLabel": false,
+      "isVisible": true,
+      "label": "Add parts",
+      "widgetId": "fshtnlp6od"
     },
     "tabu7ln1rooez": {
       "id": "tabu7ln1rooez",
       "index": 3,
       "isDuplicateLabel": false,
       "isVisible": true,
-      "label": "Add/Remove parts",
+      "label": "Remove parts",
       "widgetId": "onlm3me0uv"
     }
   },

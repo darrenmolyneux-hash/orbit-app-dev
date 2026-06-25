@@ -1,23 +1,8 @@
--- qry_pre_inventory_summary — REWRITTEN
--- Now correctly queries pre_inventory_assessments (the assessment data)
--- instead of harvested_parts (which only contains actual removals).
---
--- overdue/due_soon removed from this query for now — disposition_due
--- doesn't live on pre_inventory_assessments (we simplified that table
--- to drop it), and the real per-asset 12-month clock lives on
--- assets.asset_disposition_due, which isn't wired up yet. Leaving
--- those as 0 here until that piece is built, rather than showing
--- misleading numbers.
---
--- removed / still_in_asset added — tracks actual removal progress
--- among salvageable parts, using the harvested_part_id link set by
--- qry_link_assessment_to_removal when a part is physically removed.
-
 SELECT
   COUNT(*) AS total,
   COUNT(*) FILTER (WHERE is_salvageable = true) AS salvageable,
   COUNT(*) FILTER (WHERE is_salvageable = false) AS scrapped,
-  COUNT(*) FILTER (WHERE is_salvageable = true AND harvested_part_id IS NOT NULL) AS removed,
+  COUNT(*) FILTER (WHERE harvested_part_id IS NOT NULL) AS removed,
   COUNT(*) FILTER (WHERE is_salvageable = true AND harvested_part_id IS NULL) AS still_in_asset,
   0 AS overdue,
   0 AS due_soon,

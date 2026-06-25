@@ -25,14 +25,12 @@ LEFT JOIN models mo
   ON mo.model_id = src.model
 WHERE hp.status = 'in_stock'
 AND (
-  COALESCE(mo.model_name, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
-  OR COALESCE(mk.make_name, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
-  OR COALESCE(src.asset_ref, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
-  OR COALESCE(pt.name, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
+  COALESCE(mo.model_name, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
+  OR COALESCE(mk.make_name, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
+  OR COALESCE(src.asset_ref, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
+  OR COALESCE(pt.name, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
 )
-
 UNION ALL
-
 SELECT
   NULL::integer       AS harvested_part_id,
   pia.id              AS donor_pia_id,
@@ -54,15 +52,15 @@ JOIN assets src
   ON src.asset_id = pia.asset_id
 JOIN makes mk
   ON mk.make_id = src.make
-JOIN models mo
+LEFT JOIN models mo
   ON mo.model_id = src.model
 WHERE pia.harvested_part_id IS NULL
 AND pia.is_salvageable = true
 AND pia.asset_id != {{Number(appsmith.URL.queryParams.asset_id)}}
 AND (
-  COALESCE(mo.model_name, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
-  OR COALESCE(mk.make_name, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
-  OR COALESCE(src.asset_ref, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
-  OR COALESCE(pt.name, '') ILIKE '%' || COALESCE({{inp_part_search.text}}, '') || '%'
+  COALESCE(mo.model_name, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
+  OR COALESCE(mk.make_name, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
+  OR COALESCE(src.asset_ref, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
+  OR COALESCE(pt.name, '') ILIKE '%' || COALESCE({{Input10.text}}, '') || '%'
 )
 ORDER BY donor_make, donor_model, part_type;
