@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_0918935a-57f1-40d3-b55d-37a27bd52065",
-  "id": "Home_qry_home_search_collection",
+  "gitSyncId": "6a305b9e0882adc7e482e226_02006a37-0780-4a17-9b6b-68efc344143b",
+  "id": "Asset_Page_qry_set_stripped_date",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  c.collection_id,\n  cu.customer_name\nFROM collections c\nJOIN customers cu ON cu.customer_id = c.customer_id\nWHERE c.collection_id::text = {{inp_search_collection.text}}\nLIMIT 1;",
+      "body": "UPDATE assets \nSET date_stripped_for_parts = NOW()\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "qry_home_search_collection",
-    "pageId": "Home",
+    "name": "qry_set_stripped_date",
+    "pageId": "Asset_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

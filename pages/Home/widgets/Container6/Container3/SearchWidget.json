@@ -61,9 +61,9 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 17,
   "needsErrorInfo": false,
-  "onBarcodeSearch": "{{navigateTo('asset_page', { barcode: SearchWidget.model.searchBarcode })}}",
-  "onCollectionSearch": "{{navigateTo('collection_job_view', { collectionId: SearchWidget.model.searchCollection })}}",
-  "onSerialSearch": "{{navigateTo('asset_page', { serial: SearchWidget.model.searchSerial })}}",
+  "onBarcodeSearch": "{{\n  (async function() {\n    await qry_search_barcode.run();\n    const asset_id = qry_search_barcode.data[0]?.asset_id;\n    if (!asset_id) { showAlert('Asset not found', 'warning'); return; }\n    navigateTo('Asset_Page', { asset_id: asset_id });\n  })()\n}}",
+  "onCollectionSearch": "{{\n  (async function() {\n    await qry_search_collection.run();\n    const collection_id = qry_search_collection.data[0]?.collection_id;\n    if (!collection_id) { showAlert('Collection not found', 'warning'); return; }\n    navigateTo('Collection_job_View', { collectionId: collection_id });\n  })()\n}}",
+  "onSerialSearch": "{{\n  (async function() {\n    await qry_search_serial.run();\n    const asset_id = qry_search_serial.data[0]?.asset_id;\n    if (!asset_id) { showAlert('Asset not found', 'warning'); return; }\n    navigateTo('Asset_Page', { asset_id: asset_id });\n  })()\n}}",
   "originalBottomRow": 39,
   "originalTopRow": 1,
   "parentColumnSpace": 8.095703125,
@@ -87,5 +87,5 @@
   },
   "version": 1,
   "widgetId": "5zql399r1f",
-  "widgetName": "Custom4"
+  "widgetName": "SearchWidget"
 }

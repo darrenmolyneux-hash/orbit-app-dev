@@ -48,7 +48,7 @@
   "mobileTopRow": 38,
   "needsErrorInfo": false,
   "onChange": "{{\n  NoRamSwitch.isSwitchedOn\n    ? RAMInput.setValue(\"No RAM\")\n    : RAMInput.setValue(\"\")\n}}",
-  "originalBottomRow": 8,
+  "originalBottomRow": 9,
   "originalTopRow": 4,
   "parentColumnSpace": 19.1875,
   "parentId": "dc4v6fjacj",

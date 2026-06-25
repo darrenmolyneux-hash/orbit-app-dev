@@ -4,12 +4,12 @@
   "borderColor": "#e0e0e0",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 140,
+  "bottomRow": 136,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 390,
+      "bottomRow": 300,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -62,7 +62,7 @@
       "key": "isVisible"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
@@ -83,8 +83,8 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 104,
   "needsErrorInfo": false,
-  "originalBottomRow": 114,
-  "originalTopRow": 104,
+  "originalBottomRow": 140,
+  "originalTopRow": 101,
   "parentColumnSpace": 19.1875,
   "parentId": "7j45draovv",
   "parentRowSpace": 10,
@@ -92,7 +92,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": true,
-  "topRow": 101,
+  "topRow": 106,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "xhulu4312o",

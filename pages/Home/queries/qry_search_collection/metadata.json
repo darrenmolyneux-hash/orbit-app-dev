@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_e1efb800-c4f2-4e91-838b-dd0cb8a37cd4",
-  "id": "Home_qry_home_search_serial",
+  "gitSyncId": "6a305b9e0882adc7e482e226_a033a5cf-47c7-4cee-a5de-2eaa28f51afa",
+  "id": "Home_qry_search_collection",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT asset_id, serial_number\nFROM assets\nWHERE serial_number ILIKE {{inp_search_serial.text}}\nLIMIT 1;",
+      "body": "SELECT collection_id FROM collections\nWHERE collection_id::text = '{{SearchWidget.model.searchCollection}}'\nLIMIT 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "qry_home_search_serial",
+    "name": "qry_search_collection",
     "pageId": "Home",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

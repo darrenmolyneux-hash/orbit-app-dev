@@ -1,0 +1,3 @@
+SELECT collection_id FROM collections
+WHERE collection_id::text = '{{SearchWidget.model.searchCollection}}'
+LIMIT 1;

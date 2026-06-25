@@ -96,7 +96,9 @@ export default {
     storeValue('hp_condition_grade', sel_condition.selectedOptionValue);
     storeValue('hp_notes',           inp_removal_notes.text || '');
     storeValue('hp_removed_by',      appsmith.user.name);
-    storeValue('harvest_step', 3);
+    await storeValue('harvest_step', 3);
+    await new Promise(resolve => setTimeout(resolve, 200));
+    scrollTo('Container11', 'start');
   },
 
   step3to4() {
@@ -153,6 +155,7 @@ export default {
       }
       storeValue('harvest_step', 5);
       showAlert('Part removed and R2V3 audit record created ✓', 'success');
+      await qry_pre_inventory_summary.run();
       await qry_get_asset_parts_combined.run();
     } catch (err) {
       showAlert('Error: ' + err.message, 'error');

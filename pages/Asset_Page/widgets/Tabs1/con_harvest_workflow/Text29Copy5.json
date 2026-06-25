@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#ffffff",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 145,
+  "bottomRow": 141,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -55,7 +55,7 @@
   "text": "✓ Signed off as {{appsmith.user.name}}",
   "textAlign": "CENTER",
   "textColor": "#1d9e75",
-  "topRow": 141,
+  "topRow": 137,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

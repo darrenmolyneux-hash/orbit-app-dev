@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 10,
+  "bottomRow": 8,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,8 +33,8 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 8,
-  "originalTopRow": 4,
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
   "overflow": "NONE",
   "parentColumnSpace": 6.763916015625,
   "parentId": "3c3jzenovo",
@@ -46,7 +46,7 @@
   "text": "{{\n  \"Carriage £\" + Number(qry_GetAssetById.data[0]?.carriage_cost_allocated || 0).toFixed(2) + \" + Cost £\" + Number(qry_GetAssetById.data[0]?.original_cost || 0).toFixed(2) + \" = Total cost: £\" + (Number(qry_GetAssetById.data[0]?.original_cost || 0) + Number(qry_GetAssetById.data[0]?.carriage_cost_allocated || 0)).toFixed(2)\n}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 5,
+  "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

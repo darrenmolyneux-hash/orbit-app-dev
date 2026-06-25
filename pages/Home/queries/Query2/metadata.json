@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_0c95cfda-e1ef-4514-ae4a-eed5652b46a3",
-  "id": "Home_qry_home_search_barcode",
+  "gitSyncId": "6a305b9e0882adc7e482e226_996d4700-a73b-4031-a956-2f0014ab83ce",
+  "id": "Home_Query2",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT asset_id, asset_ref\nFROM assets\nWHERE asset_ref ILIKE {{inp_search_barcode.text}}\nLIMIT 1;",
+      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,12 +22,7 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_home_search_barcode",
+    "name": "Query2",
     "pageId": "Home",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
