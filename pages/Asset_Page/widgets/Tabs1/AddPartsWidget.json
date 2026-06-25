@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 105,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{{{\"parts\": qry_add_parts_search.data}}}",
+  "defaultModel": "{{{\n  \"installedParts\": qry_get_installed_parts.data\n}}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"

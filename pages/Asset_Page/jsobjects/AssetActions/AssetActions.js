@@ -74,6 +74,7 @@ export default {
     }
     if (Tabs1.selectedTab === 'Add parts') {
       await qry_add_parts_search.run();
+      await qry_get_installed_parts.run();
     }
   },
   confirmAddPart_fromWidget: async () => {
@@ -101,6 +102,7 @@ export default {
         await qry_insert_parts_audit_log.run();
         await qry_add_parts_search.run();
         await qry_get_asset_parts_combined.run();
+        await qry_get_installed_parts.run();
         showAlert('Part installed successfully ✓', 'success');
       } catch (err) {
         showAlert('Install failed: ' + err.message, 'error');
