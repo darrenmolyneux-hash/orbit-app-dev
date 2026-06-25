@@ -1,0 +1,1 @@
+SELECT * FROM downstream_vendors ORDER BY name;

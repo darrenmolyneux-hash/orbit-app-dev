@@ -1,0 +1,23 @@
+SELECT
+  ss.survey_id,
+  ss.completed_by,
+  ss.completed_at,
+  ss.review_due,
+  ss.vehicle_access,
+  ss.parking_loading_bay,
+  ss.access_restrictions,
+  ss.time_restrictions,
+  ss.lift_restrictions,
+  ss.narrow_corridors,
+  ss.security_procedures,
+  ss.security_details,
+  ss.driver_instructions,
+  CASE
+    WHEN ss.survey_id IS NULL THEN 'no_survey'
+    WHEN ss.review_due < CURRENT_DATE THEN 'expired'
+    WHEN ss.review_due < CURRENT_DATE + INTERVAL '30 days' THEN 'due_soon'
+    ELSE 'current'
+  END AS survey_status
+FROM sites s
+LEFT JOIN site_surveys ss ON ss.site_id = s.site_id
+WHERE s.site_id = {{Number(appsmith.store.col_site_id)}};

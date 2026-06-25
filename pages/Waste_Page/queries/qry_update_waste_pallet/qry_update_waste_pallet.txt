@@ -1,0 +1,10 @@
+UPDATE waste_pallets SET
+  vendor_id = {{appsmith.store.pallet_vendor_id}},
+  waste_type = {{appsmith.store.pallet_waste_type}},
+  weight_kg = {{appsmith.store.pallet_weight}},
+  collection_date = {{appsmith.store.pallet_collection_date}},
+  notes = {{appsmith.store.pallet_notes}},
+  status = {{appsmith.store.pallet_status}},
+  closed_at = CASE WHEN {{appsmith.store.pallet_status}} = 'closed' AND closed_at IS NULL THEN NOW() ELSE closed_at END,
+  collected_at = CASE WHEN {{appsmith.store.pallet_status}} = 'collected' AND collected_at IS NULL THEN NOW() ELSE collected_at END
+WHERE pallet_id = {{appsmith.store.pallet_id}};

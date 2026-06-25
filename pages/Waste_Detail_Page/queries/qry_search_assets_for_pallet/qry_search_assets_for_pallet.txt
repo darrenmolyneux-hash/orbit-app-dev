@@ -1,0 +1,8 @@
+SELECT asset_id, asset_ref, mk.make_name, mo.model_name, serial_number
+FROM assets a
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
+WHERE (a.asset_ref ILIKE '%'||{{appsmith.store.pallet_search}}||'%'
+OR a.serial_number ILIKE '%'||{{appsmith.store.pallet_search}}||'%')
+AND a.status_id NOT IN (SELECT status_id FROM statuses WHERE status_name = 'Disposed')
+LIMIT 10;

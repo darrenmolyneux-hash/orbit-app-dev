@@ -1,0 +1,20 @@
+SELECT 
+  wp.pallet_id,
+  wp.waste_id,
+  wp.status,
+  wp.waste_type,
+  wp.weight_kg,
+  wp.collection_date,
+  wp.notes,
+  wp.created_by,
+  wp.created_at::date AS created_date,
+  wp.closed_at::date AS closed_date,
+  wp.collected_at::date AS collected_date,
+  dv.name AS vendor_name,
+  dv.permit_number,
+  COUNT(pi.item_id) AS item_count
+FROM waste_pallets wp
+LEFT JOIN downstream_vendors dv ON dv.vendor_id = wp.vendor_id
+LEFT JOIN pallet_items pi ON pi.pallet_id = wp.pallet_id
+GROUP BY wp.pallet_id, dv.name, dv.permit_number
+ORDER BY wp.created_at DESC;

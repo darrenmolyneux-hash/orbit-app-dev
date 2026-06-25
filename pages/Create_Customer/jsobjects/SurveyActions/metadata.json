@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_3027c527-902f-4006-b41a-820f04be6321",
+  "id": "Create_Customer_SurveyActions",
+  "unpublishedCollection": {
+    "name": "SurveyActions",
+    "pageId": "Create_Customer",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

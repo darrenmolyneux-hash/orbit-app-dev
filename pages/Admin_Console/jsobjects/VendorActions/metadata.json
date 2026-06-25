@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_e2d25eb4-2c31-45eb-a881-e5537b3ac310",
+  "id": "Admin_Console_VendorActions",
+  "unpublishedCollection": {
+    "name": "VendorActions",
+    "pageId": "Admin_Console",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

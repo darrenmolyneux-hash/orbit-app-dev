@@ -1,0 +1,18 @@
+SELECT 
+  wp.pallet_id,
+  wp.waste_id,
+  wp.status,
+  wp.waste_type,
+  wp.weight_kg,
+  wp.collection_date,
+  wp.notes,
+  wp.created_by,
+  wp.created_at::date AS created_date,
+  wp.closed_at::date AS closed_date,
+  wp.collected_at::date AS collected_date,
+  dv.name AS vendor_name,
+  dv.permit_number,
+  dv.permit_expiry
+FROM waste_pallets wp
+LEFT JOIN downstream_vendors dv ON dv.vendor_id = wp.vendor_id
+WHERE wp.pallet_id = {{Number(appsmith.URL.queryParams.pallet_id)}};

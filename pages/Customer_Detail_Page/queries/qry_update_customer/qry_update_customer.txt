@@ -1,0 +1,16 @@
+UPDATE customers SET
+  customer_name = {{appsmith.store.customer_name}},
+  contact_name = {{appsmith.store.contact_name}},
+  contact_number = {{appsmith.store.contact_number}},
+  email = {{appsmith.store.email}},
+  job_title = {{appsmith.store.job_title}},
+  dial_ref = {{appsmith.store.dial_rating}},
+  dial_expiry = {{appsmith.store.dial_expiry}},
+  msa_signed = {{appsmith.store.msa_signed}},
+  account_manager = {{appsmith.store.account_manager}},
+  address1 = {{appsmith.store.address1}},
+  address2 = {{appsmith.store.address2}},
+  city = {{appsmith.store.city}},
+  postcode = {{appsmith.store.postcode}},
+  default_instructions = {{appsmith.store.default_instructions}}
+WHERE customer_id = {{Number(appsmith.URL.queryParams.customer_id)}};

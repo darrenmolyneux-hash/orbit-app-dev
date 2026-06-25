@@ -1,0 +1,23 @@
+SELECT
+  s.site_id,
+  s.address1,
+  s.address2,
+  s.city,
+  s.postcode,
+  s.site_contact,
+  s.contact_number,
+  s.contact_email,
+  s.created_at::date AS created_date,
+  ss.survey_id,
+  ss.completed_at,
+  ss.review_due,
+  CASE
+    WHEN ss.review_due IS NULL THEN 'no_survey'
+    WHEN ss.review_due < CURRENT_DATE THEN 'expired'
+    WHEN ss.review_due < CURRENT_DATE + INTERVAL '30 days' THEN 'due_soon'
+    ELSE 'current'
+  END AS survey_status
+FROM sites s
+LEFT JOIN site_surveys ss ON ss.site_id = s.site_id
+WHERE s.customer_id = {{Number(appsmith.URL.queryParams.customer_id)}}
+ORDER BY s.created_at DESC;

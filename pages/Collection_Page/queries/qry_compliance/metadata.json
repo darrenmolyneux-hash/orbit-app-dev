@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  dial_ref,\n  dial_expiry,\n  msa_signed\nFROM customers\nWHERE customer_id = {{ Number(sel_customer.selectedOptionValue) }};",
+      "body": "SELECT dial_ref, dial_expiry, msa_signed\nFROM customers\nWHERE customer_id = {{Number(appsmith.store.col_customer_id)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

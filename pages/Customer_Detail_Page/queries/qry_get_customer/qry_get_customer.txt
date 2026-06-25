@@ -1,0 +1,20 @@
+SELECT 
+  c.customer_id,
+  c.customer_name,
+  c.contact_name,
+  c.contact_number,
+  c.email,
+  c.job_title,
+  c.dial_ref,
+  c.dial_expiry,
+  c.msa_signed,
+  c.account_manager,
+  c.address1,
+  c.address2,
+  c.city,
+  c.postcode,
+  c.default_instructions,
+  c.created_by,
+  c.created_at::date AS created_date
+FROM customers c
+WHERE c.customer_id = {{Number(appsmith.URL.queryParams.customer_id)}};

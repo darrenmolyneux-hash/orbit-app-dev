@@ -1,0 +1,1 @@
+SELECT vendor_id, name FROM downstream_vendors WHERE active = true ORDER BY name;

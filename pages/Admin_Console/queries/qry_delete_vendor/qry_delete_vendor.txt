@@ -1,0 +1,1 @@
+DELETE FROM downstream_vendors WHERE vendor_id = {{appsmith.store.vendor_id}};

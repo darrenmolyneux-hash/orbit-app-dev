@@ -96,6 +96,18 @@
     {
       "id": "Driver_Job_Sheet",
       "isDefault": false
+    },
+    {
+      "id": "Waste_Page",
+      "isDefault": false
+    },
+    {
+      "id": "Waste_Detail_Page",
+      "isDefault": false
+    },
+    {
+      "id": "Customer_Detail_Page",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

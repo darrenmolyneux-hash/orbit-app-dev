@@ -1,0 +1,15 @@
+INSERT INTO downstream_vendors (
+  name, permit_number, permit_expiry, review_date,
+  address, contact_name, contact_email, contact_phone, notes, active
+) VALUES (
+  {{appsmith.store.vendor_name}},
+  {{appsmith.store.vendor_permit}},
+  {{appsmith.store.vendor_permit_expiry}},
+  {{appsmith.store.vendor_review_date}},
+  {{appsmith.store.vendor_address}},
+  {{appsmith.store.vendor_contact_name}},
+  {{appsmith.store.vendor_contact_email}},
+  {{appsmith.store.vendor_contact_phone}},
+  {{appsmith.store.vendor_notes}},
+  {{appsmith.store.vendor_active}}
+);

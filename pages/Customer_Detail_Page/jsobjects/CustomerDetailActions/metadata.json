@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_4c126a87-70f7-4a7e-80f9-8e87d66b1b8f",
+  "id": "Customer_Detail_Page_CustomerDetailActions",
+  "unpublishedCollection": {
+    "name": "CustomerDetailActions",
+    "pageId": "Customer_Detail_Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

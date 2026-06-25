@@ -1,0 +1,15 @@
+INSERT INTO sites (
+  customer_id, address1, address2, city, postcode,
+  site_contact, contact_number, contact_email, created_at
+) VALUES (
+  {{Number(appsmith.URL.queryParams.customer_id)}},
+  {{appsmith.store.address1}},
+  {{appsmith.store.address2}},
+  {{appsmith.store.city}},
+  {{appsmith.store.postcode}},
+  {{appsmith.store.site_contact}},
+  {{appsmith.store.site_phone}},
+  {{appsmith.store.site_email}},
+  NOW()
+)
+RETURNING site_id;

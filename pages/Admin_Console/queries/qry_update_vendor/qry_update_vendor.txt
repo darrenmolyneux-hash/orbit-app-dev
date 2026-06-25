@@ -1,0 +1,12 @@
+UPDATE downstream_vendors SET
+  name = {{appsmith.store.vendor_name}},
+  permit_number = {{appsmith.store.vendor_permit}},
+  permit_expiry = {{appsmith.store.vendor_permit_expiry}},
+  review_date = {{appsmith.store.vendor_review_date}},
+  address = {{appsmith.store.vendor_address}},
+  contact_name = {{appsmith.store.vendor_contact_name}},
+  contact_email = {{appsmith.store.vendor_contact_email}},
+  contact_phone = {{appsmith.store.vendor_contact_phone}},
+  notes = {{appsmith.store.vendor_notes}},
+  active = {{appsmith.store.vendor_active}}
+WHERE vendor_id = {{appsmith.store.vendor_id}};

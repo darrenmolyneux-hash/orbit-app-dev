@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#1a2e3b",
   "borderColor": "#ffffff",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "0",
   "bottomRow": 10,
   "boxShadow": "none",
@@ -51,11 +51,7 @@
     }
   ],
   "containerStyle": "card",
-  "dynamicBindingPathList": [
-    {
-      "key": "borderRadius"
-    }
-  ],
+  "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",

@@ -1,0 +1,23 @@
+SELECT
+  pi.item_id,
+  pi.item_type,
+  pi.description,
+  pi.quantity,
+  pi.notes,
+  pi.added_by,
+  pi.added_at::date AS added_date,
+  a.asset_ref,
+  a.asset_id,
+  hp.part_ref,
+  hp.id AS harvested_part_id,
+  pt.name AS part_type,
+  mk.make_name,
+  mo.model_name
+FROM pallet_items pi
+LEFT JOIN assets a ON a.asset_id = pi.asset_id
+LEFT JOIN harvested_parts hp ON hp.id = pi.harvested_part_id
+LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
+WHERE pi.pallet_id = {{Number(appsmith.URL.queryParams.pallet_id)}}
+ORDER BY pi.added_at DESC;

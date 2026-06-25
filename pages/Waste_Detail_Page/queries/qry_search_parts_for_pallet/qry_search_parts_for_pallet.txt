@@ -1,0 +1,13 @@
+SELECT 
+  hp.id, hp.part_ref, hp.serial_number, hp.condition_grade,
+  pt.name AS part_type,
+  mk.make_name, mo.model_name
+FROM harvested_parts hp
+LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
+LEFT JOIN assets src ON src.asset_id = hp.source_asset_id
+LEFT JOIN makes mk ON mk.make_id = src.make
+LEFT JOIN models mo ON mo.model_id = src.model
+WHERE hp.status = 'in_stock'
+AND (hp.part_ref ILIKE '%'||{{appsmith.store.pallet_search}}||'%'
+OR hp.serial_number ILIKE '%'||{{appsmith.store.pallet_search}}||'%')
+LIMIT 10;

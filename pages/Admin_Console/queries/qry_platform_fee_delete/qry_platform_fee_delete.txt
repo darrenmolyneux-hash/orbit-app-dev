@@ -1,0 +1,1 @@
+DELETE FROM platform_fees WHERE platform_fee_id = {{this.params.platform_fee_id}};
