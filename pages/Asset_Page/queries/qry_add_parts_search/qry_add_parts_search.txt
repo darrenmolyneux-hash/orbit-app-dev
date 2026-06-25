@@ -1,0 +1,50 @@
+SELECT
+  hp.id AS harvested_part_id,
+  NULL::integer AS donor_pia_id,
+  pt.name AS part_type,
+  pt.is_battery,
+  mk.make_name AS donor_make,
+  mo.model_name AS donor_model,
+  src.asset_ref AS donor_asset_ref,
+  src.asset_id AS donor_asset_id,
+  hp.serial_number,
+  hp.condition_grade,
+  hp.part_cost,
+  l.location_code AS location_code,
+  l.location_name AS location_name,
+  'in_stock' AS availability
+FROM harvested_parts hp
+LEFT JOIN pre_inventory_assessments pia_src ON pia_src.harvested_part_id = hp.id
+LEFT JOIN part_types pt ON pt.part_type_id = pia_src.part_type_id
+LEFT JOIN assets src ON src.asset_id = hp.source_asset_id
+LEFT JOIN makes mk ON mk.make_id = src.make
+LEFT JOIN models mo ON mo.model_id = src.model
+LEFT JOIN locations l ON l.location_id = hp.current_location_id
+WHERE hp.status = 'in_stock'
+
+UNION ALL
+
+SELECT
+  NULL::integer AS harvested_part_id,
+  pia.id AS donor_pia_id,
+  pt.name AS part_type,
+  pt.is_battery,
+  mk.make_name AS donor_make,
+  mo.model_name AS donor_model,
+  src.asset_ref AS donor_asset_ref,
+  src.asset_id AS donor_asset_id,
+  NULL AS serial_number,
+  NULL AS condition_grade,
+  NULL AS part_cost,
+  NULL AS location_code,
+  NULL AS location_name,
+  'in_donor_asset' AS availability
+FROM pre_inventory_assessments pia
+JOIN part_types pt ON pt.part_type_id = pia.part_type_id
+JOIN assets src ON src.asset_id = pia.asset_id
+JOIN makes mk ON mk.make_id = src.make
+JOIN models mo ON mo.model_id = src.model
+WHERE pia.harvested_part_id IS NULL
+AND pia.is_salvageable = true
+AND pia.asset_id != {{Number(appsmith.URL.queryParams.asset_id)}}
+ORDER BY availability, donor_make, donor_model, part_type;

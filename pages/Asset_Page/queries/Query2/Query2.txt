@@ -1,0 +1,7 @@
+SELECT 
+  hp.id,
+  hp.part_ref,
+  hp.installed_in_asset_id,
+  hp.status
+FROM harvested_parts hp
+WHERE hp.installed_in_asset_id = 132

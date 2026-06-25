@@ -9,16 +9,15 @@ INSERT INTO pre_inventory_assessments (
 )
 SELECT
   {{Number(appsmith.URL.queryParams.asset_id)}},
-  pia_src.part_type_id,
+  hp.part_type_id,
   hp.is_salvageable,
   {{appsmith.user.name}},
   NOW(),
   hp.id,
   'Installed from stock'
 FROM harvested_parts hp
-LEFT JOIN pre_inventory_assessments pia_src 
-  ON pia_src.harvested_part_id = hp.id
 WHERE hp.id = {{Number(appsmith.store.hp_install_id)}}
+  AND hp.part_type_id IS NOT NULL
 ON CONFLICT (asset_id, part_type_id)
 DO UPDATE SET
   harvested_part_id = EXCLUDED.harvested_part_id,

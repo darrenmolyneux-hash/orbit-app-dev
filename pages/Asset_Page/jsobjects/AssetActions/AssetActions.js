@@ -73,7 +73,7 @@ export default {
       await JSParts.init();
     }
     if (Tabs1.selectedTab === 'Add parts') {
-      await qry_get_parts_stock.run();
+      await qry_add_parts_search.run();
     }
   },
   confirmAddPart_fromWidget: async () => {
@@ -99,7 +99,7 @@ export default {
         await qry_install_part_pia.run();
         await qry_update_part_cost.run();
         await qry_insert_parts_audit_log.run();
-        await qry_get_parts_stock.run();
+        await qry_add_parts_search.run();
         await qry_get_asset_parts_combined.run();
         showAlert('Part installed successfully ✓', 'success');
       } catch (err) {

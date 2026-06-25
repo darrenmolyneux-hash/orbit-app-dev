@@ -1,0 +1,67 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 29,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{\n  \"installedParts\": {{qry_get_installed_parts.data || []}}\n}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "uelj6vcah6",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 16.375,
+  "parentId": "fshtnlp6od",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "srcDoc": {
+    "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n}\n\n.tip-container {\n  margin-bottom: 20px;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  margin-bottom: 9px;\n}\n\n.tip-header div {\n  color: #999;\n}\n\n.content {\n  white-space: pre-wrap;\n  word-break: break-word;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.button-container {\n  text-align: right;\n  padding-top: 4px;\n}\n\n.button-container button {\n  margin: 0 10px;\n  cursor: pointer;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 6px 16px;\n  background: none;\n  height: auto;\n  transition: all 0.3s ease;\n}\n\n.button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n  color: #fff;\n  border: 1px solid var(--appsmith-theme-primaryColor) !important;\n}\n\n.button-container button.reset {\n  border: 1px solid #999;\n  color: #999;\n  outline: none;\n  box-shadow: none;\n}\n\n.button-container button.reset:hover:not(:disabled) {\n  color: var(--appsmith-theme-primaryColor);\n  border-color: var(--appsmith-theme-primaryColor);\n}\n\n.button-container button.reset:disabled {\n  cursor: default;\n}",
+    "html": "<style>\n  * { box-sizing: border-box; margin: 0; padding: 0; }\n  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: transparent; }\n  .wrap { padding: 0.5rem 0; }\n  .section-label { font-size: 11px; font-weight: 500; color: #6b7280; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }\n  .parts-table { width: 100%; border-collapse: collapse; table-layout: fixed; }\n  .parts-table thead tr { border-bottom: 0.5px solid rgba(0,0,0,0.12); }\n  .parts-table th { font-size: 11px; font-weight: 500; color: #6b7280; text-transform: uppercase; letter-spacing: 0.06em; padding: 0 8px 8px 0; text-align: left; }\n  .parts-table td { font-size: 13px; color: #111827; padding: 9px 8px 9px 0; border-bottom: 0.5px solid rgba(0,0,0,0.08); vertical-align: middle; }\n  .parts-table tr:last-child td { border-bottom: none; }\n  .part-ref { font-family: monospace; font-size: 12px; color: #6b7280; }\n  .spec-cell { color: #6b7280; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }\n  .grade-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }\n  .grade-a { background: #E1F5EE; color: #085041; }\n  .grade-b { background: #E6F1FB; color: #0C447C; }\n  .grade-c { background: #FAEEDA; color: #633806; }\n  .grade-n { background: #F1EFE8; color: #444441; }\n  .cost-null { color: #9ca3af; }\n  .empty { text-align: center; padding: 2rem; color: #9ca3af; font-size: 13px; }\n  .total-row { display: flex; justify-content: flex-end; padding-top: 10px; border-top: 0.5px solid rgba(0,0,0,0.12); margin-top: 2px; font-size: 13px; color: #6b7280; gap: 8px; }\n  .total-row span { font-weight: 500; color: #111827; }\n</style>\n\n<div class=\"wrap\">\n  <p class=\"section-label\">Installed parts</p>\n  <div id=\"content\"><p class=\"empty\">Loading…</p></div>\n</div>",
+    "js": "const parts = appsmith.model.installedParts;\nfunction gradeClass(g) {\n  if (!g) return 'grade-n';\n  const u = g.toUpperCase();\n  if (u === 'A') return 'grade-a';\n  if (u === 'B') return 'grade-b';\n  if (u === 'C') return 'grade-c';\n  return 'grade-n';\n}\nfunction render(parts) {\n  const el = document.getElementById('content');\n  if (!parts || parts.length === 0) {\n    el.innerHTML = '<p class=\"empty\">No parts installed</p>';\n    return;\n  }\n  let total = 0;\n  let hasAny = false;\n  const rows = parts.map(p => {\n    const cost = p.part_cost ? parseFloat(p.part_cost) : null;\n    if (cost !== null) {\n      total += cost;\n      hasAny = true;\n    }\n    const spec = p.spec && p.spec !== 'null' && p.spec !== '' ? p.spec : '—';\n    const grade = p.condition_grade && p.condition_grade !== 'null' ? p.condition_grade.toUpperCase() : 'N';\n    const costStr = cost !== null ? `£${cost.toFixed(2)}` : `<span class=\"cost-null\">—</span>`;\n    return `<tr>\n      <td><span class=\"part-ref\">${p.part_ref || '—'}</span></td>\n      <td>${p.part_type || '—'}</td>\n      <td class=\"spec-cell\">${spec}</td>\n      <td><span class=\"grade-badge ${gradeClass(grade)}\">${grade}</span></td>\n      <td>${costStr}</td>\n    </tr>`;\n  }).join('');\n  const totalLine = hasAny ? `<div class=\"total-row\">Total parts cost <span>£${total.toFixed(2)}</span></div>` : '';\n  el.innerHTML = `\n    <table class=\"parts-table\">\n      <thead><tr>\n        <th style=\"width:90px\">Part ref</th>\n        <th style=\"width:130px\">Type</th>\n        <th>Details</th>\n        <th style=\"width:60px\">Grade</th>\n        <th style=\"width:70px\">Cost</th>\n      </tr></thead>\n      <tbody>${rows}</tbody>\n    </table>\n    ${totalLine}\n  `;\n}\nappsmith.onModelChange(function (model) {\n  render(model.installedParts);\n});\nrender(parts);"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n}\n\n.tip-container {\n  margin-bottom: 20px;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  margin-bottom: 9px;\n}\n\n.tip-header div {\n  color: #999;\n}\n\n.content {\n  white-space: pre-wrap;\n  word-break: break-word;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.button-container {\n  text-align: right;\n  padding-top: 4px;\n}\n\n.button-container button {\n  margin: 0 10px;\n  cursor: pointer;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 6px 16px;\n  background: none;\n  height: auto;\n  transition: all 0.3s ease;\n}\n\n.button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n  color: #fff;\n  border: 1px solid var(--appsmith-theme-primaryColor) !important;\n}\n\n.button-container button.reset {\n  border: 1px solid #999;\n  color: #999;\n  outline: none;\n  box-shadow: none;\n}\n\n.button-container button.reset:hover:not(:disabled) {\n  color: var(--appsmith-theme-primaryColor);\n  border-color: var(--appsmith-theme-primaryColor);\n}\n\n.button-container button.reset:disabled {\n  cursor: default;\n}",
+    "html": "<style>\n  * { box-sizing: border-box; margin: 0; padding: 0; }\n  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: transparent; }\n  .wrap { padding: 0.5rem 0; }\n  .section-label { font-size: 11px; font-weight: 500; color: #6b7280; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }\n  .parts-table { width: 100%; border-collapse: collapse; table-layout: fixed; }\n  .parts-table thead tr { border-bottom: 0.5px solid rgba(0,0,0,0.12); }\n  .parts-table th { font-size: 11px; font-weight: 500; color: #6b7280; text-transform: uppercase; letter-spacing: 0.06em; padding: 0 8px 8px 0; text-align: left; }\n  .parts-table td { font-size: 13px; color: #111827; padding: 9px 8px 9px 0; border-bottom: 0.5px solid rgba(0,0,0,0.08); vertical-align: middle; }\n  .parts-table tr:last-child td { border-bottom: none; }\n  .part-ref { font-family: monospace; font-size: 12px; color: #6b7280; }\n  .spec-cell { color: #6b7280; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }\n  .grade-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }\n  .grade-a { background: #E1F5EE; color: #085041; }\n  .grade-b { background: #E6F1FB; color: #0C447C; }\n  .grade-c { background: #FAEEDA; color: #633806; }\n  .grade-n { background: #F1EFE8; color: #444441; }\n  .cost-null { color: #9ca3af; }\n  .empty { text-align: center; padding: 2rem; color: #9ca3af; font-size: 13px; }\n  .total-row { display: flex; justify-content: flex-end; padding-top: 10px; border-top: 0.5px solid rgba(0,0,0,0.12); margin-top: 2px; font-size: 13px; color: #6b7280; gap: 8px; }\n  .total-row span { font-weight: 500; color: #111827; }\n</style>\n\n<div class=\"wrap\">\n  <p class=\"section-label\">Installed parts</p>\n  <div id=\"content\"><p class=\"empty\">Loading…</p></div>\n</div>",
+    "js": "const parts = appsmith.model.installedParts;\n\nfunction gradeClass(g) {\n  if (!g) return 'grade-n';\n  const u = g.toUpperCase();\n  if (u === 'A') return 'grade-a';\n  if (u === 'B') return 'grade-b';\n  if (u === 'C') return 'grade-c';\n  return 'grade-n';\n}\n\nfunction render(parts) {\n  const el = document.getElementById('content');\n  if (!parts || parts.length === 0) {\n    el.innerHTML = '<p class=\"empty\">No parts installed</p>';\n    return;\n  }\n\n  let total = 0;\n  let hasAny = false;\n\n  const rows = parts.map(p => {\n    const cost = p.part_cost ? parseFloat(p.part_cost) : null;\n    if (cost !== null) { total += cost; hasAny = true; }\n    const spec = p.spec && p.spec !== 'null' && p.spec !== '' ? p.spec : '—';\n    const grade = p.condition_grade && p.condition_grade !== 'null' ? p.condition_grade.toUpperCase() : 'N';\n    const costStr = cost !== null ? `£${cost.toFixed(2)}` : `<span class=\"cost-null\">—</span>`;\n    return `<tr>\n      <td><span class=\"part-ref\">${p.part_ref || '—'}</span></td>\n      <td>${p.part_type || '—'}</td>\n      <td class=\"spec-cell\">${spec}</td>\n      <td><span class=\"grade-badge ${gradeClass(grade)}\">${grade}</span></td>\n      <td>${costStr}</td>\n    </tr>`;\n  }).join('');\n\n  const totalLine = hasAny\n    ? `<div class=\"total-row\">Total parts cost <span>£${total.toFixed(2)}</span></div>`\n    : '';\n\n  el.innerHTML = `\n    <table class=\"parts-table\">\n      <thead><tr>\n        <th style=\"width:90px\">Part ref</th>\n        <th style=\"width:130px\">Type</th>\n        <th>Details</th>\n        <th style=\"width:60px\">Grade</th>\n        <th style=\"width:70px\">Cost</th>\n      </tr></thead>\n      <tbody>${rows}</tbody>\n    </table>\n    ${totalLine}\n  `;\n}\n\nappsmith.onModelChange(function(model) {\n  render(model.installedParts);\n});\n\nrender(parts);"
+  },
+  "version": 1,
+  "widgetId": "m22j60iwec",
+  "widgetName": "Custom10"
+}

@@ -1,0 +1,14 @@
+SELECT 
+  hp.id,
+  hp.part_ref,
+  pt.name AS part_type,
+  hp.spec,
+  hp.part_make,
+  hp.part_model,
+  hp.serial_number,
+  hp.condition_grade,
+  hp.part_cost
+FROM harvested_parts hp
+LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
+WHERE hp.installed_in_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+ORDER BY pt.name;

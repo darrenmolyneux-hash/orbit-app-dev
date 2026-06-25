@@ -29,7 +29,7 @@
     ],
     "name": "qry_get_parts_stock",
     "pageId": "Asset_Page",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }
