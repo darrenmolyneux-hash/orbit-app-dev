@@ -1,8 +1,8 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#1a2e3b",
+  "backgroundColor": "#3f3f46",
   "borderColor": "#ffffff",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "0",
   "bottomRow": 10,
   "boxShadow": "none",

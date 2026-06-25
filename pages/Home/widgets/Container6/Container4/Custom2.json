@@ -1,20 +1,14 @@
 {
   "backgroundColor": "#FFFFFF",
-  "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
-  "bottomRow": 364,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "borderColor": "#ffffff",
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 328,
+  "boxShadow": "none",
   "defaultModel": "{{ { activities: qry_recent_activity.data } }}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "defaultModel"

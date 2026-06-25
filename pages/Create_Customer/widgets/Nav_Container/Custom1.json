@@ -3,20 +3,14 @@
   "GoCustomers": "{{navigateTo('Customer_List', {}, 'SAME_WINDOW');}}",
   "backgroundColor": "\"transparent\"",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "0px",
   "borderWidth": "0",
   "bottomRow": 7,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "none",
   "defaultModel": "{\n  \"activePage\": \"Home\",\n  \"userName\": \"{{appsmith.user.name}}\"\n}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "defaultModel"
