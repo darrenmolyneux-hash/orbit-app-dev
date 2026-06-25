@@ -1,7 +1,8 @@
-SELECT 
-  hp.id,
-  hp.part_ref,
-  hp.installed_in_asset_id,
+SELECT
+  hp.id AS harvested_part_id,
+  pt.name AS part_type,
+  hp.condition_grade,
   hp.status
 FROM harvested_parts hp
-WHERE hp.installed_in_asset_id = 132
+LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
+WHERE hp.status = 'in_stock'

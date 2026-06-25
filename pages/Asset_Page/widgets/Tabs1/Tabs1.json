@@ -356,7 +356,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "onTabSelected": "{{AssetActions.onTabChange();}}",
+  "onTabSelected": "{{qry_add_parts_search.run()}}",
   "originalBottomRow": 394,
   "originalTopRow": 59,
   "parentColumnSpace": 19.5,
