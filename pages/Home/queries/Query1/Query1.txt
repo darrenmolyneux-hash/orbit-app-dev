@@ -12,10 +12,10 @@ LEFT JOIN item_types it ON it.item_type_id = a.item_type
 LEFT JOIN makes mk ON mk.make_id = a.make
 LEFT JOIN models mo ON mo.model_id = a.model
 WHERE 
-  a.asset_ref ILIKE {{'%' + SearchWidget.model.searchTerm + '%'}}
-  OR a.serial_number ILIKE {{'%' + SearchWidget.model.searchTerm + '%'}}
-  OR mk.make_name ILIKE {{'%' + SearchWidget.model.searchTerm + '%'}}
-  OR mo.model_name ILIKE {{'%' + SearchWidget.model.searchTerm + '%'}}
+  a.asset_ref ILIKE {{'%' + inp_global_search.text + '%'}}
+  OR a.serial_number ILIKE {{'%' + inp_global_search.text + '%'}}
+  OR mk.make_name ILIKE {{'%' + inp_global_search.text + '%'}}
+  OR mo.model_name ILIKE {{'%' + inp_global_search.text + '%'}}
 
 UNION ALL
 
@@ -31,8 +31,8 @@ SELECT
 FROM collections c
 JOIN customers cu ON cu.customer_id = c.customer_id
 WHERE 
-  c.collection_id::text ILIKE {{'%' + SearchWidget.model.searchTerm + '%'}}
-  OR cu.customer_name ILIKE {{'%' + SearchWidget.model.searchTerm + '%'}}
+  c.collection_id::text ILIKE {{'%' + inp_global_search.text + '%'}}
+  OR cu.customer_name ILIKE {{'%' + inp_global_search.text + '%'}}
 
 ORDER BY result_type, ref
 LIMIT 20;
