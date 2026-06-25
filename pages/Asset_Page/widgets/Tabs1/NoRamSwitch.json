@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignWidget": "LEFT",
   "animateLoading": true,
-  "bottomRow": 9,
+  "bottomRow": 8,
   "boxShadow": "none",
   "defaultSwitchState": "{{\n  (qry_GetAssetById.data?.[0]?.ram || \"\").trim().toLowerCase() === \"no ram\"\n}}",
   "dynamicBindingPathList": [
