@@ -22,13 +22,16 @@
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onViewCustomer"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "events": [
-    "onViewCustomer"
+    "goHome",
+    "goCustomers",
+    "goCollections",
+    "goAssets",
+    "goWaste",
+    "goSales",
+    "goReports",
+    "goAdmin"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -43,7 +46,6 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onViewCustomer": "{{CustomerListActions.onViewCustomer();}}",
   "parentColumnSpace": 17.625,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,

@@ -34,7 +34,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 7,
+  "originalBottomRow": 8,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "p93jiknohg",
