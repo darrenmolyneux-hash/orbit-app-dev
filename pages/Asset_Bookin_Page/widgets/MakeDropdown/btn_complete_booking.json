@@ -32,7 +32,7 @@
   "isLoading": false,
   "isVisible": "{{qry_booked_assets.data.length > 0}}",
   "key": "6d9xbwpp8k",
-  "leftColumn": 47,
+  "leftColumn": 46,
   "minWidth": 120,
   "mobileBottomRow": 23,
   "mobileLeftColumn": 47,
