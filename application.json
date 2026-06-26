@@ -108,6 +108,10 @@
     {
       "id": "Customer_Detail_Page",
       "isDefault": false
+    },
+    {
+      "id": "Reports_Page",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
