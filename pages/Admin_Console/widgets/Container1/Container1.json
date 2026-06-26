@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#eff6ff",
+  "backgroundColor": "#ffffff",
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
@@ -80,7 +80,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "shouldScrollContents": false,
+  "shouldScrollContents": true,
   "topRow": 14,
   "type": "CONTAINER_WIDGET",
   "version": 1,

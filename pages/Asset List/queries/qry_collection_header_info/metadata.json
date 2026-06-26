@@ -29,7 +29,7 @@
     ],
     "name": "qry_collection_header_info",
     "pageId": "Asset List",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
