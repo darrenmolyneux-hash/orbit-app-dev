@@ -1,8 +1,8 @@
 {
   "gitSyncId": "6a305b9e0882adc7e482e226_8e70e486-8538-4f1a-ae91-4daff45f64b0",
-  "id": "Customer_List_JSObject1",
+  "id": "Customer_List_CustomerListActions",
   "unpublishedCollection": {
-    "name": "JSObject1",
+    "name": "CustomerListActions",
     "pageId": "Customer_List",
     "pluginId": "js-plugin",
     "pluginType": "JS",
