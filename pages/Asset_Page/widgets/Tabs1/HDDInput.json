@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 18,
   "boxShadow": "none",
   "defaultText": "{{ qry_GetAssetById.data[0].hdd }}",
   "dynamicBindingPathList": [
@@ -61,7 +61,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 14,
   "showStepArrows": false,
-  "topRow": 8,
+  "topRow": 14,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "v88lsapgab",

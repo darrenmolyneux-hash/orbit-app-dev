@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 28,
   "boxShadow": "none",
   "defaultText": "{{ qry_GetAssetById.data[0].resolution }}",
   "dynamicBindingPathList": [
@@ -61,7 +61,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 20,
   "showStepArrows": false,
-  "topRow": 16,
+  "topRow": 24,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "dfbdptq127",

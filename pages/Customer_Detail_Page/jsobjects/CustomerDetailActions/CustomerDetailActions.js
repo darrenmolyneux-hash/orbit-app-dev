@@ -1,4 +1,7 @@
 export default {
+  onPageLoad: () => {
+    storeValue('show_site_survey', false);
+  },
   onGoBack: () => {
     navigateTo('Customer_List', {}, 'SAME_WINDOW');
   },

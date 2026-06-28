@@ -1,3 +1,3 @@
 UPDATE assets
-SET sell_price = {{Number(SellPriceInput.text)}}
+SET sell_price = {{Number(appsmith.store.asset_sell_price)}}
 WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};

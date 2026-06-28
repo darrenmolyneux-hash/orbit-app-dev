@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 46,
+  "bottomRow": 69,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  \"pallet\": qry_get_pallet_detail.data[0],\n  \"items\": qry_get_pallet_items.data\n}}}",
   "dynamicBindingPathList": [

@@ -1,0 +1,3 @@
+SELECT COALESCE(SUM(hp.part_cost), 0) AS total_parts_cost
+FROM harvested_parts hp
+WHERE hp.installed_in_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};

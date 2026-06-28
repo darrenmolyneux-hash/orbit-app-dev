@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": 1,
-  "bottomRow": 393,
+  "bottomRow": 390,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 3350,
+      "bottomRow": 3310,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 3350,
+      "bottomRow": 3310,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -102,7 +102,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 3350,
+      "bottomRow": 3310,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -147,7 +147,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 3350,
+      "bottomRow": 3310,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -237,7 +237,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 3350,
+      "bottomRow": 3310,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -282,7 +282,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 3350,
+      "bottomRow": 3310,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -354,8 +354,8 @@
   "mobileTopRow": 12,
   "needsErrorInfo": false,
   "onTabSelected": "{{qry_add_parts_search.run()}}",
-  "originalBottomRow": 393,
-  "originalTopRow": 54,
+  "originalBottomRow": 390,
+  "originalTopRow": 55,
   "parentColumnSpace": 19.5,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -424,7 +424,7 @@
       "widgetId": "onlm3me0uv"
     }
   },
-  "topRow": 54,
+  "topRow": 55,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "22vdiaxhm2",

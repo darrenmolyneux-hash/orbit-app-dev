@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 18,
   "boxShadow": "none",
   "defaultText": "{{ qry_GetAssetById.data[0].apple_no }}",
   "dynamicBindingPathList": [
@@ -61,7 +61,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 34,
   "showStepArrows": false,
-  "topRow": 4,
+  "topRow": 14,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "5k1eon77wx",

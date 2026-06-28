@@ -69,7 +69,7 @@
   "goHome": "{{navigateTo('Home', {}, 'SAME_WINDOW');}}",
   "goReports": "{{navigateTo('Reports_Page', {}, 'SAME_WINDOW');}}",
   "goSales": "{{navigateTo('SalesRecords', {}, 'SAME_WINDOW');}}",
-  "goWaste": "{{navigateTo('Waste_Page', {}, 'SAME_WINDOW');}}",
+  "goWaste": "{{navigateTo('Waste_Detail_Page', {}, 'SAME_WINDOW');}}",
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,

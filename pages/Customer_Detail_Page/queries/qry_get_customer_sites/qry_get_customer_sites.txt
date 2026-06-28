@@ -9,12 +9,13 @@ SELECT
   s.contact_email,
   s.created_at::date AS created_date,
   ss.survey_id,
-  ss.completed_at,
-  ss.review_due,
+  ss.survey_date,
+  ss.last_reviewed_date,
+  ss.surveyed_by,
   CASE
-    WHEN ss.review_due IS NULL THEN 'no_survey'
-    WHEN ss.review_due < CURRENT_DATE THEN 'expired'
-    WHEN ss.review_due < CURRENT_DATE + INTERVAL '30 days' THEN 'due_soon'
+    WHEN ss.survey_id IS NULL THEN 'no_survey'
+    WHEN ss.last_reviewed_date < CURRENT_DATE - INTERVAL '12 months' THEN 'expired'
+    WHEN ss.last_reviewed_date < CURRENT_DATE - INTERVAL '11 months' THEN 'due_soon'
     ELSE 'current'
   END AS survey_status
 FROM sites s

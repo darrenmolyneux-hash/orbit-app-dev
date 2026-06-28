@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  s.site_id,\n  s.address1,\n  s.address2,\n  s.city,\n  s.postcode,\n  s.site_contact,\n  s.contact_number,\n  s.contact_email,\n  s.created_at::date AS created_date,\n  ss.survey_id,\n  ss.completed_at,\n  ss.review_due,\n  CASE\n    WHEN ss.review_due IS NULL THEN 'no_survey'\n    WHEN ss.review_due < CURRENT_DATE THEN 'expired'\n    WHEN ss.review_due < CURRENT_DATE + INTERVAL '30 days' THEN 'due_soon'\n    ELSE 'current'\n  END AS survey_status\nFROM sites s\nLEFT JOIN site_surveys ss ON ss.site_id = s.site_id\nWHERE s.customer_id = {{Number(appsmith.URL.queryParams.customer_id)}}\nORDER BY s.created_at DESC;",
+      "body": "SELECT\n  s.site_id,\n  s.address1,\n  s.address2,\n  s.city,\n  s.postcode,\n  s.site_contact,\n  s.contact_number,\n  s.contact_email,\n  s.created_at::date AS created_date,\n  ss.survey_id,\n  ss.survey_date,\n  ss.last_reviewed_date,\n  ss.surveyed_by,\n  CASE\n    WHEN ss.survey_id IS NULL THEN 'no_survey'\n    WHEN ss.last_reviewed_date < CURRENT_DATE - INTERVAL '12 months' THEN 'expired'\n    WHEN ss.last_reviewed_date < CURRENT_DATE - INTERVAL '11 months' THEN 'due_soon'\n    ELSE 'current'\n  END AS survey_status\nFROM sites s\nLEFT JOIN site_surveys ss ON ss.site_id = s.site_id\nWHERE s.customer_id = {{Number(appsmith.URL.queryParams.customer_id)}}\nORDER BY s.created_at DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
