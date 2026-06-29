@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO customers (\n  customer_name,\n  contact_name,\n  contact_number,\n  dial_ref,\n  dial_expiry,\n  msa_signed,\n  created_at,\n  created_by\n)\nVALUES (\n  '{{inp_customer_name.text}}',\n  '{{inp_contact_name.text}}',\n  '{{inp_contact_number.text}}',\n  '{{sel_dial_rating.selectedOptionValue}}',\n  '{{dp_dial_expiry.formattedDate}}',\n  '{{sel_msa.selectedOptionValue}}',\n  NOW(),\n  '{{appsmith.user.email.split(\"@\")[0]}}'\n)\nRETURNING customer_id;",
+      "body": "INSERT INTO customers (\n  customer_name, contact_name, contact_number, email, job_title,\n  dial_rating, dial_expiry, msa_signed, account_manager, default_instructions\n) VALUES (\n  '{{appsmith.store.customer_name}}',\n  '{{appsmith.store.contact_name}}',\n  '{{appsmith.store.contact_number}}',\n  '{{appsmith.store.email}}',\n  '{{appsmith.store.job_title}}',\n  '{{appsmith.store.dial_rating}}',\n  '{{appsmith.store.dial_expiry}}',\n  '{{appsmith.store.msa_signed}}',\n  '{{appsmith.store.account_manager}}',\n  '{{appsmith.store.default_instructions}}'\n)\nRETURNING customer_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

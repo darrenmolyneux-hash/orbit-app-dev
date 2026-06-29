@@ -1,22 +1,14 @@
 INSERT INTO sites (
-  customer_id,
-  address1,
-  address2,
-  city,
-  postcode,
-  site_contact,
-  contact_number,
-  contact_email,
-  created_at
+  customer_id, address1, address2, city, postcode,
+  site_contact, contact_number, site_email
+) VALUES (
+  '{{appsmith.store.new_customer_id}}',
+  '{{appsmith.store.address1}}',
+  '{{appsmith.store.address2}}',
+  '{{appsmith.store.city}}',
+  '{{appsmith.store.postcode}}',
+  '{{appsmith.store.site_contact}}',
+  '{{appsmith.store.contact_number}}',
+  '{{appsmith.store.site_email}}'
 )
-VALUES (
-  {{Number(appsmith.store.newCustomerId)}},
-  '{{inp_address1.text}}',
-  '{{inp_address2.text}}',
-  '{{inp_city.text}}',
-  '{{inp_postcode.text}}',
-  '{{inp_site_contact.text}}',
-  '{{inp_contact_number.dialCode + inp_contact_number.text}}',
-  '{{inp_site_email.text}}',
-  NOW()
-);
+RETURNING site_id;
