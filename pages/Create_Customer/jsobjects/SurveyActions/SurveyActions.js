@@ -27,13 +27,17 @@ export default {
       await qry_site_survey_create.run();
       showAlert('Site survey saved', 'success');
       storeValue('show_site_survey', false);
-      try { scrollTo('Container6', 0, 'smooth'); } catch(e) {}
+      storeValue('new_site_id', null);
+      storeValue('new_customer_id', null);
+      navigateTo('Customer_List', {}, 'SAME_WINDOW');
     } catch (err) {
       showAlert('Failed to save site survey: ' + err.message, 'error');
     }
   },
   onSkipSurvey: () => {
     storeValue('show_site_survey', false);
-    try { scrollTo('Container6', 0, 'smooth'); } catch(e) {}
+    storeValue('new_site_id', null);
+    storeValue('new_customer_id', null);
+    navigateTo('Customer_List', {}, 'SAME_WINDOW');
   }
 }

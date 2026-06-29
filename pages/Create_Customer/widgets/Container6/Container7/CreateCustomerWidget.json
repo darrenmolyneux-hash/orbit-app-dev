@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 61,
+  "bottomRow": 62,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{}}}",
   "dynamicBindingPathList": [
@@ -44,7 +44,7 @@
   "onCreateCustomer": "{{CustomerActions.onCreateCustomer();}}",
   "onSurveyFirst": "{{CustomerActions.onSurveyFirst();}}",
   "originalBottomRow": 62,
-  "originalTopRow": 0,
+  "originalTopRow": 1,
   "parentColumnSpace": 15.806640625,
   "parentId": "dt1b1ibleu",
   "parentRowSpace": 10,
@@ -57,7 +57,7 @@
     "js": "function toTitleCase(str) {\n  if (!str) return str;\n  return str.replace(/\\w\\S*/g, function (txt) {\n    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();\n  });\n}\nfunction v(id) {\n  var el = document.getElementById(id);\n  return el ? el.value : '';\n}\nfunction validate() {\n  var name = v('f_customer_name');\n  var err = document.getElementById('err_customer_name');\n  if (!name.trim()) {\n    if (err) err.style.display = 'block';\n    return false;\n  }\n  if (err) err.style.display = 'none';\n  return true;\n}\nfunction collectData() {\n  return {\n    customer_name: toTitleCase(v('f_customer_name')),\n    contact_name: toTitleCase(v('f_contact_name')),\n    job_title: toTitleCase(v('f_job_title')),\n    contact_number: v('f_contact_number'),\n    email: v('f_email').toLowerCase(),\n    dial_rating: v('f_dial_rating'),\n    dial_expiry: v('f_dial_expiry') || null,\n    msa_signed: v('f_msa'),\n    account_manager: v('f_account_manager'),\n    default_instructions: v('f_default_instructions'),\n    address1: toTitleCase(v('f_address1')),\n    address2: toTitleCase(v('f_address2')),\n    city: toTitleCase(v('f_city')),\n    postcode: v('f_postcode').toUpperCase(),\n    site_contact: toTitleCase(v('f_site_contact')),\n    site_phone: v('f_site_phone'),\n    site_email: v('f_site_email').toLowerCase()\n  };\n}\nwindow.createCustomer = function () {\n  if (!validate()) return;\n  appsmith.updateModel(collectData());\n  appsmith.triggerEvent('onCreateCustomer');\n};\nwindow.triggerSurvey = function () {\n  if (!validate()) return;\n  appsmith.updateModel(collectData());\n  appsmith.triggerEvent('onSurveyFirst');\n};\nappsmith.onReady(function () {});\nappsmith.onModelChange(function () {});"
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 0,
+  "topRow": 1,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n}\n\n.tip-container {\n  margin-bottom: 20px;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  margin-bottom: 9px;\n}\n\n.tip-header div {\n  color: #999;\n}\n\n.content {\n  white-space: pre-wrap;\n  word-break: break-word;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.button-container {\n  text-align: right;\n  padding-top: 4px;\n}\n\n.button-container button {\n  margin: 0 10px;\n  cursor: pointer;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 6px 16px;\n  background: none;\n  height: auto;\n  transition: all 0.3s ease;\n}\n\n.button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n  color: #fff;\n  border: 1px solid var(--appsmith-theme-primaryColor) !important;\n}\n\n.button-container button.reset {\n  border: 1px solid #999;\n  color: #999;\n  outline: none;\n  box-shadow: none;\n}\n\n.button-container button.reset:hover:not(:disabled) {\n  color: var(--appsmith-theme-primaryColor);\n  border-color: var(--appsmith-theme-primaryColor);\n}\n\n.button-container button.reset:disabled {\n  cursor: default;\n}",
