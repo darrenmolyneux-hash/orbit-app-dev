@@ -42,7 +42,7 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 38,
+  "rightColumn": 45,
   "text": "New Sale",
   "topRow": 16,
   "type": "BUTTON_WIDGET",

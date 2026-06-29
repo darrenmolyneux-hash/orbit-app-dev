@@ -9,7 +9,7 @@ export default {
     storeValue('col_site_id', CreateCollectionWidget.model.col_site_id);
     await qry_site_survey_status.run();
   },
-  onSaveCollection: async () => {
+ onSaveCollection: async () => {
     const m = CreateCollectionWidget.model;
     storeValue('col_customer_id', m.col_customer_id);
     storeValue('col_site_id', m.col_site_id);
@@ -27,14 +27,23 @@ export default {
     storeValue('col_address2', m.col_address2);
     storeValue('col_city', m.col_city);
     storeValue('col_postcode', m.col_postcode);
-    storeValue('col_expected_assets', m.col_expected_assets);
+
+    // Ensure expected_assets is valid JSON string
+    let assets = m.col_expected_assets;
+    if (!assets || assets === 'null') {
+      assets = '[]';
+    } else if (typeof assets === 'object') {
+      assets = JSON.stringify(assets);
+    }
+    storeValue('col_expected_assets', assets);
+
     try {
       await qry_collection_create.run();
       const newId = qry_collection_create.data[0].collection_id;
       storeValue('newCollectionId', newId);
       await qry_create_col_asset_ref.run();
+      navigateTo('Home', {}, 'SAME_WINDOW');
       showAlert('Collection created successfully ✓', 'success');
-      navigateTo('Upcoming_Collection', {}, 'SAME_WINDOW');
     } catch(err) {
       showAlert('Failed to create collection: ' + err.message, 'error');
     }

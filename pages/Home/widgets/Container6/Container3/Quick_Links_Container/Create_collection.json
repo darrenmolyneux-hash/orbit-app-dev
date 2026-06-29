@@ -46,7 +46,7 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 39,
+  "rightColumn": 45,
   "text": "Create New Job",
   "topRow": 11,
   "type": "BUTTON_WIDGET",
