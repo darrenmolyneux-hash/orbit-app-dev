@@ -35,7 +35,7 @@ export default {
 onSurveyFirst: () => {
   closeModal('Modal_SurveyPrompt');
   storeValue('show_site_survey', true);
-  scrollTo('SiteSurveyWidget', 0, 'smooth');
+ appsmith.utils?.scrollTo?.('SiteSurveyWidget', 0, 'smooth');
 },
 
   onSkipSurvey: () => {
