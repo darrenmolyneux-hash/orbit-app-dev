@@ -1,0 +1,17 @@
+INSERT INTO drive_shred_records (
+  asset_id, drive_serial, drive_model, drive_interface,
+  drive_capacity, shred_type, shred_by, pallet_id, notes, certificate_ref
+)
+VALUES (
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  '{{appsmith.store.shred_serial || ""}}',
+  '{{appsmith.store.shred_model || ""}}',
+  '{{appsmith.store.shred_interface || ""}}',
+  '{{appsmith.store.shred_capacity || ""}}',
+  '{{appsmith.store.shred_type || "manual"}}',
+  '{{appsmith.user.email}}',
+  {{appsmith.store.shred_pallet_id || null}},
+  '{{appsmith.store.shred_notes || ""}}',
+  '{{appsmith.store.shred_cert_ref || ""}}'
+)
+RETURNING shred_id;

@@ -1,0 +1,7 @@
+SELECT pallet_id, waste_id, waste_type, created_at
+FROM waste_pallets
+WHERE status = 'open'
+AND waste_type ILIKE '%hdd%'
+OR waste_type ILIKE '%drive%'
+OR waste_type ILIKE '%disk%'
+ORDER BY created_at DESC;

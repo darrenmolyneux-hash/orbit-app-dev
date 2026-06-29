@@ -146,6 +146,31 @@ clearLocks: async () => {
   storeValue('pending_status_id', null);
   showAlert('Locks cleared — asset released ✓', 'success');
 },
+	handleShred: async () => {
+  try {
+    const m = DriveWidget.model;
+    const createNew = m.shred_create_new_pallet;
+    let palletId = m.shred_pallet_id;
+    if (createNew) {
+      const result = await qry_insert_hdd_waste_pallet.run();
+      palletId = result[0]?.pallet_id || null;
+    }
+    await storeValue('shred_serial', m.shred_serial || '');
+    await storeValue('shred_model', m.shred_model || '');
+    await storeValue('shred_interface', m.shred_interface || '');
+    await storeValue('shred_capacity', m.shred_capacity || '');
+    await storeValue('shred_type', m.shred_type || 'manual');
+    await storeValue('shred_pallet_id', palletId);
+    await storeValue('shred_notes', m.shred_notes || '');
+    await storeValue('shred_cert_ref', '');
+    await qry_insert_shred_record.run();
+    await qry_get_shred_records.run();
+    await qry_get_open_hdd_pallets.run();
+    showAlert('Shred record created ✓', 'success');
+  } catch(err) {
+    showAlert('Shred error: ' + err.message, 'error');
+  }
+},
 saveGrading: async () => {
   try {
     await new Promise(resolve => setTimeout(resolve, 1500));

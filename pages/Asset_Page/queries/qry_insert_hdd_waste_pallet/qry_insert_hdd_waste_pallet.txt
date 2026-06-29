@@ -1,0 +1,8 @@
+INSERT INTO waste_pallets (waste_id, waste_type, status, created_by)
+VALUES (
+  'WP-HDD-' || TO_CHAR(NOW(), 'YYYY-MM-DD-HH24MI'),
+  'HDD Shred',
+  'open',
+  '{{appsmith.user.email}}'
+)
+RETURNING pallet_id, waste_id;
