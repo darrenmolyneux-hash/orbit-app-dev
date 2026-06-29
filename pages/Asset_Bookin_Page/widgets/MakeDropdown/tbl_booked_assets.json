@@ -48,7 +48,7 @@
     "customColumn5",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1782319410015,
+  "columnUpdatedAt": 1782739898129,
   "columnWidthMap": {
     "asset_ref": 129,
     "customColumn1": 130,
@@ -57,7 +57,7 @@
     "kg": 162,
     "make": 134,
     "needs_review": 93,
-    "serial_number": 237
+    "serial_number": 174
   },
   "compactMode": "SHORT",
   "customIsLoading": false,
@@ -236,6 +236,9 @@
     },
     {
       "key": "primaryColumns.needs_review.buttonColor"
+    },
+    {
+      "key": "primaryColumns.EditActions1.onSave"
     }
   ],
   "dynamicTriggerPathList": [
@@ -247,6 +250,9 @@
     },
     {
       "key": "primaryColumns.customColumn5.onClick"
+    },
+    {
+      "key": "primaryColumns.EditActions1.onSave"
     }
   ],
   "enableClientSideSearch": true,
@@ -266,7 +272,7 @@
   "isVisibleSearch": true,
   "key": "gstjl8lox1",
   "label": "Data",
-  "leftColumn": 2,
+  "leftColumn": 0,
   "minWidth": 450,
   "mobileBottomRow": 45,
   "mobileLeftColumn": 0,
@@ -278,6 +284,7 @@
   "parentColumnSpace": 18.880859375,
   "parentId": "xgvjb501nc",
   "parentRowSpace": 10,
+  "primaryColumnId": "asset_id",
   "primaryColumns": {
     "EditActions1": {
       "alias": "EditActions1",
@@ -306,9 +313,10 @@
       "isEditable": false,
       "isSaveDisabled": "{{tbl_booked_assets.processedTableData.map((currentRow, currentIndex) => ( !tbl_booked_assets.updatedRowIndices.includes(currentIndex)))}}",
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Save / Discard",
       "notation": "standard",
+      "onSave": "{{jsAddAsset.onSaveAssetSerial()}}",
       "originalId": "EditActions1",
       "saveActionLabel": "Save",
       "saveBorderRadius": "{{tbl_booked_assets.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",

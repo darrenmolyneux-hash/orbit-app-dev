@@ -1,0 +1,3 @@
+UPDATE assets
+SET serial_number = {{this.params.serial_number}}
+WHERE asset_id = {{this.params.asset_id}};

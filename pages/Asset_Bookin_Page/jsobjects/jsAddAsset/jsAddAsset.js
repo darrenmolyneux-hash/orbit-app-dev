@@ -20,7 +20,15 @@ export default {
     await qry_booked_assets.run();
     return true;
   },
-
+onSaveAssetSerial: async () => {
+  const row = tbl_booked_assets.updatedRow;
+  await qry_asset_serial_update.run({
+    asset_id: row.asset_id,
+    serial_number: row.serial_number
+  });
+  await qry_booked_assets.run();
+  showAlert('Serial number updated', 'success');
+},
   confirmAssets: async function() {
     await qry_collection_update_status.run();
     navigateTo('Collection_job_View', { collectionId: appsmith.URL.queryParams.collectionId }, 'SAME_WINDOW');
