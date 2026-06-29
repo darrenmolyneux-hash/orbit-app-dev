@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_340b3c17-9616-4adb-a16c-075e5a649cf7",
+  "id": "PreInventory_Page_PageGaurdCopy",
+  "unpublishedCollection": {
+    "name": "PageGaurdCopy",
+    "pageId": "PreInventory_Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

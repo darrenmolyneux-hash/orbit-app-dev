@@ -1,0 +1,11 @@
+INSERT INTO locations (location_code, location_name, location_type, is_weee_registered, weee_reg_number, is_active, notes)
+VALUES (
+  '{{Custom_Admin.model.row.location_code}}',
+  '{{Custom_Admin.model.row.location_name}}',
+  '{{Custom_Admin.model.row.location_type}}',
+  {{Custom_Admin.model.row.is_weee_registered || false}},
+  '{{Custom_Admin.model.row.weee_reg_number || ""}}',
+  {{Custom_Admin.model.row.is_active !== false}},
+  '{{Custom_Admin.model.row.notes || ""}}'
+)
+RETURNING location_id;

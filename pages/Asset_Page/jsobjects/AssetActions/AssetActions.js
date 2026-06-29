@@ -57,13 +57,19 @@ export default {
   onViewSale: () => {
     navigateTo('SaleDetails', { sale_id: FinancialWidget.model.sale_id }, 'SAME_WINDOW');
   },
-  onTabChange: async () => {
-    if (Tabs1.selectedTab === 'Grading') { await Query3qry_grading_get.run(); }
-    if (Tabs1.selectedTab === 'Remove parts' && appsmith.store.harvest_step === 0) { await JSParts.init(); }
-    if (Tabs1.selectedTab === 'Add parts') {
-      await qry_add_parts_search.run();
-      await qry_get_asset_parts_combined.run();
-    }
+ onTabChange: async () => {
+  if (Tabs1.selectedTab === 'Grading') {
+    await Query3qry_grading_get.run();
+    await storeValue('gradingLoadedAt', Date.now());
+  }
+  if (Tabs1.selectedTab === 'History') {
+    await qry_asset_history.run();
+  }
+  if (Tabs1.selectedTab === 'Remove parts' && appsmith.store.harvest_step === 0) { await JSParts.init(); }
+  if (Tabs1.selectedTab === 'Add parts') {
+    await qry_add_parts_search.run();
+    await qry_get_asset_parts_combined.run();
+  }
   },
   confirmAddPart_fromWidget: async () => {
     const row = appsmith.store.add_part_row;
@@ -102,8 +108,14 @@ export default {
     }
   },
   saveGrading: async () => {
-    await qry_grading_save.run();
-    await qry_update_overall_grade.run();
-    await qry_GetAssetById.run();
+    try {
+      await new Promise(resolve => setTimeout(resolve, 300));
+      await qry_grading_save.run();
+      await qry_update_overall_grade.run();
+      await qry_GetAssetById.run();
+      showAlert('Grading saved ✓', 'success');
+    } catch(err) {
+      showAlert('Save error: ' + err.message, 'error');
+    }
   }
 }

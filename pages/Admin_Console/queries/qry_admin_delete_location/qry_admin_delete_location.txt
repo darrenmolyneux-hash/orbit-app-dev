@@ -1,0 +1,1 @@
+DELETE FROM locations WHERE location_id = {{Custom_Admin.model.row.location_id}};

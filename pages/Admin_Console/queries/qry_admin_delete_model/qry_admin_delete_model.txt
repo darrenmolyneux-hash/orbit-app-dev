@@ -1,0 +1,1 @@
+DELETE FROM models WHERE model_id = {{Custom_Admin.model.row.model_id}};

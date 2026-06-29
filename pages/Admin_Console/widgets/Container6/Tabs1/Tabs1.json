@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 69,
+  "bottomRow": 82,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 640,
+      "bottomRow": 770,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 690,
+      "bottomRow": 770,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -99,6 +99,95 @@
       "version": 1,
       "widgetId": "0xh6vs8vr6",
       "widgetName": "Canvas15"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 770,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "fx3k710hne",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 750,
+      "minWidth": 450,
+      "mobileBottomRow": 751,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1048,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "gn5exx72ps",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1048,
+      "tabId": "tabv2oech752a",
+      "tabName": "Maintain Tables",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "hu9j884nlk",
+      "widgetName": "Canvas16"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 770,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "fx3k710hne",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 750,
+      "minWidth": 450,
+      "mobileBottomRow": 751,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1048,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "gn5exx72ps",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1048,
+      "tabId": "tab8sawhf3toa",
+      "tabName": "Tab 2",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "atrrr7in9h",
+      "widgetName": "Canvas17"
     }
   ],
   "defaultTab": "Tab 1",
@@ -129,7 +218,7 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 69,
+  "originalBottomRow": 72,
   "originalTopRow": 1,
   "parentColumnSpace": 16.375,
   "parentId": "kk03s7t1bg",
@@ -155,6 +244,20 @@
       "label": "Downstream Vendors",
       "positioning": "vertical",
       "widgetId": "0xh6vs8vr6"
+    },
+    "tab8sawhf3toa": {
+      "id": "tab8sawhf3toa",
+      "index": 3,
+      "isVisible": true,
+      "label": "Tab 2",
+      "widgetId": "atrrr7in9h"
+    },
+    "tabv2oech752a": {
+      "id": "tabv2oech752a",
+      "index": 2,
+      "isVisible": true,
+      "label": "Maintain Tables",
+      "widgetId": "hu9j884nlk"
     }
   },
   "topRow": 1,

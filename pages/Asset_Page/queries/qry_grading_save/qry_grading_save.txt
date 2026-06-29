@@ -1,30 +1,24 @@
 INSERT INTO asset_grading_answers (
-  asset_id,
-  cosmetics_option_id,
-  lcd_option_id,
-  functionality_option_id,
-  missing_option_id,
-  bios_lock,
-  mdm_lock,
-  efi_lock,
-  icloud_lock,
-  intune_lock,
-  calculated_grade,
-  notes
+  asset_id, cosmetics_option_id, lcd_option_id,
+  functionality_option_id, missing_option_id,
+  bios_lock, mdm_lock, efi_lock, icloud_lock, intune_lock,
+  no_hdd, no_ram, calculated_grade, notes
 )
 VALUES (
   {{Number(appsmith.URL.queryParams.asset_id)}},
-  {{Number(Custom_Grading.model.selections[1]) || null}},
-  {{Number(Custom_Grading.model.selections[2]) || null}},
-  {{Number(Custom_Grading.model.selections[3]) || null}},
-  {{Number(Custom_Grading.model.selections[4]) || null}},
-  {{Custom_Grading.model.locks['BIOS Lock'] || false}},
-  {{Custom_Grading.model.locks['MDM Lock'] || false}},
-  {{Custom_Grading.model.locks['EFI Lock'] || false}},
-  {{Custom_Grading.model.locks['iCloud Lock'] || false}},
-  {{Custom_Grading.model.locks['inTune'] || false}},
-  '{{Custom_Grading.model.overallGrade || ""}}',
-  '{{Custom_Grading.model.notes || ""}}'
+  {{GradingData.getSel1()}},
+  {{GradingData.getSel2()}},
+  {{GradingData.getSel3()}},
+  {{GradingData.getSel4()}},
+  {{GradingData.getBios()}},
+  {{GradingData.getMdm()}},
+  {{GradingData.getEfi()}},
+  {{GradingData.getIcloud()}},
+  {{GradingData.getIntune()}},
+  {{GradingData.getNoHdd()}},
+  {{GradingData.getNoRam()}},
+  NULLIF('{{GradingData.getGrade()}}', ''),
+  '{{GradingData.getNotes()}}'
 )
 ON CONFLICT (asset_id) DO UPDATE SET
   cosmetics_option_id = EXCLUDED.cosmetics_option_id,
@@ -36,5 +30,7 @@ ON CONFLICT (asset_id) DO UPDATE SET
   efi_lock = EXCLUDED.efi_lock,
   icloud_lock = EXCLUDED.icloud_lock,
   intune_lock = EXCLUDED.intune_lock,
-  calculated_grade = EXCLUDED.calculated_grade,
+  no_hdd = EXCLUDED.no_hdd,
+  no_ram = EXCLUDED.no_ram,
+  calculated_grade = NULLIF(EXCLUDED.calculated_grade, ''),
   notes = EXCLUDED.notes;

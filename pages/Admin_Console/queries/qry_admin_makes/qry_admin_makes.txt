@@ -1,0 +1,4 @@
+SELECT m.make_id, m.make_name, m.item_type_id, it.item_type_name
+FROM makes m
+JOIN item_types it ON it.item_type_id = m.item_type_id
+ORDER BY it.item_type_name, m.make_name;

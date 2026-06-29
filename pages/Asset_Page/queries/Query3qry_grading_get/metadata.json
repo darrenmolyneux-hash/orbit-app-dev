@@ -29,7 +29,7 @@
     ],
     "name": "Query3qry_grading_get",
     "pageId": "Asset_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

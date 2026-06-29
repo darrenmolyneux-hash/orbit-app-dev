@@ -1,0 +1,4 @@
+UPDATE item_types 
+SET item_type_name = '{{Custom_Admin.model.row.item_type_name}}',
+    is_data_bearing = {{Custom_Admin.model.row.is_data_bearing || false}}
+WHERE item_type_id = {{Custom_Admin.model.row.item_type_id}};

@@ -1,0 +1,47 @@
+SELECT * FROM (
+
+  -- Status changes from asset_status_history
+  SELECT
+    ash.changed_at AS event_time,
+    'Status Change' AS event_type,
+    'Status' AS field_name,
+    NULL AS old_value,
+    st.status_name AS new_value,
+    ash.changed_by,
+    NULL AS notes
+  FROM asset_status_history ash
+  LEFT JOIN status_types st ON st.status_id = ash.status_id
+  WHERE ash.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+
+  UNION ALL
+
+  -- Field edits excluding status (covered above)
+  SELECT
+    aal.changed_at AS event_time,
+    'Field Edit' AS event_type,
+    aal.field_name,
+    aal.old_value,
+    aal.new_value,
+    aal.changed_by,
+    NULL AS notes
+  FROM asset_audit_log aal
+  WHERE aal.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+  AND aal.field_name != 'status'
+
+  UNION ALL
+
+  -- Parts movements
+  SELECT
+    pal.created_at AS event_time,
+    'Parts' AS event_type,
+    pal.movement_type AS field_name,
+    NULL AS old_value,
+    NULL AS new_value,
+    pal.performed_by AS changed_by,
+    pal.notes
+  FROM parts_audit_log pal
+  WHERE pal.from_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+     OR pal.to_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+
+) combined
+ORDER BY event_time DESC;

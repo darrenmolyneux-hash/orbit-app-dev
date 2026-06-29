@@ -1,0 +1,1 @@
+DELETE FROM users WHERE user_id = {{Custom_Admin.model.row.user_id}};

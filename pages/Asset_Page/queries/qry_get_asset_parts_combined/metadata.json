@@ -29,7 +29,7 @@
     ],
     "name": "qry_get_asset_parts_combined",
     "pageId": "Asset_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

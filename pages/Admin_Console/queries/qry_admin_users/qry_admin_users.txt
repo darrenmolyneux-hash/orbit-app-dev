@@ -1,0 +1,4 @@
+SELECT user_id, email, full_name, role, is_active, 
+  created_at, last_login, notes
+FROM users
+ORDER BY full_name;

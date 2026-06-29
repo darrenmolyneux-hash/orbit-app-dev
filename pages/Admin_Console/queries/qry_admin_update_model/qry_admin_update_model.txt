@@ -1,0 +1,5 @@
+UPDATE models 
+SET model_name = '{{Custom_Admin.model.row.model_name}}',
+    make_id = {{Custom_Admin.model.row.make_id}},
+    weight = {{Custom_Admin.model.row.weight || null}}
+WHERE model_id = {{Custom_Admin.model.row.model_id}};

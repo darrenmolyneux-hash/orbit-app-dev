@@ -1,0 +1,6 @@
+SELECT mo.model_id, mo.model_name, mo.make_id, mo.weight,
+  m.make_name, it.item_type_name
+FROM models mo
+JOIN makes m ON m.make_id = mo.make_id
+JOIN item_types it ON it.item_type_id = m.item_type_id
+ORDER BY it.item_type_name, m.make_name, mo.model_name;

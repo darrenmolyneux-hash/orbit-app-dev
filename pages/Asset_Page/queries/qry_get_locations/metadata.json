@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "qry_get_locations",
     "pageId": "Asset_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

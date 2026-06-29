@@ -1,0 +1,27 @@
+SELECT 
+  location_id::integer,
+  location_code::varchar,
+  location_name::varchar,
+  location_type::text,
+  is_weee_registered::boolean,
+  weee_reg_number::varchar,
+  is_active::boolean,
+  notes::text
+FROM locations
+WHERE is_active = true
+
+UNION ALL
+
+SELECT
+  pallet_id::integer,
+  waste_id::varchar,
+  ('Waste Pallet: ' || waste_id)::varchar,
+  'waste_pallet'::text,
+  false::boolean,
+  NULL::varchar,
+  true::boolean,
+  ('Open waste pallet — ' || COALESCE(waste_type, 'unknown type'))::text
+FROM waste_pallets
+WHERE status = 'open'
+
+ORDER BY location_type, location_name;

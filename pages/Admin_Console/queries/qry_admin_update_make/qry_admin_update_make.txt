@@ -1,0 +1,4 @@
+UPDATE makes 
+SET make_name = '{{Custom_Admin.model.row.make_name}}',
+    item_type_id = {{Custom_Admin.model.row.item_type_id}}
+WHERE make_id = {{Custom_Admin.model.row.make_id}};

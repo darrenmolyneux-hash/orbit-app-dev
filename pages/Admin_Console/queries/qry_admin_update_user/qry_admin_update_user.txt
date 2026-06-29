@@ -1,0 +1,7 @@
+UPDATE users 
+SET email = '{{Custom_Admin.model.row.email}}',
+    full_name = '{{Custom_Admin.model.row.full_name}}',
+    role = '{{Custom_Admin.model.row.role}}',
+    is_active = {{Custom_Admin.model.row.is_active !== false}},
+    notes = '{{Custom_Admin.model.row.notes || ""}}'
+WHERE user_id = {{Custom_Admin.model.row.user_id}};

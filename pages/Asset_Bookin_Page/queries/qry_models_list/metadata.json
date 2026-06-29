@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT model_id, model_name\nFROM models\nWHERE make_id = {{ Number(appsmith.store.selectedMake) || Number(sel_make.selectedOptionValue) }}\nORDER BY model_name;",
+      "body": "SELECT model_id, model_name\nFROM models\nWHERE make_id = {{Number(Custom3.model.selectedMakeId)}}\nORDER BY model_name;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

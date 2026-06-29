@@ -1,6 +1,12 @@
 INSERT INTO asset_status_history (asset_id, status_id, changed_by)
-VALUES (
+SELECT
   {{Number(qry_GetAssetById.data[0].asset_id)}},
   {{Number(Custom5.model.selectedStatusId)}},
   '{{appsmith.user.email}}'
+WHERE {{Number(Custom5.model.selectedStatusId)}} > 0
+AND NOT EXISTS (
+  SELECT 1 FROM asset_status_history
+  WHERE asset_id = {{Number(qry_GetAssetById.data[0].asset_id)}}
+  AND status_id = {{Number(Custom5.model.selectedStatusId)}}
+  AND changed_at > NOW() - INTERVAL '5 seconds'
 );

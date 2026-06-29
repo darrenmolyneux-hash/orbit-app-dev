@@ -1,0 +1,1 @@
+DELETE FROM makes WHERE make_id = {{Custom_Admin.model.row.make_id}};

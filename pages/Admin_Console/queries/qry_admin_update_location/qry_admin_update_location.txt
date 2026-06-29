@@ -1,0 +1,9 @@
+UPDATE locations 
+SET location_code = '{{Custom_Admin.model.row.location_code}}',
+    location_name = '{{Custom_Admin.model.row.location_name}}',
+    location_type = '{{Custom_Admin.model.row.location_type}}',
+    is_weee_registered = {{Custom_Admin.model.row.is_weee_registered || false}},
+    weee_reg_number = '{{Custom_Admin.model.row.weee_reg_number || ""}}',
+    is_active = {{Custom_Admin.model.row.is_active !== false}},
+    notes = '{{Custom_Admin.model.row.notes || ""}}'
+WHERE location_id = {{Custom_Admin.model.row.location_id}};

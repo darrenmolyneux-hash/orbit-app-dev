@@ -1,0 +1,9 @@
+INSERT INTO users (email, full_name, role, is_active, notes)
+VALUES (
+  '{{Custom_Admin.model.row.email}}',
+  '{{Custom_Admin.model.row.full_name}}',
+  '{{Custom_Admin.model.row.role || "viewer"}}',
+  {{Custom_Admin.model.row.is_active !== false}},
+  '{{Custom_Admin.model.row.notes || ""}}'
+)
+RETURNING user_id;
