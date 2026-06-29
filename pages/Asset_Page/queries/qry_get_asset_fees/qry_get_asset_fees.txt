@@ -1,0 +1,3 @@
+SELECT COALESCE(SUM(fee_amount), 0) AS total_fees
+FROM asset_fees
+WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_587ca953-96c3-4a45-bab9-560c4f2d53c9",
-  "id": "Asset_Page_GetSaleItemByAsset",
+  "gitSyncId": "6a305b9e0882adc7e482e226_bd806775-1f8d-445f-ae4d-31fc5b39537c",
+  "id": "Asset_Page_qry_insert_blancco_fee",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT sale_item_id\nFROM sale_items\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\nORDER BY sale_item_id DESC\nLIMIT 1;",
+      "body": "INSERT INTO asset_fees (asset_id, fee_type, fee_amount, fee_description, created_by)\nVALUES (\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  'erasure',\n  5.00,\n  'Blancco erasure fee',\n  '{{appsmith.user.email}}'\n)\nON CONFLICT DO NOTHING;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "GetSaleItemByAsset",
+    "name": "qry_insert_blancco_fee",
     "pageId": "Asset_Page",
-    "runBehaviour": "ON_PAGE_LOAD",
-    "userSetOnLoad": true
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": false
   }
 }

@@ -1,8 +1,35 @@
 export default {
-  getSel1: () => { try { return Number(Custom_Grading.model.selections[1]) || null; } catch(e) { return null; } },
-  getSel2: () => { try { return Number(Custom_Grading.model.selections[2]) || null; } catch(e) { return null; } },
-  getSel3: () => { try { return Number(Custom_Grading.model.selections[3]) || null; } catch(e) { return null; } },
-  getSel4: () => { try { return Number(Custom_Grading.model.selections[4]) || null; } catch(e) { return null; } },
+  getCategoryId: (name) => {
+    try {
+      const rows = Custom_Grading.model.gradingData || [];
+      const row = rows.find(r => r.category_name === name && !r.is_checklist);
+      return row ? row.category_id : null;
+    } catch(e) { return null; }
+  },
+  getSel1: () => {
+    try {
+      const catId = GradingData.getCategoryId('Cosmetics');
+      return catId ? (Number(Custom_Grading.model.selections[catId]) || null) : null;
+    } catch(e) { return null; }
+  },
+  getSel2: () => {
+    try {
+      const catId = GradingData.getCategoryId('LCD') || GradingData.getCategoryId('Screen');
+      return catId ? (Number(Custom_Grading.model.selections[catId]) || null) : null;
+    } catch(e) { return null; }
+  },
+  getSel3: () => {
+    try {
+      const catId = GradingData.getCategoryId('Functionality');
+      return catId ? (Number(Custom_Grading.model.selections[catId]) || null) : null;
+    } catch(e) { return null; }
+  },
+  getSel4: () => {
+    try {
+      const catId = GradingData.getCategoryId('Missing Components');
+      return catId ? (Number(Custom_Grading.model.selections[catId]) || null) : null;
+    } catch(e) { return null; }
+  },
   getBios: () => { try { return Custom_Grading.model.locks['BIOS Lock'] || false; } catch(e) { return false; } },
   getMdm: () => { try { return Custom_Grading.model.locks['MDM Lock'] || false; } catch(e) { return false; } },
   getEfi: () => { try { return Custom_Grading.model.locks['EFI Lock'] || false; } catch(e) { return false; } },

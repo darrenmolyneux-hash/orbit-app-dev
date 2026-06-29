@@ -1,0 +1,9 @@
+INSERT INTO asset_fees (asset_id, fee_type, fee_amount, fee_description, created_by)
+VALUES (
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  'erasure',
+  5.00,
+  'Blancco erasure fee',
+  '{{appsmith.user.email}}'
+)
+ON CONFLICT DO NOTHING;

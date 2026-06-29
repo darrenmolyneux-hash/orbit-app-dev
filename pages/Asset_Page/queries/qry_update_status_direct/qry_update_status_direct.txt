@@ -1,0 +1,3 @@
+UPDATE assets
+SET status_id = {{Number(appsmith.store.pending_status_id)}}
+WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};

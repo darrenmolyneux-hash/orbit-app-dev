@@ -1,0 +1,9 @@
+CREATE TABLE asset_fees (
+  fee_id SERIAL PRIMARY KEY,
+  asset_id INTEGER NOT NULL REFERENCES assets(asset_id),
+  fee_type VARCHAR(100) NOT NULL,
+  fee_amount NUMERIC(10,2) NOT NULL DEFAULT 0,
+  fee_description TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  created_by VARCHAR(255)
+);

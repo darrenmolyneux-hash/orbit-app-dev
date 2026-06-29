@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_587ca953-96c3-4a45-bab9-560c4f2d53c9",
-  "id": "Asset_Page_GetSaleItemByAsset",
+  "gitSyncId": "6a305b9e0882adc7e482e226_ddc0fbea-cdb6-4ea4-918b-e7941c45cde2",
+  "id": "Asset_Page_qry_update_status_direct",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT sale_item_id\nFROM sale_items\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\nORDER BY sale_item_id DESC\nLIMIT 1;",
+      "body": "UPDATE assets\nSET status_id = {{Number(appsmith.store.pending_status_id)}}\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "GetSaleItemByAsset",
+    "name": "qry_update_status_direct",
     "pageId": "Asset_Page",
-    "runBehaviour": "ON_PAGE_LOAD",
-    "userSetOnLoad": true
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": false
   }
 }

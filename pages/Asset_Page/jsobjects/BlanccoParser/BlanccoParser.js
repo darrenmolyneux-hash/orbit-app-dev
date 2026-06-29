@@ -897,21 +897,30 @@ getRequestedSerial() {
     return result[0];
   },
 
-  async fetchAndSave() {
-    await BlanccoSearch.run();
+async fetchAndSave() {
+  await BlanccoSearch.run();
 
-    const parsed = this.parseBlancco();
+  const parsed = this.parseBlancco();
 
-    const saved = await this.saveToDb(parsed);
-    if (!saved) return;
+  const saved = await this.saveToDb(parsed);
+  if (!saved) return;
 
-    await qry_GetAssetById.run();
+  const erasureStatus = (parsed.erasure_status || '').toLowerCase();
+  if (erasureStatus.includes('success') || erasureStatus === 'erased') {
+    try {
+      await qry_insert_blancco_fee.run();
+    } catch(e) {
+      showAlert('Fee write failed: ' + e.message, 'warning');
+    }
+  }
 
-    showAlert(
-      `Saved — ${parsed.product_name || parsed.model} (${parsed.serial})`,
-      "success"
-    );
-  },
+  await qry_GetAssetById.run();
+
+  showAlert(
+    `Saved — ${parsed.product_name || parsed.model} (${parsed.serial})`,
+    'success'
+  );
+},
 
   debugResponse() {
     const raw = BlanccoSearch.data;

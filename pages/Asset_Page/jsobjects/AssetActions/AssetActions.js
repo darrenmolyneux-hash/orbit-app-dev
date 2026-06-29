@@ -40,13 +40,13 @@ export default {
     if (!saleId) { showAlert('No sale linked to this asset', 'warning'); return; }
     navigateTo('SaleDetails', { sale_id: saleId }, 'SAME_WINDOW');
   },
-  saveCost: async () => {
-    const m = FinancialWidget.model;
-    await storeValue('asset_original_cost', m.input_cost);
-    await UpdateOriginalCost.run();
-    await qry_GetAssetById.run();
-    showAlert('Cost saved ✓', 'success');
-  },
+saveCost: async () => {
+  const m = FinancialWidget.model;
+  await storeValue('asset_original_cost', m.input_cost);
+  await UpdateOriginalCost.run();
+  await qry_GetAssetById.run();
+  showAlert('Cost saved ✓', 'success');
+},
   saveSellPrice: async () => {
     const m = FinancialWidget.model;
     await storeValue('asset_sell_price', m.input_sell);
@@ -107,15 +107,63 @@ export default {
       showModal('ModalAddPart');
     }
   },
-  saveGrading: async () => {
-    try {
-      await new Promise(resolve => setTimeout(resolve, 300));
-      await qry_grading_save.run();
-      await qry_update_overall_grade.run();
-      await qry_GetAssetById.run();
-      showAlert('Grading saved ✓', 'success');
-    } catch(err) {
-      showAlert('Save error: ' + err.message, 'error');
+	applyLockStatus: async (locks) => {
+  showAlert('applyLock type: ' + typeof qry_update_status_direct, 'info');
+  const biosLock = locks['BIOS Lock'];
+  const mdmLock = locks['MDM Lock'];
+  const icloudLock = locks['iCloud Lock'];
+  const anyLock = biosLock || mdmLock || icloudLock;
+  if (!anyLock) return;
+  let targetStatusId = null;
+  if (icloudLock) targetStatusId = 10;
+  else if (mdmLock) targetStatusId = 8;
+  else if (biosLock) targetStatusId = 9;
+  await storeValue('pending_status_id', targetStatusId);
+  await qry_update_status_direct.run();
+  await qry_insert_status_history_dire.run();
+  await qry_GetAssetById.run();
+  storeValue('pending_status_id', null);
+},
+clearLocks: async () => {
+  await storeValue('grade_bios', false);
+  await storeValue('grade_mdm', false);
+  await storeValue('grade_efi', false);
+  await storeValue('grade_icloud', false);
+  await storeValue('grade_intune', false);
+  await storeValue('grade_overall', Custom_Grading.model.overallGrade || '');
+  await storeValue('grade_notes', Custom_Grading.model.notes || '');
+  await qry_grading_save.run();
+  await storeValue('pending_status_id', 23);
+  await qry_update_status_direct.run();
+  await qry_insert_status_history_dire.run();
+  await storeValue('pending_status_id', 1);
+  await qry_update_status_direct.run();
+  await qry_insert_status_history_dire.run();
+  await qry_GetAssetById.run();
+  await Query3qry_grading_get.run();
+  await qry_asset_history.run();
+  await storeValue('gradingLoadedAt', Date.now());
+  storeValue('pending_status_id', null);
+  showAlert('Locks cleared — asset released ✓', 'success');
+},
+saveGrading: async () => {
+  try {
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    await qry_grading_save.run();
+    await qry_update_overall_grade.run();
+    await qry_GetAssetById.run();
+    const biosLock = appsmith.store.lock_bios || false;
+    const mdmLock = appsmith.store.lock_mdm || false;
+    const icloudLock = appsmith.store.lock_icloud || false;
+    const anyLock = biosLock || mdmLock || icloudLock;
+    if (anyLock) {
+      await AssetActions.applyLockStatus({ 'BIOS Lock': biosLock, 'MDM Lock': mdmLock, 'iCloud Lock': icloudLock });
+      await Query3qry_grading_get.run();
+      await storeValue('gradingLoadedAt', Date.now());
     }
+    showAlert('Grading saved ✓', 'success');
+  } catch(err) {
+    showAlert('Save error: ' + err.message, 'error');
   }
+}
 }

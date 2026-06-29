@@ -1,0 +1,12 @@
+INSERT INTO asset_status_history (asset_id, status_id, changed_by)
+SELECT
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(appsmith.store.pending_status_id)}},
+  '{{appsmith.user.email}}'
+WHERE {{Number(appsmith.store.pending_status_id)}} > 0
+AND NOT EXISTS (
+  SELECT 1 FROM asset_status_history
+  WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+  AND status_id = {{Number(appsmith.store.pending_status_id)}}
+  AND changed_at > NOW() - INTERVAL '5 seconds'
+);
