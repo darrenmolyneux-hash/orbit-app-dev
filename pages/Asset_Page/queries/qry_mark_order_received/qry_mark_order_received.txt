@@ -1,0 +1,4 @@
+UPDATE parts_orders
+SET status = 'Received', received_at = NOW()
+WHERE order_id = {{Number(this.params.orderId)}}
+RETURNING *;

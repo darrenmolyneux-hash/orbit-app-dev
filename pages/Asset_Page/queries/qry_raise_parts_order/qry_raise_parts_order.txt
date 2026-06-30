@@ -1,0 +1,18 @@
+INSERT INTO parts_orders (
+  asset_id, part_type_id, part_description, supplier, order_ref,
+  unit_cost, quantity, expected_delivery, notes,
+  ordered_by, ordered_at, status
+) VALUES (
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(RepairPartsWidget.model.partsOrder.part_type_id)}},
+  '{{RepairPartsWidget.model.partsOrder.part_description}}',
+  '{{RepairPartsWidget.model.partsOrder.supplier}}',
+  '{{RepairPartsWidget.model.partsOrder.order_ref}}',
+  {{Number(RepairPartsWidget.model.partsOrder.unit_cost)}},
+  {{Number(RepairPartsWidget.model.partsOrder.quantity)}},
+  {{RepairPartsWidget.model.partsOrder.expected_delivery ? "'" + RepairPartsWidget.model.partsOrder.expected_delivery + "'" : 'NULL'}},
+  '{{RepairPartsWidget.model.partsOrder.notes}}',
+  '{{appsmith.user.name}}',
+  NOW(), 'Pending'
+)
+RETURNING order_id;

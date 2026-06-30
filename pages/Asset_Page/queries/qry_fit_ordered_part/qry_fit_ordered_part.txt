@@ -1,0 +1,19 @@
+INSERT INTO harvested_parts (
+  part_ref,
+  part_type_id,
+  installed_in_asset_id,
+  status,
+  part_cost,
+  date_added_to_stock,
+  part_make
+) 
+SELECT 
+  'PRT-' || LPAD(nextval('part_ref_seq')::text, 5, '0'),
+  po.part_type_id,
+  po.asset_id,
+  'in_asset',
+  po.unit_cost,
+  NOW(),
+  po.supplier
+FROM parts_orders po
+WHERE po.order_id = {{Number(this.params.orderId)}};

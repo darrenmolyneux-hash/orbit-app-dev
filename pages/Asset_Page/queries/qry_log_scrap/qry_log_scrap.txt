@@ -1,0 +1,13 @@
+INSERT INTO harvested_parts (
+  part_ref,
+  source_asset_id, part_type_id, removal_notes,
+  removed_by, removed_at, status, is_salvageable,
+  destination_type
+) VALUES (
+  'PRT-' || LPAD(nextval('part_ref_seq')::text, 5, '0'),
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(RepairPartsWidget.model.scrapPart.part_type_id)}},
+  '{{RepairPartsWidget.model.scrapPart.notes}}',
+  '{{RepairPartsWidget.model.scrapPart.removed_by}}',
+  NOW(), 'scrapped', false, 'scrap_general'
+);

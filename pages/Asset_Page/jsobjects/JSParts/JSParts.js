@@ -346,6 +346,35 @@ export default {
       showAlert('Complete the removal details below to pull this part.', 'info');
     }
   },
+	onLogScrap: async () => {
+  try {
+    await qry_log_scrap.run();
+    showAlert('Scrapped part logged', 'success');
+  } catch(err) {
+    showAlert('Failed to log scrap: ' + err.message, 'error');
+  }
+},
+
+onRaiseOrder: async () => {
+  try {
+    await qry_raise_parts_order.run();
+    await qry_parts_orders.run();
+    showAlert('Parts order raised', 'success');
+  } catch(err) {
+    showAlert('Failed to raise order: ' + err.message, 'error');
+  }
+},
+onMarkReceived: async () => {
+  try {
+    const orderId = RepairPartsWidget.model.receivingOrderId;
+    await qry_mark_order_received.run({ orderId: orderId });
+    await qry_fit_ordered_part.run({ orderId: orderId });
+    await qry_parts_orders.run();
+    showAlert('Part marked as received and fitted', 'success');
+  } catch(err) {
+    showAlert('Failed to mark received: ' + err.message, 'error');
+  }
+},
 
   async confirmDonorRemoval() {
     if (!appsmith.store.inp_donor_serial) {

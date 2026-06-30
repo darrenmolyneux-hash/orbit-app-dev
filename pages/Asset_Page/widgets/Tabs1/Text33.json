@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 21,
+  "bottomRow": 37,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,6 +30,8 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
+  "originalBottomRow": 37,
+  "originalTopRow": 33,
   "overflow": "NONE",
   "parentColumnSpace": 18.8828125,
   "parentId": "onlm3me0uv",
@@ -41,7 +43,7 @@
   "text": "Part assessment — log components on this asset",
   "textAlign": "CENTER",
   "textColor": "#1a5c3a",
-  "topRow": 17,
+  "topRow": 33,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -1,0 +1,1 @@
+SELECT order_id, asset_id, part_description, ordered_at FROM parts_orders ORDER BY ordered_at DESC LIMIT 5;
