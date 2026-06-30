@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 82,
+  "bottomRow": 69,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 770,
+      "bottomRow": 640,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 770,
+      "bottomRow": 690,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -102,7 +102,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 770,
+      "bottomRow": 750,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -147,7 +147,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 770,
+      "bottomRow": 640,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -161,6 +161,7 @@
         }
       ],
       "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
       "flexLayers": [],
       "isLoading": false,
       "isVisible": true,
@@ -182,12 +183,57 @@
       "responsiveBehavior": "fill",
       "rightColumn": 1048,
       "tabId": "tab8sawhf3toa",
-      "tabName": "Tab 2",
+      "tabName": "Bulk Part Orders",
       "topRow": 1,
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "atrrr7in9h",
       "widgetName": "Canvas17"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 640,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "5qfxz0lz3x",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 680,
+      "minWidth": 450,
+      "mobileBottomRow": 681,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1048,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "gn5exx72ps",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1048,
+      "tabId": "tabx82v04cyt6",
+      "tabName": "Finacial Report ",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "0jt9br0zq6",
+      "widgetName": "Canvas18"
     }
   ],
   "defaultTab": "Tab 1",
@@ -218,7 +264,7 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 72,
+  "originalBottomRow": 63,
   "originalTopRow": 1,
   "parentColumnSpace": 16.375,
   "parentId": "kk03s7t1bg",
@@ -249,7 +295,7 @@
       "id": "tab8sawhf3toa",
       "index": 3,
       "isVisible": true,
-      "label": "Tab 2",
+      "label": "Bulk Part Orders",
       "widgetId": "atrrr7in9h"
     },
     "tabv2oech752a": {
@@ -258,6 +304,13 @@
       "isVisible": true,
       "label": "Maintain Tables",
       "widgetId": "hu9j884nlk"
+    },
+    "tabx82v04cyt6": {
+      "id": "tabx82v04cyt6",
+      "index": 4,
+      "isVisible": true,
+      "label": "Finacial Report ",
+      "widgetId": "0jt9br0zq6"
     }
   },
   "topRow": 1,

@@ -14,7 +14,6 @@ LEFT JOIN makes mk ON mk.make_id = a.make
 LEFT JOIN models md ON md.model_id = a.model
 LEFT JOIN status_types st ON st.status_id = a.status_id
 WHERE 
-  (a.asset_ref ILIKE {{'%' + AssetRefSearch.text + '%'}}
-  OR a.serial_number ILIKE {{'%' + AssetRefSearch.text + '%'}})
-  AND a.status_id = 16
-LIMIT 10;
+  (a.asset_ref ILIKE {{'%' + AssetSearchWidget.model.searchTerm + '%'}}
+  OR a.serial_number ILIKE {{'%' + AssetSearchWidget.model.searchTerm + '%'}})
+LIMIT 1;

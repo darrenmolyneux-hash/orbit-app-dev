@@ -1,3 +1,4 @@
+-- GetAssetStatus
 SELECT 
     a.asset_id,
     a.status_id,
@@ -5,4 +6,4 @@ SELECT
 FROM assets a
 LEFT JOIN status_types st 
     ON a.status_id = st.status_id
-WHERE a.asset_id = {{Number(SearchResultTable.selectedRow?.asset_id || -1)}}
+WHERE a.asset_id = {{Number(AssetSearchWidget.model.asset?.asset_id || -1)}}

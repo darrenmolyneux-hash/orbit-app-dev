@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
+      "body": "SELECT * FROM drive_shred_records\nWHERE asset_id = {{ Number(appsmith.URL.queryParams.asset_id) }}\nORDER BY shred_date DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,6 +22,11 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "qry_get_shred_records",
     "pageId": "Asset_Page",
     "runBehaviour": "ON_PAGE_LOAD",

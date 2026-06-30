@@ -1,5 +1,4 @@
 SELECT * FROM (
-
   -- Status changes from asset_status_history
   SELECT
     ash.changed_at AS event_time,
@@ -26,7 +25,7 @@ SELECT * FROM (
     NULL AS notes
   FROM asset_audit_log aal
   WHERE aal.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
-  AND aal.field_name != 'status'
+    AND aal.field_name != 'status'
 
   UNION ALL
 
@@ -42,6 +41,39 @@ SELECT * FROM (
   FROM parts_audit_log pal
   WHERE pal.from_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
      OR pal.to_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+
+  UNION ALL
+
+  -- Blancco erasure events (per drive)
+  SELECT
+    d.erasure_end_time AS event_time,
+    'Erasure' AS event_type,
+    d.model AS field_name,
+    NULL AS old_value,
+    d.erasure_status AS new_value,
+    'Blancco' AS changed_by,
+    'Serial: ' || d.serial AS notes
+  FROM drives d
+  WHERE d.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+    AND d.erasure_end_time IS NOT NULL
+
+  UNION ALL
+
+  -- Drive shred events
+  SELECT
+    dsr.shred_date AS event_time,
+    'Shred' AS event_type,
+    dsr.drive_model AS field_name,
+    NULL AS old_value,
+    dsr.shred_type AS new_value,
+    dsr.shred_by AS changed_by,
+    dsr.notes
+  FROM drive_shred_records dsr
+  WHERE dsr.asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+
+  -- TODO: add Grading event block here once table/schema confirmed
+  -- UNION ALL
+  -- SELECT g.graded_at AS event_time, 'Grading' AS event_type, ...
 
 ) combined
 ORDER BY event_time DESC;

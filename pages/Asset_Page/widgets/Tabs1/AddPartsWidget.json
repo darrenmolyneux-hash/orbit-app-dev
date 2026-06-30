@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 169,
+  "bottomRow": 316,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  \"parts\": qry_add_parts_search.data\n}}}",
   "dynamicBindingPathList": [
@@ -20,7 +20,7 @@
       "key": "defaultModel"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "onInstallPart"
@@ -48,8 +48,8 @@
   "mobileTopRow": 12,
   "needsErrorInfo": false,
   "onInstallPart": "{{\n  (async function() {\n    const row = AddPartsWidget.model.selectedPart;\n    await storeValue('add_part_row', row);\n    AssetActions.confirmAddPart_fromWidget();\n  })()\n}}",
-  "originalBottomRow": 165,
-  "originalTopRow": 93,
+  "originalBottomRow": 119,
+  "originalTopRow": 96,
   "parentColumnSpace": 16.1142578125,
   "parentId": "fshtnlp6od",
   "parentRowSpace": 10,
@@ -62,7 +62,7 @@
     "js": "var allParts = [];\nwindow.applyFilters = function () {\n  var typeVal = (document.getElementById('filter_type') || {}).value || '';\n  var modelVal = ((document.getElementById('filter_model') || {}).value || '').toLowerCase().trim();\n  var filtered = allParts.filter(function (p) {\n    var typeMatch = !typeVal || p.part_type === typeVal;\n    var modelMatch = !modelVal || [p.donor_make, p.donor_model].filter(Boolean).join(' ').toLowerCase().indexOf(modelVal) !== -1;\n    return typeMatch && modelMatch;\n  });\n  var stock = filtered.filter(function (r) {\n    return r.availability === 'in_stock';\n  });\n  var donor = filtered.filter(function (r) {\n    return r.availability === 'in_donor_asset';\n  });\n  var count = document.getElementById('count');\n  var tbody = document.getElementById('table_body');\n  if (!tbody) return;\n  if (count) count.textContent = filtered.length + ' part' + (filtered.length !== 1 ? 's' : '');\n  if (!filtered.length) {\n    tbody.innerHTML = '<tr><td colspan=\"8\" class=\"empty\">No parts available</td></tr>';\n    return;\n  }\n  var html = '';\n  if (stock.length) {\n    html += '<tr class=\"group-row\"><td colspan=\"8\">✅ In Stock (' + stock.length + ')</td></tr>';\n    html += stock.map(function (r, i) {\n      var mm = [r.donor_make, r.donor_model].filter(Boolean).join(' · ') || '—';\n      var bat = r.is_battery ? ' 🔋' : '';\n      return '<tr><td><span class=\"badge badge-stock\">Stock</span></td>' + '<td><span class=\"part-type\">' + (r.part_type || '—') + bat + '</span></td>' + '<td><span class=\"asset-ref\">' + (r.donor_asset_ref || '—') + '</span></td>' + '<td>' + mm + '</td>' + '<td style=\"font-family:monospace;font-size:11px\">' + (r.serial_number || '—') + '</td>' + '<td>' + (r.condition_grade ? '<span class=\"grade\">' + r.condition_grade + '</span>' : '—') + '</td>' + '<td>' + (r.part_cost ? '£' + Number(r.part_cost).toFixed(2) : '—') + '</td>' + '<td><button class=\"btn-install\" onclick=\"window.installPart(' + i + ',\\'stock\\')\">Install</button></td></tr>';\n    }).join('');\n  }\n  if (donor.length) {\n    html += '<tr class=\"group-row\"><td colspan=\"8\">📦 From Donor Asset (' + donor.length + ')</td></tr>';\n    html += donor.map(function (r, i) {\n      var mm = [r.donor_make, r.donor_model].filter(Boolean).join(' · ') || '—';\n      var bat = r.is_battery ? ' 🔋' : '';\n      return '<tr><td><span class=\"badge badge-donor\">Donor</span></td>' + '<td><span class=\"part-type\">' + (r.part_type || '—') + bat + '</span></td>' + '<td><span class=\"asset-ref\">' + (r.donor_asset_ref || '—') + '</span></td>' + '<td>' + mm + '</td><td>—</td><td>—</td><td>—</td>' + '<td><button class=\"btn-install donor\" onclick=\"window.installPart(' + i + ',\\'donor\\')\">Pull & Install</button></td></tr>';\n    }).join('');\n  }\n  tbody.innerHTML = html;\n};\nwindow.installPart = function (idx, type) {\n  var parts = allParts.filter(function (r) {\n    return r.availability === (type === 'stock' ? 'in_stock' : 'in_donor_asset');\n  });\n  var row = parts[idx];\n  if (!row) return;\n  appsmith.updateModel({\n    selectedPart: row\n  });\n  appsmith.triggerEvent('onInstallPart');\n};\nfunction render(model) {\n  allParts = model.parts || [];\n  var select = document.getElementById('filter_type');\n  if (select) {\n    var current = select.value;\n    var types = [];\n    allParts.forEach(function (p) {\n      if (p.part_type && types.indexOf(p.part_type) === -1) types.push(p.part_type);\n    });\n    types.sort();\n    select.innerHTML = '<option value=\"\">All part types</option>' + types.map(function (t) {\n      return '<option value=\"' + t + '\"' + (t === current ? ' selected' : '') + '>' + t + '</option>';\n    }).join('');\n  }\n  window.applyFilters();\n}\nappsmith.onReady(function () {\n  render(appsmith.model);\n});\nappsmith.onModelChange(function () {\n  render(appsmith.model);\n});"
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 97,
+  "topRow": 92,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n}\n\n.tip-container {\n  margin-bottom: 20px;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  margin-bottom: 9px;\n}\n\n.tip-header div {\n  color: #999;\n}\n\n.content {\n  white-space: pre-wrap;\n  word-break: break-word;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.button-container {\n  text-align: right;\n  padding-top: 4px;\n}\n\n.button-container button {\n  margin: 0 10px;\n  cursor: pointer;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 6px 16px;\n  background: none;\n  height: auto;\n  transition: all 0.3s ease;\n}\n\n.button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n  color: #fff;\n  border: 1px solid var(--appsmith-theme-primaryColor) !important;\n}\n\n.button-container button.reset {\n  border: 1px solid #999;\n  color: #999;\n  outline: none;\n  box-shadow: none;\n}\n\n.button-container button.reset:hover:not(:disabled) {\n  color: var(--appsmith-theme-primaryColor);\n  border-color: var(--appsmith-theme-primaryColor);\n}\n\n.button-container button.reset:disabled {\n  cursor: default;\n}",

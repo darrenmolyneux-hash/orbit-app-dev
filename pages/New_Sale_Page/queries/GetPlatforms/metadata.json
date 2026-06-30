@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "GetPlatforms",
     "pageId": "New_Sale_Page",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

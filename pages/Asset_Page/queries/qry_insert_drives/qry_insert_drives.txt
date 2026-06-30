@@ -1,0 +1,39 @@
+INSERT INTO drives (
+	asset_id,
+	disk_index,
+	model,
+	serial,
+	interface_type,
+	capacity,
+	health,
+	power_on_hours,
+	erasure_status,
+	erasure_standard,
+	erasure_start_time,
+	erasure_end_time,
+	source
+)
+SELECT
+  {{ qry_GetAssetById.data[0].asset_id }} AS asset_id,
+  (d->>'disk_index')::int AS disk_index,
+  d->>'model' AS model,
+  d->>'serial' AS serial,
+  d->>'interface_type' AS interface_type,
+  d->>'capacity' AS capacity,
+  d->>'health' AS health,
+  d->>'power_on_hours' AS power_on_hours,
+  d->>'erasure_status' AS erasure_status,
+  d->>'erasure_standard' AS erasure_standard,
+  NULLIF(d->>'erasure_start_time', '')::timestamptz AS erasure_start_time,
+  NULLIF(d->>'erasure_end_time', '')::timestamptz AS erasure_end_time,
+  'blancco' AS source
+FROM jsonb_array_elements({{ JSON.stringify(this.params.drives) }}::jsonb) AS d
+ON CONFLICT (asset_id, serial) DO UPDATE SET
+  disk_index = EXCLUDED.disk_index,
+  model = EXCLUDED.model,
+  interface_type = EXCLUDED.interface_type,
+  capacity = EXCLUDED.capacity,
+  health = EXCLUDED.health,
+  erasure_status = EXCLUDED.erasure_status,
+  erasure_standard = EXCLUDED.erasure_standard,
+  erasure_end_time = EXCLUDED.erasure_end_time;

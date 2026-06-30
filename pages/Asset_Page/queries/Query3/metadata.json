@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT order_id, asset_id, part_description, ordered_at FROM parts_orders ORDER BY ordered_at DESC LIMIT 5;",
+      "body": "SELECT\n  hp.id,\n  hp.part_ref,\n  pt.name AS part_type,\n  hp.part_make,\n  hp.part_cost,\n  hp.date_added_to_stock\nFROM harvested_parts hp\nLEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id\nWHERE hp.installed_in_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\nAND hp.status = 'in_asset'\nORDER BY hp.date_added_to_stock DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "Query3",
     "pageId": "Asset_Page",
     "runBehaviour": "MANUAL",

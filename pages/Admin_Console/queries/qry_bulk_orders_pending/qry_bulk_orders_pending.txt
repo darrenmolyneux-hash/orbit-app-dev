@@ -1,0 +1,5 @@
+SELECT po.*, pt.name AS part_type_name
+FROM parts_orders po
+LEFT JOIN part_types pt ON pt.part_type_id = po.part_type_id
+WHERE po.asset_id IS NULL
+ORDER BY po.ordered_at DESC;

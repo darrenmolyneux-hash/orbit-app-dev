@@ -1,0 +1,1 @@
+SELECT * FROM drives WHERE asset_id = {{ appsmith.URL.queryParams.asset_id }} ORDER BY disk_index;

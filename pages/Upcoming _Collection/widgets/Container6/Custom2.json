@@ -31,15 +31,11 @@
       "key": "onResetClick"
     },
     {
-      "key": "onPageLoad"
-    },
-    {
       "key": "onGoTo"
     }
   ],
   "events": [
     "onResetClick",
-    "onPageLoad",
     "onGoTo"
   ],
   "isCanvas": false,
@@ -56,7 +52,6 @@
   "mobileTopRow": 10,
   "needsErrorInfo": false,
   "onGoTo": "{{navigateTo('Collection_job_View', { collectionId: Custom2.model.collectionId }, 'SAME_WINDOW')}}",
-  "onPageLoad": "{{JSCollections.init();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "parentColumnSpace": 19.171875,
   "parentId": "kk03s7t1bg",

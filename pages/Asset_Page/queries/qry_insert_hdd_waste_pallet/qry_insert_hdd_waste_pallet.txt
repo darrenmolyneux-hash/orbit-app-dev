@@ -1,6 +1,6 @@
 INSERT INTO waste_pallets (waste_id, waste_type, status, created_by)
 VALUES (
-  'WP-HDD-' || TO_CHAR(NOW(), 'YYYY-MM-DD-HH24MI'),
+  'WP-' || LPAD(NEXTVAL('waste_pallet_seq')::text, 5, '0'),
   'HDD Shred',
   'open',
   '{{appsmith.user.email}}'

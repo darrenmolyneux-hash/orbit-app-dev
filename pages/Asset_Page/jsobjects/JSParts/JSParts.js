@@ -346,35 +346,85 @@ export default {
       showAlert('Complete the removal details below to pull this part.', 'info');
     }
   },
-	onLogScrap: async () => {
-  try {
-    await qry_log_scrap.run();
-    showAlert('Scrapped part logged', 'success');
-  } catch(err) {
-    showAlert('Failed to log scrap: ' + err.message, 'error');
-  }
-},
 
-onRaiseOrder: async () => {
-  try {
-    await qry_raise_parts_order.run();
-    await qry_parts_orders.run();
-    showAlert('Parts order raised', 'success');
-  } catch(err) {
-    showAlert('Failed to raise order: ' + err.message, 'error');
-  }
-},
-onMarkReceived: async () => {
-  try {
-    const orderId = RepairPartsWidget.model.receivingOrderId;
-    await qry_mark_order_received.run({ orderId: orderId });
-    await qry_fit_ordered_part.run({ orderId: orderId });
-    await qry_parts_orders.run();
-    showAlert('Part marked as received and fitted', 'success');
-  } catch(err) {
-    showAlert('Failed to mark received: ' + err.message, 'error');
-  }
-},
+  onLogScrap: async () => {
+    try {
+      await qry_log_scrap.run();
+      showAlert('Scrapped part logged', 'success');
+    } catch(err) {
+      showAlert('Failed to log scrap: ' + err.message, 'error');
+    }
+  },
+
+  onRaiseOrder: async () => {
+    try {
+      await qry_raise_parts_order.run();
+      await qry_parts_orders.run();
+      showAlert('Parts order raised', 'success');
+    } catch(err) {
+      showAlert('Failed to raise order: ' + err.message, 'error');
+    }
+  },
+
+  onMarkReceived: async () => {
+    try {
+      const orderId = RepairPartsWidget.model.receivingOrderId;
+      await qry_mark_order_received.run({ orderId: orderId });
+      await qry_fit_ordered_part.run({ orderId: orderId });
+      await qry_parts_orders.run();
+      showAlert('Part marked as received and fitted', 'success');
+    } catch(err) {
+      showAlert('Failed to mark received: ' + err.message, 'error');
+    }
+  },
+
+  onRequestPart: async () => {
+    try {
+      const assetRef = qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].asset_ref : appsmith.URL.queryParams.asset_id;
+      const partDesc = RepairPartsWidget.model.requestedPartDesc;
+      const requestedBy = appsmith.user.name;
+
+  const payload = {
+  text: "Part request - Asset " + assetRef + " - Part needed: " + partDesc,
+  blocks: [
+    {
+      type: "header",
+      text: { type: "plain_text", text: "🔧 Repair Part Request", emoji: true }
+    },
+    {
+      type: "section",
+      fields: [
+        { type: "mrkdwn", text: ":package: *Asset Ref*\n" + assetRef },
+        { type: "mrkdwn", text: ":bust_in_silhouette: *Requested by*\n" + requestedBy }
+      ]
+    },
+    { type: "divider" },
+    {
+      type: "section",
+      text: { type: "mrkdwn", text: ":wrench: *Part needed*\n" + partDesc }
+    },
+    {
+      type: "context",
+      elements: [
+        { type: "mrkdwn", text: "Submitted via Orbit • " + new Date().toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) }
+      ]
+    }
+  ],
+  attachments: [
+    {
+      color: "#A3E851",
+      blocks: []
+    }
+  ]
+};
+
+      console.log('Payload being sent:', JSON.stringify(payload));
+      await Slack_Webhook.run({ slackPayload: payload });
+      showAlert('Part request sent to Slack', 'success');
+    } catch(err) {
+      showAlert('Failed to send request: ' + err.message, 'error');
+    }
+  },
 
   async confirmDonorRemoval() {
     if (!appsmith.store.inp_donor_serial) {

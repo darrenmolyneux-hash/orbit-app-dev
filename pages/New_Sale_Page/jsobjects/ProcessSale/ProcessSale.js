@@ -1,10 +1,10 @@
 export default {
   async run() {
-    if (!SalePlatformSelect.selectedOptionValue) {
+    const platform = appsmith.store.selectedPlatform;
+    if (!platform) {
       showAlert("Please select a sale platform before processing", "warning");
       return;
     }
-
     const items = appsmith.store.saleList || [];
     if (items.length === 0) {
       showAlert("No items in sale", "warning");
@@ -15,7 +15,8 @@ export default {
       0
     );
     const saleHeader = await InsertSaleHeader.run({
-      total_price: total
+      total_price: total,
+      platform: platform
     });
     const sale_id = saleHeader[0].sale_id;
     const sale_ref = saleHeader[0].sale_ref;
@@ -41,6 +42,7 @@ export default {
       });
     }
     storeValue("saleList", []);
+    storeValue("selectedPlatform", "");
     showAlert("Sale processed: " + sale_ref, "success");
     navigateTo('SaleDetails', { sale_id: sale_id });
     return sale_ref;

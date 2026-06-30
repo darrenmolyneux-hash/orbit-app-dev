@@ -1,0 +1,70 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 105,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{{\n  \"header\": GetSaleHeader.data && GetSaleHeader.data[0] ? GetSaleHeader.data[0] : null,\n  \"items\": GetSaleItems.data || []\n}}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "8eibghhyh8",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 50,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 20,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 105,
+  "originalTopRow": 20,
+  "parentColumnSpace": 16.6875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "#invoiceBox {\n  font-family: inherit;\n  background: #FFFFFF;\n  border: 1px solid #E5E7EB;\n  border-radius: 12px;\n  padding: 24px 28px;\n}\n\n.invoice-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid #E5E7EB;\n  padding-bottom: 16px;\n  margin-bottom: 20px;\n}\n\n.invoice-title {\n  font-size: 22px;\n  font-weight: 700;\n  color: #05042E;\n}\n\n.invoice-subtitle {\n  font-size: 13px;\n  color: #469BC0;\n}\n\n#printBtn {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #00C170;\n  color: #05042E;\n  border: none;\n  padding: 9px 16px;\n  border-radius: 8px;\n  font-weight: 700;\n  font-size: 13px;\n  cursor: pointer;\n}\n\n#printBtn:hover {\n  opacity: 0.9;\n}\n\n.invoice-summary {\n  display: flex;\n  gap: 32px;\n  background: #F8FAFC;\n  border-radius: 10px;\n  padding: 16px 20px;\n  margin-bottom: 20px;\n}\n\n.summary-block .label {\n  display: block;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  color: #64748B;\n  font-weight: 600;\n  margin-bottom: 4px;\n}\n\n.summary-block .value {\n  font-size: 28px;\n  font-weight: 700;\n  color: #05042E;\n}\n\n.invoice-meta {\n  display: flex;\n  justify-content: space-between;\n  gap: 24px;\n  margin-bottom: 24px;\n}\n\n.invoice-meta .label {\n  display: block;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  color: #64748B;\n  font-weight: 600;\n  margin-bottom: 4px;\n}\n\n.invoice-meta .value {\n  font-size: 14px;\n  font-weight: 600;\n  color: #1F2937;\n}\n\n#customerInput {\n  border: 1px solid #D1D5DB;\n  border-radius: 6px;\n  padding: 6px 10px;\n  font-size: 14px;\n  width: 180px;\n}\n\n.invoice-ref {\n  font-size: 32px;\n  font-weight: 700;\n  letter-spacing: 0.02em;\n  color: #05042E;\n  margin-bottom: 16px;\n}\n\n#invoiceTable {\n  width: 100%;\n  border-collapse: collapse;\n}\n\n#invoiceTable th {\n  text-align: left;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  color: #64748B;\n  font-weight: 600;\n  padding: 10px 8px;\n  border-bottom: 1px solid #E5E7EB;\n}\n\n#invoiceTable td {\n  padding: 10px 8px;\n  font-size: 13px;\n  border-bottom: 1px solid #F1F5F9;\n}\n\n@media print {\n  #printBtn {\n    display: none;\n  }\n}",
+    "html": "<div id=\"invoiceBox\">\n  <div class=\"invoice-header\">\n    <div>\n      <div class=\"invoice-title\">Invoice</div>\n      <div class=\"invoice-subtitle\">Sales invoice</div>\n    </div>\n    <button id=\"printBtn\"><i class=\"ti ti-printer\"></i> Print</button>\n  </div>\n\n  <div class=\"invoice-summary\">\n    <div class=\"summary-block\">\n      <span class=\"label\">Items</span>\n      <span class=\"value\" id=\"itemCount\">0</span>\n    </div>\n    <div class=\"summary-block\">\n      <span class=\"label\">Total</span>\n      <span class=\"value\" id=\"totalValue\">£0.00</span>\n    </div>\n  </div>\n\n  <div class=\"invoice-meta\">\n    <div>\n      <span class=\"label\">Customer</span>\n      <input type=\"text\" id=\"customerInput\" placeholder=\"Enter name...\" />\n    </div>\n    <div>\n      <span class=\"label\">Sale date</span>\n      <span class=\"value\" id=\"saleDate\"></span>\n    </div>\n    <div>\n      <span class=\"label\">Created by</span>\n      <span class=\"value\" id=\"createdBy\"></span>\n    </div>\n  </div>\n\n  <div class=\"invoice-ref\" id=\"saleRef\"></div>\n\n  <table id=\"invoiceTable\">\n    <thead>\n      <tr><th>Ref</th><th>Make / Model</th><th>Serial</th><th>Price</th></tr>\n    </thead>\n    <tbody id=\"invoiceTbody\"></tbody>\n  </table>\n</div>",
+    "js": "function escHtml(str) {\n  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\nfunction render() {\n  const m = appsmith.model || {};\n  const header = m.header;\n  const items = Array.isArray(m.items) ? m.items : [];\n  if (!header) return;\n  const isDirectSale = header.platform === 'Direct Sale';\n  const customerInput = document.getElementById('customerInput');\n  customerInput.value = isDirectSale ? header.customer_name || '' : header.platform;\n  customerInput.disabled = !isDirectSale;\n  customerInput.style.background = isDirectSale ? '#FFFFFF' : '#F1F5F9';\n  document.getElementById('saleDate').textContent = header.sale_date ? new Date(header.sale_date).toLocaleDateString('en-GB', {\n    day: '2-digit',\n    month: 'short',\n    year: 'numeric'\n  }) : '';\n  document.getElementById('createdBy').textContent = header.created_by || '';\n  document.getElementById('saleRef').textContent = header.sale_ref || '';\n  document.getElementById('itemCount').textContent = items.length;\n  const total = items.reduce(function (sum, it) {\n    return sum + Number(it.sell_price || 0);\n  }, 0);\n  document.getElementById('totalValue').textContent = '£' + total.toFixed(2);\n  document.getElementById('invoiceTbody').innerHTML = items.map(function (item) {\n    return '<tr>' + '<td>' + escHtml(item.asset_ref) + '</td>' + '<td>' + escHtml(item.make_name) + ' ' + escHtml(item.model_name) + '</td>' + '<td>' + escHtml(item.serial_number) + '</td>' + '<td>£' + Number(item.sell_price || 0).toFixed(2) + '</td>' + '</tr>';\n  }).join('');\n}\nappsmith.onReady(function () {\n  render();\n  document.getElementById('printBtn').onclick = function () {\n    window.print();\n  };\n});\nappsmith.onModelChange(render);"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 20,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "#invoiceBox {\n  font-family: inherit;\n  background: #FFFFFF;\n  border: 1px solid #E5E7EB;\n  border-radius: 12px;\n  padding: 24px 28px;\n}\n\n.invoice-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid #E5E7EB;\n  padding-bottom: 16px;\n  margin-bottom: 20px;\n}\n\n.invoice-title {\n  font-size: 22px;\n  font-weight: 700;\n  color: #05042E;\n}\n\n.invoice-subtitle {\n  font-size: 13px;\n  color: #469BC0;\n}\n\n#printBtn {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #00C170;\n  color: #05042E;\n  border: none;\n  padding: 9px 16px;\n  border-radius: 8px;\n  font-weight: 700;\n  font-size: 13px;\n  cursor: pointer;\n}\n\n#printBtn:hover {\n  opacity: 0.9;\n}\n\n.invoice-summary {\n  display: flex;\n  gap: 32px;\n  background: #F8FAFC;\n  border-radius: 10px;\n  padding: 16px 20px;\n  margin-bottom: 20px;\n}\n\n.summary-block .label {\n  display: block;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  color: #64748B;\n  font-weight: 600;\n  margin-bottom: 4px;\n}\n\n.summary-block .value {\n  font-size: 28px;\n  font-weight: 700;\n  color: #05042E;\n}\n\n.invoice-meta {\n  display: flex;\n  justify-content: space-between;\n  gap: 24px;\n  margin-bottom: 24px;\n}\n\n.invoice-meta .label {\n  display: block;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  color: #64748B;\n  font-weight: 600;\n  margin-bottom: 4px;\n}\n\n.invoice-meta .value {\n  font-size: 14px;\n  font-weight: 600;\n  color: #1F2937;\n}\n\n#customerInput {\n  border: 1px solid #D1D5DB;\n  border-radius: 6px;\n  padding: 6px 10px;\n  font-size: 14px;\n  width: 180px;\n}\n\n.invoice-ref {\n  font-size: 32px;\n  font-weight: 700;\n  letter-spacing: 0.02em;\n  color: #05042E;\n  margin-bottom: 16px;\n}\n\n#invoiceTable {\n  width: 100%;\n  border-collapse: collapse;\n}\n\n#invoiceTable th {\n  text-align: left;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  color: #64748B;\n  font-weight: 600;\n  padding: 10px 8px;\n  border-bottom: 1px solid #E5E7EB;\n}\n\n#invoiceTable td {\n  padding: 10px 8px;\n  font-size: 13px;\n  border-bottom: 1px solid #F1F5F9;\n}\n\n@media print {\n  #printBtn { display: none; }\n}",
+    "html": "<div id=\"invoiceBox\">\n  <div class=\"invoice-header\">\n    <div>\n      <div class=\"invoice-title\">Invoice</div>\n      <div class=\"invoice-subtitle\">Sales invoice</div>\n    </div>\n    <button id=\"printBtn\"><i class=\"ti ti-printer\"></i> Print</button>\n  </div>\n\n  <div class=\"invoice-summary\">\n    <div class=\"summary-block\">\n      <span class=\"label\">Items</span>\n      <span class=\"value\" id=\"itemCount\">0</span>\n    </div>\n    <div class=\"summary-block\">\n      <span class=\"label\">Total</span>\n      <span class=\"value\" id=\"totalValue\">£0.00</span>\n    </div>\n  </div>\n\n  <div class=\"invoice-meta\">\n    <div>\n      <span class=\"label\">Customer</span>\n      <input type=\"text\" id=\"customerInput\" placeholder=\"Enter name...\" />\n    </div>\n    <div>\n      <span class=\"label\">Sale date</span>\n      <span class=\"value\" id=\"saleDate\"></span>\n    </div>\n    <div>\n      <span class=\"label\">Created by</span>\n      <span class=\"value\" id=\"createdBy\"></span>\n    </div>\n  </div>\n\n  <div class=\"invoice-ref\" id=\"saleRef\"></div>\n\n  <table id=\"invoiceTable\">\n    <thead>\n      <tr><th>Ref</th><th>Make / Model</th><th>Serial</th><th>Price</th></tr>\n    </thead>\n    <tbody id=\"invoiceTbody\"></tbody>\n  </table>\n</div>",
+    "js": "function escHtml(str) {\n  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n}\n\nfunction render() {\n  const m = appsmith.model || {};\n  const header = m.header;\n  const items = Array.isArray(m.items) ? m.items : [];\n\n  if (!header) return;\n\n  const isDirectSale = header.platform === 'Direct Sale';\n  const customerInput = document.getElementById('customerInput');\n  customerInput.value = isDirectSale ? (header.customer_name || '') : header.platform;\n  customerInput.disabled = !isDirectSale;\n  customerInput.style.background = isDirectSale ? '#FFFFFF' : '#F1F5F9';\n\n  document.getElementById('saleDate').textContent = header.sale_date\n    ? new Date(header.sale_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })\n    : '';\n  document.getElementById('createdBy').textContent = header.created_by || '';\n  document.getElementById('saleRef').textContent = header.sale_ref || '';\n\n  document.getElementById('itemCount').textContent = items.length;\n  const total = items.reduce(function(sum, it) { return sum + Number(it.sell_price || 0); }, 0);\n  document.getElementById('totalValue').textContent = '£' + total.toFixed(2);\n\n  document.getElementById('invoiceTbody').innerHTML = items.map(function(item) {\n    return '<tr>' +\n      '<td>' + escHtml(item.asset_ref) + '</td>' +\n      '<td>' + escHtml(item.make_name) + ' ' + escHtml(item.model_name) + '</td>' +\n      '<td>' + escHtml(item.serial_number) + '</td>' +\n      '<td>£' + Number(item.sell_price || 0).toFixed(2) + '</td>' +\n      '</tr>';\n  }).join('');\n}\n\nappsmith.onReady(function() {\n  render();\n  document.getElementById('printBtn').onclick = function() {\n    window.print();\n  };\n});\n\nappsmith.onModelChange(render);"
+  },
+  "version": 1,
+  "widgetId": "aq0gt0fdpn",
+  "widgetName": "Custom2"
+}

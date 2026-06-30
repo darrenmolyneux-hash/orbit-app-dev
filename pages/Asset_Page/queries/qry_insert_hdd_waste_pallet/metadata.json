@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO waste_pallets (waste_id, waste_type, status, created_by)\nVALUES (\n  'WP-HDD-' || TO_CHAR(NOW(), 'YYYY-MM-DD-HH24MI'),\n  'HDD Shred',\n  'open',\n  '{{appsmith.user.email}}'\n)\nRETURNING pallet_id, waste_id;",
+      "body": "INSERT INTO waste_pallets (waste_id, waste_type, status, created_by)\nVALUES (\n  'WP-' || LPAD(NEXTVAL('waste_pallet_seq')::text, 5, '0'),\n  'HDD Shred',\n  'open',\n  '{{appsmith.user.email}}'\n)\nRETURNING pallet_id, waste_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

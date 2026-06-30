@@ -1,0 +1,19 @@
+INSERT INTO parts_orders (
+  asset_id, part_type_id, part_description, supplier, order_ref,
+  unit_cost, quantity, expected_delivery, notes, location_id,
+  ordered_by, ordered_at, status
+) VALUES (
+  NULL,
+  {{Number(this.params.partTypeId)}},
+  '{{this.params.partDescription}}',
+  '{{this.params.supplier}}',
+  '{{this.params.orderRef}}',
+  {{Number(this.params.unitCost)}},
+  {{Number(this.params.quantity)}},
+  {{this.params.expectedDelivery ? "'" + this.params.expectedDelivery + "'" : 'NULL'}},
+  '{{this.params.notes}}',
+  {{Number(this.params.locationId)}},
+  '{{appsmith.user.name}}',
+  NOW(), 'Pending'
+)
+RETURNING order_id;

@@ -1,0 +1,5 @@
+SELECT location_id, location_code, location_name 
+FROM locations 
+WHERE location_type = 'stock' 
+AND is_active = true
+ORDER BY location_code;

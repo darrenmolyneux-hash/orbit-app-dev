@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    a.asset_id,\n    a.status_id,\n    st.status_name\nFROM assets a\nLEFT JOIN status_types st \n    ON a.status_id = st.status_id\nWHERE a.asset_id = {{Number(SearchResultTable.selectedRow?.asset_id || -1)}}",
+      "body": "-- GetAssetStatus\nSELECT \n    a.asset_id,\n    a.status_id,\n    st.status_name\nFROM assets a\nLEFT JOIN status_types st \n    ON a.status_id = st.status_id\nWHERE a.asset_id = {{Number(AssetSearchWidget.model.asset?.asset_id || -1)}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

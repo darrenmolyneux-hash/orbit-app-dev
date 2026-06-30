@@ -1,0 +1,76 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 58,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{{\n  \"searchTerm\": \"\",\n  \"asset\": SearchSaleItem.data && SearchSaleItem.data[0] ? SearchSaleItem.data[0] : null,\n  \"statusInfo\": {\n    \"status_name\": GetAssetStatus.data && GetAssetStatus.data[0] ? GetAssetStatus.data[0].status_name : null,\n    \"alreadySold\": CheckAssetOnSale.data && CheckAssetOnSale.data.length > 0,\n    \"sale_ref\": CheckAssetOnSale.data && CheckAssetOnSale.data.length > 0 ? CheckAssetOnSale.data[0].sale_ref : null\n  },\n  \"assetToAdd\": null\n}}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSearch"
+    },
+    {
+      "key": "onAddToSale"
+    }
+  ],
+  "events": [
+    "onSearch",
+    "onAddToSale"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "d66cheozdv",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 52,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 22,
+  "needsErrorInfo": false,
+  "onAddToSale": "{{JSObject4.runOnAddToSale();}}",
+  "onSearch": "{{JSObject3.Custom2onSearch();}}",
+  "originalBottomRow": 58,
+  "originalTopRow": 22,
+  "parentColumnSpace": 16.6875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "#searchBox {\n  font-family: inherit;\n  padding: 4px;\n}\n\n.widget-header {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #469BC0;\n  color: #FFFFFF;\n  padding: 12px 16px;\n  border-radius: 8px 8px 0 0;\n  font-weight: 700;\n  font-size: 13px;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n}\n\n.widget-header i {\n  font-size: 16px;\n}\n\n#assetSearchInput {\n  width: 100%;\n  box-sizing: border-box;\n  padding: 12px 16px;\n  font-size: 15px;\n  border: 1px solid #D1D5DB;\n  border-radius: 0 0 8px 8px;\n  outline: none;\n  transition: border-color 0.15s;\n}\n\n#assetSearchInput:focus {\n  border-color: #469BC0;\n  box-shadow: 0 0 0 3px rgba(70, 155, 192, 0.15);\n}\n\n.result-card {\n  margin-top: 16px;\n  background: #FFFFFF;\n  border: 1px solid #E5E7EB;\n  border-radius: 10px;\n  padding: 18px 20px;\n}\n\n.result-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 8px 0;\n  border-bottom: 1px solid #F1F5F9;\n  font-size: 14px;\n}\n\n.result-row:last-of-type {\n  border-bottom: none;\n}\n\n.result-row .label {\n  color: #64748B;\n  font-weight: 600;\n  font-size: 12px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n}\n\n#addToSaleBtn {\n  width: 100%;\n  margin-top: 14px;\n  padding: 12px;\n  background: #00C170;\n  color: #05042E;\n  font-weight: 700;\n  font-size: 14px;\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: opacity 0.15s;\n}\n\n#addToSaleBtn:hover {\n  opacity: 0.9;\n}\n\n#addToSaleBtn:disabled {\n  background: #E2E8F0;\n  color: #94A3B8;\n  cursor: not-allowed;\n}\n\n.no-result {\n  margin-top: 16px;\n  color: #94A3B8;\n  font-size: 14px;\n  text-align: center;\n  padding: 24px 0;\n}\n\n.status-badge {\n  display: inline-block;\n  padding: 3px 10px;\n  border-radius: 999px;\n  font-weight: 600;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.02em;\n}\n\n.status-intake {\n  background: #E2E8F0;\n  color: #475569;\n}\n\n.status-data {\n  background: #EDE9FE;\n  color: #5B21B6;\n}\n\n.status-compliance {\n  background: #FEF3C7;\n  color: #92400E;\n}\n\n.status-evaluation {\n  background: #DBEAFE;\n  color: #1E5A78;\n}\n\n.status-sales {\n  background: #DCFCE7;\n  color: #085041;\n}\n\n.status-end_of_life {\n  background: #E5E7EB;\n  color: #374151;\n}\n\n.status-asset {\n  background: #CCFBF1;\n  color: #0F6E56;\n}\n\n.status-default {\n  background: #F1F5F9;\n  color: #64748B;\n}",
+    "html": "<div id=\"searchBox\">\n  <div class=\"widget-header\">\n    <i class=\"ti ti-search\"></i>\n    <span>Find asset to sell</span>\n  </div>\n  <input type=\"text\" id=\"assetSearchInput\" placeholder=\"Enter asset ref or serial number...\" />\n  <div id=\"searchResult\"></div>\n</div>",
+    "js": "function escHtml(str) {\n  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\nconst STATUS_CATEGORY = {\n  'Received': 'intake',\n  'Awaiting Arrival': 'intake',\n  'Data Erasure': 'data',\n  'MDM Lock': 'compliance',\n  'BIOS Lock': 'compliance',\n  'iCloud Lock': 'compliance',\n  'Lock Released': 'compliance',\n  'Repair': 'evaluation',\n  'Awaiting Parts': 'evaluation',\n  'Stripped for Parts': 'evaluation',\n  'Available for Sale': 'sales',\n  'Under Offer': 'sales',\n  'Sold': 'sales',\n  'Recycled': 'end_of_life',\n  'In Repair': 'asset',\n  'Awaiting Part': 'asset',\n  'Repair Complete': 'asset'\n};\nfunction statusBadgeClass(statusName) {\n  const category = STATUS_CATEGORY[statusName] || 'default';\n  return 'status-badge status-' + category;\n}\nfunction renderResult(asset, statusInfo) {\n  const container = document.getElementById('searchResult');\n  if (!asset) {\n    container.innerHTML = '<p class=\"no-result\">No matching asset found.</p>';\n    return;\n  }\n  const available = statusInfo.status_name === 'Available for Sale' && !statusInfo.alreadySold;\n  const statusLabel = statusInfo.alreadySold ? 'Already on Sale: ' + escHtml(statusInfo.sale_ref || '') : escHtml(statusInfo.status_name || 'Unknown');\n  container.innerHTML = '<div class=\"result-card\">' + '<div class=\"result-row\"><span class=\"label\">Ref</span><span>' + escHtml(asset.asset_ref) + '</span></div>' + '<div class=\"result-row\"><span class=\"label\">Serial</span><span>' + escHtml(asset.serial_number) + '</span></div>' + '<div class=\"result-row\"><span class=\"label\">Item</span><span>' + escHtml(asset.item_type_name) + '</span></div>' + '<div class=\"result-row\"><span class=\"label\">Make / Model</span><span>' + escHtml(asset.make_name) + ' ' + escHtml(asset.model_name) + '</span></div>' + '<div class=\"result-row\"><span class=\"label\">Status</span><span class=\"' + statusBadgeClass(statusInfo.status_name) + '\">' + statusLabel + '</span></div>' + '<button id=\"addToSaleBtn\"' + (available ? '' : ' disabled') + '>Add to sale</button>' + '</div>';\n  document.getElementById('addToSaleBtn').onclick = function () {\n    if (!available) return;\n    appsmith.updateModel({\n      assetToAdd: asset\n    });\n    appsmith.triggerEvent('onAddToSale');\n  };\n}\nwindow.runSearch = async function () {\n  const term = document.getElementById('assetSearchInput').value.trim();\n  appsmith.updateModel({\n    searchTerm: term\n  });\n  if (term.length < 2) {\n    document.getElementById('searchResult').innerHTML = '';\n    return;\n  }\n  await appsmith.triggerEvent('onSearch');\n};\nappsmith.onReady(function () {\n  document.getElementById('assetSearchInput').addEventListener('keydown', function (e) {\n    if (e.key === 'Enter') window.runSearch();\n  });\n});\nappsmith.onModelChange(function () {\n  const m = appsmith.model || {};\n  renderResult(m.asset, m.statusInfo || {});\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 22,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "#searchBox {\n  font-family: inherit;\n  padding: 4px;\n}\n.widget-header {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #469BC0;\n  color: #FFFFFF;\n  padding: 12px 16px;\n  border-radius: 8px 8px 0 0;\n  font-weight: 700;\n  font-size: 13px;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n}\n.widget-header i {\n  font-size: 16px;\n}\n#assetSearchInput {\n  width: 100%;\n  box-sizing: border-box;\n  padding: 12px 16px;\n  font-size: 15px;\n  border: 1px solid #D1D5DB;\n  border-radius: 0 0 8px 8px;\n  outline: none;\n  transition: border-color 0.15s;\n}\n#assetSearchInput:focus {\n  border-color: #469BC0;\n  box-shadow: 0 0 0 3px rgba(70, 155, 192, 0.15);\n}\n.result-card {\n  margin-top: 16px;\n  background: #FFFFFF;\n  border: 1px solid #E5E7EB;\n  border-radius: 10px;\n  padding: 18px 20px;\n}\n.result-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 8px 0;\n  border-bottom: 1px solid #F1F5F9;\n  font-size: 14px;\n}\n.result-row:last-of-type {\n  border-bottom: none;\n}\n.result-row .label {\n  color: #64748B;\n  font-weight: 600;\n  font-size: 12px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n}\n#addToSaleBtn {\n  width: 100%;\n  margin-top: 14px;\n  padding: 12px;\n  background: #00C170;\n  color: #05042E;\n  font-weight: 700;\n  font-size: 14px;\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: opacity 0.15s;\n}\n#addToSaleBtn:hover {\n  opacity: 0.9;\n}\n#addToSaleBtn:disabled {\n  background: #E2E8F0;\n  color: #94A3B8;\n  cursor: not-allowed;\n}\n.no-result {\n  margin-top: 16px;\n  color: #94A3B8;\n  font-size: 14px;\n  text-align: center;\n  padding: 24px 0;\n}\n.status-badge {\n  display: inline-block;\n  padding: 3px 10px;\n  border-radius: 999px;\n  font-weight: 600;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.02em;\n}\n.status-intake {\n  background: #E2E8F0;\n  color: #475569;\n}\n.status-data {\n  background: #EDE9FE;\n  color: #5B21B6;\n}\n.status-compliance {\n  background: #FEF3C7;\n  color: #92400E;\n}\n.status-evaluation {\n  background: #DBEAFE;\n  color: #1E5A78;\n}\n.status-sales {\n  background: #DCFCE7;\n  color: #085041;\n}\n.status-end_of_life {\n  background: #E5E7EB;\n  color: #374151;\n}\n.status-asset {\n  background: #CCFBF1;\n  color: #0F6E56;\n}\n.status-default {\n  background: #F1F5F9;\n  color: #64748B;\n}",
+    "html": "<div id=\"searchBox\">\n  <div class=\"widget-header\">\n    <i class=\"ti ti-search\"></i>\n    <span>Find asset to sell</span>\n  </div>\n  <input type=\"text\" id=\"assetSearchInput\" placeholder=\"Enter asset ref or serial number...\" />\n  <div id=\"searchResult\"></div>\n</div>",
+    "js": "function escHtml(str) {\n  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n}\n\nconst STATUS_CATEGORY = {\n  'Received': 'intake',\n  'Awaiting Arrival': 'intake',\n  'Data Erasure': 'data',\n  'MDM Lock': 'compliance',\n  'BIOS Lock': 'compliance',\n  'iCloud Lock': 'compliance',\n  'Lock Released': 'compliance',\n  'Repair': 'evaluation',\n  'Awaiting Parts': 'evaluation',\n  'Stripped for Parts': 'evaluation',\n  'Available for Sale': 'sales',\n  'Under Offer': 'sales',\n  'Sold': 'sales',\n  'Recycled': 'end_of_life',\n  'In Repair': 'asset',\n  'Awaiting Part': 'asset',\n  'Repair Complete': 'asset'\n};\n\nfunction statusBadgeClass(statusName) {\n  const category = STATUS_CATEGORY[statusName] || 'default';\n  return 'status-badge status-' + category;\n}\n\nfunction renderResult(asset, statusInfo) {\n  const container = document.getElementById('searchResult');\n  if (!asset) {\n    container.innerHTML = '<p class=\"no-result\">No matching asset found.</p>';\n    return;\n  }\n  const available = statusInfo.status_name === 'Available for Sale' && !statusInfo.alreadySold;\n  const statusLabel = statusInfo.alreadySold\n    ? 'Already on Sale: ' + escHtml(statusInfo.sale_ref || '')\n    : escHtml(statusInfo.status_name || 'Unknown');\n  container.innerHTML =\n    '<div class=\"result-card\">' +\n      '<div class=\"result-row\"><span class=\"label\">Ref</span><span>' + escHtml(asset.asset_ref) + '</span></div>' +\n      '<div class=\"result-row\"><span class=\"label\">Serial</span><span>' + escHtml(asset.serial_number) + '</span></div>' +\n      '<div class=\"result-row\"><span class=\"label\">Item</span><span>' + escHtml(asset.item_type_name) + '</span></div>' +\n      '<div class=\"result-row\"><span class=\"label\">Make / Model</span><span>' + escHtml(asset.make_name) + ' ' + escHtml(asset.model_name) + '</span></div>' +\n      '<div class=\"result-row\"><span class=\"label\">Status</span><span class=\"' + statusBadgeClass(statusInfo.status_name) + '\">' + statusLabel + '</span></div>' +\n      '<button id=\"addToSaleBtn\"' + (available ? '' : ' disabled') + '>Add to sale</button>' +\n    '</div>';\n  document.getElementById('addToSaleBtn').onclick = function() {\n    if (!available) return;\n    appsmith.updateModel({ assetToAdd: asset });\n    appsmith.triggerEvent('onAddToSale');\n  };\n}\n\nwindow.runSearch = async function() {\n  const term = document.getElementById('assetSearchInput').value.trim();\n  appsmith.updateModel({ searchTerm: term });\n  if (term.length < 2) {\n    document.getElementById('searchResult').innerHTML = '';\n    return;\n  }\n  await appsmith.triggerEvent('onSearch');\n};\n\nappsmith.onReady(function() {\n  document.getElementById('assetSearchInput').addEventListener('keydown', function(e) {\n    if (e.key === 'Enter') window.runSearch();\n  });\n});\n\nappsmith.onModelChange(function() {\n  const m = appsmith.model || {};\n  renderResult(m.asset, m.statusInfo || {});\n});"
+  },
+  "version": 1,
+  "widgetId": "3cnkl1o27o",
+  "widgetName": "AssetSearchWidget"
+}

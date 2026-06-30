@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO sales (customer, sale_date, total_price, created_by, sale_ref)\nVALUES (\n    '{{SalePlatformSelect.selectedOptionValue}}',\n    NOW(),\n    {{Number(this.params.total_price)}},\n    '{{appsmith.user.email}}',\n    generate_sale_ref()\n)\nRETURNING sale_id, sale_ref;",
+      "body": "INSERT INTO sales (customer, sale_date, total_price, created_by, sale_ref)\nVALUES (\n    '{{this.params.platform}}',\n    NOW(),\n    {{Number(this.params.total_price)}},\n    '{{appsmith.user.email}}',\n    generate_sale_ref()\n)\nRETURNING sale_id, sale_ref;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

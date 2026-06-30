@@ -1,1 +1,12 @@
-SELECT order_id, asset_id, part_description, ordered_at FROM parts_orders ORDER BY ordered_at DESC LIMIT 5;
+SELECT
+  hp.id,
+  hp.part_ref,
+  pt.name AS part_type,
+  hp.part_make,
+  hp.part_cost,
+  hp.date_added_to_stock
+FROM harvested_parts hp
+LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
+WHERE hp.installed_in_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+AND hp.status = 'in_asset'
+ORDER BY hp.date_added_to_stock DESC;

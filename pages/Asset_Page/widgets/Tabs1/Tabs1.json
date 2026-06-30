@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": 1,
-  "bottomRow": 392,
+  "bottomRow": 393,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -358,8 +358,8 @@
   "mobileTopRow": 12,
   "needsErrorInfo": false,
   "onTabSelected": "{{AssetActions.onTabChange()}}",
-  "originalBottomRow": 392,
-  "originalTopRow": 57,
+  "originalBottomRow": 393,
+  "originalTopRow": 58,
   "parentColumnSpace": 19.5,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -380,7 +380,7 @@
     },
     "tab2": {
       "id": "tab2",
-      "index": 2,
+      "index": 1,
       "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Data",
@@ -389,7 +389,7 @@
     },
     "tab8d6w1nf9xr": {
       "id": "tab8d6w1nf9xr",
-      "index": 1,
+      "index": 2,
       "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Grading",
@@ -428,7 +428,7 @@
       "widgetId": "onlm3me0uv"
     }
   },
-  "topRow": 57,
+  "topRow": 58,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "22vdiaxhm2",
