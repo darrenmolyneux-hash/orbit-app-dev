@@ -1,3 +1,0 @@
-SELECT customer_id, customer_name
-FROM customers
-WHERE customer_id = {{Number(qry_collection_get.data[0]?.customer_id)}};

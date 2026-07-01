@@ -50,7 +50,7 @@
       "isDefault": false
     },
     {
-      "id": "Upcoming _Collection",
+      "id": "Upcoming Collection",
       "isDefault": false
     },
     {
@@ -75,10 +75,6 @@
     },
     {
       "id": "SaleDetails",
-      "isDefault": false
-    },
-    {
-      "id": "NewPageTemplate",
       "isDefault": false
     },
     {

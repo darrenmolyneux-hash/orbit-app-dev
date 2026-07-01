@@ -17,10 +17,7 @@ export default {
     );
     await qry_makes_list.run();
     return qry_makes_list.data;
-  },
-  checkAddNewModel() {
-    if (sel_model.selectedOptionValue === "__add_new__") {
-      showModal('Modal1');
-    }
   }
-}
+ 
+    }
+  

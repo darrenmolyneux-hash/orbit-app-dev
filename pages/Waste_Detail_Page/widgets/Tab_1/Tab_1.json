@@ -1,0 +1,162 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "1.5rem",
+  "borderWidth": 1,
+  "bottomRow": 110,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 850,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": true,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isDisabled": false,
+      "isLoading": false,
+      "isVisible": true,
+      "key": "5qfxz0lz3x",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 150,
+      "minWidth": 450,
+      "mobileBottomRow": 150,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 400.5,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "5kt14v1mi1",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 400.5,
+      "shouldScrollContents": false,
+      "tabId": "tab1",
+      "tabName": "Sale Pallets",
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "8la24952gt",
+      "widgetName": "Canvas13"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 850,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": true,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isDisabled": false,
+      "isLoading": false,
+      "isVisible": true,
+      "key": "5qfxz0lz3x",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 150,
+      "minWidth": 450,
+      "mobileBottomRow": 150,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 400.5,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "5kt14v1mi1",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 400.5,
+      "shouldScrollContents": false,
+      "tabId": "tab2",
+      "tabName": "Waste Pallets",
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "34wmkoz6fj",
+      "widgetName": "Canvas14"
+    }
+  ],
+  "defaultTab": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "stretch",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "7i3loaa5v0",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 15,
+  "minWidth": 450,
+  "mobileBottomRow": 37,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 22,
+  "needsErrorInfo": false,
+  "originalBottomRow": 110,
+  "originalTopRow": 21,
+  "parentColumnSpace": 16.6875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "shouldShowTabs": true,
+  "tabsObj": {
+    "tab1": {
+      "id": "tab1",
+      "index": 0,
+      "isVisible": true,
+      "label": "Sale Pallets",
+      "positioning": "vertical",
+      "widgetId": "8la24952gt"
+    },
+    "tab2": {
+      "id": "tab2",
+      "index": 1,
+      "isVisible": true,
+      "label": "Waste Pallets",
+      "positioning": "vertical",
+      "widgetId": "34wmkoz6fj"
+    }
+  },
+  "topRow": 21,
+  "type": "TABS_WIDGET",
+  "version": 3,
+  "widgetId": "5kt14v1mi1",
+  "widgetName": "Tab_1"
+}

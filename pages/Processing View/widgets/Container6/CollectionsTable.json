@@ -350,7 +350,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "#dcfce7",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : status })()}}",
+      "computedValue": "{{(() => { const tableData = CollectionsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : currentRow[\"status\"] })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,

@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_f3b3b110-a0a3-473b-8cde-909ce8983d1e",
+  "unpublishedPage": {
+    "isHidden": true,
+    "layouts": [
+      {
+        "dsl": {
+          "backgroundColor": "none",
+          "bottomRow": 1450,
+          "canExtend": true,
+          "containerStyle": "none",
+          "detachFromLayout": true,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "minHeight": 780,
+          "parentColumnSpace": 1,
+          "parentRowSpace": 1,
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "snapRows": 76,
+          "topRow": 0,
+          "type": "CANVAS_WIDGET",
+          "version": 94,
+          "widgetId": "0",
+          "widgetName": "MainContainer"
+        }
+      }
+    ],
+    "name": "Upcoming Collection",
+    "slug": "upcoming-collection"
+  }
+}

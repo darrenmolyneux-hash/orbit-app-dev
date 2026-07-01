@@ -64,7 +64,7 @@
   ],
   "goAdmin": "{{navigateTo('Admin_Console', {}, 'SAME_WINDOW');}}",
   "goAssets": "{{navigateTo('Asset List', {}, 'SAME_WINDOW');}}",
-  "goCollections": "{{navigateTo('Upcoming _Collection', {}, 'SAME_WINDOW');}}",
+  "goCollections": "{{navigateTo('Upcoming Collection', {}, 'SAME_WINDOW');}}",
   "goCustomers": "{{navigateTo('Customer_List', {}, 'SAME_WINDOW');}}",
   "goHome": "{{navigateTo('Home', {}, 'SAME_WINDOW');}}",
   "goReports": "{{navigateTo('Reports_Page', {}, 'SAME_WINDOW');}}",

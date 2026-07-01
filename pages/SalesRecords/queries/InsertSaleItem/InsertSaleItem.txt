@@ -1,6 +1,0 @@
-INSERT INTO sale_items (sale_id, asset_id, sell_price)
-VALUES (
-    {{Number(this.params.sale_id)}},
-    {{Number(this.params.asset_id)}},
-    {{Number(this.params.sell_price)}}
-);

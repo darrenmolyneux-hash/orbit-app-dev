@@ -236,7 +236,7 @@
       "widgetName": "Canvas18"
     }
   ],
-  "defaultTab": "Tab 1",
+  "defaultTab": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
