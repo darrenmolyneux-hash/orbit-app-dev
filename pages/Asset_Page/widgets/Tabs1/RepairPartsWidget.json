@@ -59,7 +59,7 @@
   "onMarkReceived": "{{JSParts.onMarkReceived();}}",
   "onRaiseOrder": "{{JSParts.onRaiseOrder();}}",
   "onRequestPart": "{{JSParts.onRequestPart();}}",
-  "originalBottomRow": 96,
+  "originalBottomRow": 92,
   "originalTopRow": 19,
   "parentColumnSpace": 16.375,
   "parentId": "fshtnlp6od",

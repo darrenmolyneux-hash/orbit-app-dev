@@ -1,0 +1,3 @@
+UPDATE sale_pallets
+SET status = 'closed', closed_at = NOW()
+WHERE pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }};

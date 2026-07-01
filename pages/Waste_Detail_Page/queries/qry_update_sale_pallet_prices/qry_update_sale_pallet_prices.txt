@@ -1,0 +1,18 @@
+WITH split AS (
+  SELECT 
+    {{ Number(appsmith.store.sale_pallet_total) }} / 
+    COUNT(*) AS price_each
+  FROM pallet_items 
+  WHERE pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }} 
+    AND pallet_type = 'sale'
+),
+update_items AS (
+  UPDATE pallet_items
+  SET sale_price = (SELECT price_each FROM split)
+  WHERE pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }}
+    AND pallet_type = 'sale'
+  RETURNING asset_id
+)
+UPDATE assets
+SET sell_price = (SELECT price_each FROM split)
+WHERE asset_id IN (SELECT asset_id FROM update_items);

@@ -1,0 +1,13 @@
+SELECT
+  it.item_type_name AS item_type,
+  COUNT(*) AS unit_count,
+  COALESCE(SUM(a.original_cost), 0)::numeric(10,2) AS total_value
+FROM assets a
+JOIN item_types it ON it.item_type_id = a.item_type
+WHERE a.status_id NOT IN (19, 20)
+  AND a.status_id IN (
+    SELECT status_id FROM status_types
+    WHERE category NOT IN ('end_of_life', 'disposed')
+  )
+GROUP BY it.item_type_name
+ORDER BY total_value DESC;

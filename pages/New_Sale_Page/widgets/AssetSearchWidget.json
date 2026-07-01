@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 58,
+  "bottomRow": 61,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  \"searchTerm\": \"\",\n  \"asset\": SearchSaleItem.data && SearchSaleItem.data[0] ? SearchSaleItem.data[0] : null,\n  \"statusInfo\": {\n    \"status_name\": GetAssetStatus.data && GetAssetStatus.data[0] ? GetAssetStatus.data[0].status_name : null,\n    \"alreadySold\": CheckAssetOnSale.data && CheckAssetOnSale.data.length > 0,\n    \"sale_ref\": CheckAssetOnSale.data && CheckAssetOnSale.data.length > 0 ? CheckAssetOnSale.data[0].sale_ref : null\n  },\n  \"assetToAdd\": null\n}}}",
   "dynamicBindingPathList": [
@@ -20,7 +20,7 @@
       "key": "defaultModel"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
@@ -49,7 +49,7 @@
   "needsErrorInfo": false,
   "onAddToSale": "{{JSObject4.runOnAddToSale();}}",
   "onSearch": "{{JSObject3.Custom2onSearch();}}",
-  "originalBottomRow": 58,
+  "originalBottomRow": 61,
   "originalTopRow": 22,
   "parentColumnSpace": 16.6875,
   "parentId": "0",

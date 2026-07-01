@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 56,
+  "bottomRow": 74,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  \"partTypes\": qry_bulk_part_types_list.data,\n  \"locations\": qry_bulk_locations.data,\n  \"orders\": qry_bulk_orders_pending.data\n}}}",
   "dynamicBindingPathList": [
@@ -53,7 +53,7 @@
   "onRaiseBulkOrder": "{{JSBulkParts.onRaiseBulkOrder();}}",
   "onReceiveBulkOrder": "{{JSBulkParts.onReceiveBulkOrder();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 49,
+  "originalBottomRow": 74,
   "originalTopRow": 0,
   "parentColumnSpace": 16.0625,
   "parentId": "atrrr7in9h",

@@ -1,0 +1,46 @@
+WITH pallet_data AS (
+  SELECT sp.pallet_id, sp.customer_id, c.customer_name,
+    COALESCE(SUM(pi.sale_price), 0) AS total_value
+  FROM sale_pallets sp
+  LEFT JOIN customers c ON c.customer_id = sp.customer_id
+  LEFT JOIN pallet_items pi ON pi.pallet_id = sp.pallet_id AND pi.pallet_type = 'sale'
+  WHERE sp.pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }}
+  GROUP BY sp.pallet_id, sp.customer_id, c.customer_name
+),
+new_sale AS (
+  INSERT INTO sales (customer, sale_date, total_price, created_by, sale_ref)
+  SELECT 
+    pd.customer_name,
+    NOW(),
+    pd.total_value,
+    '{{ appsmith.user.email }}',
+    'SAL-' || LPAD(NEXTVAL('sale_seq')::text, 5, '0')
+  FROM pallet_data pd
+  RETURNING sale_id, sale_ref
+),
+sale_items_insert AS (
+  INSERT INTO sale_items (sale_id, asset_id, sell_price)
+  SELECT ns.sale_id, pi.asset_id, pi.sale_price
+  FROM pallet_items pi
+  CROSS JOIN new_sale ns
+  WHERE pi.pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }}
+    AND pi.pallet_type = 'sale'
+    AND pi.asset_id IS NOT NULL
+  RETURNING asset_id
+),
+update_assets AS (
+  UPDATE assets
+  SET status_id = 19
+  WHERE asset_id IN (SELECT asset_id FROM sale_items_insert)
+),
+log_status AS (
+  INSERT INTO asset_status_history (asset_id, status_id, changed_by, changed_at)
+  SELECT asset_id, 19, '{{ appsmith.user.email }}', NOW()
+  FROM sale_items_insert
+),
+close_pallet AS (
+  UPDATE sale_pallets
+  SET status = 'closed', closed_at = NOW()
+  WHERE pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }}
+)
+SELECT sale_id, sale_ref FROM new_sale;

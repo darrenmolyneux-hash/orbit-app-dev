@@ -1,11 +1,11 @@
 {
   "animateLoading": false,
   "backgroundColor": "{{appsmith.theme.colors.backgroundColor}}",
-  "borderColor": "#231f20",
-  "borderRadius": "0px",
-  "borderWidth": "0",
+  "borderColor": "#ffffff",
+  "borderRadius": "1.5rem",
+  "borderWidth": "1",
   "bottomRow": 97,
-  "boxShadow": "none",
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",

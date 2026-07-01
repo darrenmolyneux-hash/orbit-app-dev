@@ -1,0 +1,7 @@
+INSERT INTO sale_pallets (pallet_ref, status, created_by)
+VALUES (
+  'SP-' || LPAD(NEXTVAL('sale_pallet_seq')::text, 5, '0'),
+  'open',
+  '{{ appsmith.user.email }}'
+)
+RETURNING pallet_id, pallet_ref;

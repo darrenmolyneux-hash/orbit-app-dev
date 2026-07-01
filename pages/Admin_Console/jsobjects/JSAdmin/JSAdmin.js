@@ -30,6 +30,13 @@ export default {
       showAlert('Error: ' + err.message, 'error');
     }
   },
+	handleTabChange: async () => {
+  await Promise.all([
+    qry_report_sales_gp.run(),
+    qry_report_bestsellers.run(),
+    qry_report_stock_value.run()
+  ]);
+},
   delete: async () => {
     const m = Custom_Admin.model;
     const section = m.section;

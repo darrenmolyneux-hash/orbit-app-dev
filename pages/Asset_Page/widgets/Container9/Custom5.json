@@ -3,7 +3,7 @@
   "borderColor": "#ffffff",
   "borderRadius": "1.5rem",
   "borderWidth": "0",
-  "bottomRow": 33,
+  "bottomRow": 32,
   "boxShadow": "none",
   "defaultModel": "{{\n{\n  asset: qry_GetAssetById.data?.[0] || {},\n  statusTypes: qry_GetStatusTypes.data || [],\n  drives: qry_get_drives.data || [],\n  shredRecords: qry_get_shred_records.data || []\n}\n}}",
   "dynamicBindingPathList": [
