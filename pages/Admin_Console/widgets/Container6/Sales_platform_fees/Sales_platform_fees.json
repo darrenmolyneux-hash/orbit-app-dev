@@ -280,7 +280,8 @@
   "tabsObj": {
     "tab1": {
       "id": "tab1",
-      "index": 0,
+      "index": 1,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Sales platform fees",
       "positioning": "vertical",
@@ -288,7 +289,8 @@
     },
     "tab2": {
       "id": "tab2",
-      "index": 1,
+      "index": 2,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Downstream Vendors",
       "positioning": "vertical",
@@ -297,13 +299,15 @@
     "tab8sawhf3toa": {
       "id": "tab8sawhf3toa",
       "index": 3,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Bulk Part Orders",
       "widgetId": "atrrr7in9h"
     },
     "tabv2oech752a": {
       "id": "tabv2oech752a",
-      "index": 2,
+      "index": 0,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Maintain Tables",
       "widgetId": "hu9j884nlk"
@@ -311,6 +315,7 @@
     "tabx82v04cyt6": {
       "id": "tabx82v04cyt6",
       "index": 4,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Finacial Report ",
       "widgetId": "0jt9br0zq6"

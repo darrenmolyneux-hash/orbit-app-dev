@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_1aeec0c6-5089-4768-9f37-fa45e7eda8f7",
-  "id": "Admin_Console_qry_admin_insert_item_type",
+  "gitSyncId": "6a305b9e0882adc7e482e226_3064ab12-f031-4202-a696-f71554b869bc",
+  "id": "Login_Page_qry_get_user_role",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO item_types (item_type_name, is_data_bearing)\nVALUES ('{{Custom_Admin.model.row.item_type_name}}', {{Custom_Admin.model.row.is_data_bearing || false}})\nRETURNING item_type_id;",
+      "body": "SELECT role, is_active, full_name \nFROM users \nWHERE email = '{{ Custom1.model.loginEmail }}';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "qry_admin_insert_item_type",
-    "pageId": "Admin_Console",
+    "name": "qry_get_user_role",
+    "pageId": "Login_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
