@@ -1,4 +1,4 @@
 {
-  "email": "{{ Custom1.model.loginEmail }}",
-  "password": "{{ Custom1.model.loginPassword }}"
+  "email": "{{ appsmith.store.loginEmail }}",
+  "password": "{{ appsmith.store.loginPassword }}"
 }

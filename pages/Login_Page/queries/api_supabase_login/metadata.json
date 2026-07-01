@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"email\": \"{{ Custom1.model.loginEmail }}\",\n  \"password\": \"{{ Custom1.model.loginPassword }}\"\n}",
+      "body": "{\n  \"email\": \"{{ appsmith.store.loginEmail }}\",\n  \"password\": \"{{ appsmith.store.loginPassword }}\"\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

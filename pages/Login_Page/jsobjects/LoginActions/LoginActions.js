@@ -1,13 +1,13 @@
 export default {
   handleLogin: async () => {
     try {
-      const email = Custom1.model.loginEmail;
-      const password = Custom1.model.loginPassword;
+      await storeValue('loginEmail', Custom1.model.loginEmail);
+      await storeValue('loginPassword', Custom1.model.loginPassword);
 
       const res = await api_supabase_login.run();
 
       if (!res.access_token) {
-        await Custom1.updateModel({ loginErrorMessage: 'Invalid email or password' });
+        showAlert('Invalid email or password', 'error');
         return;
       }
 
@@ -15,25 +15,25 @@ export default {
       const user = userRes?.[0];
 
       if (!user) {
-        await Custom1.updateModel({ loginErrorMessage: 'Account not found — contact your administrator' });
+        showAlert('Account not found — contact your administrator', 'error');
         return;
       }
 
       if (!user.is_active) {
-        await Custom1.updateModel({ loginErrorMessage: 'Your account is inactive — contact your administrator' });
+        showAlert('Your account is inactive — contact your administrator', 'error');
         return;
       }
 
       await storeValue('isLoggedIn', true);
       await storeValue('userRole', user.role);
       await storeValue('userName', user.full_name);
-      await storeValue('userEmail', email);
+      await storeValue('userEmail', Custom1.model.loginEmail);
       await storeValue('accessToken', res.access_token);
 
       navigateTo('Home', {}, 'SAME_WINDOW');
 
     } catch(e) {
-      await Custom1.updateModel({ loginErrorMessage: 'Login failed — check your email and password' });
+      showAlert('Login failed — check your email and password', 'error');
     }
   }
 }
