@@ -1,4 +1,4 @@
 {
-  "email": "{{ appsmith.store.loginEmail }}",
-  "password": "{{ appsmith.store.loginPassword }}"
+  "email": "darren.molyneux@mbhglobal.co.uk",
+  "password": "youractualpassword"
 }

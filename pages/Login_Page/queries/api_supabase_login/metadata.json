@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_c878af94-f685-4214-bd73-373511b207fa",
+  "gitSyncId": "6a305b9e0882adc7e482e226_139d1282-d2a6-4b83-b827-a82e008ea388",
   "id": "Login_Page_api_supabase_login",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"email\": \"{{ appsmith.store.loginEmail }}\",\n  \"password\": \"{{ appsmith.store.loginPassword }}\"\n}",
+      "body": "{\n  \"email\": \"darren.molyneux@mbhglobal.co.uk\",\n  \"password\": \"youractualpassword\"\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
@@ -42,11 +42,7 @@
       "name": "SupabaseAuth",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "name": "api_supabase_login",
     "pageId": "Login_Page",
     "runBehaviour": "MANUAL",
