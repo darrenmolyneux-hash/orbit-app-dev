@@ -6,6 +6,11 @@
     "pageId": "Asset_Page",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": []
+    "variables": [
+      {
+        "name": "signed",
+        "value": "false"
+      }
+    ]
   }
 }

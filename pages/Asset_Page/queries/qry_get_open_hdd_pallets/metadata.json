@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "qry_get_open_hdd_pallets",
     "pageId": "Asset_Page",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

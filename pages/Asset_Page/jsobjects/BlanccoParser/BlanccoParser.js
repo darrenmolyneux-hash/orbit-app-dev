@@ -1008,4 +1008,5 @@ export default {
 			`Saved — ${parsed.product_name || parsed.model} (${parsed.serial})`,
 			'success'
 		);
-	},
+	}
+};

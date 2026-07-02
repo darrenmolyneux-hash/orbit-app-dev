@@ -29,7 +29,7 @@
     ],
     "name": "qry_unmatched_assets",
     "pageId": "Asset_Bookin_Page",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

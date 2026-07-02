@@ -1,7 +1,0 @@
-UPDATE assets
-SET cost = NULLIF(
-  regexp_replace('{{Inputoriginalcost.text || ""}}', '[^0-9.\-]', '', 'g'),
-  ''
-)::numeric
-WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
-RETURNING asset_id, cost;

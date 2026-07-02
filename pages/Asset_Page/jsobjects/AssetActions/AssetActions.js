@@ -57,20 +57,34 @@ saveCost: async () => {
   onViewSale: () => {
     navigateTo('SaleDetails', { sale_id: FinancialWidget.model.sale_id }, 'SAME_WINDOW');
   },
- onTabChange: async () => {
-  if (Tabs1.selectedTab === 'Grading') {
-    await Query3qry_grading_get.run();
-    await storeValue('gradingLoadedAt', Date.now());
-  }
+onTabChange: async () => {
+if (Tabs1.selectedTab === 'Grading') {
+  await Query3qry_grading_get.run();
+  await storeValue('gradingLoadedAt', Date.now());
+}
   if (Tabs1.selectedTab === 'History') {
     await qry_asset_history.run();
   }
-  if (Tabs1.selectedTab === 'Remove parts' && appsmith.store.harvest_step === 0) { await JSParts.init(); }
+  if (Tabs1.selectedTab === 'Remove parts') {
+    await qry_repair_scraps.run();
+    await qry_scrap_locations.run();
+    if (appsmith.store.harvest_step === 0) { await JSParts.init(); }
+  }
   if (Tabs1.selectedTab === 'Add parts') {
     await qry_add_parts_search.run();
     await qry_get_asset_parts_combined.run();
+    await qry_get_parts_stock.run();
+    await qry_part_types_list.run();
+    await qry_search_available_parts.run();
+    await qry_get_open_hdd_pallets.run();
   }
-  },
+  if (Tabs1.selectedTab === 'Pricing') {
+    await qry_purchaseHistory.run();
+    await qry_saleHistory.run();
+    await qry_priceTrend.run();
+    await qry_estimatedValue.run();
+  }
+},
   confirmAddPart_fromWidget: async () => {
     const row = appsmith.store.add_part_row;
     if (!row) { showAlert('No part selected', 'warning'); return; }

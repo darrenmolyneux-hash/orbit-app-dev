@@ -1,0 +1,13 @@
+SELECT a.grade,
+       COUNT(*) AS units_sold,
+       ROUND(AVG(si.sell_price), 2) AS avg_sold,
+       MIN(si.sell_price) AS min_sold,
+       MAX(si.sell_price) AS max_sold
+FROM assets a
+JOIN sale_items si ON si.asset_id = a.asset_id
+JOIN sales s ON s.sale_id = si.sale_id
+WHERE a.make = {{ qry_GetAssetById.data[0].make }}
+  AND a.model = {{ qry_GetAssetById.data[0].model }}
+  AND s.sale_date >= NOW() - INTERVAL '6 months'
+GROUP BY a.grade
+ORDER BY a.grade;

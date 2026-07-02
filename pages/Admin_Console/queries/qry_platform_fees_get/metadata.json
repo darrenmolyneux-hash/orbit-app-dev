@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "qry_platform_fees_get",
     "pageId": "Admin_Console",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

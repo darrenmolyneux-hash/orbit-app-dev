@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 18,
   "boxShadow": "none",
-  "defaultText": "{{ qry_GetAssetById.data[0].apple_no }}",
+  "defaultText": "{{ String(qry_GetAssetById.data[0]?.apple_no ?? '') }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

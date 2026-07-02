@@ -6,7 +6,7 @@
   "bottomRow": 26,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "costChanged": "{{storeValue('hp_part_cost', Custom8.model.cost)}}",
-  "defaultModel": "{{\n  {\n    selectedRow: Table2.selectedRow,\n    destAsset: qry_GetAssetById.data[0],\n    installedParts: qry_get_installed_parts_cost.data\n  }\n}}",
+  "defaultModel": "{{\n{\n\tselectedRow: Table2.selectedRow,\n\tdestAsset: qry_GetAssetById.data[0],\n\tinstalledParts: qry_get_asset_parts_cost.data\n}\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"

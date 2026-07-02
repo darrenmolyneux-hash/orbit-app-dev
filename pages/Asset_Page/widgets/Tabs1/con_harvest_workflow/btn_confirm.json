@@ -31,7 +31,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{JSParts.confirmDisabled}}",
+  "isDisabled": "{{ !appsmith.store.harvest_signed }}",
   "isLoading": false,
   "isVisible": true,
   "key": "h9cvk2664q",

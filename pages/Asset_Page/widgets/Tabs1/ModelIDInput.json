@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 13,
   "boxShadow": "none",
-  "defaultText": "{{ qry_GetAssetById.data[0].model_id }}\n",
+  "defaultText": "{{ String(qry_GetAssetById.data[0]?.model_id ?? '') }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -18,11 +18,7 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [
-    {
-      "key": "onTextChanged"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onTextChanged"
@@ -50,7 +46,7 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 17,
   "needsErrorInfo": false,
-  "onTextChanged": "{{UpdateModelId.run()}}",
+  "onTextChanged": "",
   "originalBottomRow": 25,
   "originalTopRow": 21,
   "parentColumnSpace": 18.880859375,

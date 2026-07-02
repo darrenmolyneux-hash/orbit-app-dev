@@ -20,7 +20,7 @@ export default {
     await qry_get_asset_parts_combined.run();
     await qry_get_parts_stock.run();
     await qry_get_locations.run();
-    await qry_get_installed_parts_cost.run();
+    await qry_get_asset_parts_cost.run();
   },
 
   initPreInventory() {
@@ -34,6 +34,8 @@ export default {
     storeValue('pi_new_part_id',  null);
     storeValue('pi_saved',        false);
   },
+
+  signed: false,
 
   start(row) {
     this.signed = false;
@@ -327,7 +329,7 @@ export default {
         await qry_update_part_cost.run();
         await qry_insert_parts_audit_log.run();
         await qry_get_asset_parts_combined.run();
-        await qry_get_installed_parts_cost.run();
+        await qry_get_asset_parts_cost.run();
         closeModal('ModalAddPart');
         showAlert('Part installed successfully ✓', 'success');
       } catch (err) {
@@ -384,39 +386,39 @@ export default {
       const partDesc = RepairPartsWidget.model.requestedPartDesc;
       const requestedBy = appsmith.user.name;
 
-  const payload = {
-  text: "Part request - Asset " + assetRef + " - Part needed: " + partDesc,
-  blocks: [
-    {
-      type: "header",
-      text: { type: "plain_text", text: "🔧 Repair Part Request", emoji: true }
-    },
-    {
-      type: "section",
-      fields: [
-        { type: "mrkdwn", text: ":package: *Asset Ref*\n" + assetRef },
-        { type: "mrkdwn", text: ":bust_in_silhouette: *Requested by*\n" + requestedBy }
-      ]
-    },
-    { type: "divider" },
-    {
-      type: "section",
-      text: { type: "mrkdwn", text: ":wrench: *Part needed*\n" + partDesc }
-    },
-    {
-      type: "context",
-      elements: [
-        { type: "mrkdwn", text: "Submitted via Orbit • " + new Date().toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) }
-      ]
-    }
-  ],
-  attachments: [
-    {
-      color: "#A3E851",
-      blocks: []
-    }
-  ]
-};
+      const payload = {
+        text: "Part request - Asset " + assetRef + " - Part needed: " + partDesc,
+        blocks: [
+          {
+            type: "header",
+            text: { type: "plain_text", text: "🔧 Repair Part Request", emoji: true }
+          },
+          {
+            type: "section",
+            fields: [
+              { type: "mrkdwn", text: ":package: *Asset Ref*\n" + assetRef },
+              { type: "mrkdwn", text: ":bust_in_silhouette: *Requested by*\n" + requestedBy }
+            ]
+          },
+          { type: "divider" },
+          {
+            type: "section",
+            text: { type: "mrkdwn", text: ":wrench: *Part needed*\n" + partDesc }
+          },
+          {
+            type: "context",
+            elements: [
+              { type: "mrkdwn", text: "Submitted via Orbit • " + new Date().toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) }
+            ]
+          }
+        ],
+        attachments: [
+          {
+            color: "#A3E851",
+            blocks: []
+          }
+        ]
+      };
 
       console.log('Payload being sent:', JSON.stringify(payload));
       await Slack_Webhook.run({ slackPayload: payload });
@@ -470,7 +472,7 @@ export default {
       await qry_update_part_cost.run();
       await qry_insert_parts_audit_log.run();
       await qry_get_asset_parts_combined.run();
-      await qry_get_installed_parts_cost.run();
+      await qry_get_asset_parts_cost.run();
 
       storeValue('add_part_step', null);
       closeModal('ModalAddPart');

@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": 1,
-  "bottomRow": 392,
+  "bottomRow": 386,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -192,7 +192,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 4510,
+      "bottomRow": 4520,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -273,7 +273,7 @@
       "responsiveBehavior": "fill",
       "rightColumn": 1248,
       "tabId": "tabqryd0ghcdr",
-      "tabName": "Location",
+      "tabName": "Pricing",
       "topRow": 1,
       "type": "CANVAS_WIDGET",
       "version": 1,
@@ -358,8 +358,8 @@
   "mobileTopRow": 12,
   "needsErrorInfo": false,
   "onTabSelected": "{{AssetActions.onTabChange()}}",
-  "originalBottomRow": 392,
-  "originalTopRow": 57,
+  "originalBottomRow": 386,
+  "originalTopRow": 51,
   "parentColumnSpace": 19.5,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -408,7 +408,7 @@
       "index": 5,
       "isDuplicateLabel": false,
       "isVisible": true,
-      "label": "Location",
+      "label": "Pricing",
       "widgetId": "rw1nt0r2w0"
     },
     "tabr9uf74qbkp": {
@@ -428,7 +428,7 @@
       "widgetId": "onlm3me0uv"
     }
   },
-  "topRow": 57,
+  "topRow": 51,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "22vdiaxhm2",

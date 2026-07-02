@@ -29,7 +29,7 @@
     ],
     "name": "qry_add_parts_search",
     "pageId": "Asset_Page",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }
