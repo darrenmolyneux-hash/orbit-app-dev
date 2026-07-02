@@ -18,19 +18,14 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onTextChanged"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": true,
+  "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "p6jmamh392",
+  "key": "gzcp8di42x",
   "label": "Weight Kg",
   "labelAlignment": "left",
   "labelPosition": "Left",
@@ -41,15 +36,12 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 48,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 21,
-  "mobileTopRow": 41,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 40,
+  "mobileTopRow": 29,
   "needsErrorInfo": false,
-  "onTextChanged": "",
-  "originalBottomRow": 39,
-  "originalTopRow": 35,
-  "parentColumnSpace": 19.1875,
+  "parentColumnSpace": 14.5,
   "parentId": "dc4v6fjacj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
@@ -60,6 +52,6 @@
   "topRow": 29,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "3jnxebsiwz",
+  "widgetId": "1g7t9e1uqc",
   "widgetName": "KgInput"
 }

@@ -18,24 +18,15 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [
-    {
-      "key": "onTextChanged"
-    }
-  ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onTextChanged"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "nlfdoyi8vb",
-  "label": "Model ID",
+  "key": "gzcp8di42x",
+  "label": "ModelID",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
@@ -45,15 +36,12 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 24,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 21,
-  "mobileTopRow": 17,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 40,
+  "mobileTopRow": 7,
   "needsErrorInfo": false,
-  "onTextChanged": "",
-  "originalBottomRow": 25,
-  "originalTopRow": 21,
-  "parentColumnSpace": 18.880859375,
+  "parentColumnSpace": 14.5,
   "parentId": "dc4v6fjacj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
@@ -64,6 +52,6 @@
   "topRow": 9,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "f9ckx05h13",
+  "widgetId": "8uvo778e6l",
   "widgetName": "ModelIDInput"
 }
