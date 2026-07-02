@@ -1,0 +1,86 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 38,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n  {\n    assetLabel: (qry_GetAssetById.data[0]?.make_name || '') + ' ' + (qry_GetAssetById.data[0]?.model_name || '') + ' (' + (qry_GetAssetById.data[0]?.asset_ref || '') + ')'\n  }\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onCancel"
+    },
+    {
+      "key": "onConfirm"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    },
+    {
+      "key": "onCancel"
+    },
+    {
+      "key": "onConfirm"
+    }
+  ],
+  "events": [
+    "onResetClick",
+    "onCancel",
+    "onConfirm"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "mmp8hmekkp",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 63,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 33,
+  "needsErrorInfo": false,
+  "onCancel": "{{closeModal('Harvest_Warning')}}",
+  "onConfirm": "{{AssetActions.confirmHarvest()}}",
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 6.9375,
+  "parentId": "2rzqsz0lwr",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 62,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget: Custom_HarvestWarning. Replaces the native modal content inside Harvest_Warning modal. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .wrap { padding: 20px 24px; }\n\n  .header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }\n  .title { font-size: 18px; font-weight: 700; color: #05042E; }\n  .close-btn { background: none; border: none; cursor: pointer; color: #888780; font-size: 18px; line-height: 1; padding: 2px; }\n  .close-btn:hover { color: #05042E; }\n\n  .body-text { font-size: 14px; font-weight: 500; color: #05042E; line-height: 1.5; margin-bottom: 14px; }\n  .body-text strong { font-weight: 700; }\n\n  .warning-box {\n    background: #FAEEDA; border: 0.5px solid #f5deb0; border-radius: 8px;\n    padding: 12px 16px; margin-bottom: 20px;\n    font-size: 13px; font-weight: 700; color: #633806;\n    display: flex; align-items: flex-start; gap: 8px;\n  }\n\n  .btn-row { display: flex; gap: 10px; justify-content: flex-end; }\n  .btn { font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 700; padding: 0 20px; height: 40px; border-radius: 6px; border: none; cursor: pointer; white-space: nowrap; }\n  .btn-cancel { background: rgba(5,4,46,0.06); color: #05042E; }\n  .btn-cancel:hover { background: rgba(5,4,46,0.1); }\n  .btn-confirm { background: #A3E851; color: #05042E; }\n  .btn-confirm:hover { background: #5DC987; }\n</style>\n\n<div class=\"wrap\" id=\"root\"></div>\n\n<script>\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const m = model || {};\n    const assetLabel = m.assetLabel || 'This asset';\n\n    const html =\n      '<div class=\"header-row\">' +\n        '<span class=\"title\">Send asset for parts harvesting?</span>' +\n        '<button class=\"close-btn\" id=\"btn_close\">✕</button>' +\n      '</div>' +\n      '<div class=\"body-text\">' +\n        '<strong>' + escHtml(assetLabel) + '</strong> will be marked as Stripped for Parts. This should only be done if the device cannot be repaired or resold as a whole unit.<br/><br/>' +\n        'Once confirmed, you will be taken to the parts assessment screen.' +\n      '</div>' +\n      '<div class=\"warning-box\">⚠️ This action will be logged in the asset audit trail and cannot be undone.</div>' +\n      '<div class=\"btn-row\">' +\n        '<button class=\"btn btn-cancel\" id=\"btn_cancel\">Cancel — keep current status</button>' +\n        '<button class=\"btn btn-confirm\" id=\"btn_confirm\">Yes — send for harvesting</button>' +\n      '</div>';\n\n    document.getElementById('root').innerHTML = html;\n\n    const closeBtn = document.getElementById('btn_close');\n    if (closeBtn) closeBtn.addEventListener('click', function() { appsmith.triggerEvent('onCancel'); });\n\n    const cancelBtn = document.getElementById('btn_cancel');\n    if (cancelBtn) cancelBtn.addEventListener('click', function() { appsmith.triggerEvent('onCancel'); });\n\n    const confirmBtn = document.getElementById('btn_confirm');\n    if (confirmBtn) confirmBtn.addEventListener('click', function() { appsmith.triggerEvent('onConfirm'); });\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 4,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget: Custom_HarvestWarning. Replaces the native modal content inside Harvest_Warning modal. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .wrap { padding: 20px 24px; }\n\n  .header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }\n  .title { font-size: 18px; font-weight: 700; color: #05042E; }\n  .close-btn { background: none; border: none; cursor: pointer; color: #888780; font-size: 18px; line-height: 1; padding: 2px; }\n  .close-btn:hover { color: #05042E; }\n\n  .body-text { font-size: 14px; font-weight: 500; color: #05042E; line-height: 1.5; margin-bottom: 14px; }\n  .body-text strong { font-weight: 700; }\n\n  .warning-box {\n    background: #FAEEDA; border: 0.5px solid #f5deb0; border-radius: 8px;\n    padding: 12px 16px; margin-bottom: 20px;\n    font-size: 13px; font-weight: 700; color: #633806;\n    display: flex; align-items: flex-start; gap: 8px;\n  }\n\n  .btn-row { display: flex; gap: 10px; justify-content: flex-end; }\n  .btn { font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 700; padding: 0 20px; height: 40px; border-radius: 6px; border: none; cursor: pointer; white-space: nowrap; }\n  .btn-cancel { background: rgba(5,4,46,0.06); color: #05042E; }\n  .btn-cancel:hover { background: rgba(5,4,46,0.1); }\n  .btn-confirm { background: #A3E851; color: #05042E; }\n  .btn-confirm:hover { background: #5DC987; }\n</style>\n\n<div class=\"wrap\" id=\"root\"></div>\n\n<script>\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const m = model || {};\n    const assetLabel = m.assetLabel || 'This asset';\n\n    const html =\n      '<div class=\"header-row\">' +\n        '<span class=\"title\">Send asset for parts harvesting?</span>' +\n        '<button class=\"close-btn\" id=\"btn_close\">✕</button>' +\n      '</div>' +\n      '<div class=\"body-text\">' +\n        '<strong>' + escHtml(assetLabel) + '</strong> will be marked as Stripped for Parts. This should only be done if the device cannot be repaired or resold as a whole unit.<br/><br/>' +\n        'Once confirmed, you will be taken to the parts assessment screen.' +\n      '</div>' +\n      '<div class=\"warning-box\">⚠️ This action will be logged in the asset audit trail and cannot be undone.</div>' +\n      '<div class=\"btn-row\">' +\n        '<button class=\"btn btn-cancel\" id=\"btn_cancel\">Cancel — keep current status</button>' +\n        '<button class=\"btn btn-confirm\" id=\"btn_confirm\">Yes — send for harvesting</button>' +\n      '</div>';\n\n    document.getElementById('root').innerHTML = html;\n\n    const closeBtn = document.getElementById('btn_close');\n    if (closeBtn) closeBtn.addEventListener('click', function() { appsmith.triggerEvent('onCancel'); });\n\n    const cancelBtn = document.getElementById('btn_cancel');\n    if (cancelBtn) cancelBtn.addEventListener('click', function() { appsmith.triggerEvent('onCancel'); });\n\n    const confirmBtn = document.getElementById('btn_confirm');\n    if (confirmBtn) confirmBtn.addEventListener('click', function() { appsmith.triggerEvent('onConfirm'); });\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "version": 1,
+  "widgetId": "zn7ydyet6n",
+  "widgetName": "Custom_HarvestWarning"
+}

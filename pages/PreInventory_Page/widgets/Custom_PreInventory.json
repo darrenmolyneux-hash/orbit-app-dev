@@ -1,0 +1,80 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 70,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n  {\n    partTypes: qry_get_part_types.data || []\n  }\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSaveAssessment"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    },
+    {
+      "key": "onSaveAssessment"
+    }
+  ],
+  "events": [
+    "onResetClick",
+    "onSaveAssessment"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "mmp8hmekkp",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 52,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 22,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "onSaveAssessment": "{{JSPreInventory.saveAssessmentFromWidget()}}",
+  "originalBottomRow": 70,
+  "originalTopRow": 22,
+  "parentColumnSpace": 14.8125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 62,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget: Custom_PreInventory. Replaces List1 + Container2 + Button1. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .wrap { display: flex; flex-direction: column; gap: 0; }\n\n  .card { background: #fff; border-radius: 10px; border: 0.5px solid rgba(0,0,0,0.1); overflow: hidden; }\n\n  .row {\n    display: grid; grid-template-columns: 1.5fr 1fr 2fr;\n    align-items: center; gap: 16px; padding: 16px;\n    border-bottom: 0.5px solid rgba(0,0,0,0.06);\n  }\n  .row:last-child { border-bottom: none; }\n  .row:hover { background: #f9f8f6; }\n\n  .part-name { font-size: 16px; font-weight: 700; color: #05042E; }\n\n  .toggle-group { display: flex; align-items: center; gap: 10px; }\n  .toggle-label { font-size: 13px; font-weight: 600; color: #888780; }\n  .toggle-track {\n    width: 40px; height: 22px; border-radius: 20px; position: relative;\n    cursor: pointer; transition: 0.2s; background: #E0DFE1; flex-shrink: 0;\n  }\n  .toggle-track.on { background: #dc2626; }\n  .toggle-thumb {\n    position: absolute; top: 3px; left: 3px; width: 16px; height: 16px;\n    border-radius: 50%; background: #fff; transition: 0.2s;\n  }\n  .toggle-track.on .toggle-thumb { left: 21px; }\n\n  .notes-field { display: flex; flex-direction: column; gap: 4px; }\n  .notes-label { font-size: 10px; font-weight: 700; color: #888780; text-transform: uppercase; letter-spacing: 0.05em; }\n  .notes-input {\n    font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 500; color: #05042E;\n    border: 0.5px solid rgba(0,0,0,0.15); border-radius: 6px; padding: 8px 10px; outline: none; background: #fff;\n  }\n  .notes-input:focus { border-color: #469BC0; }\n  .notes-input::placeholder { color: #888780; }\n\n  .footer { display: flex; justify-content: flex-end; padding: 16px 0; }\n  .btn-save {\n    font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 700;\n    padding: 0 24px; height: 40px; border-radius: 6px; border: none;\n    background: #A3E851; color: #05042E; cursor: pointer;\n  }\n  .btn-save:hover { background: #5DC987; }\n  .btn-save:disabled { background: #E0DFE1; color: #aaa; cursor: not-allowed; }\n\n  .empty-state { text-align: center; padding: 32px; color: #888780; font-size: 13px; font-weight: 500; }\n</style>\n\n<div class=\"wrap\" id=\"root\"></div>\n\n<script>\n  var scrapState = {};\n  var notesState = {};\n\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const parts = (model && Array.isArray(model.partTypes)) ? model.partTypes : [];\n\n    if (!parts.length) {\n      document.getElementById('root').innerHTML = '<div class=\"card\"><div class=\"empty-state\">No part types found for this item type.</div></div>';\n      return;\n    }\n\n    let rowsHtml = parts.map(function(p) {\n      const id = p.part_type_id;\n      if (!(id in scrapState)) scrapState[id] = false; // default OFF\n      if (!(id in notesState)) notesState[id] = '';\n\n      const isOn = scrapState[id];\n\n      return '<div class=\"row\">' +\n        '<div class=\"part-name\">' + escHtml(p.name) + '</div>' +\n        '<div class=\"toggle-group\">' +\n          '<span class=\"toggle-label\">Scrap</span>' +\n          '<div class=\"toggle-track' + (isOn ? ' on' : '') + '\" data-id=\"' + id + '\"><div class=\"toggle-thumb\"></div></div>' +\n        '</div>' +\n        '<div class=\"notes-field\">' +\n          '<span class=\"notes-label\">Notes</span>' +\n          '<input type=\"text\" class=\"notes-input\" data-id=\"' + id + '\" placeholder=\"Optional\" value=\"' + escHtml(notesState[id]) + '\"/>' +\n        '</div>' +\n      '</div>';\n    }).join('');\n\n    const html = '<div class=\"card\">' + rowsHtml + '</div>' +\n      '<div class=\"footer\"><button class=\"btn-save\" id=\"btn_save\">Save Assessment</button></div>';\n\n    document.getElementById('root').innerHTML = html;\n\n    document.querySelectorAll('.toggle-track').forEach(function(el) {\n      el.addEventListener('click', function() {\n        const id = this.dataset.id;\n        scrapState[id] = !scrapState[id];\n        appsmith.updateModel({ scrapState: scrapState, notesState: notesState });\n        render(appsmith.model);\n      });\n    });\n\n    document.querySelectorAll('.notes-input').forEach(function(el) {\n      el.addEventListener('input', function() {\n        notesState[this.dataset.id] = this.value;\n      });\n      el.addEventListener('blur', function() {\n        appsmith.updateModel({ scrapState: scrapState, notesState: notesState });\n      });\n    });\n\n    const saveBtn = document.getElementById('btn_save');\n    if (saveBtn) {\n      saveBtn.addEventListener('click', function() {\n        appsmith.updateModel({ scrapState: scrapState, notesState: notesState });\n        appsmith.triggerEvent('onSaveAssessment');\n      });\n    }\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 22,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget: Custom_PreInventory. Replaces List1 + Container2 + Button1. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .wrap { display: flex; flex-direction: column; gap: 0; }\n\n  .card { background: #fff; border-radius: 10px; border: 0.5px solid rgba(0,0,0,0.1); overflow: hidden; }\n\n  .row {\n    display: grid; grid-template-columns: 1.5fr 1fr 2fr;\n    align-items: center; gap: 16px; padding: 16px;\n    border-bottom: 0.5px solid rgba(0,0,0,0.06);\n  }\n  .row:last-child { border-bottom: none; }\n  .row:hover { background: #f9f8f6; }\n\n  .part-name { font-size: 16px; font-weight: 700; color: #05042E; }\n\n  .toggle-group { display: flex; align-items: center; gap: 10px; }\n  .toggle-label { font-size: 13px; font-weight: 600; color: #888780; }\n  .toggle-track {\n    width: 40px; height: 22px; border-radius: 20px; position: relative;\n    cursor: pointer; transition: 0.2s; background: #E0DFE1; flex-shrink: 0;\n  }\n  .toggle-track.on { background: #dc2626; }\n  .toggle-thumb {\n    position: absolute; top: 3px; left: 3px; width: 16px; height: 16px;\n    border-radius: 50%; background: #fff; transition: 0.2s;\n  }\n  .toggle-track.on .toggle-thumb { left: 21px; }\n\n  .notes-field { display: flex; flex-direction: column; gap: 4px; }\n  .notes-label { font-size: 10px; font-weight: 700; color: #888780; text-transform: uppercase; letter-spacing: 0.05em; }\n  .notes-input {\n    font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 500; color: #05042E;\n    border: 0.5px solid rgba(0,0,0,0.15); border-radius: 6px; padding: 8px 10px; outline: none; background: #fff;\n  }\n  .notes-input:focus { border-color: #469BC0; }\n  .notes-input::placeholder { color: #888780; }\n\n  .footer { display: flex; justify-content: flex-end; padding: 16px 0; }\n  .btn-save {\n    font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 700;\n    padding: 0 24px; height: 40px; border-radius: 6px; border: none;\n    background: #A3E851; color: #05042E; cursor: pointer;\n  }\n  .btn-save:hover { background: #5DC987; }\n  .btn-save:disabled { background: #E0DFE1; color: #aaa; cursor: not-allowed; }\n\n  .empty-state { text-align: center; padding: 32px; color: #888780; font-size: 13px; font-weight: 500; }\n</style>\n\n<div class=\"wrap\" id=\"root\"></div>\n\n<script>\n  var scrapState = {};\n  var notesState = {};\n\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const parts = (model && Array.isArray(model.partTypes)) ? model.partTypes : [];\n\n    if (!parts.length) {\n      document.getElementById('root').innerHTML = '<div class=\"card\"><div class=\"empty-state\">No part types found for this item type.</div></div>';\n      return;\n    }\n\n    let rowsHtml = parts.map(function(p) {\n      const id = p.part_type_id;\n      if (!(id in scrapState)) scrapState[id] = false; // default OFF\n      if (!(id in notesState)) notesState[id] = '';\n\n      const isOn = scrapState[id];\n\n      return '<div class=\"row\">' +\n        '<div class=\"part-name\">' + escHtml(p.name) + '</div>' +\n        '<div class=\"toggle-group\">' +\n          '<span class=\"toggle-label\">Scrap</span>' +\n          '<div class=\"toggle-track' + (isOn ? ' on' : '') + '\" data-id=\"' + id + '\"><div class=\"toggle-thumb\"></div></div>' +\n        '</div>' +\n        '<div class=\"notes-field\">' +\n          '<span class=\"notes-label\">Notes</span>' +\n          '<input type=\"text\" class=\"notes-input\" data-id=\"' + id + '\" placeholder=\"Optional\" value=\"' + escHtml(notesState[id]) + '\"/>' +\n        '</div>' +\n      '</div>';\n    }).join('');\n\n    const html = '<div class=\"card\">' + rowsHtml + '</div>' +\n      '<div class=\"footer\"><button class=\"btn-save\" id=\"btn_save\">Save Assessment</button></div>';\n\n    document.getElementById('root').innerHTML = html;\n\n    document.querySelectorAll('.toggle-track').forEach(function(el) {\n      el.addEventListener('click', function() {\n        const id = this.dataset.id;\n        scrapState[id] = !scrapState[id];\n        appsmith.updateModel({ scrapState: scrapState, notesState: notesState });\n        render(appsmith.model);\n      });\n    });\n\n    document.querySelectorAll('.notes-input').forEach(function(el) {\n      el.addEventListener('input', function() {\n        notesState[this.dataset.id] = this.value;\n      });\n      el.addEventListener('blur', function() {\n        appsmith.updateModel({ scrapState: scrapState, notesState: notesState });\n      });\n    });\n\n    const saveBtn = document.getElementById('btn_save');\n    if (saveBtn) {\n      saveBtn.addEventListener('click', function() {\n        appsmith.updateModel({ scrapState: scrapState, notesState: notesState });\n        appsmith.triggerEvent('onSaveAssessment');\n      });\n    }\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "version": 1,
+  "widgetId": "hfmg7yw4u5",
+  "widgetName": "Custom_PreInventory"
+}

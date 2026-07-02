@@ -1,15 +1,15 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#faeeda",
+  "backgroundColor": "{{appsmith.theme.colors.backgroundColor}}",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 375,
+  "bottomRow": 455,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 320,
+      "bottomRow": 400,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -30,7 +30,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 240,
+      "minHeight": 972,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -55,23 +55,28 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "backgroundColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 320,
+  "height": 400,
   "isCanvas": true,
   "isLoading": false,
   "key": "wun71yv1cd",
   "leftColumn": 2,
   "maxDynamicHeight": 9000,
-  "minDynamicHeight": 24,
-  "minHeight": 320,
+  "minDynamicHeight": 10,
+  "minHeight": 340,
   "mobileBottomRow": 79,
   "mobileLeftColumn": 2,
   "mobileRightColumn": 26,
   "mobileTopRow": 55,
   "needsErrorInfo": false,
+  "originalBottomRow": 395,
+  "originalTopRow": 55,
   "parentColumnSpace": 18.880859375,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -83,5 +88,5 @@
   "version": 2,
   "widgetId": "oj07u5149o",
   "widgetName": "Harvest_Warning",
-  "width": 456
+  "width": 526
 }

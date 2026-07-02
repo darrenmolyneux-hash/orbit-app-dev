@@ -3,9 +3,9 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 38,
+  "bottomRow": 37,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{{{\"parts\": qry_get_asset_parts_combined.data, \"repairScraps\": qry_repair_scraps.data}}}",
+  "defaultModel": "{{\n  {\n    removedParts: qry_get_asset_parts_combined.data.filter(r => r.row_status === 'removed') || [],\n    repairScraps: qry_repair_scraps.data || [],\n    step: appsmith.store.harvest_step,\n    isBattery: appsmith.store.hp_is_battery,\n    harvestSigned: appsmith.store.harvest_signed,\n    locationOptions: JSParts.locationOptions(),\n    donorLocationOptions: JSParts.donorLocationOptions(),\n    disposeByDate: JSParts.disposeByDate(),\n    signOffLabel: JSParts.signOffLabel(),\n    itemPartType: appsmith.store.hp_part_type,\n    sourceAssetRef: qry_GetAssetById.data[0]?.asset_ref\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
@@ -43,7 +43,7 @@
   "mobileTopRow": 23,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 37,
+  "originalBottomRow": 47,
   "originalTopRow": 0,
   "parentColumnSpace": 16.1142578125,
   "parentId": "onlm3me0uv",

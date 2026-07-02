@@ -1,3 +1,3 @@
 UPDATE assets
-SET sell_price = NULLIF('{{SearchResultTable.updatedRow.sell_price}}', '')::numeric
-WHERE asset_id = {{Number(SearchResultTable.updatedRow.asset_id)}};
+SET sell_price = {{Number(Custom2.model.priceUpdate?.value)}}
+WHERE asset_id = {{Number(appsmith.store.saleList?.[Custom2.model.priceUpdate?.idx]?.asset_id)}};

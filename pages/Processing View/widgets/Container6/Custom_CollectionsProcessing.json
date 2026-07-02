@@ -1,0 +1,67 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 30,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n  {\n    collections: GetProcessing.data || []\n  }\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "mmp8hmekkp",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 30,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 14.5,
+  "parentId": "kk03s7t1bg",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "srcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget to replace CollectionsTable. Paste into a new Custom widget's source editor. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .card {\n    background: #fff;\n    border-radius: 10px;\n    border: 0.5px solid rgba(0,0,0,0.1);\n    overflow: hidden;\n  }\n\n  table { width: 100%; border-collapse: collapse; }\n  th {\n    text-align: left; padding: 10px 14px;\n    font-size: 10px; font-weight: 700; text-transform: uppercase;\n    color: #888780; letter-spacing: 0.05em;\n    border-bottom: 0.5px solid rgba(0,0,0,0.08);\n    background: rgba(5,4,46,0.02);\n  }\n  td {\n    padding: 12px 14px;\n    font-size: 13px; font-weight: 600; color: #05042E;\n    border-bottom: 0.5px solid rgba(0,0,0,0.06);\n  }\n  tr:last-child td { border-bottom: none; }\n  tr:hover td { background: #f9f8f6; }\n\n  .status-pill {\n    display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;\n    padding: 3px 10px; border-radius: 20px;\n    background: #FAEEDA; color: #633806;\n  }\n\n  .empty-state {\n    text-align: center; padding: 32px 16px;\n    color: #888780; font-size: 13px;\n  }\n\n  .date-cell { color: #888780; font-weight: 500; font-size: 12px; }\n</style>\n\n<div class=\"card\">\n  <table>\n    <thead>\n      <tr>\n        <th>Collection Date</th>\n        <th>Customer</th>\n        <th>Address</th>\n        <th>Status</th>\n      </tr>\n    </thead>\n    <tbody id=\"rows_body\"></tbody>\n  </table>\n</div>\n\n<script>\n  function fmtDate(d) {\n    if (!d) return '—';\n    const dt = new Date(d);\n    if (isNaN(dt.getTime())) return String(d);\n    return dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });\n  }\n\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const rows = (model && Array.isArray(model.collections)) ? model.collections : [];\n    const tbody = document.getElementById('rows_body');\n\n    if (!rows.length) {\n      tbody.innerHTML = '<tr><td colspan=\"4\"><div class=\"empty-state\">No collections currently in Processing status.</div></td></tr>';\n      return;\n    }\n\n    tbody.innerHTML = rows.map(function(r) {\n      return '<tr>' +\n        '<td class=\"date-cell\">' + fmtDate(r.collection_date) + '</td>' +\n        '<td>' + escHtml(r.customer_name || '—') + '</td>' +\n        '<td>' + escHtml(r.address1 || '—') + '</td>' +\n        '<td><span class=\"status-pill\">' + escHtml(r.status || '—') + '</span></td>' +\n        '</tr>';\n    }).join('');\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget to replace CollectionsTable. Paste into a new Custom widget's source editor. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .card {\n    background: #fff;\n    border-radius: 10px;\n    border: 0.5px solid rgba(0,0,0,0.1);\n    overflow: hidden;\n  }\n\n  table { width: 100%; border-collapse: collapse; }\n  th {\n    text-align: left; padding: 10px 14px;\n    font-size: 10px; font-weight: 700; text-transform: uppercase;\n    color: #888780; letter-spacing: 0.05em;\n    border-bottom: 0.5px solid rgba(0,0,0,0.08);\n    background: rgba(5,4,46,0.02);\n  }\n  td {\n    padding: 12px 14px;\n    font-size: 13px; font-weight: 600; color: #05042E;\n    border-bottom: 0.5px solid rgba(0,0,0,0.06);\n  }\n  tr:last-child td { border-bottom: none; }\n  tr:hover td { background: #f9f8f6; }\n\n  .status-pill {\n    display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;\n    padding: 3px 10px; border-radius: 20px;\n    background: #FAEEDA; color: #633806;\n  }\n\n  .empty-state {\n    text-align: center; padding: 32px 16px;\n    color: #888780; font-size: 13px;\n  }\n\n  .date-cell { color: #888780; font-weight: 500; font-size: 12px; }\n</style>\n\n<div class=\"card\">\n  <table>\n    <thead>\n      <tr>\n        <th>Collection Date</th>\n        <th>Customer</th>\n        <th>Address</th>\n        <th>Status</th>\n      </tr>\n    </thead>\n    <tbody id=\"rows_body\"></tbody>\n  </table>\n</div>\n\n<script>\n  function fmtDate(d) {\n    if (!d) return '—';\n    const dt = new Date(d);\n    if (isNaN(dt.getTime())) return String(d);\n    return dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });\n  }\n\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const rows = (model && Array.isArray(model.collections)) ? model.collections : [];\n    const tbody = document.getElementById('rows_body');\n\n    if (!rows.length) {\n      tbody.innerHTML = '<tr><td colspan=\"4\"><div class=\"empty-state\">No collections currently in Processing status.</div></td></tr>';\n      return;\n    }\n\n    tbody.innerHTML = rows.map(function(r) {\n      return '<tr>' +\n        '<td class=\"date-cell\">' + fmtDate(r.collection_date) + '</td>' +\n        '<td>' + escHtml(r.customer_name || '—') + '</td>' +\n        '<td>' + escHtml(r.address1 || '—') + '</td>' +\n        '<td><span class=\"status-pill\">' + escHtml(r.status || '—') + '</span></td>' +\n        '</tr>';\n    }).join('');\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "version": 1,
+  "widgetId": "i32lkzabru",
+  "widgetName": "Custom_CollectionsProcessing"
+}

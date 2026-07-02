@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 59,
+  "bottomRow": 60,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n  {\n    purchaseHistory: qry_purchaseHistory.data || [],\n    saleHistory: qry_saleHistory.data || [],\n    priceTrend: qry_priceTrend.data || [],\n    estimatedValue: qry_estimatedValue.data || []\n  }\n}}",
   "dynamicBindingPathList": [
@@ -43,7 +43,7 @@
   "mobileTopRow": 9,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 61,
+  "originalBottomRow": 59,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "rw1nt0r2w0",

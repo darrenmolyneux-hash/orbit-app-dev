@@ -3,6 +3,15 @@ export default {
     await qry_GetAssetById.run();
     await qry_get_part_types.run();
   },
+  async saveAssessmentFromWidget() {
+    const scrap = Custom_PreInventory.model.scrapState || {};
+    const notes = Custom_PreInventory.model.notesState || {};
+    Object.keys(scrap).forEach(function(id) {
+      storeValue('scrap_' + id, scrap[id]);
+      storeValue('notes_' + id, notes[id] || '');
+    });
+    await this.savePreInventory();
+  },
   async savePreInventory() {
     const parts = qry_get_part_types.data;
     if (!parts || parts.length === 0) {

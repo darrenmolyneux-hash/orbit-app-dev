@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 68,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{{{\n  \"pallet\": qry_get_pallet_detail.data[0],\n  \"items\": qry_get_pallet_items.data\n}}}",
+  "defaultModel": "{{{\n  \"pallet\": qry_get_pallet_detail.data[0],\n  \"items\": qry_get_pallet_items.data,\n  \"assetResults\": appsmith.store.asset_search_results || [],\n  \"partResults\": appsmith.store.part_search_results || []\n}}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"

@@ -10,19 +10,19 @@ export default {
     storeValue('pallet_collection_date', null);
     storeValue('pallet_notes', null);
     storeValue('pallet_waste_type', null);
-    await qry_update_waste_pallet.run();
+    await qry_close_waste_pallet.run();
     await qry_get_pallet_detail.run();
   },
-  onSearchAssets: async () => {
-    storeValue('pallet_search', PalletDetailWidget.model.search_query);
-    const results = await qry_search_assets_for_pallet.run();
-    PalletDetailWidget.updateModel({ asset_results: results });
-  },
-  onSearchParts: async () => {
-    storeValue('pallet_search', PalletDetailWidget.model.search_query);
-    const results = await qry_search_parts_for_pallet.run();
-    PalletDetailWidget.updateModel({ part_results: results });
-  },
+ onSearchAssets: async () => {
+  storeValue('pallet_search', PalletDetailWidget.model.search_query);
+  const results = await qry_search_assets_for_pallet.run();
+  storeValue('asset_search_results', results);
+},
+onSearchParts: async () => {
+  storeValue('pallet_search', PalletDetailWidget.model.search_query);
+  const results = await qry_search_parts_for_pallet.run();
+  storeValue('part_search_results', results);
+},
   onSaveItem: async () => {
     const m = PalletDetailWidget.model;
     storeValue('item_type', m.item_type);

@@ -1,0 +1,67 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 27,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n  {\n    assetRef: qry_GetAssetById.data[0]?.asset_ref,\n    makeName: qry_GetAssetById.data[0]?.make_name,\n    modelName: qry_GetAssetById.data[0]?.model_name,\n    serial: qry_GetAssetById.data[0]?.serial_number,\n    itemType: qry_GetAssetById.data[0]?.item_type_name\n  }\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "mmp8hmekkp",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 28,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 12,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 14.5,
+  "parentId": "a62n6shs6z",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 62,
+  "srcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget: Custom_PreInventoryHeader. Replaces the two plain text fields at the top of the page. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .card {\n    background: #fff; border-radius: 10px; border: 0.5px solid rgba(0,0,0,0.1);\n    padding: 24px 28px;\n  }\n  .title { font-size: 28px; font-weight: 700; color: #05042E; line-height: 1.25; }\n  .subtitle { font-size: 15px; font-weight: 600; color: #469BC0; margin-top: 8px; }\n</style>\n\n<div class=\"card\" id=\"root\"></div>\n\n<script>\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const m = model || {};\n    const assetRef = m.assetRef || '';\n    const makeName = m.makeName || '';\n    const modelName = m.modelName || '';\n    const serial = m.serial || '';\n    const itemType = m.itemType || '';\n\n    const html =\n      '<div class=\"title\">' + escHtml(assetRef) + ' — ' + escHtml(makeName) + ' ' + escHtml(modelName) + ' | Serial: ' + escHtml(serial) + '</div>' +\n      '<div class=\"subtitle\">' + escHtml(itemType) + ' — Pre-Inventory Assessment</div>';\n\n    document.getElementById('root').innerHTML = html;\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "",
+    "html": "<!-- New custom widget: Custom_PreInventoryHeader. Replaces the two plain text fields at the top of the page. -->\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .card {\n    background: #fff; border-radius: 10px; border: 0.5px solid rgba(0,0,0,0.1);\n    padding: 24px 28px;\n  }\n  .title { font-size: 28px; font-weight: 700; color: #05042E; line-height: 1.25; }\n  .subtitle { font-size: 15px; font-weight: 600; color: #469BC0; margin-top: 8px; }\n</style>\n\n<div class=\"card\" id=\"root\"></div>\n\n<script>\n  function escHtml(str) {\n    if (str === null || str === undefined) return '';\n    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n  }\n\n  function render(model) {\n    const m = model || {};\n    const assetRef = m.assetRef || '';\n    const makeName = m.makeName || '';\n    const modelName = m.modelName || '';\n    const serial = m.serial || '';\n    const itemType = m.itemType || '';\n\n    const html =\n      '<div class=\"title\">' + escHtml(assetRef) + ' — ' + escHtml(makeName) + ' ' + escHtml(modelName) + ' | Serial: ' + escHtml(serial) + '</div>' +\n      '<div class=\"subtitle\">' + escHtml(itemType) + ' — Pre-Inventory Assessment</div>';\n\n    document.getElementById('root').innerHTML = html;\n  }\n\n  function initWhenReady() {\n    if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n      setTimeout(initWhenReady, 50);\n      return;\n    }\n    appsmith.onReady(() => render(appsmith.model));\n    appsmith.onModelChange(() => render(appsmith.model));\n  }\n\n  initWhenReady();\n</script>",
+    "js": ""
+  },
+  "version": 1,
+  "widgetId": "fvpmsae7zk",
+  "widgetName": "Custom_PreInventoryHeader"
+}
