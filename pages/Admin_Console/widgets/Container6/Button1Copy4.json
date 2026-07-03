@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 112,
+  "bottomRow": 102,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -39,7 +39,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 25,
   "text": "Update Sale Price",
-  "topRow": 108,
+  "topRow": 98,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "z5si1mfhwp",

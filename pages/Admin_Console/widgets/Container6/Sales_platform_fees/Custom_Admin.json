@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 31,
+  "bottomRow": 21,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n{\n  \"activeSection\": \"itemTypes\",\n  \"itemTypes\": qry_admin_item_types.data,\n  \"makes\": qry_admin_makes.data,\n  \"models\": qry_admin_models.data,\n  \"locations\": qry_admin_locations.data,\n  \"users\": qry_admin_users.data,\n  \"editRow\": null,\n  \"mode\": \"list\",\n  \"saleCustomers\": qry_admin_sale_customers.data\n}\n}}",
   "dynamicBindingPathList": [
