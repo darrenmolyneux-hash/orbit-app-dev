@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_3064ab12-f031-4202-a696-f71554b869bc",
-  "id": "Login_Page_qry_get_user_role",
+  "gitSyncId": "6a305b9e0882adc7e482e226_1ee31e6b-b9e1-48ff-83b9-1b140642990a",
+  "id": "Login_Page_qry_record_failed_login",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT role, is_active, full_name \nFROM users \nWHERE email = '{{ appsmith.store.loginEmail }}';",
+      "body": "SELECT * FROM neon_auth.\"account\" LIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,12 +22,7 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_get_user_role",
+    "name": "qry_record_failed_login",
     "pageId": "Login_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

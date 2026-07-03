@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO users (email, full_name, role, is_active, notes)\nVALUES (\n  '{{Custom_Admin.model.row.email}}',\n  '{{Custom_Admin.model.row.full_name}}',\n  '{{Custom_Admin.model.row.role || \"viewer\"}}',\n  {{Custom_Admin.model.row.is_active !== false}},\n  '{{Custom_Admin.model.row.notes || \"\"}}'\n)\nRETURNING user_id;",
+      "body": "INSERT INTO users (email, full_name, role, is_active, notes, password_hash, must_change_password)\nVALUES (\n  '{{Custom_Admin.model.row.email}}',\n  '{{Custom_Admin.model.row.full_name.split(\"'\").join(\"''\")}}',\n  '{{Custom_Admin.model.row.role || \"viewer\"}}',\n  {{Custom_Admin.model.row.is_active !== false}},\n  '{{(Custom_Admin.model.row.notes || \"\").split(\"'\").join(\"''\")}}',\n  crypt('{{this.params.tempPassword}}', gen_salt('bf')),\n  true\n)\nRETURNING user_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,3 +1,0 @@
-SELECT role, is_active, full_name 
-FROM users 
-WHERE email = '{{ appsmith.store.loginEmail }}';

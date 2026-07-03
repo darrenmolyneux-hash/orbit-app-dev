@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_272d6035-3543-46b6-a50e-98f1c79f6e61",
-  "id": "Login_Page_AuthActions.onGoogleSignIn",
+  "gitSyncId": "6a305b9e0882adc7e482e226_aad9972e-2ffc-46a7-b383-e37c8af5f44c",
+  "id": "Login_Page_AuthActions.onSetNewPassword",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "AuthActions.onGoogleSignIn",
-    "name": "onGoogleSignIn",
+    "fullyQualifiedName": "AuthActions.onSetNewPassword",
+    "name": "onSetNewPassword",
     "pageId": "Login_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

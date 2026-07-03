@@ -1,9 +1,11 @@
-INSERT INTO users (email, full_name, role, is_active, notes)
+INSERT INTO users (email, full_name, role, is_active, notes, password_hash, must_change_password)
 VALUES (
   '{{Custom_Admin.model.row.email}}',
-  '{{Custom_Admin.model.row.full_name}}',
+  '{{Custom_Admin.model.row.full_name.split("'").join("''")}}',
   '{{Custom_Admin.model.row.role || "viewer"}}',
   {{Custom_Admin.model.row.is_active !== false}},
-  '{{Custom_Admin.model.row.notes || ""}}'
+  '{{(Custom_Admin.model.row.notes || "").split("'").join("''")}}',
+  crypt('{{this.params.tempPassword}}', gen_salt('bf')),
+  true
 )
 RETURNING user_id;

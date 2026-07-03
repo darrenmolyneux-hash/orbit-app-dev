@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_7d41ada6-7517-43f1-8ea4-075c7dcb4c9c",
-  "id": "Login_Page_qry_get_user_by_email",
+  "gitSyncId": "6a305b9e0882adc7e482e226_77a60e82-c355-46d1-aa55-d2a60616ac02",
+  "id": "Login_Page_qry_record_successful_login",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- qry_get_user_by_email\nSELECT user_id, full_name, email, role, is_active\nFROM users\nWHERE LOWER(email) = LOWER({{this.params.email}})\nLIMIT 1;",
+      "body": "-- qry_record_successful_login\nUPDATE users\nSET failed_login_attempts = 0, locked_until = NULL, last_login = NOW()\nWHERE user_id = {{this.params.userId}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "qry_get_user_by_email",
+    "name": "qry_record_successful_login",
     "pageId": "Login_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

@@ -1,5 +1,0 @@
--- qry_get_user_by_email
-SELECT user_id, full_name, email, role, is_active
-FROM users
-WHERE LOWER(email) = LOWER({{this.params.email}})
-LIMIT 1;
