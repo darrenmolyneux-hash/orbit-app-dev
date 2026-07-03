@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "qry_search_sale_customers",
     "pageId": "Waste_Detail_Page",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

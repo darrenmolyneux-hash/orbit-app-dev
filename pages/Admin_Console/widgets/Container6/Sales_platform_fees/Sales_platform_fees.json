@@ -269,7 +269,7 @@
   "mobileTopRow": 1,
   "needsErrorInfo": false,
   "onTabSelected": "{{JSAdmin.handleTabChange();}}",
-  "originalBottomRow": 188,
+  "originalBottomRow": 28,
   "originalTopRow": 1,
   "parentColumnSpace": 16.375,
   "parentId": "kk03s7t1bg",
