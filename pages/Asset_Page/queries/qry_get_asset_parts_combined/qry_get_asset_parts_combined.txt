@@ -25,11 +25,12 @@ SELECT
   l.location_code AS current_location_code,
   l.location_name AS current_location_name,
 
-  CASE
-    WHEN hp.id IS NOT NULL THEN 'removed'
-    WHEN pia.is_salvageable = true THEN 'in_asset_salvageable'
-    ELSE 'in_asset_scrap'
-  END AS row_status,
+ CASE
+  WHEN hp.id IS NOT NULL AND hp.status = 'scrapped' THEN 'scrapped'
+  WHEN hp.id IS NOT NULL THEN 'removed'
+  WHEN pia.is_salvageable = true THEN 'in_asset_salvageable'
+  ELSE 'in_asset_scrap'
+END AS row_status,
 
   CASE
     WHEN hp.disposition_due IS NOT NULL AND hp.disposition_due < CURRENT_DATE THEN true

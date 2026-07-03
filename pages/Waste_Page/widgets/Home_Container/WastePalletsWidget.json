@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 17,
+  "bottomRow": 20,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  \"pallets\": qry_get_waste_pallets.data,\n  \"vendors\": qry_get_vendors_active.data\n}}}",
   "dynamicBindingPathList": [

@@ -1,0 +1,8 @@
+UPDATE waste_pallets
+SET status = '{{WastePalletsWidget.model.pallet_status}}',
+    vendor_id = {{WastePalletsWidget.model.pallet_vendor_id ? Number(WastePalletsWidget.model.pallet_vendor_id) : null}},
+    weight_kg = {{WastePalletsWidget.model.pallet_weight ? Number(WastePalletsWidget.model.pallet_weight) : null}},
+    collection_date = {{WastePalletsWidget.model.pallet_collection_date ? "'" + WastePalletsWidget.model.pallet_collection_date + "'" : null}},
+    notes = '{{WastePalletsWidget.model.pallet_notes ? WastePalletsWidget.model.pallet_notes.replace(/'/g, "''") : ""}}',
+    waste_type = '{{WastePalletsWidget.model.pallet_waste_type}}'
+WHERE pallet_id = {{Number(WastePalletsWidget.model.pallet_id)}};

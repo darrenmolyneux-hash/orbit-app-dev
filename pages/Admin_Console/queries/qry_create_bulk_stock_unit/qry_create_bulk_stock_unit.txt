@@ -10,11 +10,11 @@ INSERT INTO harvested_parts (
   date_added_to_stock,
   is_battery
 ) VALUES (
-  'PRT-' || LPAD(nextval('part_ref_seq')::text, 5, '0'),
+  '{{qry_get_next_part_ref.data[0].next_part_ref}}',
   {{Number(this.params.partTypeId)}},
   '{{this.params.partMake}}',
   '{{this.params.partModel}}',
-  'A',
+  'New',
   'in_stock',
   {{Number(this.params.unitCost)}},
   {{Number(this.params.locationId)}},

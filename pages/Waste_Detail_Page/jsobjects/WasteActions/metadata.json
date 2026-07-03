@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_e44f4b38-d1ca-4400-974f-4614f92dda71",
+  "id": "Waste_Detail_Page_WasteActions",
+  "unpublishedCollection": {
+    "name": "WasteActions",
+    "pageId": "Waste_Detail_Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

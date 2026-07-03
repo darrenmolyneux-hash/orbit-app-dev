@@ -19,7 +19,6 @@ export default {
 			showAlert('Failed to raise bulk order: ' + err.message, 'error');
 		}
 	},
-
 	onReceiveBulkOrder: async () => {
 		try {
 			const orderId = BulkPartsWidget.model.receivingBulkOrderId;
@@ -36,6 +35,7 @@ export default {
 			const qty = order.quantity;
 			let created = 0;
 			for (let i = 0; i < qty; i++) {
+				await qry_get_next_part_ref.run();
 				await qry_create_bulk_stock_unit.run({
 					partTypeId: partTypeId,
 					partMake: '',
@@ -46,6 +46,7 @@ export default {
 				});
 				created++;
 			}
+			await qry_bulk_orders_pending.run();
 			showAlert(created + ' units added to stock', 'success');
 		} catch(err) {
 			showAlert('Failed to receive bulk order: ' + err.message, 'error');

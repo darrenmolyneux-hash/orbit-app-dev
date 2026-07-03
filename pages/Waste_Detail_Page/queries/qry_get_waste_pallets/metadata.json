@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6a305b9e0882adc7e482e226_ffdc11e9-fb19-48f4-ae0b-4f7737a56ff5",
-  "id": "Waste_Page_qry_get_waste_pallets",
+  "id": "Waste_Detail_Page_qry_get_waste_pallets",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -24,7 +24,7 @@
     },
     "dynamicBindingPathList": [],
     "name": "qry_get_waste_pallets",
-    "pageId": "Waste_Page",
+    "pageId": "Waste_Detail_Page",
     "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }

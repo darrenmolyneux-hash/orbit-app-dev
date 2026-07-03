@@ -1,13 +1,24 @@
+WITH check_dup AS (
+  SELECT EXISTS (
+    SELECT 1 FROM harvested_parts hp2
+    WHERE hp2.source_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+    AND hp2.part_type_id = {{Number(RepairPartsWidget.model.scrapPart.part_type_id)}}
+  ) AS already_exists
+),
+next_ref AS (
+  SELECT 'PRT-' || LPAD((COALESCE(MAX(CAST(SUBSTRING(part_ref FROM 5) AS INT)), 0) + 1)::text, 5, '0') AS ref
+  FROM harvested_parts
+)
 INSERT INTO harvested_parts (
-  part_ref,
-  source_asset_id, part_type_id, removal_notes,
-  removed_by, removed_at, status, is_salvageable,
-  destination_type
-) VALUES (
-  'PRT-' || LPAD(nextval('part_ref_seq')::text, 5, '0'),
+  part_ref, source_asset_id, part_type_id, removal_notes, removed_by, removed_at, status, is_salvageable, destination_type
+)
+SELECT
+  next_ref.ref,
   {{Number(appsmith.URL.queryParams.asset_id)}},
   {{Number(RepairPartsWidget.model.scrapPart.part_type_id)}},
   '{{RepairPartsWidget.model.scrapPart.notes}}',
   '{{RepairPartsWidget.model.scrapPart.removed_by}}',
   NOW(), 'scrapped', false, 'scrap_general'
-);
+FROM next_ref, check_dup
+WHERE check_dup.already_exists = false
+RETURNING id, part_ref;

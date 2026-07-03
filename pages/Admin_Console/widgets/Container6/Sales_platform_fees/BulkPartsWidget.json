@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 74,
+  "bottomRow": 75,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  \"partTypes\": qry_bulk_part_types_list.data,\n  \"locations\": qry_bulk_locations.data,\n  \"orders\": qry_bulk_orders_pending.data\n}}}",
   "dynamicBindingPathList": [

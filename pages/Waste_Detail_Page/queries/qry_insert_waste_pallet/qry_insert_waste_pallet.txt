@@ -1,0 +1,13 @@
+INSERT INTO waste_pallets (
+  waste_id, status, vendor_id, weight_kg, collection_date, notes, waste_type, created_by, created_at
+) VALUES (
+  '{{qry_get_next_waste_id.data[0].next_waste_id}}',
+  'open',
+  {{WastePalletsWidget.model.pallet_vendor_id ? Number(WastePalletsWidget.model.pallet_vendor_id) : null}},
+  {{WastePalletsWidget.model.pallet_weight ? Number(WastePalletsWidget.model.pallet_weight) : null}},
+  {{WastePalletsWidget.model.pallet_collection_date ? "'" + WastePalletsWidget.model.pallet_collection_date + "'" : null}},
+  '{{WastePalletsWidget.model.pallet_notes ? WastePalletsWidget.model.pallet_notes.replace(/'/g, "''") : ""}}',
+  '{{WastePalletsWidget.model.pallet_waste_type}}',
+  '{{appsmith.user.name}}',
+  NOW()
+);

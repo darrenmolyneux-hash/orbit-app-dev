@@ -1,13 +1,13 @@
-INSERT INTO pallet_items (pallet_id, item_type, asset_id, harvested_part_id, description, quantity, notes, added_by, pallet_type)
-VALUES (
-  {{ Number(appsmith.URL.queryParams.pallet_id) }},
-  '{{ appsmith.store.pallet_item_type || "asset" }}',
-  {{ appsmith.store.pallet_asset_id || null }},
-  {{ appsmith.store.pallet_part_id || null }},
-  '{{ appsmith.store.pallet_description || "" }}',
-  {{ appsmith.store.pallet_quantity || 1 }},
-  '{{ appsmith.store.pallet_notes || "" }}',
-  '{{ appsmith.user.email }}',
-  'waste'
-)
-RETURNING item_id;
+INSERT INTO pallet_items (
+  pallet_id, item_type, asset_id, harvested_part_id, description, quantity, notes, added_by, added_at
+) VALUES (
+  {{this.params.palletId}},
+  '{{this.params.itemType}}',
+  {{this.params.itemAssetId === null ? 'NULL' : this.params.itemAssetId}},
+  {{this.params.itemPartId === null ? 'NULL' : this.params.itemPartId}},
+  '{{this.params.description.replace(/'/g, "''")}}',
+  {{this.params.quantity}},
+  '{{this.params.notes.replace(/'/g, "''")}}',
+  '{{this.params.addedBy}}',
+  NOW()
+);

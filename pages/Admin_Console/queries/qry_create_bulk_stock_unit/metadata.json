@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO harvested_parts (\n  part_ref,\n  part_type_id,\n  part_make,\n  part_model,\n  condition_grade,\n  status,\n  part_cost,\n  current_location_id,\n  date_added_to_stock,\n  is_battery\n) VALUES (\n  'PRT-' || LPAD(nextval('part_ref_seq')::text, 5, '0'),\n  {{Number(this.params.partTypeId)}},\n  '{{this.params.partMake}}',\n  '{{this.params.partModel}}',\n  'A',\n  'in_stock',\n  {{Number(this.params.unitCost)}},\n  {{Number(this.params.locationId)}},\n  NOW(),\n  {{this.params.isBattery}}\n);",
+      "body": "INSERT INTO harvested_parts (\n  part_ref,\n  part_type_id,\n  part_make,\n  part_model,\n  condition_grade,\n  status,\n  part_cost,\n  current_location_id,\n  date_added_to_stock,\n  is_battery\n) VALUES (\n  '{{qry_get_next_part_ref.data[0].next_part_ref}}',\n  {{Number(this.params.partTypeId)}},\n  '{{this.params.partMake}}',\n  '{{this.params.partModel}}',\n  'New',\n  'in_stock',\n  {{Number(this.params.unitCost)}},\n  {{Number(this.params.locationId)}},\n  NOW(),\n  {{this.params.isBattery}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

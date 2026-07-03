@@ -1,9 +1,3 @@
 UPDATE waste_pallets
-SET status = '{{appsmith.store.pallet_status}}',
-    vendor_id = {{appsmith.store.pallet_vendor_id ? Number(appsmith.store.pallet_vendor_id) : null}},
-    weight_kg = {{appsmith.store.pallet_weight ? Number(appsmith.store.pallet_weight) : null}},
-    collection_date = {{appsmith.store.pallet_collection_date ? "'" + appsmith.store.pallet_collection_date + "'" : null}},
-    notes = {{appsmith.store.pallet_notes ? "'" + appsmith.store.pallet_notes.replace(/'/g, "''") + "'" : null}},
-    waste_type = {{appsmith.store.pallet_waste_type ? "'" + appsmith.store.pallet_waste_type + "'" : null}},
-    closed_at = NOW()
-WHERE pallet_id = {{Number(appsmith.store.pallet_id)}};
+SET status = 'closed', closed_at = NOW()
+WHERE pallet_id = {{Number(WastePalletsWidget.model.selectedPalletId)}};

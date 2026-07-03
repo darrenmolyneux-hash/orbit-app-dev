@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  pi.item_id,\n  pi.item_type,\n  pi.description,\n  pi.quantity,\n  pi.notes,\n  pi.added_by,\n  pi.added_at::date AS added_date,\n  a.asset_ref,\n  a.asset_id,\n  hp.part_ref,\n  hp.id AS harvested_part_id,\n  pt.name AS part_type,\n  mk.make_name,\n  mo.model_name\nFROM pallet_items pi\nLEFT JOIN assets a ON a.asset_id = pi.asset_id\nLEFT JOIN harvested_parts hp ON hp.id = pi.harvested_part_id\nLEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id\nLEFT JOIN makes mk ON mk.make_id = a.make\nLEFT JOIN models mo ON mo.model_id = a.model\nWHERE pi.pallet_id = {{Number(appsmith.URL.queryParams.pallet_id)}}\nORDER BY pi.added_at DESC;",
+      "body": "SELECT\n  pi.item_id,\n  pi.item_type,\n  pi.description,\n  pi.quantity,\n  pi.notes,\n  pi.added_by,\n  pi.added_at::date AS added_date,\n  a.asset_ref,\n  a.asset_id,\n  hp.part_ref,\n  hp.id AS harvested_part_id,\n  pt.name AS part_type,\n  mk.make_name,\n  mo.model_name\nFROM pallet_items pi\nLEFT JOIN assets a ON a.asset_id = pi.asset_id\nLEFT JOIN harvested_parts hp ON hp.id = pi.harvested_part_id\nLEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id\nLEFT JOIN makes mk ON mk.make_id = a.make\nLEFT JOIN models mo ON mo.model_id = a.model\nWHERE pi.pallet_id = {{Number(WastePalletsWidget.model.selectedPalletId)}}\nORDER BY pi.added_at DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

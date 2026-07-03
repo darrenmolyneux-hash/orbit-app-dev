@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 15,
+  "bottomRow": 37,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n  {\n    parts: qry_get_asset_parts_combined.data || []\n  }\n}}",
   "dynamicBindingPathList": [
@@ -51,7 +51,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onRemovePart": "{{ (function() { closeModal('ModalParts'); JSParts.start(Custom14.model.selectedRow); setTimeout(() => scrollTo('RemovePartsWidget', 'start'), 150); })() }}",
+  "onRemovePart": "{{ (function() { closeModal('ModalParts'); JSParts.start(Custom14.model.selectedRow); JSParts.scrollToWizard(); })() }}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "originalBottomRow": 38,
   "originalTopRow": 6,

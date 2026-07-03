@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_deff0576-c6ae-4dc6-9666-88e852166c99",
-  "id": "Waste_Page_qry_insert_waste_pallet",
+  "gitSyncId": "6a305b9e0882adc7e482e226_01b3053f-e6cb-4e47-976a-56e105f0e413",
+  "id": "Waste_Detail_Page_qry_get_next_waste_id",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO waste_pallets (waste_id, waste_type, notes, created_by)\nVALUES (\n  '',\n  {{appsmith.store.pallet_waste_type}},\n  {{appsmith.store.pallet_notes}},\n  {{appsmith.user.name}}\n)\nRETURNING *;",
+      "body": "SELECT 'WP-' || LPAD((COALESCE(MAX(CAST(SUBSTRING(waste_id FROM 4) AS INT)), 0) + 1)::text, 5, '0') AS next_waste_id\nFROM waste_pallets;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,13 +22,9 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_insert_waste_pallet",
-    "pageId": "Waste_Page",
+    "dynamicBindingPathList": [],
+    "name": "qry_get_next_waste_id",
+    "pageId": "Waste_Detail_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

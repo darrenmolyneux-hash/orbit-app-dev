@@ -19,5 +19,5 @@ LEFT JOIN harvested_parts hp ON hp.id = pi.harvested_part_id
 LEFT JOIN part_types pt ON pt.part_type_id = hp.part_type_id
 LEFT JOIN makes mk ON mk.make_id = a.make
 LEFT JOIN models mo ON mo.model_id = a.model
-WHERE pi.pallet_id = {{Number(appsmith.URL.queryParams.pallet_id)}}
+WHERE pi.pallet_id = {{Number(WastePalletsWidget.model.selectedPalletId)}}
 ORDER BY pi.added_at DESC;

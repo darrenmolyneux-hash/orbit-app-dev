@@ -1,8 +1,0 @@
-INSERT INTO waste_pallets (waste_id, waste_type, notes, created_by)
-VALUES (
-  '',
-  {{appsmith.store.pallet_waste_type}},
-  {{appsmith.store.pallet_notes}},
-  {{appsmith.user.name}}
-)
-RETURNING *;

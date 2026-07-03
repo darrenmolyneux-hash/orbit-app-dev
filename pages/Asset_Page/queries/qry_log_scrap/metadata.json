@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO harvested_parts (\n  part_ref,\n  source_asset_id, part_type_id, removal_notes,\n  removed_by, removed_at, status, is_salvageable,\n  destination_type\n) VALUES (\n  'PRT-' || LPAD(nextval('part_ref_seq')::text, 5, '0'),\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  {{Number(RepairPartsWidget.model.scrapPart.part_type_id)}},\n  '{{RepairPartsWidget.model.scrapPart.notes}}',\n  '{{RepairPartsWidget.model.scrapPart.removed_by}}',\n  NOW(), 'scrapped', false, 'scrap_general'\n);",
+      "body": "WITH check_dup AS (\n  SELECT EXISTS (\n    SELECT 1 FROM harvested_parts hp2\n    WHERE hp2.source_asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\n    AND hp2.part_type_id = {{Number(RepairPartsWidget.model.scrapPart.part_type_id)}}\n  ) AS already_exists\n),\nnext_ref AS (\n  SELECT 'PRT-' || LPAD((COALESCE(MAX(CAST(SUBSTRING(part_ref FROM 5) AS INT)), 0) + 1)::text, 5, '0') AS ref\n  FROM harvested_parts\n)\nINSERT INTO harvested_parts (\n  part_ref, source_asset_id, part_type_id, removal_notes, removed_by, removed_at, status, is_salvageable, destination_type\n)\nSELECT\n  next_ref.ref,\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  {{Number(RepairPartsWidget.model.scrapPart.part_type_id)}},\n  '{{RepairPartsWidget.model.scrapPart.notes}}',\n  '{{RepairPartsWidget.model.scrapPart.removed_by}}',\n  NOW(), 'scrapped', false, 'scrap_general'\nFROM next_ref, check_dup\nWHERE check_dup.already_exists = false\nRETURNING id, part_ref;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

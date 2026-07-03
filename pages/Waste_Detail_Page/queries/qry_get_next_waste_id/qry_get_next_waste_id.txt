@@ -1,0 +1,2 @@
+SELECT 'WP-' || LPAD((COALESCE(MAX(CAST(SUBSTRING(waste_id FROM 4) AS INT)), 0) + 1)::text, 5, '0') AS next_waste_id
+FROM waste_pallets;

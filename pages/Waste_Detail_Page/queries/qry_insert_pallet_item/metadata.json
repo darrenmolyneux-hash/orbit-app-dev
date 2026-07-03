@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO pallet_items (pallet_id, item_type, asset_id, harvested_part_id, description, quantity, notes, added_by, pallet_type)\nVALUES (\n  {{ Number(appsmith.URL.queryParams.pallet_id) }},\n  '{{ appsmith.store.pallet_item_type || \"asset\" }}',\n  {{ appsmith.store.pallet_asset_id || null }},\n  {{ appsmith.store.pallet_part_id || null }},\n  '{{ appsmith.store.pallet_description || \"\" }}',\n  {{ appsmith.store.pallet_quantity || 1 }},\n  '{{ appsmith.store.pallet_notes || \"\" }}',\n  '{{ appsmith.user.email }}',\n  'waste'\n)\nRETURNING item_id;",
+      "body": "INSERT INTO pallet_items (\n  pallet_id, item_type, asset_id, harvested_part_id, description, quantity, notes, added_by, added_at\n) VALUES (\n  {{this.params.palletId}},\n  '{{this.params.itemType}}',\n  {{this.params.itemAssetId === null ? 'NULL' : this.params.itemAssetId}},\n  {{this.params.itemPartId === null ? 'NULL' : this.params.itemPartId}},\n  '{{this.params.description.replace(/'/g, \"''\")}}',\n  {{this.params.quantity}},\n  '{{this.params.notes.replace(/'/g, \"''\")}}',\n  '{{this.params.addedBy}}',\n  NOW()\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

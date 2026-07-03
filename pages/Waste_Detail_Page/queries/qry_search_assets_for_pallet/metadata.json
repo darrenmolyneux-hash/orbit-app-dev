@@ -29,7 +29,7 @@
     ],
     "name": "qry_search_assets_for_pallet",
     "pageId": "Waste_Detail_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

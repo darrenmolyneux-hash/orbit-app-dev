@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6a305b9e0882adc7e482e226_47252e9b-2e33-4fb2-8f0b-30aca0448986",
-  "id": "Waste_Page_qry_get_vendors_active",
+  "id": "Waste_Detail_Page_qry_get_vendors_active",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -24,7 +24,7 @@
     },
     "dynamicBindingPathList": [],
     "name": "qry_get_vendors_active",
-    "pageId": "Waste_Page",
+    "pageId": "Waste_Detail_Page",
     "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }

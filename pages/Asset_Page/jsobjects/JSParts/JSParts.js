@@ -112,6 +112,10 @@ export default {
 		storeValue('hp_dest_location_id', f.dest_location);
 		storeValue('harvest_step', 4);
 	},
+	async scrollToWizard() {
+		await new Promise(resolve => setTimeout(resolve, 150));
+		scrollTo('RemovePartsWidget', 'start');
+	},
 
 	onWizardBack() {
 		const target = RemovePartsWidget.model.backTo;
@@ -350,14 +354,18 @@ export default {
 		}
 	},
 
-	onLogScrap: async () => {
-		try {
-			await qry_log_scrap.run();
-			showAlert('Scrapped part logged', 'success');
-		} catch(err) {
-			showAlert('Failed to log scrap: ' + err.message, 'error');
-		}
-	},
+onLogScrap: async () => {
+  try {
+    await qry_log_scrap.run();
+    if (!qry_log_scrap.data || qry_log_scrap.data.length === 0) {
+      showAlert('This part type has already been removed from this asset.', 'warning');
+      return;
+    }
+    showAlert('Scrapped part logged', 'success');
+  } catch(err) {
+    showAlert('Failed to log scrap: ' + err.message, 'error');
+  }
+},
 
 	onRaiseOrder: async () => {
 		try {

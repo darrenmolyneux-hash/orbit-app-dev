@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE waste_pallets\nSET status = '{{appsmith.store.pallet_status}}',\n    vendor_id = {{appsmith.store.pallet_vendor_id ? Number(appsmith.store.pallet_vendor_id) : null}},\n    weight_kg = {{appsmith.store.pallet_weight ? Number(appsmith.store.pallet_weight) : null}},\n    collection_date = {{appsmith.store.pallet_collection_date ? \"'\" + appsmith.store.pallet_collection_date + \"'\" : null}},\n    notes = {{appsmith.store.pallet_notes ? \"'\" + appsmith.store.pallet_notes.replace(/'/g, \"''\") + \"'\" : null}},\n    waste_type = {{appsmith.store.pallet_waste_type ? \"'\" + appsmith.store.pallet_waste_type + \"'\" : null}},\n    closed_at = NOW()\nWHERE pallet_id = {{Number(appsmith.store.pallet_id)}};",
+      "body": "UPDATE waste_pallets\nSET status = 'closed', closed_at = NOW()\nWHERE pallet_id = {{Number(WastePalletsWidget.model.selectedPalletId)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
