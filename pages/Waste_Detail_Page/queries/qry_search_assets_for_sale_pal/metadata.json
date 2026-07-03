@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  a.asset_id,\n  a.asset_ref,\n  a.serial_number,\n  mk.make_name,\n  mo.model_name,\n  a.hdd,\n  a.ram,\n  a.cpu,\n  st.status_name,\n  l.location_name\nFROM assets a\nLEFT JOIN makes mk ON mk.make_id = a.make\nLEFT JOIN models mo ON mo.model_id = a.model\nLEFT JOIN status_types st ON st.status_id = a.status_id\nLEFT JOIN locations l ON l.location_id = a.location_id\nWHERE (\n  a.asset_ref ILIKE '%' || {{ appsmith.store.sale_pallet_search }} || '%'\n  OR a.serial_number ILIKE '%' || {{ appsmith.store.sale_pallet_search }} || '%'\n)\nAND a.status_id NOT IN (SELECT status_id FROM status_types WHERE status_name IN ('Disposed', 'Sold'))\nLIMIT 10;",
+      "body": "SELECT\n  a.asset_id,\n  a.asset_ref,\n  a.serial_number,\n  mk.make_name,\n  mo.model_name,\n  a.hdd,\n  a.ram,\n  a.cpu,\n  st.status_name,\n  l.location_name\nFROM assets a\nLEFT JOIN makes mk ON mk.make_id = a.make\nLEFT JOIN models mo ON mo.model_id = a.model\nLEFT JOIN status_types st ON st.status_id = a.status_id\nLEFT JOIN locations l ON l.location_id = a.location_id\nWHERE (\n  a.asset_ref ILIKE '%' || {{this.params.searchQuery}} || '%'\n  OR a.serial_number ILIKE '%' || {{this.params.searchQuery}} || '%'\n)\nAND a.status_id NOT IN (SELECT status_id FROM status_types WHERE status_name IN ('Disposed', 'Sold'))\nLIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "qry_search_assets_for_sale_pal",
     "pageId": "Waste_Detail_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

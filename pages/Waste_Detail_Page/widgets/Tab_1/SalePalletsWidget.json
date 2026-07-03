@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 35,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{{\n  {\n    pallets: qry_get_sale_pallets.data || [],\n    customers: qry_search_sale_customers.data || [],\n    pallet: qry_get_sale_pallet_detail.data?.[0] || {},\n    items: qry_get_sale_pallet_items.data || [],\n    asset_results: qry_search_assets_for_sale_pallet.data || []\n  }\n}}",
+  "defaultModel": "{{\n  {\n    pallets: qry_get_sale_pallets.data || [],\n    customers: qry_search_sale_customers.data || [],\n    pallet: qry_get_sale_pallet_detail.data?.[0] || {},\n    items: qry_get_sale_pallet_items.data || [],\n    asset_results: qry_search_assets_for_sale_pal.data || []\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
@@ -107,9 +107,9 @@
   "onProcessOrder": "{{SaleActions.onProcessOrder()}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "onSaveItem": "{{SaleActions.onSaveItem()}}",
-  "onSearchAssets": "{{qry_search_assets_for_sale_pallet.run()}}",
+  "onSearchAssets": "{{qry_search_assets_for_sale_pal.run({ searchQuery: SalePalletsWidget.model.search_query })}}",
   "onSelectPallet": "{{qry_get_sale_pallet_detail.run(); qry_get_sale_pallet_items.run({ palletId: Number(SalePalletsWidget.model.selectedPalletId) })}}",
-  "originalBottomRow": 45,
+  "originalBottomRow": 35,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "8la24952gt",

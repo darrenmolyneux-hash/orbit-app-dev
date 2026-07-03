@@ -52,7 +52,7 @@ export default {
   },
   onApplyPrice: async () => {
     try {
-      await qry_update_sale_pallet_price.run({
+      await qry_update_sale_pallet_prices.run({
         palletId: Number(SalePalletsWidget.model.selectedPalletId),
         totalPrice: Number(SalePalletsWidget.model.sale_total)
       });
@@ -64,16 +64,16 @@ export default {
       showAlert('Failed to apply price: ' + err.message, 'error');
     }
   },
-onProcessOrder: async () => {
-  try {
-    await qry_process_sale_pallet.run({
-      palletId: Number(SalePalletsWidget.model.selectedPalletId),
-      processedBy: appsmith.user.email
-    });
-    await qry_get_sale_pallets.run();
-    showAlert('Pallet processed as sale ✓', 'success');
-  } catch (err) {
-    showAlert('Failed to process order: ' + err.message, 'error');
-  }
+  onProcessOrder: async () => {
+    try {
+      await qry_process_sale_pallet.run({
+        palletId: Number(SalePalletsWidget.model.selectedPalletId),
+        processedBy: appsmith.user.email
+      });
+      await qry_get_sale_pallets.run();
+      showAlert('Pallet processed as sale ✓', 'success');
+    } catch (err) {
+      showAlert('Failed to process order: ' + err.message, 'error');
+    }
   }
 }
