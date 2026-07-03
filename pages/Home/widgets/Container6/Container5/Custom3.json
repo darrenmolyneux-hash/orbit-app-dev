@@ -1,9 +1,9 @@
 {
   "backgroundColor": "#ffffff",
-  "borderColor": "#ffffff",
+  "borderColor": "#e0dede",
   "borderRadius": "1.5rem",
   "borderWidth": "0",
-  "bottomRow": 88,
+  "bottomRow": 63,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{\"assets\": GetAssetTypeCounts.data}}}",
   "dynamicBindingPathList": [
@@ -14,7 +14,7 @@
       "key": "defaultModel"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [
     {
       "key": "onResetClick"
@@ -28,7 +28,7 @@
   "isSearchWildcard": true,
   "isVisible": true,
   "key": "tkiwxlt97p",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "mobileBottomRow": 31,
@@ -37,6 +37,8 @@
   "mobileTopRow": 1,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 84,
+  "originalTopRow": 0,
   "parentColumnSpace": 5.2421875,
   "parentId": "0yh95qv1xk",
   "parentRowSpace": 10,

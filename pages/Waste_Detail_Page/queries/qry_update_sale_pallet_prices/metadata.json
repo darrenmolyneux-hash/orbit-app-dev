@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "WITH split AS (\n  SELECT \n    {{ Number(appsmith.store.sale_pallet_total) }} / \n    COUNT(*) AS price_each\n  FROM pallet_items \n  WHERE pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }} \n    AND pallet_type = 'sale'\n),\nupdate_items AS (\n  UPDATE pallet_items\n  SET sale_price = (SELECT price_each FROM split)\n  WHERE pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }}\n    AND pallet_type = 'sale'\n  RETURNING asset_id\n)\nUPDATE assets\nSET sell_price = (SELECT price_each FROM split)\nWHERE asset_id IN (SELECT asset_id FROM update_items);",
+      "body": "WITH split AS (\n  SELECT \n    {{this.params.totalPrice}} / \n    COUNT(*) AS price_each\n  FROM pallet_items \n  WHERE pallet_id = {{this.params.palletId}} \n    AND pallet_type = 'sale'\n),\nupdate_items AS (\n  UPDATE pallet_items\n  SET sale_price = (SELECT price_each FROM split)\n  WHERE pallet_id = {{this.params.palletId}}\n    AND pallet_type = 'sale'\n  RETURNING asset_id\n)\nUPDATE assets\nSET sell_price = (SELECT price_each FROM split)\nWHERE asset_id IN (SELECT asset_id FROM update_items);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

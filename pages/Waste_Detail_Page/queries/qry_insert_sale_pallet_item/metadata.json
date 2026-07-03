@@ -5,12 +5,12 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO pallet_items (pallet_id, item_type, asset_id, sale_price, notes, added_by, pallet_type)\nVALUES (\n  {{ Number(appsmith.URL.queryParams.pallet_id) }},\n  'asset',\n  {{ Number(appsmith.store.sale_pallet_asset_id) }},\n  {{ Number(appsmith.store.sale_pallet_price) }},\n  '{{ appsmith.store.sale_pallet_notes || \"\" }}',\n  '{{ appsmith.user.email }}',\n  'sale'\n)\nRETURNING item_id;",
+      "body": "INSERT INTO pallet_items (pallet_id, item_type, asset_id, sale_price, notes, added_by, pallet_type)\nVALUES (\n  {{this.params.palletId}},\n  'asset',\n  {{this.params.assetId}},\n  {{this.params.salePrice}},\n  '{{this.params.notes.replace(/'/g, \"''\")}}',\n  '{{this.params.addedBy}}',\n  'sale'\n)\nRETURNING item_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "timeoutInMillisecond": 10000

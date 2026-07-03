@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 4,
+  "bottomRow": 35,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n  {\n    pallets: qry_get_sale_pallets.data || [],\n    customers: qry_search_sale_customers.data || [],\n    pallet: qry_get_sale_pallet_detail.data?.[0] || {},\n    items: qry_get_sale_pallet_items.data || [],\n    asset_results: qry_search_assets_for_sale_pallet.data || []\n  }\n}}",
   "dynamicBindingPathList": [

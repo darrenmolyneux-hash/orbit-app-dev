@@ -1,11 +1,11 @@
 INSERT INTO pallet_items (pallet_id, item_type, asset_id, sale_price, notes, added_by, pallet_type)
 VALUES (
-  {{ Number(appsmith.URL.queryParams.pallet_id) }},
+  {{this.params.palletId}},
   'asset',
-  {{ Number(appsmith.store.sale_pallet_asset_id) }},
-  {{ Number(appsmith.store.sale_pallet_price) }},
-  '{{ appsmith.store.sale_pallet_notes || "" }}',
-  '{{ appsmith.user.email }}',
+  {{this.params.assetId}},
+  {{this.params.salePrice}},
+  '{{this.params.notes.replace(/'/g, "''")}}',
+  '{{this.params.addedBy}}',
   'sale'
 )
 RETURNING item_id;

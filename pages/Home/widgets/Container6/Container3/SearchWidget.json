@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 36,
+  "bottomRow": 33,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{\"searchBarcode\": \"\", \"searchSerial\": \"\", \"searchCollection\": \"\"}}}",
   "dynamicBindingPathList": [
@@ -47,7 +47,7 @@
   "isSearchWildcard": true,
   "isVisible": true,
   "key": "tkiwxlt97p",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "mobileBottomRow": 47,
