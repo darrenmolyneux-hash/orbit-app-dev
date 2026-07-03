@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO pallet_items (pallet_id, item_type, asset_id, sale_price, notes, added_by, pallet_type)\nVALUES (\n  {{this.params.palletId}},\n  'asset',\n  {{this.params.assetId}},\n  {{this.params.salePrice}},\n  '{{this.params.notes.replace(/'/g, \"''\")}}',\n  '{{this.params.addedBy}}',\n  'sale'\n)\nRETURNING item_id;",
+      "body": "INSERT INTO pallet_items (pallet_id, item_type, asset_id, sale_price, notes, added_by, pallet_type)\nSELECT\n  {{this.params.palletId}},\n  'asset',\n  {{this.params.assetId}},\n  {{this.params.salePrice}},\n  '{{this.params.notes.split(\"'\").join(\"''\")}}',\n  '{{this.params.addedBy}}',\n  'sale'\nWHERE NOT EXISTS (\n  SELECT 1 FROM pallet_items\n  WHERE pallet_id = {{this.params.palletId}}\n  AND asset_id = {{this.params.assetId}}\n  AND pallet_type = 'sale'\n)\nRETURNING item_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

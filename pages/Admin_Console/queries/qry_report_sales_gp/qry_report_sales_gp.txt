@@ -3,12 +3,14 @@ SELECT
   sale_type,
   COALESCE(SUM(sell_price), 0)::numeric(10,2) AS total_sales,
   (COALESCE(SUM(sell_price), 0)
+    - COALESCE(SUM(cost), 0)
     - COALESCE(SUM(fees), 0)
     - COALESCE(SUM(carriage), 0)
     - COALESCE(SUM(erasure_fee), 0))::numeric(10,2) AS gross_profit
 FROM (
   SELECT
     si.sell_price,
+    a.original_cost AS cost,
     a.carriage_cost_allocated AS carriage,
     COALESCE(sf.total_fees, 0) AS fees,
     COALESCE(af.total_erasure, 0) AS erasure_fee,
@@ -31,11 +33,10 @@ FROM (
     (p.period = '7days'  AND s.sale_date::date >= CURRENT_DATE - INTERVAL '7 days') OR
     (p.period = '30days' AND s.sale_date::date >= CURRENT_DATE - INTERVAL '30 days') OR
     (p.period = 'mtd'    AND s.sale_date::date >= DATE_TRUNC('month', CURRENT_DATE))
-
   UNION ALL
-
   SELECT
     hp.part_cost AS sell_price,
+    0 AS cost,
     0 AS carriage,
     0 AS fees,
     0 AS erasure_fee,

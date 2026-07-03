@@ -1,0 +1,17 @@
+SELECT
+  a.asset_id,
+  a.asset_ref,
+  a.serial_number,
+  mk.make_name,
+  mo.model_name,
+  a.hdd,
+  a.ram,
+  a.cpu,
+  st.status_name
+FROM assets a
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models mo ON mo.model_id = a.model
+LEFT JOIN status_types st ON st.status_id = a.status_id
+WHERE (a.asset_ref = {{this.params.ref}} OR a.serial_number = {{this.params.ref}})
+AND a.status_id NOT IN (SELECT status_id FROM status_types WHERE status_name IN ('Disposed', 'Sold'))
+LIMIT 1;

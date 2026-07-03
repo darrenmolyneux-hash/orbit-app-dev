@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  pi.item_id,\n  pi.asset_id,\n  pi.sale_price,\n  pi.notes,\n  pi.added_by,\n  pi.added_at::date AS added_date,\n  a.asset_ref,\n  a.serial_number,\n  mk.make_name,\n  mo.model_name,\n  a.hdd,\n  a.ram,\n  a.cpu\nFROM pallet_items pi\nLEFT JOIN assets a ON a.asset_id = pi.asset_id\nLEFT JOIN makes mk ON mk.make_id = a.make\nLEFT JOIN models mo ON mo.model_id = a.model\nWHERE pi.pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }}\n  AND pi.pallet_type = 'sale'\nORDER BY pi.added_at DESC;",
+      "body": "SELECT\n  pi.item_id,\n  pi.asset_id,\n  pi.sale_price,\n  pi.notes,\n  pi.added_by,\n  pi.added_at::date AS added_date,\n  a.asset_ref,\n  a.serial_number,\n  mk.make_name,\n  mo.model_name,\n  a.hdd,\n  a.ram,\n  a.cpu\nFROM pallet_items pi\nLEFT JOIN assets a ON a.asset_id = pi.asset_id\nLEFT JOIN makes mk ON mk.make_id = a.make\nLEFT JOIN models mo ON mo.model_id = a.model\nWHERE pi.pallet_id = {{this.params.palletId}}\n  AND pi.pallet_type = 'sale'\nORDER BY pi.added_at DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

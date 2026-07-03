@@ -16,6 +16,6 @@ FROM pallet_items pi
 LEFT JOIN assets a ON a.asset_id = pi.asset_id
 LEFT JOIN makes mk ON mk.make_id = a.make
 LEFT JOIN models mo ON mo.model_id = a.model
-WHERE pi.pallet_id = {{ Number(appsmith.URL.queryParams.pallet_id) }}
+WHERE pi.pallet_id = {{this.params.palletId}}
   AND pi.pallet_type = 'sale'
 ORDER BY pi.added_at DESC;

@@ -1,0 +1,56 @@
+SELECT
+  period,
+  sale_type,
+  COALESCE(SUM(sell_price), 0)::numeric(10,2) AS total_sales,
+  (COALESCE(SUM(sell_price), 0)
+	 - COALESCE(SUM(cost), 0)
+	 - COALESCE(SUM(fees), 0)
+	 - COALESCE(SUM(carriage), 0)
+	 - COALESCE(SUM(erasure_fee), 0))::numeric(10,2) AS gross_profit
+FROM (
+	SELECT
+	si.sell_price,
+	a.original_cost AS cost,
+	a.carriage_cost_allocated AS carriage,
+	COALESCE(sf.total_fees, 0) AS fees,
+	COALESCE(af.total_erasure, 0) AS erasure_fee,
+	p.period,
+	'asset' AS sale_type
+	FROM sale_items si
+	JOIN sales s ON s.sale_id = si.sale_id
+	JOIN assets a ON a.asset_id = si.asset_id
+	LEFT JOIN (
+		SELECT sale_item_id, SUM(fee_amount) AS total_fees
+		FROM sales_fee GROUP BY sale_item_id
+	) sf ON sf.sale_item_id = si.sale_item_id
+	LEFT JOIN (
+		SELECT asset_id, SUM(fee_amount) AS total_erasure
+		FROM asset_fees GROUP BY asset_id
+	) af ON af.asset_id = a.asset_id
+	CROSS JOIN (VALUES ('today'),('7days'),('30days'),('mtd')) AS p(period)
+	WHERE
+	(p.period = 'today'  AND s.sale_date::date = CURRENT_DATE) OR
+	(p.period = '7days'  AND s.sale_date::date >= CURRENT_DATE - INTERVAL '7 days') OR
+	(p.period = '30days' AND s.sale_date::date >= CURRENT_DATE - INTERVAL '30 days') OR
+	(p.period = 'mtd'    AND s.sale_date::date >= DATE_TRUNC('month', CURRENT_DATE))
+	UNION ALL
+	SELECT
+	hp.part_cost AS sell_price,
+	0 AS cost,
+	0 AS carriage,
+	0 AS fees,
+	0 AS erasure_fee,
+	p.period,
+	'part' AS sale_type
+	FROM harvested_parts hp
+	CROSS JOIN (VALUES ('today'),('7days'),('30days'),('mtd')) AS p(period)
+	WHERE hp.dispatched_via_pallet_id IS NOT NULL
+	AND (
+		(p.period = 'today'  AND hp.removed_at::date = CURRENT_DATE) OR
+		(p.period = '7days'  AND hp.removed_at::date >= CURRENT_DATE - INTERVAL '7 days') OR
+		(p.period = '30days' AND hp.removed_at::date >= CURRENT_DATE - INTERVAL '30 days') OR
+		(p.period = 'mtd'    AND hp.removed_at::date >= DATE_TRUNC('month', CURRENT_DATE))
+	)
+) sub
+GROUP BY period, sale_type
+ORDER BY period, sale_type;
