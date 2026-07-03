@@ -1,0 +1,6 @@
+-- qry_admin_update_sale_customer
+UPDATE sale_customers
+SET customer_name = '{{Custom_Admin.model.row.customer_name.replace(/'/g, "''")}}',
+    platform = '{{Custom_Admin.model.row.platform ? Custom_Admin.model.row.platform.replace(/'/g, "''") : ""}}',
+    active = {{Custom_Admin.model.row.active !== false}}
+WHERE customer_id = {{Number(Custom_Admin.model.row.customer_id)}};

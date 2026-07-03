@@ -1,0 +1,8 @@
+-- qry_admin_insert_sale_customer
+INSERT INTO sale_customers (customer_name, platform, active, created_at)
+VALUES (
+  '{{Custom_Admin.model.row.customer_name.replace(/'/g, "''")}}',
+  '{{Custom_Admin.model.row.platform ? Custom_Admin.model.row.platform.replace(/'/g, "''") : ""}}',
+  {{Custom_Admin.model.row.active !== false}},
+  NOW()
+);

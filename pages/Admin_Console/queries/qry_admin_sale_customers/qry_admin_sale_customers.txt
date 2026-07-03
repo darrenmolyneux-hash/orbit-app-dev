@@ -1,0 +1,4 @@
+-- qry_admin_sale_customers
+SELECT customer_id, customer_name, platform, active
+FROM sale_customers
+ORDER BY customer_name;

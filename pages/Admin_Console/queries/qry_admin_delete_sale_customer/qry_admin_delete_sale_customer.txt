@@ -1,0 +1,2 @@
+-- qry_admin_delete_sale_customer
+DELETE FROM sale_customers WHERE customer_id = {{Number(Custom_Admin.model.row.customer_id)}};
