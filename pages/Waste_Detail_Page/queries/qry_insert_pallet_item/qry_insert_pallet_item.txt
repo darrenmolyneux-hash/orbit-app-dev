@@ -3,8 +3,8 @@ INSERT INTO pallet_items (
 ) VALUES (
   {{this.params.palletId}},
   '{{this.params.itemType}}',
-  {{this.params.itemAssetId === null ? 'NULL' : this.params.itemAssetId}},
-  {{this.params.itemPartId === null ? 'NULL' : this.params.itemPartId}},
+  {{this.params.itemAssetId}},
+  {{this.params.itemPartId}},
   '{{this.params.description.replace(/'/g, "''")}}',
   {{this.params.quantity}},
   '{{this.params.notes.replace(/'/g, "''")}}',

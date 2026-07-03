@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_e5ea2fb0-fef1-49a6-81ba-8ebb71f4bc30",
-  "id": "Waste_Detail_Page_qry_close_waste_pallet",
+  "gitSyncId": "6a305b9e0882adc7e482e226_e0e8b419-9eb3-4946-9a7a-da4d4240e3fb",
+  "id": "Waste_Detail_Page_qry_search_sale_customers",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE waste_pallets\nSET status = 'closed', closed_at = NOW()\nWHERE pallet_id = {{this.params.palletId}};",
+      "body": "SELECT customer_id, customer_name, platform\nFROM sale_customers\nWHERE active = true\nORDER BY customer_name;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,14 +22,10 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_close_waste_pallet",
+    "dynamicBindingPathList": [],
+    "name": "qry_search_sale_customers",
     "pageId": "Waste_Detail_Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

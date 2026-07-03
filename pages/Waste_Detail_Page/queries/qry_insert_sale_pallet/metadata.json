@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO sale_pallets (pallet_ref, status, created_by)\nVALUES (\n  'SP-' || LPAD(NEXTVAL('sale_pallet_seq')::text, 5, '0'),\n  'open',\n  '{{ appsmith.user.email }}'\n)\nRETURNING pallet_id, pallet_ref;",
+      "body": "INSERT INTO sale_pallets (pallet_ref, status, customer_id, created_by)\nVALUES (\n  'SP-' || LPAD(NEXTVAL('sale_pallet_seq')::text, 5, '0'),\n  'open',\n  {{this.params.customerId}},\n  '{{this.params.createdBy}}'\n)\nRETURNING pallet_id, pallet_ref;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

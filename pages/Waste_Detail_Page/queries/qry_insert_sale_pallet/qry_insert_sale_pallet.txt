@@ -1,7 +1,8 @@
-INSERT INTO sale_pallets (pallet_ref, status, created_by)
+INSERT INTO sale_pallets (pallet_ref, status, customer_id, created_by)
 VALUES (
   'SP-' || LPAD(NEXTVAL('sale_pallet_seq')::text, 5, '0'),
   'open',
-  '{{ appsmith.user.email }}'
+  {{this.params.customerId}},
+  '{{this.params.createdBy}}'
 )
 RETURNING pallet_id, pallet_ref;

@@ -14,6 +14,6 @@ SELECT
 FROM sale_pallets sp
 LEFT JOIN sale_customers c ON c.customer_id = sp.customer_id
 LEFT JOIN pallet_items pi ON pi.pallet_id = sp.pallet_id AND pi.pallet_type = 'sale'
-WHERE sp.pallet_id = {{Number(SalePalletsWidget.model.selectedPalletId)}}
 GROUP BY sp.pallet_id, sp.pallet_ref, sp.status, sp.notes, sp.created_by,
-  sp.created_at, sp.closed_at, sp.shipped_at, sp.customer_id, c.customer_name;
+  sp.created_at, sp.closed_at, sp.shipped_at, sp.customer_id, c.customer_name
+ORDER BY sp.created_at DESC;

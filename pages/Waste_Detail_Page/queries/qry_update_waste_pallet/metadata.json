@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE waste_pallets\nSET status = '{{WastePalletsWidget.model.pallet_status}}',\n    vendor_id = {{WastePalletsWidget.model.pallet_vendor_id ? Number(WastePalletsWidget.model.pallet_vendor_id) : null}},\n    weight_kg = {{WastePalletsWidget.model.pallet_weight ? Number(WastePalletsWidget.model.pallet_weight) : null}},\n    collection_date = {{WastePalletsWidget.model.pallet_collection_date ? \"'\" + WastePalletsWidget.model.pallet_collection_date + \"'\" : null}},\n    notes = '{{WastePalletsWidget.model.pallet_notes ? WastePalletsWidget.model.pallet_notes.replace(/'/g, \"''\") : \"\"}}',\n    waste_type = '{{WastePalletsWidget.model.pallet_waste_type}}'\nWHERE pallet_id = {{Number(WastePalletsWidget.model.pallet_id)}};",
+      "body": "UPDATE waste_pallets\nSET status = '{{this.params.status}}',\n    vendor_id = {{this.params.vendorId}},\n    weight_kg = {{this.params.weight}},\n    collection_date = {{this.params.collectionDate}},\n    notes = '{{this.params.notes.replace(/'/g, \"''\")}}',\n    waste_type = '{{this.params.wasteType}}'\nWHERE pallet_id = {{this.params.palletId}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

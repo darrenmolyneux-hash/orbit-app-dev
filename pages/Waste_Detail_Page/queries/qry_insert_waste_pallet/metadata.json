@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO waste_pallets (\n  waste_id, status, vendor_id, weight_kg, collection_date, notes, waste_type, created_by, created_at\n) VALUES (\n  '{{qry_get_next_waste_id.data[0].next_waste_id}}',\n  'open',\n  {{WastePalletsWidget.model.pallet_vendor_id ? Number(WastePalletsWidget.model.pallet_vendor_id) : null}},\n  {{WastePalletsWidget.model.pallet_weight ? Number(WastePalletsWidget.model.pallet_weight) : null}},\n  {{WastePalletsWidget.model.pallet_collection_date ? \"'\" + WastePalletsWidget.model.pallet_collection_date + \"'\" : null}},\n  '{{WastePalletsWidget.model.pallet_notes ? WastePalletsWidget.model.pallet_notes.replace(/'/g, \"''\") : \"\"}}',\n  '{{WastePalletsWidget.model.pallet_waste_type}}',\n  '{{appsmith.user.name}}',\n  NOW()\n);",
+      "body": "INSERT INTO waste_pallets (\n  waste_id, status, vendor_id, weight_kg, collection_date, notes, waste_type, created_by, created_at\n) VALUES (\n  '{{qry_get_next_waste_id.data[0].next_waste_id}}',\n  'open',\n  {{this.params.vendorId}},\n  {{this.params.weight}},\n  {{this.params.collectionDate}},\n  '{{this.params.notes.replace(/'/g, \"''\")}}',\n  '{{this.params.wasteType}}',\n  '{{this.params.createdBy}}',\n  NOW()\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

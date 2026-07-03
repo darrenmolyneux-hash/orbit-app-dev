@@ -5,12 +5,12 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO pallet_items (\n  pallet_id, item_type, asset_id, harvested_part_id, description, quantity, notes, added_by, added_at\n) VALUES (\n  {{this.params.palletId}},\n  '{{this.params.itemType}}',\n  {{this.params.itemAssetId === null ? 'NULL' : this.params.itemAssetId}},\n  {{this.params.itemPartId === null ? 'NULL' : this.params.itemPartId}},\n  '{{this.params.description.replace(/'/g, \"''\")}}',\n  {{this.params.quantity}},\n  '{{this.params.notes.replace(/'/g, \"''\")}}',\n  '{{this.params.addedBy}}',\n  NOW()\n);",
+      "body": "INSERT INTO pallet_items (\n  pallet_id, item_type, asset_id, harvested_part_id, description, quantity, notes, added_by, added_at\n) VALUES (\n  {{this.params.palletId}},\n  '{{this.params.itemType}}',\n  {{this.params.itemAssetId}},\n  {{this.params.itemPartId}},\n  '{{this.params.description.replace(/'/g, \"''\")}}',\n  {{this.params.quantity}},\n  '{{this.params.notes.replace(/'/g, \"''\")}}',\n  '{{this.params.addedBy}}',\n  NOW()\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "timeoutInMillisecond": 10000

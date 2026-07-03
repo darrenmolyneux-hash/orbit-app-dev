@@ -3,11 +3,11 @@ INSERT INTO waste_pallets (
 ) VALUES (
   '{{qry_get_next_waste_id.data[0].next_waste_id}}',
   'open',
-  {{WastePalletsWidget.model.pallet_vendor_id ? Number(WastePalletsWidget.model.pallet_vendor_id) : null}},
-  {{WastePalletsWidget.model.pallet_weight ? Number(WastePalletsWidget.model.pallet_weight) : null}},
-  {{WastePalletsWidget.model.pallet_collection_date ? "'" + WastePalletsWidget.model.pallet_collection_date + "'" : null}},
-  '{{WastePalletsWidget.model.pallet_notes ? WastePalletsWidget.model.pallet_notes.replace(/'/g, "''") : ""}}',
-  '{{WastePalletsWidget.model.pallet_waste_type}}',
-  '{{appsmith.user.name}}',
+  {{this.params.vendorId}},
+  {{this.params.weight}},
+  {{this.params.collectionDate}},
+  '{{this.params.notes.replace(/'/g, "''")}}',
+  '{{this.params.wasteType}}',
+  '{{this.params.createdBy}}',
   NOW()
 );
