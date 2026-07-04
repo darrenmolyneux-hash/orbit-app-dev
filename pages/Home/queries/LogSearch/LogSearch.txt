@@ -1,0 +1,2 @@
+INSERT INTO user_recent_searches (user_email, search_type, search_value)
+VALUES ({{appsmith.store.userEmail}}, {{this.params.searchType}}, {{this.params.searchValue}});

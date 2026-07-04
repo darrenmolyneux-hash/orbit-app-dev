@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_45a89c8a-8d69-4698-a376-36dbebeb91d1",
-  "id": "Home_HomeActions.onGoCreateCustomer",
+  "gitSyncId": "6a305b9e0882adc7e482e226_5980e327-b965-47ae-a763-c484c139d555",
+  "id": "Home_HomeActions.onLoadRecentSearches",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "HomeActions.onGoCreateCustomer",
-    "name": "onGoCreateCustomer",
+    "fullyQualifiedName": "HomeActions.onLoadRecentSearches",
+    "name": "onLoadRecentSearches",
     "pageId": "Home",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

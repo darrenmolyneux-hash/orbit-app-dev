@@ -97,7 +97,7 @@
   "mobileRightColumn": 35,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onAutoLogout": "{{NavActions.onSignOut()}}",
+  "onAutoLogout": "{{ storeValue('userEmail',''); storeValue('userName',''); storeValue('userRole',''); storeValue('userId',''); storeValue('userLastLogin',''); navigateTo('Login_Page', {}, 'SAME_WINDOW'); }}",
   "onSignOut": "{{ storeValue('userEmail',''); storeValue('userName',''); storeValue('userRole',''); storeValue('userId',''); storeValue('userLastLogin',''); navigateTo('Login_Page', {}, 'SAME_WINDOW'); }}",
   "parentColumnSpace": 19.5,
   "parentId": "razqsvmfxj",

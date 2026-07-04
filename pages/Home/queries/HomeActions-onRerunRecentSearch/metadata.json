@@ -1,12 +1,19 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_9132c917-be6e-4d23-af1d-c7fa14f783c1",
-  "id": "Home_HomeActions.onGoNewSale",
+  "gitSyncId": "6a305b9e0882adc7e482e226_6128c50f-157e-40e3-9f36-afd3d8e5e6a9",
+  "id": "Home_HomeActions.onRerunRecentSearch",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "searchType"
+        },
+        {
+          "name": "searchValue"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,8 +29,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "HomeActions.onGoNewSale",
-    "name": "onGoNewSale",
+    "fullyQualifiedName": "HomeActions.onRerunRecentSearch",
+    "name": "onRerunRecentSearch",
     "pageId": "Home",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

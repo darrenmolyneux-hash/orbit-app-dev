@@ -1,0 +1,5 @@
+SELECT search_type, search_value, searched_at
+FROM user_recent_searches
+WHERE user_email = {{this.params.userEmail}}
+ORDER BY searched_at DESC
+LIMIT 6;
