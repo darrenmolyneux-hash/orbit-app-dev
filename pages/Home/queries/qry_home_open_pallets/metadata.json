@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_a033a5cf-47c7-4cee-a5de-2eaa28f51afa",
-  "id": "Home_qry_search_collection",
+  "gitSyncId": "6a305b9e0882adc7e482e226_db29a744-d1c8-4ffe-9af7-6347e4879e7c",
+  "id": "Home_qry_home_open_pallets",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT collection_id FROM collections\nWHERE collection_id::text = '{{SearchWidget.model.searchCollection}}'\nLIMIT 1;",
+      "body": "SELECT\n  (SELECT COUNT(*) FROM sale_pallets WHERE status = 'open') AS open_sale_pallets,\n  (SELECT COUNT(*) FROM waste_pallets WHERE status = 'open') AS open_waste_pallets;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,14 +22,10 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_search_collection",
+    "dynamicBindingPathList": [],
+    "name": "qry_home_open_pallets",
     "pageId": "Home",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

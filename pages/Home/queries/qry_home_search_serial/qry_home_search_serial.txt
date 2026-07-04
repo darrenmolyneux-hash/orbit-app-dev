@@ -1,0 +1,3 @@
+SELECT asset_id, asset_ref FROM assets
+WHERE serial_number ILIKE {{this.params.query}}
+LIMIT 1;

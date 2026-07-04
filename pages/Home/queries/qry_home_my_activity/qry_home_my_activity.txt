@@ -1,0 +1,19 @@
+SELECT * FROM (
+  SELECT 'collection' AS activity_type, c.job_type AS title_detail, c.status AS status, c.created_by, c.created_at
+  FROM collections c
+  UNION ALL
+  SELECT 'asset', a.asset_ref, st.status_name, a.added_by, a.date_added
+  FROM assets a LEFT JOIN status_types st ON a.status_id = st.status_id
+  UNION ALL
+  SELECT 'asset_status_change', a.asset_ref, st.status_name, ash.changed_by, ash.changed_at
+  FROM asset_status_history ash
+  JOIN assets a ON a.asset_id = ash.asset_id
+  LEFT JOIN status_types st ON st.status_id = ash.status_id
+  UNION ALL
+  SELECT 'sale_pallet', sp.pallet_ref, sp.status, sp.created_by, sp.created_at FROM sale_pallets sp
+  UNION ALL
+  SELECT 'waste_pallet', wp.waste_id, wp.status, wp.created_by, wp.created_at FROM waste_pallets wp
+) combined
+WHERE LOWER(created_by) = LOWER({{this.params.userEmail}})
+ORDER BY created_at DESC
+LIMIT 10;

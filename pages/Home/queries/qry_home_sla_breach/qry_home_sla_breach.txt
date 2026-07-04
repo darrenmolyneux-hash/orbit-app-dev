@@ -1,0 +1,9 @@
+SELECT
+  collection_id, job_type, status, created_by, created_at,
+  (CURRENT_DATE - created_at::date)
+    - 2 * FLOOR(((CURRENT_DATE - created_at::date) + EXTRACT(DOW FROM created_at::date)) / 7) AS business_days_elapsed
+FROM collections
+WHERE status != 'Complete'
+AND (CURRENT_DATE - created_at::date)
+    - 2 * FLOOR(((CURRENT_DATE - created_at::date) + EXTRACT(DOW FROM created_at::date)) / 7) > 10
+ORDER BY created_at ASC;

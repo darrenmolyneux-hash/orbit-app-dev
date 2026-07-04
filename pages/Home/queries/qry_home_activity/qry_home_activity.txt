@@ -1,11 +1,68 @@
 SELECT
-  'collection'            AS entity_type,
-  c.collection_id         AS entity_id,
-  c.collection_id::text   AS title,
-  cu.customer_name        AS subtitle,
-  c.status                AS status,
-  c.created_at            AS event_time
+  'collection' AS activity_type,
+  c.collection_id AS record_id,
+  c.job_type AS title_detail,
+  c.status AS status,
+  c.created_by AS created_by,
+  c.created_at AS created_at
 FROM collections c
-JOIN customers cu ON cu.customer_id = c.customer_id
-ORDER BY c.created_at DESC
-LIMIT 10;
+UNION ALL
+SELECT
+  'customer' AS activity_type,
+  cu.customer_id AS record_id,
+  cu.customer_name AS title_detail,
+  NULL AS status,
+  cu.created_by AS created_by,
+  cu.created_at AS created_at
+FROM customers cu
+UNION ALL
+SELECT
+  'asset' AS activity_type,
+  a.asset_id AS record_id,
+  a.asset_ref AS title_detail,
+  st.status_name AS status,
+  a.added_by AS created_by,
+  a.date_added AS created_at
+FROM assets a
+LEFT JOIN status_types st ON a.status_id = st.status_id
+WHERE st.status_name IS DISTINCT FROM 'Received'
+UNION ALL
+SELECT
+  'sale_pallet_created' AS activity_type,
+  sp.pallet_id AS record_id,
+  sp.pallet_ref AS title_detail,
+  sp.status AS status,
+  sp.created_by AS created_by,
+  sp.created_at AS created_at
+FROM sale_pallets sp
+UNION ALL
+SELECT
+  'sale_pallet_closed' AS activity_type,
+  sp.pallet_id AS record_id,
+  sp.pallet_ref AS title_detail,
+  'closed' AS status,
+  sp.created_by AS created_by,
+  sp.closed_at AS created_at
+FROM sale_pallets sp
+WHERE sp.closed_at IS NOT NULL
+UNION ALL
+SELECT
+  'waste_pallet_created' AS activity_type,
+  wp.pallet_id AS record_id,
+  wp.waste_id AS title_detail,
+  wp.status AS status,
+  wp.created_by AS created_by,
+  wp.created_at AS created_at
+FROM waste_pallets wp
+UNION ALL
+SELECT
+  'waste_pallet_closed' AS activity_type,
+  wp.pallet_id AS record_id,
+  wp.waste_id AS title_detail,
+  'closed' AS status,
+  wp.created_by AS created_by,
+  wp.closed_at AS created_at
+FROM waste_pallets wp
+WHERE wp.closed_at IS NOT NULL
+ORDER BY created_at DESC
+LIMIT 50;

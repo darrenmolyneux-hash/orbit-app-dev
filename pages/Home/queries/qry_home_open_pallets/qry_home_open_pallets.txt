@@ -1,0 +1,3 @@
+SELECT
+  (SELECT COUNT(*) FROM sale_pallets WHERE status = 'open') AS open_sale_pallets,
+  (SELECT COUNT(*) FROM waste_pallets WHERE status = 'open') AS open_waste_pallets;

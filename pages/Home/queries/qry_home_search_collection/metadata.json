@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_3a398da5-8ad4-40f0-9987-37b15cd46ccf",
-  "id": "Home_qry_search_barcode",
+  "gitSyncId": "6a305b9e0882adc7e482e226_a033a5cf-47c7-4cee-a5de-2eaa28f51afa",
+  "id": "Home_qry_home_search_collection",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT asset_id, asset_ref\nFROM assets\nWHERE asset_ref ILIKE {{'%' + SearchWidget.model.searchBarcode + '%'}}\nLIMIT 1;",
+      "body": "SELECT collection_id FROM collections\nWHERE collection_id::text = {{this.params.query}}\nLIMIT 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "qry_search_barcode",
+    "name": "qry_home_search_collection",
     "pageId": "Home",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

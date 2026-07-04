@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a27f57e40e83311173efe61_b44e85a1-37e3-4872-8029-39fdbedea9bf",
-  "id": "Home_GetAssetTypeCounts",
+  "gitSyncId": "6a305b9e0882adc7e482e226_5f9916f4-eb07-4e6a-8d32-450cbc921d64",
+  "id": "Home_qry_home_sla_breach",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  it.item_type_name,\n  COUNT(*) AS total,\n  COUNT(*) FILTER (WHERE DATE_TRUNC('month', a.date_added) = DATE_TRUNC('month', CURRENT_DATE)) AS this_month,\n  COUNT(*) FILTER (WHERE DATE_TRUNC('year', a.date_added) = DATE_TRUNC('year', CURRENT_DATE)) AS this_year\nFROM assets a\nJOIN item_types it ON it.item_type_id = a.item_type\nGROUP BY it.item_type_name\nORDER BY total DESC\n",
+      "body": "SELECT\n  collection_id, job_type, status, created_by, created_at,\n  (CURRENT_DATE - created_at::date)\n    - 2 * FLOOR(((CURRENT_DATE - created_at::date) + EXTRACT(DOW FROM created_at::date)) / 7) AS business_days_elapsed\nFROM collections\nWHERE status != 'Complete'\nAND (CURRENT_DATE - created_at::date)\n    - 2 * FLOOR(((CURRENT_DATE - created_at::date) + EXTRACT(DOW FROM created_at::date)) / 7) > 10\nORDER BY created_at ASC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,7 +23,7 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "GetAssetTypeCounts",
+    "name": "qry_home_sla_breach",
     "pageId": "Home",
     "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true

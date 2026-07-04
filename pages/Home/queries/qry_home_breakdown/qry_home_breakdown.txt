@@ -7,3 +7,4 @@ FROM assets a
 JOIN item_types it ON it.item_type_id = a.item_type
 GROUP BY it.item_type_name
 ORDER BY total DESC
+LIMIT 10;
