@@ -1,7 +1,7 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "1",
   "bottomRow": 82,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
@@ -9,9 +9,6 @@
   "dynamicBindingPathList": [
     {
       "key": "theme"
-    },
-    {
-      "key": "borderRadius"
     },
     {
       "key": "boxShadow"

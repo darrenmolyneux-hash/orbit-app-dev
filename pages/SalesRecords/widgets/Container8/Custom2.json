@@ -1,20 +1,14 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "1",
   "bottomRow": 68,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{\"sales\": GetSales.data}}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "defaultModel"
@@ -39,7 +33,7 @@
   "isSearchWildcard": true,
   "isVisible": true,
   "key": "ua2c6l0i1v",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "mobileBottomRow": 31,
@@ -52,7 +46,7 @@
   "parentId": "qz6uonpsco",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 62,
+  "rightColumn": 64,
   "srcDoc": {
     "css": "",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n  body {\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n    background: transparent;\n    padding: 0.75rem;\n    font-size: 13px;\n    color: #1a1a1a;\n  }\n  .filters {\n    background: #fff;\n    border: 0.5px solid rgba(0,0,0,0.12);\n    border-radius: 12px;\n    padding: 1rem 1.25rem;\n    display: flex;\n    gap: 1rem;\n    align-items: flex-end;\n    flex-wrap: wrap;\n    margin-bottom: 0.75rem;\n  }\n  .filter-group { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 140px; }\n  .filter-label { font-size: 10px; font-weight: 500; color: #888780; text-transform: uppercase; letter-spacing: 0.06em; }\n  .filter-group input, .filter-group select {\n    border: 0.5px solid rgba(0,0,0,0.2);\n    border-radius: 8px; padding: 7px 10px;\n    font-size: 13px; color: #1a1a1a; background: #fff; outline: none; width: 100%;\n  }\n  .filter-group input:focus, .filter-group select:focus { border-color: #1a3c2e; }\n  .btn-clear {\n    font-size: 12px; padding: 7px 14px; border-radius: 8px;\n    border: 0.5px solid rgba(0,0,0,0.2); background: transparent;\n    color: #5f5e5a; cursor: pointer; white-space: nowrap; align-self: flex-end;\n  }\n  .btn-clear:hover { background: #f1efe8; }\n  .table-wrap { background: #fff; border: 0.5px solid rgba(0,0,0,0.12); border-radius: 12px; overflow: hidden; }\n  .table-header { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; border-bottom: 0.5px solid rgba(0,0,0,0.08); }\n  .table-title { font-size: 11px; font-weight: 500; color: #888780; text-transform: uppercase; letter-spacing: 0.07em; }\n  .record-count { font-size: 12px; color: #888780; }\n  table { width: 100%; border-collapse: collapse; }\n  th { text-align: left; padding: 8px 12px; font-size: 11px; font-weight: 500; color: #888780; border-bottom: 0.5px solid rgba(0,0,0,0.1); white-space: nowrap; }\n  td { padding: 10px 12px; border-bottom: 0.5px solid rgba(0,0,0,0.06); vertical-align: middle; }\n  tr:last-child td { border-bottom: none; }\n  tr:hover td { background: #f9f8f6; }\n  .sale-ref { font-family: monospace; font-size: 12px; color: #085041; background: #E1F5EE; padding: 2px 7px; border-radius: 4px; }\n  .platform-badge { font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 20px; text-transform: capitalize; }\n  .platform-amazon { background: #FFF4E0; color: #8A5A00; }\n  .platform-ebay { background: #EEF2FF; color: #3730A3; }\n  .platform-backmarket { background: #FCEBEB; color: #791F1F; }\n  .platform-default { background: #F1EFE8; color: #5F5E5A; }\n  .total { font-weight: 600; color: #085041; }\n  .asset-refs { font-size: 11px; color: #5f5e5a; font-family: monospace; }\n  .btn-view { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 6px; border: 0.5px solid rgba(0,0,0,0.2); background: #1a3c2e; color: #fff; cursor: pointer; white-space: nowrap; }\n  .btn-view:hover { background: #0f2a1f; }\n  .empty { text-align: center; padding: 3rem; color: #888780; font-size: 13px; }\n</style>\n</head>\n<body>\n<div class=\"filters\">\n  <div class=\"filter-group\">\n    <div class=\"filter-label\">Platform</div>\n    <select id=\"filter_platform\" onchange=\"window.applyFilters()\"><option value=\"\">All platforms</option></select>\n  </div>\n  <div class=\"filter-group\">\n    <div class=\"filter-label\">Sale Ref</div>\n    <input type=\"text\" id=\"filter_ref\" placeholder=\"Search ref...\" oninput=\"window.applyFilters()\">\n  </div>\n  <div class=\"filter-group\">\n    <div class=\"filter-label\">From</div>\n    <input type=\"date\" id=\"filter_from\" onchange=\"window.applyFilters()\">\n  </div>\n  <div class=\"filter-group\">\n    <div class=\"filter-label\">To</div>\n    <input type=\"date\" id=\"filter_to\" onchange=\"window.applyFilters()\">\n  </div>\n  <button class=\"btn-clear\" onclick=\"window.clearFilters()\">Clear</button>\n</div>\n<div class=\"table-wrap\">\n  <div class=\"table-header\">\n    <div class=\"table-title\">Sales Records</div>\n    <div class=\"record-count\" id=\"record_count\">0 records</div>\n  </div>\n  <table>\n    <thead>\n      <tr><th>Sale Ref</th><th>Platform</th><th>Date</th><th>Asset Refs</th><th>Models</th><th>Total</th><th></th></tr>\n    </thead>\n    <tbody id=\"table_body\"></tbody>\n  </table>\n</div>\n</body>\n</html>",

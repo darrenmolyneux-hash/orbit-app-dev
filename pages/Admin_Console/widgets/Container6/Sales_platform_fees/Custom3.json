@@ -1,20 +1,14 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "1",
   "bottomRow": 50,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{\n{\n  \"salesGp\": qry_report_sales_gp.data || [],\n  \"bestsellers\": qry_report_bestsellers.data || [],\n  \"stockValue\": qry_report_stock_value.data || []\n}\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "defaultModel"
@@ -43,7 +37,7 @@
   "mobileTopRow": 2,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 66,
+  "originalBottomRow": 50,
   "originalTopRow": 2,
   "parentColumnSpace": 16.0625,
   "parentId": "0jt9br0zq6",

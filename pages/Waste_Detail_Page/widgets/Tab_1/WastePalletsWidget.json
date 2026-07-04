@@ -1,20 +1,14 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 50,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "bottomRow": 24,
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{\n  {\n    pallets: qry_get_waste_pallets.data || [],\n    vendors: qry_get_vendors_active.data || [],\n    items: qry_get_pallet_items.data || [],\n    asset_results: qry_search_assets_for_pallet.data || [],\n    part_results: qry_search_parts_for_pallet.data || []\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "defaultModel"
@@ -109,7 +103,7 @@
   "onSearchAssets": "{{qry_search_assets_for_pallet.run()}}",
   "onSearchParts": "{{qry_search_parts_for_pallet.run()}}",
   "onSelectPallet": "{{qry_get_pallet_items.run({ palletId: Number(WastePalletsWidget.model.selectedPalletId) })}}",
-  "originalBottomRow": 54,
+  "originalBottomRow": 50,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "34wmkoz6fj",
