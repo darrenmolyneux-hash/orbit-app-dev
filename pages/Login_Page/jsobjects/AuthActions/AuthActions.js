@@ -35,6 +35,7 @@ export default {
         return;
       }
 
+      await storeValue('userLastLogin', user.last_login || null);
       await qry_record_successful_login.run({ userId: user.user_id });
       await storeValue('loginErrorMessage', '');
       await storeValue('userEmail', user.email);

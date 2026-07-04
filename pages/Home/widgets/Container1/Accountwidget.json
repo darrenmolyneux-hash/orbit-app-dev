@@ -1,0 +1,62 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#ffffff",
+  "borderRadius": "1.5rem",
+  "borderWidth": "",
+  "bottomRow": 17,
+  "boxShadow": "none",
+  "defaultModel": "{{\n  {\n    userName: appsmith.store.userName,\n    userEmail: appsmith.store.userEmail,\n    userRole: appsmith.store.userRole,\n    userLastLogin: appsmith.store.userLastLogin\n  }\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "d32qy5nezd",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 33,
+  "mobileLeftColumn": 3,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 3,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 16.375,
+  "parentId": "3na30kv01f",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "@import url(\"https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  font-family: \"Figtree\", sans-serif;\n  margin: 0;\n  padding: 0;\n}\n\n.card {\n  background: #fff;\n  border-radius: 0px;\n  border: 0px solid rgba(0, 0, 0, 0.1);\n  padding: 24px 26px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n\n.left {\n  display: flex;\n  align-items: center;\n  gap: 18px;\n}\n\n.avatar {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  background: #469BC0;\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 21px;\n  font-weight: 700;\n  flex-shrink: 0;\n}\n\n.greeting {\n  font-size: 26px;\n  font-weight: 700;\n  color: #05042E;\n  margin-bottom: 4px;\n}\n\n.datetime {\n  font-size: 16px;\n  font-weight: 500;\n  color: #888780;\n}\n\n.right {\n  display: flex;\n  align-items: center;\n  gap: 28px;\n  flex-wrap: wrap;\n}\n\n.info-block {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n}\n\n.info-label {\n  font-size: 11px;\n  font-weight: 700;\n  color: #888780;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.info-value {\n  font-size: 15px;\n  font-weight: 600;\n  color: #05042E;\n}\n\n.role-badge {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.09em;\n  padding: 9px 18px;\n  border-radius: 20px;\n  display: inline-block;\n  width: fit-content;\n}\n\n.role-admin {\n  background: #E3EFF6;\n  color: #1B4F6C;\n}\n\n.role-manager {\n  background: #E1F5EE;\n  color: #085041;\n}\n\n.role-technician {\n  background: #FAEEDA;\n  color: #633806;\n}\n\n.role-viewer {\n  background: rgba(5, 4, 46, 0.06);\n  color: #05042E;\n}",
+    "html": "<div class=\"card\">\n  <div class=\"left\">\n    <div class=\"avatar\" id=\"avatar\">--</div>\n    <div>\n      <div class=\"greeting\" id=\"greeting\">Hello</div>\n      <div class=\"datetime\" id=\"datetime\">--</div>\n    </div>\n  </div>\n  <div class=\"right\">\n    <div class=\"info-block\">\n      <span class=\"info-label\">Role</span>\n      <span class=\"role-badge\" id=\"role_badge\">—</span>\n    </div>\n    <div class=\"info-block\">\n      <span class=\"info-label\">Last Login</span>\n      <span class=\"info-value\" id=\"last_login\">—</span>\n   \n</div>",
+    "js": "function initials(name) {\n  if (!name) return '--';\n  var parts = name.trim().split(' ');\n  return parts.length >= 2 ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase() : parts[0].substring(0, 2).toUpperCase();\n}\nfunction fmtLastLogin(d) {\n  if (!d) return 'First login';\n  var dt = new Date(d);\n  if (isNaN(dt.getTime())) return '—';\n  return dt.toLocaleDateString('en-GB', {\n    day: '2-digit',\n    month: 'short',\n    year: 'numeric'\n  }) + ' at ' + dt.toLocaleTimeString('en-GB', {\n    hour: '2-digit',\n    minute: '2-digit'\n  });\n}\nfunction fmtNow() {\n  var now = new Date();\n  return now.toLocaleDateString('en-GB', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long',\n    year: 'numeric'\n  }) + ' · ' + now.toLocaleTimeString('en-GB', {\n    hour: '2-digit',\n    minute: '2-digit'\n  });\n}\nfunction roleClass(role) {\n  var map = {\n    admin: 'role-admin',\n    manager: 'role-manager',\n    technician: 'role-technician',\n    viewer: 'role-viewer'\n  };\n  return map[(role || '').toLowerCase()] || 'role-viewer';\n}\nfunction render(model) {\n  var m = model || {};\n  var name = m.userName || 'User';\n  var role = m.userRole || 'viewer';\n  var lastLogin = m.userLastLogin;\n  var hour = new Date().getHours();\n  var greetingWord = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';\n  document.getElementById('avatar').textContent = initials(name);\n  document.getElementById('greeting').textContent = greetingWord + ', ' + name.split(' ')[0];\n  document.getElementById('datetime').textContent = fmtNow();\n  var roleBadge = document.getElementById('role_badge');\n  roleBadge.textContent = role;\n  roleBadge.className = 'role-badge ' + roleClass(role);\n  document.getElementById('last_login').textContent = fmtLastLogin(lastLogin);\n}\nfunction initWhenReady() {\n  if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n    setTimeout(initWhenReady, 50);\n    return;\n  }\n  appsmith.onReady(function () {\n    render(appsmith.model);\n    document.getElementById('signout_btn').addEventListener('click', function () {\n      appsmith.triggerEvent('onSignOut');\n    });\n    appsmith.onModelChange(function (model) {\n      render(model);\n    });\n    setInterval(function () {\n      document.getElementById('datetime').textContent = fmtNow();\n    }, 60000);\n  });\n}\ninitWhenReady();"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 3,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n\n  .card {\n    background: #fff; border-radius: 0px; border: 0.0px solid rgba(0,0,0,0.1);\n    padding: 24px 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;\n  }\n\n  .left { display: flex; align-items: center; gap: 18px; }\n  .avatar { width: 60px; height: 60px; border-radius: 50%; background: #469BC0; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 21px; font-weight: 700; flex-shrink: 0; }\n\n  .greeting { font-size: 26px; font-weight: 700; color: #05042E; margin-bottom: 4px; }\n  .datetime { font-size: 16px; font-weight: 500; color: #888780; }\n\n  .right { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }\n\n  .info-block { display: flex; flex-direction: column; gap: 5px; }\n  .info-label { font-size: 11px; font-weight: 700; color: #888780; text-transform: uppercase; letter-spacing: 0.05em; }\n  .info-value { font-size: 15px; font-weight: 600; color: #05042E; }\n\n  .role-badge { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; padding: 9px 18px; border-radius: 20px; display: inline-block; width: fit-content; }\n  .role-admin { background: #E3EFF6; color: #1B4F6C; }\n  .role-manager { background: #E1F5EE; color: #085041; }\n  .role-technician { background: #FAEEDA; color: #633806; }\n  .role-viewer { background: rgba(5,4,46,0.06); color: #05042E; }\n\n",
+    "html": "<div class=\"card\">\n  <div class=\"left\">\n    <div class=\"avatar\" id=\"avatar\">--</div>\n    <div>\n      <div class=\"greeting\" id=\"greeting\">Hello</div>\n      <div class=\"datetime\" id=\"datetime\">--</div>\n    </div>\n  </div>\n  <div class=\"right\">\n    <div class=\"info-block\">\n      <span class=\"info-label\">Role</span>\n      <span class=\"role-badge\" id=\"role_badge\">—</span>\n    </div>\n    <div class=\"info-block\">\n      <span class=\"info-label\">Last Login</span>\n      <span class=\"info-value\" id=\"last_login\">—</span>\n   \n</div>",
+    "js": "function initials(name) {\n  if (!name) return '--';\n  var parts = name.trim().split(' ');\n  return parts.length >= 2\n    ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()\n    : parts[0].substring(0, 2).toUpperCase();\n}\n\nfunction fmtLastLogin(d) {\n  if (!d) return 'First login';\n  var dt = new Date(d);\n  if (isNaN(dt.getTime())) return '—';\n  return dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) +\n    ' at ' + dt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });\n}\n\nfunction fmtNow() {\n  var now = new Date();\n  return now.toLocaleDateString('en-GB', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }) +\n    ' · ' + now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });\n}\n\nfunction roleClass(role) {\n  var map = { admin: 'role-admin', manager: 'role-manager', technician: 'role-technician', viewer: 'role-viewer' };\n  return map[(role || '').toLowerCase()] || 'role-viewer';\n}\n\nfunction render(model) {\n  var m = model || {};\n  var name = m.userName || 'User';\n  var role = m.userRole || 'viewer';\n  var lastLogin = m.userLastLogin;\n\n  var hour = new Date().getHours();\n  var greetingWord = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';\n\n  document.getElementById('avatar').textContent = initials(name);\n  document.getElementById('greeting').textContent = greetingWord + ', ' + name.split(' ')[0];\n  document.getElementById('datetime').textContent = fmtNow();\n\n  var roleBadge = document.getElementById('role_badge');\n  roleBadge.textContent = role;\n  roleBadge.className = 'role-badge ' + roleClass(role);\n\n  document.getElementById('last_login').textContent = fmtLastLogin(lastLogin);\n}\n\nfunction initWhenReady() {\n  if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n    setTimeout(initWhenReady, 50);\n    return;\n  }\n  appsmith.onReady(function() {\n    render(appsmith.model);\n\n    document.getElementById('signout_btn').addEventListener('click', function() {\n      appsmith.triggerEvent('onSignOut');\n    });\n\n    appsmith.onModelChange(function(model) { render(model); });\n\n    setInterval(function() {\n      document.getElementById('datetime').textContent = fmtNow();\n    }, 60000);\n  });\n}\n\ninitWhenReady();"
+  },
+  "version": 1,
+  "widgetId": "4amq8od9ng",
+  "widgetName": "Accountwidget"
+}

@@ -5,7 +5,7 @@
   "borderWidth": "0",
   "bottomRow": 7,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{\n  \"activePage\": \"Home\",\n  \"userName\": \"{{appsmith.user.name}}\"\n}",
+  "defaultModel": "{{\n  {\n    userName: appsmith.store.userName,\n    userRole: appsmith.store.userRole,\n    userLastLogin: appsmith.store.userLastLogin\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
@@ -60,7 +60,8 @@
     "goWaste",
     "goSales",
     "goReports",
-    "goAdmin"
+    "goAdmin",
+    "onSignOut"
   ],
   "goAdmin": "{{navigateTo('Admin_Console', {}, 'SAME_WINDOW');}}",
   "goAssets": "{{navigateTo('Asset List', {}, 'SAME_WINDOW');}}",
