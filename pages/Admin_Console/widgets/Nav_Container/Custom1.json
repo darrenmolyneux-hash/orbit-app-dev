@@ -5,7 +5,7 @@
   "borderWidth": "0",
   "bottomRow": 7,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{\n  \"activePage\": \"Home\",\n  \"userName\": \"{{appsmith.user.name}}\"\n}",
+  "defaultModel": "{{\n  {\n    \"activePage\": \"Home\",\n    \"userName\": appsmith.store.userName\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
