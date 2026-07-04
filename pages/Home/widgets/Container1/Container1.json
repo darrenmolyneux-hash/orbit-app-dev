@@ -9,7 +9,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 150,
+      "bottomRow": 140,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -52,7 +52,7 @@
   ],
   "containerStyle": "card",
   "dynamicBindingPathList": [],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
@@ -68,7 +68,7 @@
   "mobileRightColumn": 53,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 24,
+  "originalBottomRow": 27,
   "originalTopRow": 10,
   "parentColumnSpace": 19.8125,
   "parentId": "0",
