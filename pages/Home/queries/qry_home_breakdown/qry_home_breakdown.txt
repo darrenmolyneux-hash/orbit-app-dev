@@ -2,7 +2,9 @@ SELECT
   it.item_type_name,
   COUNT(*) AS total,
   COUNT(*) FILTER (WHERE DATE_TRUNC('month', a.date_added) = DATE_TRUNC('month', CURRENT_DATE)) AS this_month,
-  COUNT(*) FILTER (WHERE DATE_TRUNC('year', a.date_added) = DATE_TRUNC('year', CURRENT_DATE)) AS this_year
+  COUNT(*) FILTER (WHERE DATE_TRUNC('month', a.date_added) = DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month')) AS last_month,
+  COUNT(*) FILTER (WHERE DATE_TRUNC('year', a.date_added) = DATE_TRUNC('year', CURRENT_DATE)) AS this_year,
+  COUNT(*) FILTER (WHERE DATE_TRUNC('year', a.date_added) = DATE_TRUNC('year', CURRENT_DATE - INTERVAL '1 year')) AS last_year
 FROM assets a
 JOIN item_types it ON it.item_type_id = a.item_type
 GROUP BY it.item_type_name
