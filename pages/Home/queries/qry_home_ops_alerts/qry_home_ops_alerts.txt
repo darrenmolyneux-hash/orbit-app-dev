@@ -1,0 +1,13 @@
+SELECT
+  'Collection Overdue' AS category,
+  'Collection #' || collection_id AS ref_label,
+  address1 || ', ' || city AS sub_label,
+  (CURRENT_DATE - collection_date)::int AS days,
+  CASE WHEN (CURRENT_DATE - collection_date) >= 10 THEN 'breach'
+       WHEN (CURRENT_DATE - collection_date) >= 7 THEN 'warning'
+       ELSE NULL END AS severity
+FROM collections
+WHERE status <> 'Complete'
+  AND collection_date < CURRENT_DATE
+  AND (CURRENT_DATE - collection_date) >= 7
+ORDER BY days DESC;

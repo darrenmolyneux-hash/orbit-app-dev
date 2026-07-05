@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE assets\nSET status_id = {{Number(Custom5.model.selectedStatusId)}}\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}",
+      "body": "UPDATE assets\nSET status_id = {{Number(Custom5.model.selectedStatusId)}}\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};\n\nINSERT INTO asset_status_history (asset_id, status_id, changed_by)\nVALUES (\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  {{Number(Custom5.model.selectedStatusId)}},\n  {{appsmith.store.userEmail}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

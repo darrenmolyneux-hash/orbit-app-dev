@@ -8,7 +8,6 @@ export default {
         return;
       }
       await storeValue('searchErrorMessage', '');
-      await LogSearch.run({ searchType: 'asset_ref', searchValue: HomeWidget.model.searchQuery });
       navigateTo('Asset_Page', { asset_id: asset.asset_id }, 'SAME_WINDOW');
     } catch (err) {
       await storeValue('searchErrorMessage', 'Search failed: ' + err.message);
@@ -23,7 +22,6 @@ export default {
         return;
       }
       await storeValue('searchErrorMessage', '');
-      await LogSearch.run({ searchType: 'serial', searchValue: HomeWidget.model.searchQuery });
       navigateTo('Asset_Page', { asset_id: asset.asset_id }, 'SAME_WINDOW');
     } catch (err) {
       await storeValue('searchErrorMessage', 'Search failed: ' + err.message);
@@ -38,7 +36,6 @@ export default {
         return;
       }
       await storeValue('searchErrorMessage', '');
-      await LogSearch.run({ searchType: 'collection', searchValue: HomeWidget.model.searchQuery });
       navigateTo('Collection_Page', { collection_id: collection.collection_id }, 'SAME_WINDOW');
     } catch (err) {
       await storeValue('searchErrorMessage', 'Search failed: ' + err.message);
@@ -53,20 +50,8 @@ export default {
     if (!appsmith.store.userEmail) return;
     await qry_home_my_activity.run({ userEmail: appsmith.store.userEmail });
   },
-  onLoadRecentSearches: async () => {
-    let attempts = 0;
-    while (!appsmith.store.userEmail && attempts < 10) {
-      await new Promise(resolve => setTimeout(resolve, 200));
-      attempts++;
-    }
-    if (!appsmith.store.userEmail) return;
-    await qry_home_recent_searches.run({ userEmail: appsmith.store.userEmail });
-  },
-  onRerunRecentSearch: async (searchType, searchValue) => {
-    await storeValue('searchQuery', searchValue);
-    if (searchType === 'asset_ref') await HomeActions.onSearchAssetRef.run();
-    if (searchType === 'serial') await HomeActions.onSearchSerial.run();
-    if (searchType === 'collection') await HomeActions.onSearchCollection.run();
+  onLoadOpsAlerts: async () => {
+    await qry_home_ops_alerts.run();
   },
   onGoCreateCustomer: () => {
     navigateTo('Create_Customer', {}, 'SAME_WINDOW');

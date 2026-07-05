@@ -1,3 +1,10 @@
 UPDATE assets
 SET status_id = {{Number(Custom5.model.selectedStatusId)}}
-WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}
+WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};
+
+INSERT INTO asset_status_history (asset_id, status_id, changed_by)
+VALUES (
+  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(Custom5.model.selectedStatusId)}},
+  {{appsmith.store.userEmail}}
+);
