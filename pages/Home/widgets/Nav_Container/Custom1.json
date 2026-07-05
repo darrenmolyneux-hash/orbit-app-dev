@@ -1,11 +1,11 @@
 {
-  "backgroundColor": "\"transparent\"",
+  "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "0",
-  "bottomRow": 7,
+  "borderWidth": "1",
+  "bottomRow": 13,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{{\n  {\n    userName: appsmith.store.userName,\n    userRole: appsmith.store.userRole,\n    userLastLogin: appsmith.store.userLastLogin\n  }\n}}",
+  "defaultModel": "{{\n  {\n    currentPage: currentPageName,\n    userInitials: appsmith.store.userName ? appsmith.store.userName.split(' ').map(function(w){return w[0];}).join('').toUpperCase().substring(0,2) : 'DA',\n    targetPage: null\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
@@ -21,104 +21,102 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [
-    {
-      "key": "backgroundColor"
-    },
-    {
-      "key": "onAutoLogout"
-    },
-    {
-      "key": "onSignOut"
-    }
-  ],
   "dynamicTriggerPathList": [
     {
-      "key": "goHome"
+      "key": "onResetClick"
     },
     {
-      "key": "goCustomers"
+      "key": "onLoadMyActivity"
     },
     {
-      "key": "goCollections"
+      "key": "onLoadOpsAlerts"
     },
     {
-      "key": "goAssets"
+      "key": "onLoadCollectionsSummary"
     },
     {
-      "key": "goWaste"
+      "key": "onGoCreateCustomer"
     },
     {
-      "key": "goSales"
+      "key": "onGoCreateJob"
     },
     {
-      "key": "goReports"
+      "key": "onGoNewSale"
     },
     {
-      "key": "goAdmin"
+      "key": "onGoCreateSalePallet"
     },
     {
-      "key": "onAutoLogout"
+      "key": "onGoCreateWastePallet"
     },
     {
-      "key": "onSignOut"
+      "key": "onSearchAssetRef"
+    },
+    {
+      "key": "onSearchSerial"
+    },
+    {
+      "key": "onSearchCollection"
     }
   ],
   "events": [
-    "goHome",
-    "goCustomers",
-    "goCollections",
-    "goAssets",
-    "goWaste",
-    "goSales",
-    "goReports",
-    "goAdmin",
-    "onAutoLogout",
-    "onSignOut"
+    "onResetClick",
+    "onLoadMyActivity",
+    "onLoadOpsAlerts",
+    "onLoadCollectionsSummary",
+    "onGoCreateCustomer",
+    "onGoCreateJob",
+    "onGoNewSale",
+    "onGoCreateSalePallet",
+    "onGoCreateWastePallet",
+    "onSearchAssetRef",
+    "onSearchSerial",
+    "onSearchCollection"
   ],
-  "goAdmin": "{{navigateTo('Admin_Console', {}, 'SAME_WINDOW');}}",
-  "goAssets": "{{navigateTo('Asset List', {}, 'SAME_WINDOW');}}",
-  "goCollections": "{{navigateTo('Upcoming Collection', {}, 'SAME_WINDOW');}}",
-  "goCustomers": "{{navigateTo('Customer_List', {}, 'SAME_WINDOW');}}",
-  "goHome": "{{navigateTo('Home', {}, 'SAME_WINDOW');}}",
-  "goReports": "{{navigateTo('Reports_Page', {}, 'SAME_WINDOW');}}",
-  "goSales": "{{navigateTo('SalesRecords', {}, 'SAME_WINDOW');}}",
-  "goWaste": "{{navigateTo('Waste_Page', {}, 'SAME_WINDOW');}}",
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
   "isVisible": true,
-  "key": "xt2uojq801",
-  "leftColumn": 11,
+  "key": "g7f2tr8a0d",
+  "leftColumn": 19,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "mobileBottomRow": 30,
-  "mobileLeftColumn": 12,
-  "mobileRightColumn": 35,
-  "mobileTopRow": 0,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 19,
+  "mobileRightColumn": 42,
+  "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onAutoLogout": "{{ storeValue('userEmail',''); storeValue('userName',''); storeValue('userRole',''); storeValue('userId',''); storeValue('userLastLogin',''); navigateTo('Login_Page', {}, 'SAME_WINDOW'); }}",
-  "onSignOut": "{{ storeValue('userEmail',''); storeValue('userName',''); storeValue('userRole',''); storeValue('userId',''); storeValue('userLastLogin',''); navigateTo('Login_Page', {}, 'SAME_WINDOW'); }}",
-  "parentColumnSpace": 19.5,
+  "onGoCreateCustomer": "{{HomeActions.onGoCreateCustomer();}}",
+  "onGoCreateJob": "{{HomeActions.onGoCreateJob();}}",
+  "onGoCreateSalePallet": "{{HomeActions.onGoCreateSalePallet();}}",
+  "onGoCreateWastePallet": "{{HomeActions.onGoCreateWastePallet();}}",
+  "onGoNewSale": "{{HomeActions.onGoNewSale();}}",
+  "onLoadCollectionsSummary": "{{HomeActions.onLoadCollectionsSummary();}}",
+  "onLoadMyActivity": "{{HomeActions.onLoadMyActivity();}}",
+  "onLoadOpsAlerts": "{{HomeActions.onLoadOpsAlerts();}}",
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "onSearchAssetRef": "{{HomeActions.onSearchAssetRef();}}",
+  "onSearchCollection": "{{HomeActions.onSearchCollection();}}",
+  "onSearchSerial": "{{HomeActions.onSearchSerial();}}",
+  "parentColumnSpace": 12,
   "parentId": "razqsvmfxj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 64,
-  "shouldScrollContents": true,
+  "rightColumn": 42,
   "srcDoc": {
-    "css": "*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  background: transparent;\n  overflow: hidden;\n  font-family: \"Figtree\", Inter, system-ui, sans-serif;\n}\n\n#nav {\n  display: flex;\n  align-items: center;\n  height: 56px;\n  padding: 0 12px;\n  width: 100%;\n  background: #05042E;\n  gap: 0;\n}\n\n.logo {\n  color: #fff;\n  font-size: 14px;\n  font-weight: 700;\n  letter-spacing: -0.02em;\n  padding: 0 8px;\n  flex-shrink: 0;\n}\n\n.div {\n  width: 0.5px;\n  background: rgba(255, 255, 255, 0.12);\n  height: 22px;\n  margin: 0 8px;\n  flex-shrink: 0;\n}\n\n.grp {\n  display: flex;\n  align-items: center;\n  gap: 1px;\n}\n\n.btn {\n  background: transparent;\n  border: none;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12.5px;\n  font-family: inherit;\n  font-weight: 400;\n  padding: 5px 10px;\n  border-radius: 5px;\n  cursor: pointer;\n  transition: background 0.15s, color 0.15s;\n  white-space: nowrap;\n}\n\n.btn:hover {\n  background: rgba(255, 255, 255, 0.08);\n  color: #fff;\n}\n\n.btn.active {\n  background: rgba(255, 255, 255, 0.13);\n  color: #fff;\n  font-weight: 600;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.user {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-shrink: 0;\n}\n\n.avatar {\n  width: 26px;\n  height: 26px;\n  border-radius: 50%;\n  background: #469BC0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 9px;\n  font-weight: 700;\n  color: #fff;\n}\n\n#username {\n  color: rgba(255, 255, 255, 0.55);\n  font-size: 12.5px;\n  white-space: nowrap;\n}\n\n.signout-link {\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.7);\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  margin-left: 12px;\n  padding: 4px 8px;\n  border-radius: 6px;\n}\n\n.signout-link:hover {\n  color: #fff;\n  background: rgba(255, 255, 255, 0.1);\n}",
-    "html": "<nav id=\"nav\">\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Home\" onclick=\"go('goHome')\">Home</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Customers\" onclick=\"go('goCustomers')\">Customers</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Collections\" onclick=\"go('goCollections')\">Collections</button>\n    <button class=\"btn\" data-page=\"Assets\" onclick=\"go('goAssets')\">Assets</button>\n    <button class=\"btn\" data-page=\"Waste\" onclick=\"go('goWaste')\">Waste</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Sales\" onclick=\"go('goSales')\">Sales</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Reports\" onclick=\"go('goReports')\">Reports</button>\n    <button class=\"btn\" data-page=\"Admin\" onclick=\"go('goAdmin')\">Admin</button>\n  </div>\n<div class=\"user\">\n    <div class=\"avatar\" id=\"initials\">DA</div>\n    <span id=\"username\"></span>\n    <button id=\"signout_link\" class=\"signout-link\">Sign Out</button>\n  </div>\n</nav>\n</nav>",
-    "js": "appsmith.onReady(function () {\n  init();\n});\nappsmith.onModelChange(function () {\n  init();\n});\nfunction init() {\n  var model = appsmith.model;\n  var activePage = model && model.activePage ? model.activePage : '';\n  document.querySelectorAll('.btn').forEach(function (btn) {\n    btn.className = btn.getAttribute('data-page') === activePage ? 'btn active' : 'btn';\n  });\n  var userName = model && model.userName ? model.userName : '';\n  if (userName) {\n    document.getElementById('username').textContent = userName.split(' ')[0];\n    var parts = userName.trim().split(' ');\n    var initials = parts.length >= 2 ? parts[0][0].toUpperCase() + parts[parts.length - 1][0].toUpperCase() : parts[0].substring(0, 2).toUpperCase();\n    document.getElementById('initials').textContent = initials;\n  }\n}\nwindow.go = function (eventName) {\n  appsmith.triggerEvent(eventName);\n};\n// --- Auto-logout after 20 minutes of inactivity ---\nvar IDLE_LIMIT_MS = 20 * 60 * 1000; // 20 minutes\nvar idleTimer = null;\nfunction performAutoLogout() {\n  if (typeof appsmith === 'undefined' || !appsmith.store.userEmail) return; // already signed out, nothing to do\n  appsmith.triggerEvent('onAutoLogout');\n}\nfunction resetIdleTimer() {\n  if (idleTimer) clearTimeout(idleTimer);\n  idleTimer = setTimeout(performAutoLogout, IDLE_LIMIT_MS);\n}\nfunction startIdleWatch() {\n  ['mousemove', 'mousedown', 'keydown', 'scroll', 'touchstart', 'click'].forEach(function (evt) {\n    document.addEventListener(evt, resetIdleTimer, {\n      passive: true\n    });\n  });\n  resetIdleTimer();\n}\nstartIdleWatch();\nfunction initSignOutLink() {\n  var btn = document.getElementById('signout_link');\n  if (btn && !btn.dataset.bound) {\n    btn.dataset.bound = 'true';\n    btn.addEventListener('click', function () {\n      appsmith.triggerEvent('onSignOut');\n    });\n  }\n}\nappsmith.onReady(function () {\n  initSignOutLink();\n});\nappsmith.onModelChange(function () {\n  initSignOutLink();\n});"
+    "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n}\n\n.tip-container {\n  margin-bottom: 20px;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  margin-bottom: 9px;\n}\n\n.tip-header div {\n  color: #999;\n}\n\n.content {\n  white-space: pre-wrap;\n  word-break: break-word;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.button-container {\n  text-align: right;\n  padding-top: 4px;\n}\n\n.button-container button {\n  margin: 0 10px;\n  cursor: pointer;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 6px 16px;\n  background: none;\n  height: auto;\n  transition: all 0.3s ease;\n}\n\n.button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n  color: #fff;\n  border: 1px solid var(--appsmith-theme-primaryColor) !important;\n}\n\n.button-container button.reset {\n  border: 1px solid #999;\n  color: #999;\n  outline: none;\n  box-shadow: none;\n}\n\n.button-container button.reset:hover:not(:disabled) {\n  color: var(--appsmith-theme-primaryColor);\n  border-color: var(--appsmith-theme-primaryColor);\n}\n\n.button-container button.reset:disabled {\n  cursor: default;\n}",
+    "html": "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css\">\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n  .navbar {\n    background: #05042E;\n    border-radius: 10px;\n    padding: 14px 20px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n  .nav-left { display: flex; align-items: center; gap: 12px; }\n  .nav-logo { width: 32px; height: 32px; border-radius: 8px; }\n  .nav-brand { color: #fff; font-size: 18px; font-weight: 700; }\n  .nav-links { display: flex; align-items: center; gap: 4px; }\n  .nav-link {\n    color: rgba(255,255,255,0.7);\n    font-size: 13px;\n    font-weight: 600;\n    padding: 8px 14px;\n    border-radius: 6px;\n    cursor: pointer;\n    white-space: nowrap;\n  }\n  .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }\n  .nav-link.active { color: #05042E; background: #A3E851; }\n  .nav-avatar {\n    width: 32px; height: 32px; border-radius: 50%;\n    background: #469BC0; color: #fff;\n    display: flex; align-items: center; justify-content: center;\n    font-size: 12px; font-weight: 700; cursor: pointer;\n  }\n</style>\n\n<div class=\"navbar\">\n  <div class=\"nav-left\">\n    <img class=\"nav-logo\" src=\"YOUR_LOGO_URL_HERE\" />\n    <span class=\"nav-brand\">Orbit</span>\n  </div>\n  <div class=\"nav-links\" id=\"nav_links\"></div>\n  <div class=\"nav-avatar\" id=\"nav_avatar\">DA</div>\n</div>",
+    "js": "var NAV_ITEMS = [{\n  label: 'Home',\n  page: 'Home'\n}, {\n  label: 'Customers',\n  page: 'Customer_List'\n}, {\n  label: 'Collections',\n  page: 'Upcoming_Collection'\n}, {\n  label: 'Assets',\n  page: 'Asset_List'\n}, {\n  label: 'Pallets',\n  page: 'Waste_Detail_Page'\n}, {\n  label: 'Sales',\n  page: 'Sales_Page'\n}, {\n  label: 'Admin',\n  page: 'Admin_Page'\n}];\nfunction escHtml(str) {\n  return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\nfunction render(model) {\n  var linksEl = document.getElementById('nav_links');\n  var currentPage = model.currentPage || '';\n  linksEl.innerHTML = NAV_ITEMS.map(function (item) {\n    var isActive = item.page === currentPage;\n    return '<div class=\"nav-link' + (isActive ? ' active' : '') + '\" data-page=\"' + item.page + '\">' + escHtml(item.label) + '</div>';\n  }).join('');\n  linksEl.querySelectorAll('.nav-link').forEach(function (el) {\n    el.addEventListener('click', function () {\n      appsmith.updateModel({\n        targetPage: this.dataset.page\n      });\n      appsmith.triggerEvent('onNavClick');\n    });\n  });\n  var avatar = document.getElementById('nav_avatar');\n  if (avatar) {\n    avatar.textContent = model.userInitials || 'DA';\n    avatar.addEventListener('click', function () {\n      appsmith.triggerEvent('onAvatarClick');\n    });\n  }\n}\nfunction initWhenReady() {\n  if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n    setTimeout(initWhenReady, 50);\n    return;\n  }\n  appsmith.onReady(function () {\n    render(appsmith.model);\n  });\n  appsmith.onModelChange(function (model) {\n    render(model);\n  });\n}\ninitWhenReady();"
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 0,
+  "topRow": 6,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
-    "css": "*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\nbody { background: transparent; overflow: hidden; font-family: 'Figtree', Inter, system-ui, sans-serif; }\n#nav { display: flex; align-items: center; height: 56px; padding: 0 12px; width: 100%; background: #05042E; gap: 0; }\n.logo { color: #fff; font-size: 14px; font-weight: 700; letter-spacing: -0.02em; padding: 0 8px; flex-shrink: 0; }\n.div { width: 0.5px; background: rgba(255,255,255,0.12); height: 22px; margin: 0 8px; flex-shrink: 0; }\n.grp { display: flex; align-items: center; gap: 1px; }\n.btn { background: transparent; border: none; color: rgba(255,255,255,0.5); font-size: 12.5px; font-family: inherit; font-weight: 400; padding: 5px 10px; border-radius: 5px; cursor: pointer; transition: background 0.15s, color 0.15s; white-space: nowrap; }\n.btn:hover { background: rgba(255,255,255,0.08); color: #fff; }\n.btn.active { background: rgba(255,255,255,0.13); color: #fff; font-weight: 600; }\n.spacer { flex: 1; }\n.user { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }\n.avatar { width: 26px; height: 26px; border-radius: 50%; background: #469BC0; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #fff; }\n#username { color: rgba(255,255,255,0.55); font-size: 12.5px; white-space: nowrap; }\n.signout-link {\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: rgba(255,255,255,0.7);\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  margin-left: 12px;\n  padding: 4px 8px;\n  border-radius: 6px;\n}\n.signout-link:hover {\n  color: #fff;\n  background: rgba(255,255,255,0.1);\n}",
-    "html": "<nav id=\"nav\">\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Home\" onclick=\"go('goHome')\">Home</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Customers\" onclick=\"go('goCustomers')\">Customers</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Collections\" onclick=\"go('goCollections')\">Collections</button>\n    <button class=\"btn\" data-page=\"Assets\" onclick=\"go('goAssets')\">Assets</button>\n    <button class=\"btn\" data-page=\"Waste\" onclick=\"go('goWaste')\">Waste</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Sales\" onclick=\"go('goSales')\">Sales</button>\n  </div>\n  <div class=\"div\"></div>\n  <div class=\"grp\">\n    <button class=\"btn\" data-page=\"Reports\" onclick=\"go('goReports')\">Reports</button>\n    <button class=\"btn\" data-page=\"Admin\" onclick=\"go('goAdmin')\">Admin</button>\n  </div>\n<div class=\"user\">\n    <div class=\"avatar\" id=\"initials\">DA</div>\n    <span id=\"username\"></span>\n    <button id=\"signout_link\" class=\"signout-link\">Sign Out</button>\n  </div>\n</nav>\n</nav>",
-    "js": "appsmith.onReady(function() { init(); });\nappsmith.onModelChange(function() { init(); });\nfunction init() {\n  var model = appsmith.model;\n  var activePage = model && model.activePage ? model.activePage : '';\n  document.querySelectorAll('.btn').forEach(function(btn) {\n    btn.className = btn.getAttribute('data-page') === activePage ? 'btn active' : 'btn';\n  });\n  var userName = model && model.userName ? model.userName : '';\n  if (userName) {\n    document.getElementById('username').textContent = userName.split(' ')[0];\n    var parts = userName.trim().split(' ');\n    var initials = parts.length >= 2 ? parts[0][0].toUpperCase() + parts[parts.length-1][0].toUpperCase() : parts[0].substring(0,2).toUpperCase();\n    document.getElementById('initials').textContent = initials;\n  }\n}\nwindow.go = function(eventName) { appsmith.triggerEvent(eventName); };\n// --- Auto-logout after 20 minutes of inactivity ---\nvar IDLE_LIMIT_MS = 20 * 60 * 1000; // 20 minutes\nvar idleTimer = null;\n\nfunction performAutoLogout() {\n  if (typeof appsmith === 'undefined' || !appsmith.store.userEmail) return; // already signed out, nothing to do\n  appsmith.triggerEvent('onAutoLogout');\n}\n\nfunction resetIdleTimer() {\n  if (idleTimer) clearTimeout(idleTimer);\n  idleTimer = setTimeout(performAutoLogout, IDLE_LIMIT_MS);\n}\n\nfunction startIdleWatch() {\n  ['mousemove', 'mousedown', 'keydown', 'scroll', 'touchstart', 'click'].forEach(function(evt) {\n    document.addEventListener(evt, resetIdleTimer, { passive: true });\n  });\n  resetIdleTimer();\n}\n\nstartIdleWatch();\nfunction initSignOutLink() {\n  var btn = document.getElementById('signout_link');\n  if (btn && !btn.dataset.bound) {\n    btn.dataset.bound = 'true';\n    btn.addEventListener('click', function() {\n      appsmith.triggerEvent('onSignOut');\n    });\n  }\n}\nappsmith.onReady(function() { initSignOutLink(); });\nappsmith.onModelChange(function() { initSignOutLink(); });"
+    "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n}\n\n.tip-container {\n  margin-bottom: 20px;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  margin-bottom: 9px;\n}\n\n.tip-header div {\n  color: #999;\n}\n\n.content {\n  white-space: pre-wrap;\n  word-break: break-word;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.button-container {\n  text-align: right;\n  padding-top: 4px;\n}\n\n.button-container button {\n  margin: 0 10px;\n  cursor: pointer;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 6px 16px;\n  background: none;\n  height: auto;\n  transition: all 0.3s ease;\n}\n\n.button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n  color: #fff;\n  border: 1px solid var(--appsmith-theme-primaryColor) !important;\n}\n\n.button-container button.reset {\n  border: 1px solid #999;\n  color: #999;\n  outline: none;\n  box-shadow: none;\n}\n\n.button-container button.reset:hover:not(:disabled) {\n  color: var(--appsmith-theme-primaryColor);\n  border-color: var(--appsmith-theme-primaryColor);\n}\n\n.button-container button.reset:disabled {\n  cursor: default;\n}",
+    "html": "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css\">\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n  .navbar {\n    background: #05042E;\n    border-radius: 10px;\n    padding: 14px 20px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n  .nav-left { display: flex; align-items: center; gap: 12px; }\n  .nav-logo { width: 32px; height: 32px; border-radius: 8px; }\n  .nav-brand { color: #fff; font-size: 18px; font-weight: 700; }\n  .nav-links { display: flex; align-items: center; gap: 4px; }\n  .nav-link {\n    color: rgba(255,255,255,0.7);\n    font-size: 13px;\n    font-weight: 600;\n    padding: 8px 14px;\n    border-radius: 6px;\n    cursor: pointer;\n    white-space: nowrap;\n  }\n  .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }\n  .nav-link.active { color: #05042E; background: #A3E851; }\n  .nav-avatar {\n    width: 32px; height: 32px; border-radius: 50%;\n    background: #469BC0; color: #fff;\n    display: flex; align-items: center; justify-content: center;\n    font-size: 12px; font-weight: 700; cursor: pointer;\n  }\n</style>\n\n<div class=\"navbar\">\n  <div class=\"nav-left\">\n    <img class=\"nav-logo\" src=\"YOUR_LOGO_URL_HERE\" />\n    <span class=\"nav-brand\">Orbit</span>\n  </div>\n  <div class=\"nav-links\" id=\"nav_links\"></div>\n  <div class=\"nav-avatar\" id=\"nav_avatar\">DA</div>\n</div>",
+    "js": "var NAV_ITEMS = [\n  { label: 'Home', page: 'Home' },\n  { label: 'Customers', page: 'Customer_List' },\n  { label: 'Collections', page: 'Upcoming_Collection' },\n  { label: 'Assets', page: 'Asset_List' },\n  { label: 'Pallets', page: 'Waste_Detail_Page' },\n  { label: 'Sales', page: 'Sales_Page' },\n  { label: 'Admin', page: 'Admin_Page' }\n];\n\nfunction escHtml(str) {\n  return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n}\n\nfunction render(model) {\n  var linksEl = document.getElementById('nav_links');\n  var currentPage = model.currentPage || '';\n\n  linksEl.innerHTML = NAV_ITEMS.map(function(item) {\n    var isActive = item.page === currentPage;\n    return '<div class=\"nav-link' + (isActive ? ' active' : '') + '\" data-page=\"' + item.page + '\">' + escHtml(item.label) + '</div>';\n  }).join('');\n\n  linksEl.querySelectorAll('.nav-link').forEach(function(el) {\n    el.addEventListener('click', function() {\n      appsmith.updateModel({ targetPage: this.dataset.page });\n      appsmith.triggerEvent('onNavClick');\n    });\n  });\n\n  var avatar = document.getElementById('nav_avatar');\n  if (avatar) {\n    avatar.textContent = (model.userInitials || 'DA');\n    avatar.addEventListener('click', function() {\n      appsmith.triggerEvent('onAvatarClick');\n    });\n  }\n}\n\nfunction initWhenReady() {\n  if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n    setTimeout(initWhenReady, 50);\n    return;\n  }\n  appsmith.onReady(function() { render(appsmith.model); });\n  appsmith.onModelChange(function(model) { render(model); });\n}\n\ninitWhenReady();"
   },
   "version": 1,
-  "widgetId": "vgctqhv95x",
+  "widgetId": "jxp0q4sezm",
   "widgetName": "Custom1"
 }
