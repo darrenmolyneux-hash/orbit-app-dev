@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- qry_get_login_user\nSELECT user_id, email, full_name, role, is_active, password_hash, failed_login_attempts, locked_until, must_change_password\nFROM users\nWHERE LOWER(email) = LOWER({{this.params.email}})\nLIMIT 1;",
+      "body": "SELECT user_id, email, full_name, role, is_active, password_hash, failed_login_attempts, locked_until, must_change_password, last_login\nFROM users\nWHERE LOWER(email) = LOWER({{this.params.email}})\nLIMIT 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
