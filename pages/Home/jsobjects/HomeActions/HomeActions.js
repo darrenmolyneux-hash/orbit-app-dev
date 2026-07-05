@@ -41,6 +41,12 @@ export default {
       await storeValue('searchErrorMessage', 'Search failed: ' + err.message);
     }
   },
+	onGoCreateSalePallet: () => {
+  navigateTo('Waste_Detail_Page', { tab: 'sale_pallets' }, 'SAME_WINDOW');
+},
+onGoCreateWastePallet: () => {
+  navigateTo('Waste_Detail_Page', { tab: 'waste_pallets' }, 'SAME_WINDOW');
+},
   onLoadMyActivity: async () => {
     let attempts = 0;
     while (!appsmith.store.userEmail && attempts < 10) {

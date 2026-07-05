@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  c.collection_id,\n  c.job_type,\n  c.collection_date,\n  c.status,\n  c.instructions,\n  c.dial,\n  c.dial_expiry,\n  c.msa_signed,\n  c.site_contact,\n  c.contact_number,\n  c.contact_email,\n  c.notes,\n  c.created_by,\n  c.created_at,\n  c.address1,\n  c.address2,\n  c.city,\n  c.postcode,\n  c.expected_assets,\n  cu.customer_id,\n  cu.customer_name,\n  cu.dial_ref        AS customer_dial_ref,\n  cu.dial_expiry     AS customer_dial_expiry,\n  cu.msa_signed      AS customer_msa_signed\nFROM collections c\nJOIN customers cu ON cu.customer_id = c.customer_id\nWHERE c.collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};",
+      "body": "SELECT\n  c.collection_id,\n  c.job_type,\n  c.collection_date,\n  c.status,\n  c.instructions,\n  c.dial,\n  c.dial_expiry,\n  c.msa_signed,\n  c.site_contact,\n  c.contact_number,\n  c.contact_email,\n  c.notes,\n  c.created_by,\n  c.created_at,\n  c.address1,\n  c.address2,\n  c.city,\n  c.postcode,\n  c.expected_assets,\n  c.collection_vehicle,\n  c.driver,\n  c.client_name_onsite,\n  c.driver_signature,\n  c.client_signature,\n  c.client_signature_timestamp,\n  cu.customer_id,\n  cu.customer_name,\n  cu.dial_ref        AS customer_dial_ref,\n  cu.dial_expiry     AS customer_dial_expiry,\n  cu.msa_signed      AS customer_msa_signed\nFROM collections c\nJOIN customers cu ON cu.customer_id = c.customer_id\nWHERE c.collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

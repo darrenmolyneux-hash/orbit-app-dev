@@ -1,26 +1,24 @@
 export default {
-onLoadJobSheet: async () => {
-  await qry_jobsheet_bookings.run();
-
-  let attempts = 0;
-  let collectionId = appsmith.URL.queryParams.collection_id;
-  while (!collectionId && attempts < 10) {
-    await new Promise(resolve => setTimeout(resolve, 100));
-    collectionId = appsmith.URL.queryParams.collection_id;
-    attempts++;
-  }
-
-  if (collectionId) {
-    await qry_jobsheet_get_coll.run({ collectionId: Number(collectionId) });
-    await qry_jobsheet_get_item_types.run();
-    await qry_jobsheet_get_items.run({ collectionId: Number(collectionId) });
-  }
-},
- onOpenCollection: async () => {
-  const id = JobSheetWidget.model.selectedCollectionId;
-  await navigateTo('Driver_Job_Sheet', { collection_id: id }, 'SAME_WINDOW');
-  await JobSheetActions.onLoadJobSheet();
-},
+  onLoadJobSheet: async () => {
+    await qry_jobsheet_bookings.run();
+    let attempts = 0;
+    let collectionId = appsmith.URL.queryParams.collection_id;
+    while (!collectionId && attempts < 10) {
+      await new Promise(resolve => setTimeout(resolve, 100));
+      collectionId = appsmith.URL.queryParams.collection_id;
+      attempts++;
+    }
+    if (collectionId) {
+      await qry_jobsheet_get_coll.run({ collectionId: Number(collectionId) });
+      await qry_jobsheet_get_item_types.run();
+      await qry_jobsheet_get_items.run({ collectionId: Number(collectionId) });
+    }
+  },
+  onOpenCollection: async () => {
+    const id = JobSheetWidget.model.selectedCollectionId;
+    await navigateTo('Driver_Job_Sheet', { collection_id: id }, 'SAME_WINDOW');
+    await JobSheetActions.onLoadJobSheet();
+  },
   onAddJobSheetItem: async () => {
     try {
       const m = JobSheetWidget.model;
@@ -44,7 +42,8 @@ onLoadJobSheet: async () => {
   onSubmitJobSheet: async () => {
     try {
       const m = JobSheetWidget.model;
-      await qry_jobsheet_submit.run({
+      console.log('Submitting for collection_id:', m.collection_id, 'vehicle:', m.js_vehicle, 'driver:', m.driverName, 'driverSig:', !!m.js_driver_signature, 'clientSig:', !!m.js_client_signature);
+      const result = await qry_jobsheet_submit.run({
         collectionId: m.collection_id,
         vehicle: m.js_vehicle,
         driver: m.driverName,
@@ -52,9 +51,11 @@ onLoadJobSheet: async () => {
         clientSignature: m.js_client_signature,
         clientNameOnsite: m.js_customer_name_onsite
       });
+      console.log('Submit query result:', result);
       showAlert('Job sheet submitted ✓', 'success');
       navigateTo('Driver_Job_Sheet', {}, 'SAME_WINDOW');
     } catch (err) {
+      console.log('Submit query ERROR:', err);
       showAlert('Failed to submit job sheet: ' + err.message, 'error');
     }
   }
