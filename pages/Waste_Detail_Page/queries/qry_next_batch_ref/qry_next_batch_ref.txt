@@ -1,0 +1,2 @@
+SELECT 'WB-' || LPAD((COALESCE(MAX(SUBSTRING(batch_ref FROM 4)::int), 0) + 1)::text, 4, '0') AS next_ref
+FROM waste_batches;

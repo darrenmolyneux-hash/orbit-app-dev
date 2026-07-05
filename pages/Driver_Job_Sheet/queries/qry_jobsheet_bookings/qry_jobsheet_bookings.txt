@@ -1,0 +1,4 @@
+SELECT collection_id, customer_id, address1, address2, city, postcode, collection_date, job_type
+FROM collections
+WHERE status = 'Booked'
+ORDER BY collection_date;

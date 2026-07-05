@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_1c65a6ce-40cf-4423-8500-88d64fa986cb",
+  "id": "Driver_Job_Sheet_JobSheetActions",
+  "unpublishedCollection": {
+    "name": "JobSheetActions",
+    "pageId": "Driver_Job_Sheet",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

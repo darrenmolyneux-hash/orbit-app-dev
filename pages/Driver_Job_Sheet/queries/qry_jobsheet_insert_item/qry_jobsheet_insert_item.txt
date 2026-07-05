@@ -1,0 +1,2 @@
+INSERT INTO job_sheet_items (collection_id, item_type_id, quantity, created_by)
+VALUES ({{this.params.collectionId}}, {{this.params.itemTypeId}}, {{this.params.quantity}}, {{this.params.createdBy}});

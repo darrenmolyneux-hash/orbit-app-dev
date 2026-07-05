@@ -1,0 +1,10 @@
+INSERT INTO waste_batches (batch_ref, vendor_id, status, created_by, collection_date, waste_note_number)
+VALUES (
+  {{this.params.batchRef}},
+  {{this.params.vendorId}},
+  'open',
+  {{this.params.createdBy}},
+  {{this.params.collectionDate}},
+  {{this.params.wasteNoteNumber}}
+)
+RETURNING batch_id;

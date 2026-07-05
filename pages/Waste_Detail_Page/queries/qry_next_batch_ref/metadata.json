@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_6cb570b7-50a0-4cfe-abdb-76b877456f52",
-  "id": "Waste_Detail_Page_qry_update_waste_pallet",
+  "gitSyncId": "6a305b9e0882adc7e482e226_39161097-4197-4951-b463-15f5d6fc9921",
+  "id": "Waste_Detail_Page_qry_next_batch_ref",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE waste_pallets\nSET status = '{{this.params.status}}',\n    weight_kg = {{this.params.weight}},\n    notes = '{{this.params.notes.replace(/'/g, \"''\")}}',\n    waste_type = '{{this.params.wasteType}}'\nWHERE pallet_id = {{this.params.palletId}};",
+      "body": "SELECT 'WB-' || LPAD((COALESCE(MAX(SUBSTRING(batch_ref FROM 4)::int), 0) + 1)::text, 4, '0') AS next_ref\nFROM waste_batches;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,12 +22,8 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_update_waste_pallet",
+    "dynamicBindingPathList": [],
+    "name": "qry_next_batch_ref",
     "pageId": "Waste_Detail_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

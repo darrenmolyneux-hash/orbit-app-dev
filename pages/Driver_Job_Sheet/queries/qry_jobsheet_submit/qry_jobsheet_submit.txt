@@ -1,0 +1,9 @@
+UPDATE collections
+SET status = 'Collected',
+    collection_vehicle = {{this.params.vehicle}},
+    driver = {{this.params.driver}},
+    driver_signature = {{this.params.driverSignature}},
+    client_signature = {{this.params.clientSignature}},
+    client_signature_timestamp = now(),
+    client_name_onsite = {{this.params.clientNameOnsite}}
+WHERE collection_id = {{this.params.collectionId}};

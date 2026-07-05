@@ -1,0 +1,14 @@
+SELECT
+  wb.batch_id,
+  wb.batch_ref,
+  wb.status,
+  dv.name AS vendor_name,
+  wb.created_by,
+  wb.created_at,
+  wb.dispatched_at,
+  COUNT(wbp.pallet_id) AS pallet_count
+FROM waste_batches wb
+LEFT JOIN downstream_vendors dv ON dv.vendor_id = wb.vendor_id
+LEFT JOIN waste_batch_pallet wbp ON wbp.batch_id = wb.batch_id
+GROUP BY wb.batch_id, wb.batch_ref, wb.status, dv.name, wb.created_by, wb.created_at, wb.dispatched_at
+ORDER BY wb.created_at DESC;

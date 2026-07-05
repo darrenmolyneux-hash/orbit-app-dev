@@ -47,7 +47,7 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onTextChanged": "{{qry_driver_collections.run()}}",
+  "onTextChanged": "{{qry_jobsheet_get_coll.run()}}",
   "parentColumnSpace": 16.375,
   "parentId": "wrv1lvo6rn",
   "parentRowSpace": 10,

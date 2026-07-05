@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_6cb570b7-50a0-4cfe-abdb-76b877456f52",
-  "id": "Waste_Detail_Page_qry_update_waste_pallet",
+  "gitSyncId": "6a305b9e0882adc7e482e226_ab96b9f5-8940-4a9b-b371-a10a200ff609",
+  "id": "Waste_Detail_Page_qry_create_waste_batch",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE waste_pallets\nSET status = '{{this.params.status}}',\n    weight_kg = {{this.params.weight}},\n    notes = '{{this.params.notes.replace(/'/g, \"''\")}}',\n    waste_type = '{{this.params.wasteType}}'\nWHERE pallet_id = {{this.params.palletId}};",
+      "body": "INSERT INTO waste_batches (batch_ref, vendor_id, status, created_by, collection_date, waste_note_number)\nVALUES (\n  {{this.params.batchRef}},\n  {{this.params.vendorId}},\n  'open',\n  {{this.params.createdBy}},\n  {{this.params.collectionDate}},\n  {{this.params.wasteNoteNumber}}\n)\nRETURNING batch_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "qry_update_waste_pallet",
+    "name": "qry_create_waste_batch",
     "pageId": "Waste_Detail_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

@@ -1,0 +1,9 @@
+UPDATE waste_batches
+SET status = 'dispatched', dispatched_at = now(), dispatched_by = {{this.params.dispatchedBy}}
+WHERE batch_id = {{this.params.batchId}};
+
+UPDATE waste_pallets
+SET status = 'dispatched'
+WHERE pallet_id IN (
+  SELECT pallet_id FROM waste_batch_pallet WHERE batch_id = {{this.params.batchId}}
+);

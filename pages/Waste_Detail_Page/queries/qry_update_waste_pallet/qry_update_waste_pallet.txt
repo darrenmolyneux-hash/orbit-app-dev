@@ -1,8 +1,6 @@
 UPDATE waste_pallets
 SET status = '{{this.params.status}}',
-    vendor_id = {{this.params.vendorId}},
     weight_kg = {{this.params.weight}},
-    collection_date = {{this.params.collectionDate}},
     notes = '{{this.params.notes.replace(/'/g, "''")}}',
     waste_type = '{{this.params.wasteType}}'
 WHERE pallet_id = {{this.params.palletId}};

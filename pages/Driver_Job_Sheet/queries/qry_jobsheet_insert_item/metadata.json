@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_6cb570b7-50a0-4cfe-abdb-76b877456f52",
-  "id": "Waste_Detail_Page_qry_update_waste_pallet",
+  "gitSyncId": "6a305b9e0882adc7e482e226_57a3177a-b065-421e-871b-013e9320b9a3",
+  "id": "Driver_Job_Sheet_qry_jobsheet_insert_item",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE waste_pallets\nSET status = '{{this.params.status}}',\n    weight_kg = {{this.params.weight}},\n    notes = '{{this.params.notes.replace(/'/g, \"''\")}}',\n    waste_type = '{{this.params.wasteType}}'\nWHERE pallet_id = {{this.params.palletId}};",
+      "body": "INSERT INTO job_sheet_items (collection_id, item_type_id, quantity, created_by)\nVALUES ({{this.params.collectionId}}, {{this.params.itemTypeId}}, {{this.params.quantity}}, {{this.params.createdBy}});",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "qry_update_waste_pallet",
-    "pageId": "Waste_Detail_Page",
+    "name": "qry_jobsheet_insert_item",
+    "pageId": "Driver_Job_Sheet",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

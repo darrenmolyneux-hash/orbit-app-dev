@@ -1,11 +1,9 @@
 INSERT INTO waste_pallets (
-  waste_id, status, vendor_id, weight_kg, collection_date, notes, waste_type, created_by, created_at
+  waste_id, status, weight_kg, notes, waste_type, created_by, created_at
 ) VALUES (
   '{{qry_get_next_waste_id.data[0].next_waste_id}}',
   'open',
-  {{this.params.vendorId}},
   {{this.params.weight}},
-  {{this.params.collectionDate}},
   '{{this.params.notes.replace(/'/g, "''")}}',
   '{{this.params.wasteType}}',
   '{{this.params.createdBy}}',

@@ -1,0 +1,5 @@
+SELECT jsi.item_id, jsi.quantity, it.item_type_name, jsi.created_at, jsi.created_by
+FROM job_sheet_items jsi
+JOIN item_types it ON it.item_type_id = jsi.item_type_id
+WHERE jsi.collection_id = {{this.params.collectionId}}
+ORDER BY jsi.created_at;

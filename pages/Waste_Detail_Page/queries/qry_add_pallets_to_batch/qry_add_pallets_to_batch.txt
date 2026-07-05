@@ -1,0 +1,2 @@
+INSERT INTO waste_batch_pallet (batch_id, pallet_id)
+SELECT {{this.params.batchId}}, unnest(ARRAY[{{this.params.palletIds}}]::int[]);

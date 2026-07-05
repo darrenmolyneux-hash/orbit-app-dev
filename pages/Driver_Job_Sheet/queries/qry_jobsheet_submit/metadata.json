@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_6cb570b7-50a0-4cfe-abdb-76b877456f52",
-  "id": "Waste_Detail_Page_qry_update_waste_pallet",
+  "gitSyncId": "6a305b9e0882adc7e482e226_467210d4-124e-42d3-904e-08342d9c6764",
+  "id": "Driver_Job_Sheet_qry_jobsheet_submit",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE waste_pallets\nSET status = '{{this.params.status}}',\n    weight_kg = {{this.params.weight}},\n    notes = '{{this.params.notes.replace(/'/g, \"''\")}}',\n    waste_type = '{{this.params.wasteType}}'\nWHERE pallet_id = {{this.params.palletId}};",
+      "body": "UPDATE collections\nSET status = 'Collected',\n    collection_vehicle = {{this.params.vehicle}},\n    driver = {{this.params.driver}},\n    driver_signature = {{this.params.driverSignature}},\n    client_signature = {{this.params.clientSignature}},\n    client_signature_timestamp = now(),\n    client_name_onsite = {{this.params.clientNameOnsite}}\nWHERE collection_id = {{this.params.collectionId}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "qry_update_waste_pallet",
-    "pageId": "Waste_Detail_Page",
+    "name": "qry_jobsheet_submit",
+    "pageId": "Driver_Job_Sheet",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
