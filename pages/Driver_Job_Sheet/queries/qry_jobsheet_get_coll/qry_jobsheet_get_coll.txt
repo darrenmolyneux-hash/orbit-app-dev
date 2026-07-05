@@ -1,4 +1,17 @@
-SELECT c.*, cu.customer_name
+SELECT c.*, cu.customer_name,
+  ss.vehicle_access, ss.vehicle_access_notes,
+  ss.parking_loading_bay, ss.parking_notes,
+  ss.access_restrictions, ss.access_restriction_notes,
+  ss.time_restrictions, ss.time_restriction_notes,
+  ss.equipment_floor, ss.floor_access_type,
+  ss.lift_restrictions, ss.lift_notes,
+  ss.narrow_corridors, ss.corridor_notes,
+  ss.manual_handling_required, ss.manual_handling_notes,
+  ss.no_access_considerations,
+  ss.security_procedures, ss.security_details,
+  ss.driver_instructions,
+  ss.surveyed_by, ss.survey_date, ss.last_reviewed_date
 FROM collections c
 LEFT JOIN customers cu ON cu.customer_id = c.customer_id
+LEFT JOIN site_surveys ss ON ss.site_id = c.site_id
 WHERE c.collection_id = {{this.params.collectionId}};

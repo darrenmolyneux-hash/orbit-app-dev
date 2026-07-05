@@ -1,7 +1,10 @@
 INSERT INTO collections (
   customer_id, site_id, job_type, collection_date, instructions, notes,
   dial, dial_expiry, msa_signed, site_contact, contact_number, contact_email,
-  address1, address2, city, postcode, created_by, created_at, status, expected_assets
+  address1, address2, city, postcode, created_by, created_at, status, expected_assets,
+  crew_size, tail_lift_required, oversized_items, oversized_items_notes,
+  equipment_location_floor, items_one_location, items_location_notes,
+  different_site_contact, collection_site_contact_override, collection_site_contact_override_number
 ) VALUES (
   {{Number(appsmith.store.col_customer_id)}},
   {{Number(appsmith.store.col_site_id)}},
@@ -22,6 +25,16 @@ INSERT INTO collections (
   {{appsmith.user.name}},
   NOW(),
   'Booked',
-  {{appsmith.store.col_expected_assets}}::jsonb
+  {{appsmith.store.col_expected_assets}}::jsonb,
+  {{appsmith.store.col_crew_size}},
+  {{appsmith.store.col_tail_lift_required}},
+  {{appsmith.store.col_oversized_items}},
+  {{appsmith.store.col_oversized_items_notes}},
+  {{appsmith.store.col_equipment_location_floor}},
+  {{appsmith.store.col_items_one_location}},
+  {{appsmith.store.col_items_location_notes}},
+  {{appsmith.store.col_different_site_contact}},
+  {{appsmith.store.col_contact_override_name}},
+  {{appsmith.store.col_contact_override_number}}
 )
 RETURNING collection_id;

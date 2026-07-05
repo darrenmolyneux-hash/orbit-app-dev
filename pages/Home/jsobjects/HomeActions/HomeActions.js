@@ -53,6 +53,9 @@ export default {
   onLoadOpsAlerts: async () => {
     await qry_home_ops_alerts.run();
   },
+  onLoadCollectionsSummary: async () => {
+    // placeholder - collections summary not yet built
+  },
   onGoCreateCustomer: () => {
     navigateTo('Create_Customer', {}, 'SAME_WINDOW');
   },

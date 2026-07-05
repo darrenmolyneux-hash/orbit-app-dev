@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT c.*, cu.customer_name\nFROM collections c\nLEFT JOIN customers cu ON cu.customer_id = c.customer_id\nWHERE c.collection_id = {{this.params.collectionId}};",
+      "body": "SELECT c.*, cu.customer_name,\n  ss.vehicle_access, ss.vehicle_access_notes,\n  ss.parking_loading_bay, ss.parking_notes,\n  ss.access_restrictions, ss.access_restriction_notes,\n  ss.time_restrictions, ss.time_restriction_notes,\n  ss.equipment_floor, ss.floor_access_type,\n  ss.lift_restrictions, ss.lift_notes,\n  ss.narrow_corridors, ss.corridor_notes,\n  ss.manual_handling_required, ss.manual_handling_notes,\n  ss.no_access_considerations,\n  ss.security_procedures, ss.security_details,\n  ss.driver_instructions,\n  ss.surveyed_by, ss.survey_date, ss.last_reviewed_date\nFROM collections c\nLEFT JOIN customers cu ON cu.customer_id = c.customer_id\nLEFT JOIN site_surveys ss ON ss.site_id = c.site_id\nWHERE c.collection_id = {{this.params.collectionId}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

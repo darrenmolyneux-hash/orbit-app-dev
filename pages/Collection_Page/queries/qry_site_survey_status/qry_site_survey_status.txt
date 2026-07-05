@@ -3,12 +3,16 @@ SELECT
   ss.surveyed_by,
   ss.survey_date,
   ss.last_reviewed_date,
-  ss.vehicle_access,
+  ss.vehicle_access_height,
   ss.parking_loading_bay,
-  ss.access_restrictions,
-  ss.time_restrictions,
   ss.lift_restrictions,
   ss.narrow_corridors,
+  ss.stairs_involved,
+  ss.escort_required,
+  ss.site_induction_required,
+  ss.ppe_requirements,
+  ss.site_hazards,
+  ss.manual_handling_required,
   ss.security_procedures,
   ss.security_details,
   ss.driver_instructions,
@@ -20,4 +24,6 @@ SELECT
   END AS survey_status
 FROM sites s
 LEFT JOIN site_surveys ss ON ss.site_id = s.site_id
-WHERE s.site_id = {{Number(appsmith.store.col_site_id)}};
+WHERE s.site_id = {{Number(appsmith.store.col_site_id)}}
+ORDER BY ss.survey_id DESC
+LIMIT 1;

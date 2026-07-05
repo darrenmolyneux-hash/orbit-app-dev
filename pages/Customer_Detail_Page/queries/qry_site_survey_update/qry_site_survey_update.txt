@@ -1,0 +1,23 @@
+UPDATE site_surveys SET
+  vehicle_access_height = {{appsmith.store.ss_vehicle_access_height}},
+  vehicle_access_height_notes = {{appsmith.store.ss_vehicle_access_height_notes}},
+  parking_loading_bay = {{appsmith.store.ss_parking_loading_bay}},
+  parking_notes = {{appsmith.store.ss_parking_loading_bay_notes}},
+  lift_restrictions = {{appsmith.store.ss_lift_restrictions}},
+  lift_notes = {{appsmith.store.ss_lift_restrictions_notes}},
+  narrow_corridors = {{appsmith.store.ss_narrow_corridors}},
+  corridor_notes = {{appsmith.store.ss_narrow_corridors_notes}},
+  stairs_involved = {{appsmith.store.ss_stairs_involved}},
+  stairs_notes = {{appsmith.store.ss_stairs_involved_notes}},
+  escort_required = {{appsmith.store.ss_escort_required}},
+  site_induction_required = {{appsmith.store.ss_site_induction_required}},
+  ppe_requirements = ARRAY(SELECT jsonb_array_elements_text({{JSON.stringify(appsmith.store.ss_ppe_requirements)}}::jsonb)),
+  site_hazards = {{appsmith.store.ss_site_hazards}},
+  manual_handling_required = {{appsmith.store.ss_manual_handling_required}},
+  manual_handling_notes = {{appsmith.store.ss_manual_handling_required_notes}},
+  security_procedures = {{appsmith.store.ss_security_procedures}},
+  security_details = {{appsmith.store.ss_security_procedures_details}},
+  driver_instructions = {{appsmith.store.ss_driver_instructions}},
+  last_reviewed_date = NOW(),
+  updated_at = NOW()
+WHERE survey_id = {{Number(appsmith.store.ss_survey_id)}};
