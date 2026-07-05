@@ -5,7 +5,7 @@
   "borderWidth": "1",
   "bottomRow": 81,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultModel": "{{\n  {\n    collection_id: appsmith.URL.queryParams.collection_id ? Number(appsmith.URL.queryParams.collection_id) : null,\n    selectedCollectionId: null,\n    bookedCollections: qry_jobsheet_bookings.data || [],\n    collectionDetail: (qry_jobsheet_get_coll.data && qry_jobsheet_get_coll.data[0]) || null,\n    itemTypes: qry_jobsheet_get_items.data || [],\n    loggedItems: qry_jobsheet_get_items.data || [],\n    driverName: appsmith.store.userName,\n    js_vehicle: null,\n    js_item_type_id: null,\n    js_item_qty: 1,\n    js_customer_name_onsite: '',\n    js_driver_signature: null,\n    js_client_signature: null\n  }\n}}",
+  "defaultModel": "{{\n  {\n    collection_id: appsmith.URL.queryParams.collection_id ? Number(appsmith.URL.queryParams.collection_id) : null,\n    selectedCollectionId: null,\n    bookedCollections: qry_jobsheet_bookings.data || [],\n    collectionDetail: (qry_jobsheet_get_coll.data && qry_jobsheet_get_coll.data[0]) || null,\n    itemTypes: qry_jobsheet_get_item_types.data || [],\n    loggedItems: qry_jobsheet_get_items.data || [],\n    driverName: appsmith.store.userName,\n    js_vehicle: null,\n    js_item_type_id: null,\n    js_item_qty: 1,\n    js_customer_name_onsite: '',\n    js_driver_signature: null,\n    js_client_signature: null\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"

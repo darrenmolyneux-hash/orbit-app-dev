@@ -1,17 +1,26 @@
 export default {
-  onLoadJobSheet: async () => {
-    await qry_jobsheet_bookings.run();
-    const collectionId = appsmith.URL.queryParams.collection_id;
-    if (collectionId) {
-      await qry_jobsheet_get_coll.run({ collectionId: Number(collectionId) });
-      await qry_jobsheet_get_items.run();
-      await qry_jobsheet_get_items.run({ collectionId: Number(collectionId) });
-    }
-  },
-  onOpenCollection: () => {
-    const id = JobSheetWidget.model.selectedCollectionId;
-    navigateTo('Driver_Job_Sheet', { collection_id: id }, 'SAME_WINDOW');
-  },
+onLoadJobSheet: async () => {
+  await qry_jobsheet_bookings.run();
+
+  let attempts = 0;
+  let collectionId = appsmith.URL.queryParams.collection_id;
+  while (!collectionId && attempts < 10) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    collectionId = appsmith.URL.queryParams.collection_id;
+    attempts++;
+  }
+
+  if (collectionId) {
+    await qry_jobsheet_get_coll.run({ collectionId: Number(collectionId) });
+    await qry_jobsheet_get_item_types.run();
+    await qry_jobsheet_get_items.run({ collectionId: Number(collectionId) });
+  }
+},
+ onOpenCollection: async () => {
+  const id = JobSheetWidget.model.selectedCollectionId;
+  await navigateTo('Driver_Job_Sheet', { collection_id: id }, 'SAME_WINDOW');
+  await JobSheetActions.onLoadJobSheet();
+},
   onAddJobSheetItem: async () => {
     try {
       const m = JobSheetWidget.model;
