@@ -5,5 +5,8 @@ export default {
   },
   onAvatarClick: () => {
     navigateTo('Profile_Page', {}, 'SAME_WINDOW');
+  },
+  onSignOutClick: () => {
+    HomeActions.onSignOut();
   }
 }
