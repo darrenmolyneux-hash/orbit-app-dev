@@ -1,7 +1,7 @@
 {
   "accentColor": "{{\nNumber((BlanccoParser.parseBlancco().battery_health || \"0\").replace(\"%\",\"\")) >= 80\n  ? \"#00C853\"\n  : \"#D50000\"\n}}",
   "animateLoading": true,
-  "bottomRow": 48,
+  "bottomRow": 54,
   "defaultEndValue": "{{\nNumber((BlanccoParser.parseBlancco().battery_health || \"0\").replace(\"%\",\"\"))\n}}",
   "defaultStartValue": "{{0}}",
   "dynamicBindingPathList": [
@@ -53,8 +53,8 @@
   "mobileRightColumn": 48,
   "mobileTopRow": 45,
   "needsErrorInfo": false,
-  "originalBottomRow": 48,
-  "originalTopRow": 40,
+  "originalBottomRow": 54,
+  "originalTopRow": 46,
   "parentColumnSpace": 19.1875,
   "parentId": "dc4v6fjacj",
   "parentRowSpace": 10,
@@ -67,7 +67,7 @@
   "sliderSize": "m",
   "step": "1",
   "tooltipAlwaysOn": false,
-  "topRow": 40,
+  "topRow": 46,
   "type": "RANGE_SLIDER_WIDGET",
   "version": 1,
   "widgetId": "4mjimeappi",

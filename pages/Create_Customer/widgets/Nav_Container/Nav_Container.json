@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#05042e",
   "borderColor": "#ffffff",
-  "borderRadius": "0px",
+  "borderRadius": "1.5rem",
   "borderWidth": "0",
   "bottomRow": 10,
   "boxShadow": "none",
@@ -38,7 +38,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "vied0g6blr",
+      "parentId": "cgauj30ilp",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -46,7 +46,7 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "q3bb8rar9m",
+      "widgetId": "gj3m1y8o8k",
       "widgetName": "Canvas3Copy"
     }
   ],
@@ -80,6 +80,6 @@
   "topRow": 0,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "vied0g6blr",
+  "widgetId": "cgauj30ilp",
   "widgetName": "Nav_Container"
 }

@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 254,
+  "bottomRow": 257,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{\n  \"assets\": qry_asset_list_s.data,\n  \"total\": qry_asset_list_count.data[0] ? Number(qry_asset_list_count.data[0].total) : 0,\n  \"page\": appsmith.store.asset_page || 1,\n  \"pageSize\": appsmith.store.asset_page_size || 50\n}}}",
   "dynamicBindingPathList": [
@@ -63,7 +63,7 @@
   "onPageSizeChange": "{{AssetListActions.onPageSizeChange();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "onSearch": "{{AssetListActions.onSearch();}}",
-  "originalBottomRow": 254,
+  "originalBottomRow": 256,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "kk03s7t1bg",

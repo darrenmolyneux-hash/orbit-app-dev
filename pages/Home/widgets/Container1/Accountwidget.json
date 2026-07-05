@@ -3,7 +3,7 @@
   "borderColor": "#ffffff",
   "borderRadius": "1.5rem",
   "borderWidth": "",
-  "bottomRow": 12,
+  "bottomRow": 11,
   "boxShadow": "none",
   "defaultModel": "{{\n  {\n    userName: appsmith.store.userName,\n    userEmail: appsmith.store.userEmail,\n    userRole: appsmith.store.userRole,\n    userLastLogin: appsmith.store.userLastLogin\n  }\n}}",
   "dynamicBindingPathList": [
@@ -37,7 +37,7 @@
   "mobileTopRow": 3,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 12,
+  "originalBottomRow": 11,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "3na30kv01f",

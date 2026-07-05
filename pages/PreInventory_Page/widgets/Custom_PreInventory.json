@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 70,
+  "bottomRow": 30,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n  {\n    partTypes: qry_get_part_types.data || []\n  }\n}}",
   "dynamicBindingPathList": [
@@ -53,13 +53,13 @@
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "onSaveAssessment": "{{JSPreInventory.saveAssessmentFromWidget()}}",
-  "originalBottomRow": 70,
-  "originalTopRow": 22,
+  "originalBottomRow": 30,
+  "originalTopRow": 21,
   "parentColumnSpace": 14.8125,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 62,
+  "rightColumn": 64,
   "shouldScrollContents": true,
   "srcDoc": {
     "css": "",
@@ -67,7 +67,7 @@
     "js": ""
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 22,
+  "topRow": 21,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": "",

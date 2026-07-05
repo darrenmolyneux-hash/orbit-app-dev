@@ -38,7 +38,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "1c6m1rmpr6",
+      "parentId": "4do73fqbhu",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -46,7 +46,7 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "razqsvmfxj",
+      "widgetId": "lh7cyggr4e",
       "widgetName": "Canvas3Copy"
     }
   ],
@@ -59,7 +59,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "be0ccwwzaw",
-  "leftColumn": 0,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,
@@ -80,6 +80,6 @@
   "topRow": 0,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "1c6m1rmpr6",
+  "widgetId": "4do73fqbhu",
   "widgetName": "Nav_Container"
 }

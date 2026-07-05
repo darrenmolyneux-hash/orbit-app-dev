@@ -1,10 +1,10 @@
 {
   "backgroundColor": "#FFFFFF",
-  "borderColor": "#E0DEDE",
+  "borderColor": "#ffffff",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
+  "borderWidth": "0",
   "bottomRow": 27,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "none",
   "defaultModel": "{{\n  {\n    assetRef: qry_GetAssetById.data[0]?.asset_ref,\n    makeName: qry_GetAssetById.data[0]?.make_name,\n    modelName: qry_GetAssetById.data[0]?.model_name,\n    serial: qry_GetAssetById.data[0]?.serial_number,\n    itemType: qry_GetAssetById.data[0]?.item_type_name\n  }\n}}",
   "dynamicBindingPathList": [
     {
@@ -14,13 +14,15 @@
       "key": "borderRadius"
     },
     {
-      "key": "boxShadow"
-    },
-    {
       "key": "defaultModel"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "boxShadow"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onResetClick"

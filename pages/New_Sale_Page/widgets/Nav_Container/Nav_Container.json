@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#05042e",
   "borderColor": "#ffffff",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "0",
   "bottomRow": 10,
   "boxShadow": "none",
@@ -38,7 +38,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "n1awa5xmsj",
+      "parentId": "uu1nou85g7",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -46,16 +46,12 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "zviu3h4sec",
+      "widgetId": "cgedjtbgma",
       "widgetName": "Canvas3Copy"
     }
   ],
   "containerStyle": "card",
-  "dynamicBindingPathList": [
-    {
-      "key": "borderRadius"
-    }
-  ],
+  "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
@@ -84,6 +80,6 @@
   "topRow": 0,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "n1awa5xmsj",
+  "widgetId": "uu1nou85g7",
   "widgetName": "Nav_Container"
 }

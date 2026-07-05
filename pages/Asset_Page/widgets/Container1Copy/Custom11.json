@@ -1,10 +1,10 @@
 {
   "backgroundColor": "#FFFFFF",
-  "borderColor": "#E0DEDE",
+  "borderColor": "{{appsmith.theme.colors.backgroundColor}}",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
+  "borderWidth": "0",
   "bottomRow": 10,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "none",
   "defaultModel": "{{{\n  \"asset_ref\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].asset_ref : \"\",\n  \"customer_name\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].customer_name : \"\",\n  \"collection_id\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].collection_id : \"\",\n  \"item_type\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].item_type_name : \"\",\n  \"status\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].status_name : \"\"\n}}}",
   "dynamicBindingPathList": [
     {
@@ -14,10 +14,10 @@
       "key": "borderRadius"
     },
     {
-      "key": "boxShadow"
+      "key": "defaultModel"
     },
     {
-      "key": "defaultModel"
+      "key": "borderColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

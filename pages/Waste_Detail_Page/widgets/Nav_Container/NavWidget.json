@@ -1,0 +1,140 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 8,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n  {\n    currentPage: (typeof currentPageName !== 'undefined' ? currentPageName : ''),\n    userInitials: appsmith.store.userName\n      ? appsmith.store.userName.trim().split(' ').map(function(w){ return w[0]; }).join('').toUpperCase().substring(0,2)\n      : '',\n    targetPage: null\n  }\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    },
+    {
+      "key": "onLoadMyActivity"
+    },
+    {
+      "key": "onLoadOpsAlerts"
+    },
+    {
+      "key": "onLoadCollectionsSummary"
+    },
+    {
+      "key": "onGoCreateCustomer"
+    },
+    {
+      "key": "onGoCreateJob"
+    },
+    {
+      "key": "onGoNewSale"
+    },
+    {
+      "key": "onGoCreateSalePallet"
+    },
+    {
+      "key": "onGoCreateWastePallet"
+    },
+    {
+      "key": "onSearchAssetRef"
+    },
+    {
+      "key": "onSearchSerial"
+    },
+    {
+      "key": "onSearchCollection"
+    },
+    {
+      "key": "onNavClick"
+    },
+    {
+      "key": "onAvatarClick"
+    },
+    {
+      "key": "onSignOutClick"
+    }
+  ],
+  "events": [
+    "onResetClick",
+    "onLoadMyActivity",
+    "onLoadOpsAlerts",
+    "onLoadCollectionsSummary",
+    "onGoCreateCustomer",
+    "onGoCreateJob",
+    "onGoNewSale",
+    "onGoCreateSalePallet",
+    "onGoCreateWastePallet",
+    "onSearchAssetRef",
+    "onSearchSerial",
+    "onSearchCollection",
+    "onNavClick",
+    "onAvatarClick",
+    "onSignOutClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "g7f2tr8a0d",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 19,
+  "mobileRightColumn": 42,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onAvatarClick": "{{NavActions.onAvatarClick();}}",
+  "onGoCreateCustomer": "{{HomeActions.onGoCreateCustomer();}}",
+  "onGoCreateJob": "{{HomeActions.onGoCreateJob();}}",
+  "onGoCreateSalePallet": "{{HomeActions.onGoCreateSalePallet();}}",
+  "onGoCreateWastePallet": "{{HomeActions.onGoCreateWastePallet();}}",
+  "onGoNewSale": "{{HomeActions.onGoNewSale();}}",
+  "onLoadCollectionsSummary": "{{HomeActions.onLoadCollectionsSummary();}}",
+  "onLoadMyActivity": "{{HomeActions.onLoadMyActivity();}}",
+  "onLoadOpsAlerts": "{{HomeActions.onLoadOpsAlerts();}}",
+  "onNavClick": "{{NavActions.onNavClick();}}",
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "onSearchAssetRef": "{{HomeActions.onSearchAssetRef();}}",
+  "onSearchCollection": "{{HomeActions.onSearchCollection();}}",
+  "onSearchSerial": "{{HomeActions.onSearchSerial();}}",
+  "onSignOutClick": "{{NavActions.onSignOutClick();}}",
+  "originalBottomRow": 8,
+  "originalTopRow": 0,
+  "parentColumnSpace": 12,
+  "parentId": "oqwo27xzsd",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "@import url(\"https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  font-family: \"Figtree\", sans-serif;\n  margin: 0;\n  padding: 0;\n}\n\n.navbar {\n  background: #05042E;\n  border-radius: 10px;\n  padding: 14px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.nav-left {\n  display: flex;\n  align-items: center;\n}\n\n.nav-logo {\n  height: 36px;\n  width: auto;\n  display: block;\n}\n\n.nav-links {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n\n.nav-link {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 13px;\n  font-weight: 600;\n  padding: 8px 14px;\n  border-radius: 6px;\n  cursor: pointer;\n  white-space: nowrap;\n}\n\n.nav-link:hover {\n  color: #fff;\n  background: rgba(255, 255, 255, 0.08);\n}\n\n.nav-link.active {\n  color: #05042E;\n  background: #A3E851;\n}\n\n.nav-avatar-wrap {\n  position: relative;\n}\n\n.nav-avatar {\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  background: #469BC0;\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 12px;\n  font-weight: 700;\n  cursor: pointer;\n}\n\n.nav-dropdown {\n  display: none;\n  position: absolute;\n  top: 40px;\n  right: 0;\n  background: #fff;\n  border-radius: 8px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);\n  min-width: 140px;\n  overflow: hidden;\n  z-index: 10;\n}\n\n.nav-dropdown.open {\n  display: block;\n}\n\n.nav-dropdown-item {\n  padding: 10px 14px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #05042E;\n  cursor: pointer;\n}\n\n.nav-dropdown-item:hover {\n  background: rgba(5, 4, 46, 0.05);\n}",
+    "html": "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css\">\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n  .navbar {\n    background: #05042E;\n    border-radius: 10px;\n    padding: 14px 20px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n  .nav-left { display: flex; align-items: center; }\n  .nav-logo { height: 36px; width: auto; display: block; }\n  .nav-links { display: flex; align-items: center; gap: 4px; }\n  .nav-link {\n    color: rgba(255,255,255,0.7);\n    font-size: 13px;\n    font-weight: 600;\n    padding: 8px 14px;\n    border-radius: 6px;\n    cursor: pointer;\n    white-space: nowrap;\n  }\n  .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }\n  .nav-link.active { color: #05042E; background: #A3E851; }\n  .nav-avatar {\n    width: 32px; height: 32px; border-radius: 50%;\n    background: #469BC0; color: #fff;\n    display: flex; align-items: center; justify-content: center;\n    font-size: 12px; font-weight: 700; cursor: pointer;\n  }\n</style>\n<div class=\"navbar\">\n  <div class=\"nav-left\">\n    <img class=\"nav-logo\" src=\"https://www.mbhglobal.co.uk/wp-content/uploads/2026/06/Orbit_logo_white_text.png\" />\n  </div>\n  <div class=\"nav-links\" id=\"nav_links\"></div>\n  <div class=\"nav-avatar\" id=\"nav_avatar\">DA</div>\n</div>",
+    "js": "var NAV_ITEMS = [{\n  label: 'Home',\n  page: 'Home'\n}, {\n  label: 'Customers',\n  page: 'Customer_List'\n}, {\n  label: 'Collections',\n  page: 'Upcoming_Collection'\n}, {\n  label: 'Assets',\n  page: 'Asset_List'\n}, {\n  label: 'Pallets',\n  page: 'Waste_Detail_Page'\n}, {\n  label: 'Sales',\n  page: 'Sales_Page'\n}, {\n  label: 'Admin',\n  page: 'Admin_Page'\n}];\nfunction escHtml(str) {\n  return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\nfunction render(model) {\n  var linksEl = document.getElementById('nav_links');\n  if (!linksEl) return;\n  var currentPage = model && model.currentPage || '';\n  linksEl.innerHTML = NAV_ITEMS.map(function (item) {\n    var isActive = item.page === currentPage;\n    return '<div class=\"nav-link' + (isActive ? ' active' : '') + '\" data-page=\"' + item.page + '\">' + escHtml(item.label) + '</div>';\n  }).join('');\n  linksEl.querySelectorAll('.nav-link').forEach(function (el) {\n    el.addEventListener('click', function () {\n      appsmith.updateModel({\n        targetPage: this.dataset.page\n      });\n      appsmith.triggerEvent('onNavClick');\n    });\n  });\n  var avatar = document.getElementById('nav_avatar');\n  if (avatar) {\n    avatar.textContent = model && model.userInitials || '';\n    avatar.addEventListener('click', function () {\n      appsmith.triggerEvent('onSignOutClick');\n    });\n  }\n}\nfunction initWhenReady() {\n  if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n    setTimeout(initWhenReady, 50);\n    return;\n  }\n  appsmith.onReady(function () {\n    render(appsmith.model);\n  });\n  appsmith.onModelChange(function (model) {\n    render(model);\n  });\n}\ninitWhenReady();"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n* { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n.navbar {\n  background: #05042E;\n  border-radius: 10px;\n  padding: 14px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.nav-left { display: flex; align-items: center; }\n.nav-logo { height: 36px; width: auto; display: block; }\n.nav-links { display: flex; align-items: center; gap: 4px; }\n.nav-link {\n  color: rgba(255,255,255,0.7);\n  font-size: 13px;\n  font-weight: 600;\n  padding: 8px 14px;\n  border-radius: 6px;\n  cursor: pointer;\n  white-space: nowrap;\n}\n.nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }\n.nav-link.active { color: #05042E; background: #A3E851; }\n.nav-avatar-wrap { position: relative; }\n.nav-avatar {\n  width: 32px; height: 32px; border-radius: 50%;\n  background: #469BC0; color: #fff;\n  display: flex; align-items: center; justify-content: center;\n  font-size: 12px; font-weight: 700; cursor: pointer;\n}\n.nav-dropdown {\n  display: none;\n  position: absolute;\n  top: 40px;\n  right: 0;\n  background: #fff;\n  border-radius: 8px;\n  box-shadow: 0 4px 16px rgba(0,0,0,0.15);\n  min-width: 140px;\n  overflow: hidden;\n  z-index: 10;\n}\n.nav-dropdown.open { display: block; }\n.nav-dropdown-item {\n  padding: 10px 14px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #05042E;\n  cursor: pointer;\n}\n.nav-dropdown-item:hover { background: rgba(5,4,46,0.05); }",
+    "html": "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css\">\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n  * { box-sizing: border-box; font-family: 'Figtree', sans-serif; margin: 0; padding: 0; }\n  .navbar {\n    background: #05042E;\n    border-radius: 10px;\n    padding: 14px 20px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n  .nav-left { display: flex; align-items: center; }\n  .nav-logo { height: 36px; width: auto; display: block; }\n  .nav-links { display: flex; align-items: center; gap: 4px; }\n  .nav-link {\n    color: rgba(255,255,255,0.7);\n    font-size: 13px;\n    font-weight: 600;\n    padding: 8px 14px;\n    border-radius: 6px;\n    cursor: pointer;\n    white-space: nowrap;\n  }\n  .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }\n  .nav-link.active { color: #05042E; background: #A3E851; }\n  .nav-avatar {\n    width: 32px; height: 32px; border-radius: 50%;\n    background: #469BC0; color: #fff;\n    display: flex; align-items: center; justify-content: center;\n    font-size: 12px; font-weight: 700; cursor: pointer;\n  }\n</style>\n<div class=\"navbar\">\n  <div class=\"nav-left\">\n    <img class=\"nav-logo\" src=\"https://www.mbhglobal.co.uk/wp-content/uploads/2026/06/Orbit_logo_white_text.png\" />\n  </div>\n  <div class=\"nav-links\" id=\"nav_links\"></div>\n  <div class=\"nav-avatar\" id=\"nav_avatar\">DA</div>\n</div>",
+    "js": "var NAV_ITEMS = [\n  { label: 'Home', page: 'Home' },\n  { label: 'Customers', page: 'Customer_List' },\n  { label: 'Collections', page: 'Upcoming_Collection' },\n  { label: 'Assets', page: 'Asset_List' },\n  { label: 'Pallets', page: 'Waste_Detail_Page' },\n  { label: 'Sales', page: 'Sales_Page' },\n  { label: 'Admin', page: 'Admin_Page' }\n];\n\nfunction escHtml(str) {\n  return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n}\n\nfunction render(model) {\n  var linksEl = document.getElementById('nav_links');\n  if (!linksEl) return;\n  var currentPage = (model && model.currentPage) || '';\n\n  linksEl.innerHTML = NAV_ITEMS.map(function(item) {\n    var isActive = item.page === currentPage;\n    return '<div class=\"nav-link' + (isActive ? ' active' : '') + '\" data-page=\"' + item.page + '\">' + escHtml(item.label) + '</div>';\n  }).join('');\n\n  linksEl.querySelectorAll('.nav-link').forEach(function(el) {\n    el.addEventListener('click', function() {\n      appsmith.updateModel({ targetPage: this.dataset.page });\n      appsmith.triggerEvent('onNavClick');\n    });\n  });\n\n  var avatar = document.getElementById('nav_avatar');\n  if (avatar) {\n    avatar.textContent = (model && model.userInitials) || '';\n    avatar.addEventListener('click', function() {\n      appsmith.triggerEvent('onSignOutClick');\n    });\n  }\n}\n\nfunction initWhenReady() {\n  if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n    setTimeout(initWhenReady, 50);\n    return;\n  }\n  appsmith.onReady(function() { render(appsmith.model); });\n  appsmith.onModelChange(function(model) { render(model); });\n}\n\ninitWhenReady();"
+  },
+  "version": 1,
+  "widgetId": "kcj1xp37vt",
+  "widgetName": "NavWidget"
+}

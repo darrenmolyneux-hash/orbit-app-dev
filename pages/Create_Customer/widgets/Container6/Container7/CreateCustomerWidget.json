@@ -3,7 +3,7 @@
   "borderColor": "#ffffff",
   "borderRadius": "0px",
   "borderWidth": "0",
-  "bottomRow": 65,
+  "bottomRow": 59,
   "boxShadow": "none",
   "defaultModel": "{{{}}}",
   "dynamicBindingPathList": [
@@ -15,7 +15,11 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "boxShadow"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onCreateCustomer"
@@ -43,7 +47,7 @@
   "needsErrorInfo": false,
   "onCreateCustomer": "{{CustomerActions.onCreateCustomer();}}",
   "onSurveyFirst": "{{CustomerActions.onSurveyFirst();}}",
-  "originalBottomRow": 60,
+  "originalBottomRow": 59,
   "originalTopRow": 1,
   "parentColumnSpace": 15.806640625,
   "parentId": "dt1b1ibleu",

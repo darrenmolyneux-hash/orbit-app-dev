@@ -1,10 +1,10 @@
 {
   "backgroundColor": "#FFFFFF",
-  "borderColor": "#E0DEDE",
+  "borderColor": "#ffffff",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
+  "borderWidth": "0",
   "bottomRow": 11,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "none",
   "defaultModel": "{{\n{\n  \"customerName\": qry_collection_get.data[0]?.customer_name || \"Loading...\",\n  \"collectionId\": qry_collection_get.data[0]?.collection_id || \"\",\n  \"collectionDate\": qry_collection_get.data[0]?.collection_date || \"\",\n  \"status\": qry_collection_get.data[0]?.status || \"\",\n  \"jobType\": qry_collection_get.data[0]?.job_type || \"\",\n  \"address\": [qry_collection_get.data[0]?.address1, qry_collection_get.data[0]?.city, qry_collection_get.data[0]?.postcode].filter(Boolean).join(\", \")\n}\n}}",
   "dynamicBindingPathList": [
     {
@@ -12,9 +12,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "defaultModel"
