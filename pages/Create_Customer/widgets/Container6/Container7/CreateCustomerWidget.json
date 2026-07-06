@@ -50,7 +50,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onCreateCustomer": "{{CustomerActions.onCreateCustomer();}}",
-  "onPageLoad": "{{PageGaurd.checkAuth();}}",
+  "onPageLoad": "{{CheckAuth.checkAuth();}}",
   "onSurveyFirst": "{{CustomerActions.onSurveyFirst();}}",
   "originalBottomRow": 59,
   "originalTopRow": 1,

@@ -1,8 +1,8 @@
 {
   "gitSyncId": "6a305b9e0882adc7e482e226_84800a1c-247b-4f1d-8dd9-522499e5ae66",
-  "id": "Create_Customer_PageGaurd",
+  "id": "Create_Customer_CheckAuth",
   "unpublishedCollection": {
-    "name": "PageGaurd",
+    "name": "CheckAuth",
     "pageId": "Create_Customer",
     "pluginId": "js-plugin",
     "pluginType": "JS",
