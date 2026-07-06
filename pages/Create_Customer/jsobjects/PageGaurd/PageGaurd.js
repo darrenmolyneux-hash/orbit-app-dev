@@ -1,7 +1,4 @@
-export default {
-  checkAuth: () => {
-    if (!appsmith.store.userEmail) {
-      navigateTo('Login_Page', {}, 'SAME_WINDOW');
-    }
-  }
-}
+appsmith.onReady(function() {
+  appsmith.triggerEvent('onCheckAuth');
+  render(appsmith.model);
+});
