@@ -21,5 +21,9 @@ export default {
         showAlert('Failed to update serial — ' + (msg || 'unknown error'), 'error');
       }
     }
+  },
+  clearAutoSelect: async () => {
+    await storeValue('autoSelectModelId', null);
+    await storeValue('autoSelectModelName', null);
   }
 }
