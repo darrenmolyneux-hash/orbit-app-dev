@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 9,
+  "bottomRow": 8,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n  {\n    currentPage: (typeof currentPageName !== 'undefined' ? currentPageName : ''),\n    userInitials: appsmith.store.userName\n      ? appsmith.store.userName.trim().split(' ').map(function(w){ return w[0]; }).join('').toUpperCase().substring(0,2)\n      : '',\n    targetPage: null\n  }\n}}",
   "dynamicBindingPathList": [

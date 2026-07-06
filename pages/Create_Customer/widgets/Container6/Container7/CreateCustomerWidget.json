@@ -3,7 +3,7 @@
   "borderColor": "#ffffff",
   "borderRadius": "0px",
   "borderWidth": "0",
-  "bottomRow": 59,
+  "bottomRow": 60,
   "boxShadow": "none",
   "defaultModel": "{{{}}}",
   "dynamicBindingPathList": [
@@ -52,7 +52,7 @@
   "onCheckAuth": "{{CheckAuth.checkAuth();}}",
   "onCreateCustomer": "{{CustomerActions.onCreateCustomer();}}",
   "onSurveyFirst": "{{CustomerActions.onSurveyFirst();}}",
-  "originalBottomRow": 59,
+  "originalBottomRow": 60,
   "originalTopRow": 1,
   "parentColumnSpace": 15.806640625,
   "parentId": "dt1b1ibleu",
