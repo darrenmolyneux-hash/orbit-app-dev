@@ -26,11 +26,15 @@
     },
     {
       "key": "onSurveyFirst"
+    },
+    {
+      "key": "onPageLoad"
     }
   ],
   "events": [
     "onCreateCustomer",
-    "onSurveyFirst"
+    "onSurveyFirst",
+    "onPageLoad"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -46,6 +50,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onCreateCustomer": "{{CustomerActions.onCreateCustomer();}}",
+  "onPageLoad": "{{PageGaurd.checkAuth();}}",
   "onSurveyFirst": "{{CustomerActions.onSurveyFirst();}}",
   "originalBottomRow": 59,
   "originalTopRow": 1,

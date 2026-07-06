@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 273,
+  "bottomRow": 272,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{\"sales\": GetSales.data}}}",
   "dynamicBindingPathList": [
@@ -42,7 +42,7 @@
   "mobileTopRow": 1,
   "needsErrorInfo": false,
   "onViewSale": "{{navigateTo('SaleDetails', { sale_id: Custom2.model.selectedSaleId })}}",
-  "originalBottomRow": 103,
+  "originalBottomRow": 273,
   "originalTopRow": 21,
   "parentColumnSpace": 14.5,
   "parentId": "0",

@@ -66,6 +66,9 @@
     },
     {
       "key": "onSignOutClick"
+    },
+    {
+      "key": "onPageload"
     }
   ],
   "events": [
@@ -83,7 +86,8 @@
     "onSearchCollection",
     "onNavClick",
     "onAvatarClick",
-    "onSignOutClick"
+    "onSignOutClick",
+    "onPageload"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -108,6 +112,7 @@
   "onLoadMyActivity": "{{HomeActions.onLoadMyActivity();}}",
   "onLoadOpsAlerts": "{{HomeActions.onLoadOpsAlerts();}}",
   "onNavClick": "{{NavActions.onNavClick();}}",
+  "onPageload": "{{PageGaurd.checkAuth();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "onSearchAssetRef": "{{HomeActions.onSearchAssetRef();}}",
   "onSearchCollection": "{{HomeActions.onSearchCollection();}}",

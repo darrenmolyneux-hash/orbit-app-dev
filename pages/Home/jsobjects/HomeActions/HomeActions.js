@@ -27,19 +27,19 @@ export default {
       await storeValue('searchErrorMessage', 'Search failed: ' + err.message);
     }
   },
-  onSearchCollection: async () => {
-    try {
-      await qry_home_search_collection.run({ query: HomeWidget.model.searchQuery });
-      const collection = qry_home_search_collection.data && qry_home_search_collection.data[0];
-      if (!collection) {
-        await storeValue('searchErrorMessage', 'No collection found with that ID.');
-        return;
-      }
-      await storeValue('searchErrorMessage', '');
-      navigateTo('Collection_Page', { collection_id: collection.collection_id }, 'SAME_WINDOW');
-    } catch (err) {
-      await storeValue('searchErrorMessage', 'Search failed: ' + err.message);
+onSearchCollection: async () => {
+  try {
+    await qry_home_search_collection.run({ query: HomeWidget.model.searchQuery });
+    const collection = qry_home_search_collection.data && qry_home_search_collection.data[0];
+    if (!collection) {
+      await storeValue('searchErrorMessage', 'No collection found with that ID.');
+      return;
     }
+    await storeValue('searchErrorMessage', '');
+    navigateTo('Collection_job_View', { collectionId: collection.collection_id }, 'SAME_WINDOW');
+  } catch (err) {
+    await storeValue('searchErrorMessage', 'Search failed: ' + err.message);
+  }
   },
   onGoCreateSalePallet: () => {
     navigateTo('Waste_Detail_Page', { tab: 'sale_pallets' }, 'SAME_WINDOW');

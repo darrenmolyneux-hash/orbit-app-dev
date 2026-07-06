@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_8456dc80-526f-4e2f-9405-95c5e22adb67",
+  "id": "Customer_List_NavActions",
+  "unpublishedCollection": {
+    "name": "NavActions",
+    "pageId": "Customer_List",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
