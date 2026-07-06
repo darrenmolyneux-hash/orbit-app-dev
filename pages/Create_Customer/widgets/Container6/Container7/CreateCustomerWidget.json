@@ -28,13 +28,13 @@
       "key": "onSurveyFirst"
     },
     {
-      "key": "onPageLoad"
+      "key": "onCheckAuth"
     }
   ],
   "events": [
     "onCreateCustomer",
     "onSurveyFirst",
-    "onPageLoad"
+    "onCheckAuth"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -49,8 +49,8 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onCheckAuth": "{{CheckAuth.checkAuth();}}",
   "onCreateCustomer": "{{CustomerActions.onCreateCustomer();}}",
-  "onPageLoad": "{{CheckAuth.checkAuth();}}",
   "onSurveyFirst": "{{CustomerActions.onSurveyFirst();}}",
   "originalBottomRow": 59,
   "originalTopRow": 1,
