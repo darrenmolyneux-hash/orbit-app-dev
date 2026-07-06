@@ -3,7 +3,8 @@ SELECT
   it.item_type_name,
   mk.make_name,
   mo.model_name,
-  cu.customer_name
+  cu.customer_name,
+  cu.dial_ref
 FROM assets a
 LEFT JOIN item_types it ON it.item_type_id = a.item_type
 LEFT JOIN makes mk ON mk.make_id = a.make
