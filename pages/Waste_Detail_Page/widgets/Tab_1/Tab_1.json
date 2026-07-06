@@ -99,6 +99,51 @@
       "version": 1,
       "widgetId": "34wmkoz6fj",
       "widgetName": "Canvas14"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 850,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "tn9q7ssqub",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 890,
+      "minWidth": 450,
+      "mobileBottomRow": 891,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1068,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "5kt14v1mi1",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1068,
+      "tabId": "tabeezr83vk3x",
+      "tabName": "Waste batches",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "tu6r3xli4g",
+      "widgetName": "Canvas15"
     }
   ],
   "defaultTab": "",
@@ -152,6 +197,13 @@
       "label": "Waste Pallets",
       "positioning": "vertical",
       "widgetId": "34wmkoz6fj"
+    },
+    "tabeezr83vk3x": {
+      "id": "tabeezr83vk3x",
+      "index": 2,
+      "isVisible": true,
+      "label": "Waste batches",
+      "widgetId": "tu6r3xli4g"
     }
   },
   "topRow": 20,
