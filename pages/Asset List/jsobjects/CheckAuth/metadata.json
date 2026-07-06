@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_5e24b964-91db-4063-bb05-5fbc28405122",
+  "id": "Asset List_CheckAuth",
+  "unpublishedCollection": {
+    "name": "CheckAuth",
+    "pageId": "Asset List",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

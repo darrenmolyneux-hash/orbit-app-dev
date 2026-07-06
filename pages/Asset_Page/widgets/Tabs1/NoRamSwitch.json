@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignWidget": "LEFT",
   "animateLoading": true,
-  "bottomRow": 21,
+  "bottomRow": 17,
   "boxShadow": "none",
   "defaultSwitchState": "{{\n  (qry_GetAssetById.data?.[0]?.ram || \"\").trim().toLowerCase() === \"no ram\"\n}}",
   "dynamicBindingPathList": [
@@ -48,7 +48,7 @@
   "mobileTopRow": 38,
   "needsErrorInfo": false,
   "onChange": "{{\n  NoRamSwitch.isSwitchedOn\n    ? RAMInput.setValue(\"No RAM\")\n    : RAMInput.setValue(\"\")\n}}",
-  "originalBottomRow": 17,
+  "originalBottomRow": 21,
   "originalTopRow": 9,
   "parentColumnSpace": 19.1875,
   "parentId": "dc4v6fjacj",

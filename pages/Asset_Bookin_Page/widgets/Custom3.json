@@ -77,7 +77,7 @@
   "onItemTypeChange": "{{qry_makes_list.run()}}",
   "onMakeChange": "{{qry_models_list.run()}}",
   "onNewModel": "{{showModal('Modal1')}}",
-  "originalBottomRow": 49,
+  "originalBottomRow": 48,
   "originalTopRow": 23,
   "parentColumnSpace": 14.2685546875,
   "parentId": "0",

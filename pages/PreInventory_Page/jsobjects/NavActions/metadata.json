@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_5314b1fb-ff3a-46a4-b272-2a7c7ebdb5b0",
+  "id": "PreInventory_Page_NavActions",
+  "unpublishedCollection": {
+    "name": "NavActions",
+    "pageId": "PreInventory_Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

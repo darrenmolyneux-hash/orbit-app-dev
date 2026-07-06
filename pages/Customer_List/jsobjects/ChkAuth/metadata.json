@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_6bfe049a-d251-4373-9c42-fe37ff0c7b7b",
+  "id": "Customer_List_ChkAuth",
+  "unpublishedCollection": {
+    "name": "ChkAuth",
+    "pageId": "Customer_List",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

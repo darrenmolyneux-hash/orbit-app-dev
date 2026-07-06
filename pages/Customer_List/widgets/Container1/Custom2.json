@@ -19,10 +19,14 @@
   "dynamicTriggerPathList": [
     {
       "key": "onViewCustomer"
+    },
+    {
+      "key": "onCheckAuth"
     }
   ],
   "events": [
-    "onViewCustomer"
+    "onViewCustomer",
+    "onCheckAuth"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -37,6 +41,7 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onCheckAuth": "{{CheckAuth.checkAuth();}}",
   "onViewCustomer": "{{CustomerListActions.onViewCustomer();}}",
   "parentColumnSpace": 17.625,
   "parentId": "xgvjb501nc",

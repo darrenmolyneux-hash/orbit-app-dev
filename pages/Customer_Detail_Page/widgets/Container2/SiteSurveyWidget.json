@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 139,
+  "bottomRow": 140,
   "bottomRowBeforeCollapse": 113,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n  {\n    \"site_address\": appsmith.store.active_site ? appsmith.store.active_site.address1 + ', ' + appsmith.store.active_site.city : '',\n    \"customer_name\": qry_get_customer.data[0] ? qry_get_customer.data[0].customer_name : '',\n    \"existingSurvey\": qry_get_site_survey.data && qry_get_site_survey.data[0] ? qry_get_site_survey.data[0] : null\n  }\n}}",

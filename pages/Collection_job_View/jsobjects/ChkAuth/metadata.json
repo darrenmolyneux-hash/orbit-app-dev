@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_b300ecc4-9e91-4e78-9e0a-3884b636ac14",
+  "id": "Collection_job_View_ChkAuth",
+  "unpublishedCollection": {
+    "name": "ChkAuth",
+    "pageId": "Collection_job_View",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

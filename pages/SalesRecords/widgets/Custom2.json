@@ -42,7 +42,7 @@
   "mobileTopRow": 1,
   "needsErrorInfo": false,
   "onViewSale": "{{navigateTo('SaleDetails', { sale_id: Custom2.model.selectedSaleId })}}",
-  "originalBottomRow": 273,
+  "originalBottomRow": 272,
   "originalTopRow": 21,
   "parentColumnSpace": 14.5,
   "parentId": "0",

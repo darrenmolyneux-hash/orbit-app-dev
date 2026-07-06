@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_68faaef5-1bc1-4651-8172-8a8432bf12b0",
+  "id": "Asset_Bookin_Page_NavActions",
+  "unpublishedCollection": {
+    "name": "NavActions",
+    "pageId": "Asset_Bookin_Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -106,7 +106,7 @@
   "onSearchAssetRef": "{{HomeActions.onSearchAssetRef()}}",
   "onSearchCollection": "{{HomeActions.onSearchCollection()}}",
   "onSearchSerial": "{{HomeActions.onSearchSerial()}}",
-  "originalBottomRow": 142,
+  "originalBottomRow": 110,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "q7urywgy42",

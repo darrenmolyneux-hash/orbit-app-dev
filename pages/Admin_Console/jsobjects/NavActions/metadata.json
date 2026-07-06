@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_5018093b-1767-4fe6-8ac8-e6fc7d8e5be9",
+  "id": "Admin_Console_NavActions",
+  "unpublishedCollection": {
+    "name": "NavActions",
+    "pageId": "Admin_Console",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

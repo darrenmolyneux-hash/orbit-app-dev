@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_5c064582-bbfa-4122-8f82-9140bc3860e6",
+  "id": "SalesRecords_NavActions",
+  "unpublishedCollection": {
+    "name": "NavActions",
+    "pageId": "SalesRecords",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

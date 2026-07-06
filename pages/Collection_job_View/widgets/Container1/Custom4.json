@@ -18,13 +18,18 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onResetClick"
+    },
+    {
+      "key": "onPageLoad"
     }
   ],
   "events": [
-    "onResetClick"
+    "onResetClick",
+    "onPageLoad"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -39,6 +44,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onPageLoad": "{{ChkAuth.checkAuth();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "originalBottomRow": 11,
   "originalTopRow": 0,
@@ -51,7 +57,7 @@
   "srcDoc": {
     "css": "@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}\nbody{font-family:'Figtree',sans-serif;background:transparent;padding:0.75rem;}\n.header-card{background:#0ffff;border-radius:12px;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;min-height:72px;}\n.customer-name{font-size:20px;font-weight:700;color:##05042E;letter-spacing:-0.01em;}\n.header-meta{display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap;}\n.meta-item{font-size:12px;font-weight:600;color:#469BC0;}\n.divider{color:#469BC0;font-size:12px;}\n.header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:16px;}\n.badge{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.06em;}\n.job-type{background:rgba(70,155,192,0.2);color:#469BC0;border:1px solid #469BC0;}\n.status{background:rgba(163,232,81,0.15);color:#A3E851;border:1px solid #A3E851;}",
     "html": "<div class=\"header-card\">\n  <div class=\"header-left\">\n    <div class=\"customer-name\" id=\"customer-name\">Loading...</div>\n    <div class=\"header-meta\">\n      <span class=\"meta-item\" id=\"collection-id\"></span>\n      <span class=\"divider\">|</span>\n      <span class=\"meta-item\" id=\"collection-date\"></span>\n      <span class=\"divider\">|</span>\n      <span class=\"meta-item\" id=\"address\"></span>\n    </div>\n  </div>\n  <div class=\"header-right\">\n    <span class=\"badge job-type\" id=\"job-type\"></span>\n    <span class=\"badge status\" id=\"status\"></span>\n  </div>\n</div>",
-    "js": "function formatDate(dateStr) {\n  if (!dateStr) return '';\n  var d = new Date(dateStr);\n  return d.toLocaleDateString('en-GB', {\n    day: '2-digit',\n    month: 'short',\n    year: 'numeric'\n  });\n}\nfunction render(m) {\n  var customerName = document.getElementById('customer-name');\n  var collectionId = document.getElementById('collection-id');\n  var collectionDate = document.getElementById('collection-date');\n  var status = document.getElementById('status');\n  var jobType = document.getElementById('job-type');\n  var address = document.getElementById('address');\n  if (customerName) customerName.textContent = m.customerName || 'Loading...';\n  if (collectionId) collectionId.textContent = m.collectionId ? 'Collection #' + m.collectionId : '';\n  if (collectionDate) collectionDate.textContent = formatDate(m.collectionDate);\n  if (status) status.textContent = m.status || '';\n  if (jobType) jobType.textContent = m.jobType || '';\n  if (address) address.textContent = m.address || '';\n}\nappsmith.onReady(function () {\n  render(appsmith.model);\n});\nappsmith.onModelChange(function (m) {\n  render(m);\n});"
+    "js": "function formatDate(dateStr) {\n  if (!dateStr) return '';\n  var d = new Date(dateStr);\n  return d.toLocaleDateString('en-GB', {\n    day: '2-digit',\n    month: 'short',\n    year: 'numeric'\n  });\n}\nappsmith.onReady(function () {\n  appsmith.triggerEvent('onPageLoad');\n  // ...rest of existing onReady logic\n});\nfunction render(m) {\n  var customerName = document.getElementById('customer-name');\n  var collectionId = document.getElementById('collection-id');\n  var collectionDate = document.getElementById('collection-date');\n  var status = document.getElementById('status');\n  var jobType = document.getElementById('job-type');\n  var address = document.getElementById('address');\n  if (customerName) customerName.textContent = m.customerName || 'Loading...';\n  if (collectionId) collectionId.textContent = m.collectionId ? 'Collection #' + m.collectionId : '';\n  if (collectionDate) collectionDate.textContent = formatDate(m.collectionDate);\n  if (status) status.textContent = m.status || '';\n  if (jobType) jobType.textContent = m.jobType || '';\n  if (address) address.textContent = m.address || '';\n}\nappsmith.triggerEvent(\"onPageLoad\");\nappsmith.onReady(function () {\n  render(appsmith.model);\n});\nappsmith.onModelChange(function (m) {\n  render(m);\n});"
   },
   "theme": "{{appsmith.theme}}",
   "topRow": 0,
@@ -59,7 +65,7 @@
   "uncompiledSrcDoc": {
     "css": "@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}\nbody{font-family:'Figtree',sans-serif;background:transparent;padding:0.75rem;}\n.header-card{background:#0ffff;border-radius:12px;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;min-height:72px;}\n.customer-name{font-size:20px;font-weight:700;color:##05042E;letter-spacing:-0.01em;}\n.header-meta{display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap;}\n.meta-item{font-size:12px;font-weight:600;color:#469BC0;}\n.divider{color:#469BC0;font-size:12px;}\n.header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:16px;}\n.badge{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.06em;}\n.job-type{background:rgba(70,155,192,0.2);color:#469BC0;border:1px solid #469BC0;}\n.status{background:rgba(163,232,81,0.15);color:#A3E851;border:1px solid #A3E851;}",
     "html": "<div class=\"header-card\">\n  <div class=\"header-left\">\n    <div class=\"customer-name\" id=\"customer-name\">Loading...</div>\n    <div class=\"header-meta\">\n      <span class=\"meta-item\" id=\"collection-id\"></span>\n      <span class=\"divider\">|</span>\n      <span class=\"meta-item\" id=\"collection-date\"></span>\n      <span class=\"divider\">|</span>\n      <span class=\"meta-item\" id=\"address\"></span>\n    </div>\n  </div>\n  <div class=\"header-right\">\n    <span class=\"badge job-type\" id=\"job-type\"></span>\n    <span class=\"badge status\" id=\"status\"></span>\n  </div>\n</div>",
-    "js": "function formatDate(dateStr) {\n  if (!dateStr) return '';\n  var d = new Date(dateStr);\n  return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });\n}\n\nfunction render(m) {\n  var customerName = document.getElementById('customer-name');\n  var collectionId = document.getElementById('collection-id');\n  var collectionDate = document.getElementById('collection-date');\n  var status = document.getElementById('status');\n  var jobType = document.getElementById('job-type');\n  var address = document.getElementById('address');\n  if (customerName) customerName.textContent = m.customerName || 'Loading...';\n  if (collectionId) collectionId.textContent = m.collectionId ? 'Collection #' + m.collectionId : '';\n  if (collectionDate) collectionDate.textContent = formatDate(m.collectionDate);\n  if (status) status.textContent = m.status || '';\n  if (jobType) jobType.textContent = m.jobType || '';\n  if (address) address.textContent = m.address || '';\n}\n\nappsmith.onReady(function() { render(appsmith.model); });\nappsmith.onModelChange(function(m) { render(m); });"
+    "js": "function formatDate(dateStr) {\n  if (!dateStr) return '';\n  var d = new Date(dateStr);\n  return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });\n}\nappsmith.onReady(function() {\n  appsmith.triggerEvent('onPageLoad');\n  // ...rest of existing onReady logic\n});\nfunction render(m) {\n  var customerName = document.getElementById('customer-name');\n  var collectionId = document.getElementById('collection-id');\n  var collectionDate = document.getElementById('collection-date');\n  var status = document.getElementById('status');\n  var jobType = document.getElementById('job-type');\n  var address = document.getElementById('address');\n  if (customerName) customerName.textContent = m.customerName || 'Loading...';\n  if (collectionId) collectionId.textContent = m.collectionId ? 'Collection #' + m.collectionId : '';\n  if (collectionDate) collectionDate.textContent = formatDate(m.collectionDate);\n  if (status) status.textContent = m.status || '';\n  if (jobType) jobType.textContent = m.jobType || '';\n  if (address) address.textContent = m.address || '';\n}\nappsmith.triggerEvent(\"onPageLoad\");\nappsmith.onReady(function() { render(appsmith.model); });\nappsmith.onModelChange(function(m) { render(m); });"
   },
   "version": 1,
   "widgetId": "u6jzdrr4sc",
