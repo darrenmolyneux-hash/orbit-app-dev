@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_0eb9224c-08b5-4d7e-b063-8a102d643cfa",
-  "id": "Asset_Page_qry_update_overall_grade",
+  "gitSyncId": "6a305b9e0882adc7e482e226_c8dd4518-700b-48fe-8e07-c53db37c2816",
+  "id": "Asset_Page_Query3",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE assets\nSET overall_grade = {{Custom_Grading.model.overallGrade ? `'${Custom_Grading.model.overallGrade}'` : 'NULL'}}\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};",
+      "body": "SELECT trigger_name, event_manipulation, action_statement, action_timing\nFROM information_schema.triggers\nWHERE event_object_table = 'assets';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -22,12 +22,8 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "qry_update_overall_grade",
+    "dynamicBindingPathList": [],
+    "name": "Query3",
     "pageId": "Asset_Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

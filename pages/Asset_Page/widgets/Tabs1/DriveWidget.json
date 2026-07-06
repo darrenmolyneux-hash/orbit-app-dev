@@ -48,7 +48,7 @@
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "onShred": "{{AssetActions.handleShred();}}",
-  "originalBottomRow": 219,
+  "originalBottomRow": 25,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "u4sctu652m",

@@ -17,7 +17,7 @@ VALUES (
   {{GradingData.getIntune()}},
   {{GradingData.getNoHdd()}},
   {{GradingData.getNoRam()}},
-  NULLIF('{{GradingData.getGrade()}}', ''),
+  {{GradingData.getGrade() ? `'${GradingData.getGrade()}'` : 'NULL'}},
   '{{GradingData.getNotes()}}'
 )
 ON CONFLICT (asset_id) DO UPDATE SET
@@ -32,5 +32,5 @@ ON CONFLICT (asset_id) DO UPDATE SET
   intune_lock = EXCLUDED.intune_lock,
   no_hdd = EXCLUDED.no_hdd,
   no_ram = EXCLUDED.no_ram,
-  calculated_grade = NULLIF(EXCLUDED.calculated_grade, ''),
+  calculated_grade = EXCLUDED.calculated_grade,
   notes = EXCLUDED.notes;
