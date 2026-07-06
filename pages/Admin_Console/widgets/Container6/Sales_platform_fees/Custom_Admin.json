@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 188,
+  "bottomRow": 189,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{\n{\n  \"activeSection\": \"itemTypes\",\n  \"itemTypes\": qry_admin_item_types.data,\n  \"makes\": qry_admin_makes.data,\n  \"models\": qry_admin_models.data,\n  \"locations\": qry_admin_locations.data,\n  \"users\": qry_admin_users.data,\n  \"editRow\": null,\n  \"mode\": \"list\",\n  \"saleCustomers\": qry_admin_sale_customers.data,\n  \"tempPasswordDisplay\": appsmith.store.tempPasswordDisplay || ''\n}\n}}",
   "dynamicBindingPathList": [
@@ -60,7 +60,7 @@
   "onDelete": "{{JSAdmin.delete();}}",
   "onResetPassword": "{{JSAdmin.onResetPassword()}}",
   "onSave": "{{JSAdmin.save();}}",
-  "originalBottomRow": 46,
+  "originalBottomRow": 188,
   "originalTopRow": 0,
   "parentColumnSpace": 16.0625,
   "parentId": "hu9j884nlk",
