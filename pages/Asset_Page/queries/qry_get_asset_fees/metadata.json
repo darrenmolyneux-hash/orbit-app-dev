@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COALESCE(SUM(fee_amount), 0) AS total_fees\nFROM asset_fees\nWHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}};",
+      "body": "SELECT COALESCE(SUM(fee_amount), 0) AS total_fees\nFROM asset_fees\nWHERE erasure_status ILIKE '%success%' THEN 5.00 ELSE 0 END",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,11 +22,7 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "name": "qry_get_asset_fees",
     "pageId": "Asset_Page",
     "runBehaviour": "ON_PAGE_LOAD",

@@ -1,4 +1,5 @@
 SELECT *
 FROM sales_fee
 WHERE sale_item_id = {{Number(GetSaleItemByAsset.data[0]?.sale_item_id || 0)}}
+  AND {{Number(GetSaleItemByAsset.data[0]?.sale_item_id || 0)}} > 0
 ORDER BY fee_id DESC;

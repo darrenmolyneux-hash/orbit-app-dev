@@ -20,7 +20,7 @@
       "key": "borderColor"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [
     {
       "key": "onResetClick"
@@ -48,8 +48,6 @@
   "needsErrorInfo": false,
   "onPageLoad": "{{CheckAuth.checkAuth();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 10,
-  "originalTopRow": 1,
   "parentColumnSpace": 16.375,
   "parentId": "uvpsp2brmt",
   "parentRowSpace": 10,

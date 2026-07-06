@@ -187,7 +187,6 @@ clearLocks: async () => {
 },
 saveGrading: async () => {
   try {
-    await new Promise(resolve => setTimeout(resolve, 1500));
     await qry_grading_save.run();
     await qry_update_overall_grade.run();
     await qry_GetAssetById.run();
