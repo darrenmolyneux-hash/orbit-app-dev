@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE assets\nSET carriage_cost_allocated = ROUND({{Number(inp_carriage_cost.text || 0)}} / (SELECT COUNT(*) FROM assets WHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}), 2)\nWHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};",
+      "body": "UPDATE assets\nSET carriage_cost_allocated = ROUND({{Number(appsmith.store.miscCostInput || 0)}} / (SELECT COUNT(*) FROM assets WHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}}), 2)\nWHERE collection_id = {{Number(appsmith.URL.queryParams.collectionId)}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
