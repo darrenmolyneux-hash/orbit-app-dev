@@ -99,7 +99,7 @@ if (Tabs1.selectedTab === 'Grading') {
       storeValue('pal_to_location_id', null);
       storeValue('hp_condition_grade', row.condition_grade);
       storeValue('hp_notes', 'Installed from stock');
-      storeValue('hp_signature', appsmith.user.name + ' | ' + new Date().toISOString());
+      storeValue('hp_signature', appsmith.store.userName + ' | ' + new Date().toISOString());
       try {
         await qry_install_part.run();
         await qry_install_part_pia.run();

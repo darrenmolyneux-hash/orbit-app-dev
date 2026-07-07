@@ -4,6 +4,6 @@ VALUES (
   'erasure',
   5.00,
   'Blancco erasure fee',
-  '{{appsmith.user.email}}'
+  '{{appsmith.store.userName}}'
 )
 ON CONFLICT DO NOTHING;

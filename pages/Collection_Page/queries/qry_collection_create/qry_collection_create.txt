@@ -22,7 +22,7 @@ INSERT INTO collections (
   {{appsmith.store.col_address2}},
   {{appsmith.store.col_city}},
   {{appsmith.store.col_postcode}},
-  {{appsmith.user.name}},
+  {{appsmith.store.userName}},
   NOW(),
   'Booked',
   {{appsmith.store.col_expected_assets}}::jsonb,

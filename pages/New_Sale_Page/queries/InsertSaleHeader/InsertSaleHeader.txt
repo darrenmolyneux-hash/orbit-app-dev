@@ -3,7 +3,7 @@ VALUES (
     '{{this.params.platform}}',
     NOW(),
     {{Number(this.params.total_price)}},
-    '{{appsmith.user.email}}',
+    '{{appsmith.store.userName}}',
     generate_sale_ref()
 )
 RETURNING sale_id, sale_ref;

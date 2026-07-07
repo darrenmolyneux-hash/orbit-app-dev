@@ -11,7 +11,7 @@ SELECT
   {{Number(appsmith.URL.queryParams.asset_id)}},
   hp.part_type_id,
   hp.is_salvageable,
-  {{appsmith.user.name}},
+  {{appsmith.store.userName}},
   NOW(),
   hp.id,
   'Installed from stock'

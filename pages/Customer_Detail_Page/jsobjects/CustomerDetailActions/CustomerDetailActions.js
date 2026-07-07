@@ -25,6 +25,25 @@ export default {
     await qry_get_customer.run();
     showAlert('Customer updated ✓', 'success');
   },
+  onSaveSite: async () => {
+    const m = CustomerDetailWidget.model;
+
+    storeValue('address1', m.address1);
+    storeValue('address2', m.address2);
+    storeValue('city', m.city);
+    storeValue('postcode', m.postcode);
+    storeValue('site_contact', m.site_contact);
+    storeValue('site_phone', m.site_phone);
+    storeValue('site_email', m.site_email);
+
+    try {
+      await qry_insert_site.run();
+      showAlert('Site added ✓', 'success');
+      await qry_get_customer_sites.run();
+    } catch (err) {
+      showAlert('Failed to save site: ' + err.message, 'error');
+    }
+  },
   onSaveSurvey: async () => {
     const m = SiteSurveyWidget.model;
     await storeValue('ss_vehicle_access_height', m.ss_vehicle_access_height);
@@ -46,7 +65,6 @@ export default {
     await storeValue('ss_security_procedures', m.ss_security_procedures);
     await storeValue('ss_security_procedures_details', m.ss_security_procedures_details);
     await storeValue('ss_driver_instructions', m.ss_driver_instructions);
-
     const existing = m.existingSurvey;
     if (existing && existing.survey_id) {
       await storeValue('ss_survey_id', existing.survey_id);
@@ -56,7 +74,6 @@ export default {
       await qry_site_survey_create.run();
       showAlert('Site survey saved ✓', 'success');
     }
-
     storeValue('show_site_survey', false);
     await qry_get_customer_sites.run();
   },

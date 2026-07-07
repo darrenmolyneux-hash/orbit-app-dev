@@ -45,7 +45,7 @@ ARRAY(SELECT jsonb_array_elements_text({{JSON.stringify(appsmith.store.ss_ppe_re
   {{appsmith.store.ss_security_procedures}},
   {{appsmith.store.ss_security_procedures_details}},
   {{appsmith.store.ss_driver_instructions}},
-  {{appsmith.user.name}},
+  {{appsmith.store.userName}},
   NOW(),
   NOW(),
   NOW(),

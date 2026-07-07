@@ -14,6 +14,6 @@ INSERT INTO job_notes (
   '{{"Status changed from " + qry_collection_get.data[0]?.status + " to " + appsmith.store.newStatus}}',
   'status_change',
   true,
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   NOW()
 );

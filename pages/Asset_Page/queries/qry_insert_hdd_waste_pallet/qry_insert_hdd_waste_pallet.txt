@@ -3,6 +3,6 @@ VALUES (
   'WP-' || LPAD(NEXTVAL('waste_pallet_seq')::text, 5, '0'),
   'HDD Shred',
   'open',
-  '{{appsmith.user.email}}'
+  '{{appsmith.store.userName}}'
 )
 RETURNING pallet_id, waste_id;

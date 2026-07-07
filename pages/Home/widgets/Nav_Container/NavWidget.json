@@ -90,7 +90,7 @@
   "isSearchWildcard": true,
   "isVisible": true,
   "key": "g7f2tr8a0d",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "mobileBottomRow": 36,
@@ -119,7 +119,7 @@
   "parentId": "lh7cyggr4e",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "shouldScrollContents": true,
   "srcDoc": {
     "css": "@import url(\"https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  font-family: \"Figtree\", sans-serif;\n  margin: 0;\n  padding: 0;\n}\n\n.navbar {\n  background: #05042E;\n  border-radius: 10px;\n  padding: 14px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.nav-left {\n  display: flex;\n  align-items: center;\n}\n\n.nav-logo {\n  height: 36px;\n  width: auto;\n  display: block;\n}\n\n.nav-links {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n\n.nav-link {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 13px;\n  font-weight: 600;\n  padding: 8px 14px;\n  border-radius: 6px;\n  cursor: pointer;\n  white-space: nowrap;\n}\n\n.nav-link:hover {\n  color: #fff;\n  background: rgba(255, 255, 255, 0.08);\n}\n\n.nav-link.active {\n  color: #05042E;\n  background: #A3E851;\n}\n\n.nav-avatar-wrap {\n  position: relative;\n}\n\n.nav-avatar {\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  background: #469BC0;\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 12px;\n  font-weight: 700;\n  cursor: pointer;\n}\n\n.nav-dropdown {\n  display: none;\n  position: absolute;\n  top: 40px;\n  right: 0;\n  background: #fff;\n  border-radius: 8px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);\n  min-width: 140px;\n  overflow: hidden;\n  z-index: 10;\n}\n\n.nav-dropdown.open {\n  display: block;\n}\n\n.nav-dropdown-item {\n  padding: 10px 14px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #05042E;\n  cursor: pointer;\n}\n\n.nav-dropdown-item:hover {\n  background: rgba(5, 4, 46, 0.05);\n}",

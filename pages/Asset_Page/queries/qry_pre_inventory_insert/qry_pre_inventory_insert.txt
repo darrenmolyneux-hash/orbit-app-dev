@@ -26,7 +26,7 @@ INSERT INTO harvested_parts (
        THEN 'in_asset' 
        ELSE 'scrapped' END,
   {{appsmith.store.pi_salvageable}},
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   NOW(),
   false,
   '{{appsmith.store.pi_notes}}'

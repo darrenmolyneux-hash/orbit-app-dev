@@ -9,7 +9,7 @@ VALUES (
   '{{appsmith.store.shred_interface || ""}}',
   '{{appsmith.store.shred_capacity || ""}}',
   '{{appsmith.store.shred_type || "manual"}}',
-  '{{appsmith.user.email}}',
+  '{{appsmith.store.userName}}',
   {{appsmith.store.shred_pallet_id || null}},
   '{{appsmith.store.shred_notes || ""}}',
   '{{appsmith.store.shred_cert_ref || ""}}'

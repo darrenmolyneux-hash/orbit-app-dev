@@ -3,7 +3,7 @@ export default {
     try {
       await qry_insert_sale_pallet.run({
         customerId: Number(SalePalletsWidget.model.new_pallet_customer_id),
-        createdBy: appsmith.user.email
+        createdBy: appsmith.store.userName
       });
       await qry_get_sale_pallets.run();
       showAlert('Sale pallet created ✓', 'success');
@@ -28,7 +28,7 @@ export default {
         assetId: Number(m.item_asset_id),
         salePrice: Number(m.item_sale_price) || 0,
         notes: m.item_notes || '',
-        addedBy: appsmith.user.email
+        addedBy: appsmith.store.userName
       });
       await new Promise(resolve => setTimeout(resolve, 300));
       await qry_get_sale_pallet_items.run({ palletId: Number(m.selectedPalletId) });
@@ -53,7 +53,7 @@ export default {
         assetId: asset.asset_id,
         salePrice: 0,
         notes: '',
-        addedBy: appsmith.user.email
+        addedBy: appsmith.store.userName
       });
       if (!qry_insert_sale_pallet_item.data || qry_insert_sale_pallet_item.data.length === 0) {
         showAlert('This asset is already on the pallet', 'warning');
@@ -100,7 +100,7 @@ export default {
     try {
       await qry_process_sale_pallet.run({
         palletId: Number(SalePalletsWidget.model.selectedPalletId),
-        processedBy: appsmith.user.email
+        processedBy: appsmith.store.userName
       });
       await qry_get_sale_pallets.run();
       showAlert('Pallet processed as sale ✓', 'success');

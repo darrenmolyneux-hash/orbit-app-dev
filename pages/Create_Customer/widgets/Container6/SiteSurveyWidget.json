@@ -28,9 +28,6 @@
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
-    },
-    {
-      "key": "onSaveSurvey"
     }
   ],
   "dynamicTriggerPathList": [
@@ -63,7 +60,7 @@
   "mobileTopRow": 72,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "onSaveSurvey": "{{CustomerDetailActions.onSaveSurvey();}}",
+  "onSaveSurvey": "{{CustomerActions.onSaveSurvey();}}",
   "onSkipSurvey": "{{CustomerDetailActions.onSkipSurvey();}}",
   "originalBottomRow": 152,
   "originalTopRow": 66,

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO asset_status_history (asset_id, status_id, changed_by)\nSELECT\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  {{Number(appsmith.store.pending_status_id)}},\n  '{{appsmith.user.email}}'\nWHERE {{Number(appsmith.store.pending_status_id)}} > 0\nAND NOT EXISTS (\n  SELECT 1 FROM asset_status_history\n  WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\n  AND status_id = {{Number(appsmith.store.pending_status_id)}}\n  AND changed_at > NOW() - INTERVAL '5 seconds'\n);",
+      "body": "INSERT INTO asset_status_history (asset_id, status_id, changed_by)\nSELECT\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  {{Number(appsmith.store.pending_status_id)}},\n  '{{appsmith.store.userName}}'\nWHERE {{Number(appsmith.store.pending_status_id)}} > 0\nAND NOT EXISTS (\n  SELECT 1 FROM asset_status_history\n  WHERE asset_id = {{Number(appsmith.URL.queryParams.asset_id)}}\n  AND status_id = {{Number(appsmith.store.pending_status_id)}}\n  AND changed_at > NOW() - INTERVAL '5 seconds'\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

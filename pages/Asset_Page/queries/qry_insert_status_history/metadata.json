@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO asset_status_history (asset_id, status_id, changed_by)\nSELECT\n  {{Number(qry_GetAssetById.data[0].asset_id)}},\n  {{Number(Custom5.model.selectedStatusId)}},\n  '{{appsmith.user.email}}'\nWHERE {{Number(Custom5.model.selectedStatusId)}} > 0\nAND NOT EXISTS (\n  SELECT 1 FROM asset_status_history\n  WHERE asset_id = {{Number(qry_GetAssetById.data[0].asset_id)}}\n  AND status_id = {{Number(Custom5.model.selectedStatusId)}}\n  AND changed_at > NOW() - INTERVAL '5 seconds'\n);",
+      "body": "INSERT INTO asset_status_history (asset_id, status_id, changed_by)\nSELECT\n  {{Number(qry_GetAssetById.data[0].asset_id)}},\n  {{Number(Custom5.model.selectedStatusId)}},\n  '{{appsmith.store.userName}}'\nWHERE {{Number(Custom5.model.selectedStatusId)}} > 0\nAND NOT EXISTS (\n  SELECT 1 FROM asset_status_history\n  WHERE asset_id = {{Number(qry_GetAssetById.data[0].asset_id)}}\n  AND status_id = {{Number(Custom5.model.selectedStatusId)}}\n  AND changed_at > NOW() - INTERVAL '5 seconds'\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

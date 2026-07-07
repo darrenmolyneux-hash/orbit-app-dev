@@ -3,7 +3,7 @@
   "borderColor": "{{appsmith.theme.colors.backgroundColor}}",
   "borderRadius": "0px",
   "borderWidth": "0",
-  "bottomRow": 142,
+  "bottomRow": 140,
   "boxShadow": "none",
   "defaultModel": "{{\n  {\n    userName: appsmith.store.userName,\n    userRole: appsmith.store.userRole,\n    userLastLogin: appsmith.store.userLastLogin,\n    assetBreakdown: qry_home_breakdown.data || [],\n    activity: qry_home_activity.data || [],\n    myActivity: qry_home_my_activity.data || [],\n    openPallets: qry_home_open_pallets.data || [],\n    slaBreaches: qry_home_sla_breach.data || [],\n\t\tcollectionsSummary: qry_home_collections_summary.data || [],\n    opsAlerts: qry_home_ops_alerts.data || [],\n    searchErrorMessage: appsmith.store.searchErrorMessage || ''\n  }\n}}",
   "dynamicBindingPathList": [
@@ -42,6 +42,12 @@
     },
     {
       "key": "onLoadCollectionsSummary"
+    },
+    {
+      "key": "onGoCreateSalePallet"
+    },
+    {
+      "key": "onGoCreateWastePallet"
     }
   ],
   "dynamicTriggerPathList": [
@@ -71,6 +77,12 @@
     },
     {
       "key": "onLoadCollectionsSummary"
+    },
+    {
+      "key": "onGoCreateSalePallet"
+    },
+    {
+      "key": "onGoCreateWastePallet"
     }
   ],
   "events": [
@@ -82,7 +94,9 @@
     "onSearchAssetRef",
     "onSearchSerial",
     "onSearchCollection",
-    "onLoadCollectionsSummary"
+    "onLoadCollectionsSummary",
+    "onGoCreateSalePallet",
+    "onGoCreateWastePallet"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -99,6 +113,8 @@
   "needsErrorInfo": false,
   "onGoCreateCustomer": "{{HomeActions.onGoCreateCustomer()}}",
   "onGoCreateJob": "{{HomeActions.onGoCreateJob()}}",
+  "onGoCreateSalePallet": "{{HomeActions.onGoCreateSalePallet();}}",
+  "onGoCreateWastePallet": "{{HomeActions.onGoCreateWastePallet();}}",
   "onGoNewSale": "{{HomeActions.onGoNewSale()}}",
   "onLoadCollectionsSummary": "{{HomeActions.onLoadCollectionsSummary()}}",
   "onLoadMyActivity": "{{HomeActions.onLoadMyActivity();}}",
@@ -106,7 +122,7 @@
   "onSearchAssetRef": "{{HomeActions.onSearchAssetRef()}}",
   "onSearchCollection": "{{HomeActions.onSearchCollection()}}",
   "onSearchSerial": "{{HomeActions.onSearchSerial()}}",
-  "originalBottomRow": 110,
+  "originalBottomRow": 140,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "q7urywgy42",

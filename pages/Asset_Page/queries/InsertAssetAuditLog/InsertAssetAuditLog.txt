@@ -6,5 +6,5 @@ VALUES
   'status',
   '{{AssetState.oldStatus}}',
   '{{Custom5.model.selectedStatusId}}',
-  '{{appsmith.user.email}}'
+  '{{appsmith.store.userName}} '
 );

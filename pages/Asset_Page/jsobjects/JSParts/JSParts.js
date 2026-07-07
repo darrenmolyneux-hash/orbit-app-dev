@@ -49,7 +49,7 @@ export default {
 		storeValue('hp_battery_chem',     row.battery_chemistry || '');
 		storeValue('hp_battery_wh',       row.battery_wh || null);
 		storeValue('hp_condition_grade',  '');
-		storeValue('hp_removed_by',       appsmith.user.name);
+		storeValue('hp_removed_by',       appsmith.store.userName);
 		storeValue('hp_notes',            '');
 		storeValue('hp_signature',        '');
 		storeValue('hp_dest_type',        row.is_battery ? 'scrap_weee' : '');
@@ -182,7 +182,7 @@ export default {
 		storeValue('hp_condition_grade',   row.condition_grade);
 		storeValue('hp_notes',             'Installed from stock');
 		storeValue('hp_signature',
-							 appsmith.user.name + ' | ' + new Date().toISOString()
+							 appsmith.store.userName + ' | ' + new Date().toISOString()
 							);
 		try {
 			await qry_install_part.run();
@@ -264,7 +264,7 @@ export default {
 
 	signOffLabel() {
 		return appsmith.store.harvest_signed
-			? '✓ Signed: ' + appsmith.user.name
+			? '✓ Signed: ' + appsmith.store.userName
 		: 'Sign off as technician';
 	},
 
@@ -326,7 +326,7 @@ export default {
 			storeValue('hp_notes',             'Installed from stock');
 			storeValue('hp_part_cost',         cost);
 			storeValue('hp_signature',
-								 appsmith.user.name + ' | ' + new Date().toISOString()
+								 appsmith.store.userName + ' | ' + new Date().toISOString()
 								);
 			try {
 				await qry_install_part.run();
@@ -393,7 +393,7 @@ onLogScrap: async () => {
 		try {
 			const assetRef = qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].asset_ref : appsmith.URL.queryParams.asset_id;
 			const partDesc = RepairPartsWidget.model.requestedPartDesc;
-			const requestedBy = appsmith.user.name;
+			const requestedBy = appsmith.store.userName;
 
 			const payload = {
 				text: "Part request - Asset " + assetRef + " - Part needed: " + partDesc,
@@ -451,10 +451,10 @@ onLogScrap: async () => {
 			storeValue('hp_serial',           appsmith.store.inp_donor_serial);
 			storeValue('hp_condition_grade',  appsmith.store.inp_donor_condition);
 			storeValue('hp_notes',            appsmith.store.inp_donor_notes || 'Removed for install on repair asset');
-			storeValue('hp_removed_by',       appsmith.user.name);
+			storeValue('hp_removed_by',       appsmith.store.userName);
 			storeValue('hp_dest_type',        'stock');
 			storeValue('hp_dest_location_id', appsmith.store.inp_donor_location_id);
-			storeValue('hp_signature',        appsmith.user.name + ' | ' + new Date().toISOString());
+			storeValue('hp_signature',        appsmith.store.userName + ' | ' + new Date().toISOString());
 
 			await qry_get_next_part_ref.run();
 			await qry_insert_harvested_part_dono.run();

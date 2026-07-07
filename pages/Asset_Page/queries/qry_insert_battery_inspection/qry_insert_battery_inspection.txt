@@ -20,6 +20,6 @@ INSERT INTO battery_inspections (
   {{appsmith.store.hp_voltage || 'NULL'}},
   {{appsmith.store.hp_c5}},
   {{appsmith.store.hp_c6}},
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   '{{appsmith.store.hp_signature}}'
 );

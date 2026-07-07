@@ -14,7 +14,7 @@ INSERT INTO pre_inventory_assessments (
   {{Number(appsmith.store.pi_part_type_id)}},
   {{appsmith.store.pi_salvageable}},
   '{{appsmith.store.pi_notes}}',
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   NOW()
 )
 ON CONFLICT (asset_id, part_type_id)

@@ -22,7 +22,7 @@ SELECT
   serial.value,
   ref.value,
   {{appsmith.store.pendingDataBearing === true}},
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   NOW(),
   (SELECT status_id FROM status_types WHERE status_name = 'Received')
 FROM jsonb_array_elements_text('{{JSON.stringify(appsmith.store.pendingSerials || [])}}'::jsonb) WITH ORDINALITY AS serial(value, idx)

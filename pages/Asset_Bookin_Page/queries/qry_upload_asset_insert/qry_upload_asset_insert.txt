@@ -23,7 +23,7 @@ SELECT
   '{{this.params.serial}}',
   '{{this.params.assetRef}}',
   {{this.params.dataBearing === true}},
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   NOW(),
   (SELECT status_id FROM status_types WHERE status_name = 'Received'),
   {{this.params.needsReview === true}};

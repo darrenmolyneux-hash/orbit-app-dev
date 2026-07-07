@@ -1,0 +1,29 @@
+SELECT
+  a.asset_id, a.serial_number, a.asset_ref,
+  it.item_type_name, mk.make_name, md.model_name,
+  a.data_bearing, a.erasure_status, a.overall_grade,
+  st.status_name, st.category AS status_category,
+  a.sale_id, a.date_added, a.needs_review
+FROM assets a
+LEFT JOIN item_types it ON it.item_type_id = a.item_type
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models md ON md.model_id = a.model
+LEFT JOIN status_types st ON st.status_id = a.status_id
+WHERE (
+  {{appsmith.URL.queryParams.collectionId ? Number(appsmith.URL.queryParams.collectionId) : 0}} = 0
+  OR a.collection_id = {{appsmith.URL.queryParams.collectionId ? Number(appsmith.URL.queryParams.collectionId) : 0}}
+)
+AND (
+  {{appsmith.store.asset_status_filter || ''}} = ''
+  OR st.status_name = {{appsmith.store.asset_status_filter || ''}}
+)
+AND (
+  {{appsmith.store.asset_search || ''}} = ''
+  OR a.asset_ref ILIKE {{'%' + (appsmith.store.asset_search || '') + '%'}}
+  OR a.serial_number ILIKE {{'%' + (appsmith.store.asset_search || '') + '%'}}
+  OR mk.make_name ILIKE {{'%' + (appsmith.store.asset_search || '') + '%'}}
+  OR md.model_name ILIKE {{'%' + (appsmith.store.asset_search || '') + '%'}}
+)
+ORDER BY a.date_added DESC
+LIMIT {{appsmith.store.asset_page_size || 50}}
+OFFSET {{((appsmith.store.asset_page || 1) - 1) * (appsmith.store.asset_page_size || 50)}};

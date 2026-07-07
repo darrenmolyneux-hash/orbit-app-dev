@@ -14,7 +14,7 @@ INSERT INTO parts_audit_log (
   'asset_to_scrap',
   {{Number(appsmith.URL.queryParams.asset_id)}},
   (SELECT location_id FROM locations WHERE location_code = 'SCRAP-W01' LIMIT 1),
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   '{{appsmith.store.pi_condition}}',
   '{{appsmith.store.pi_notes}}',
   NOW()

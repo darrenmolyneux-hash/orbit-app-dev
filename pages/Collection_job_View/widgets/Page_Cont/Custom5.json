@@ -3,7 +3,7 @@
   "borderColor": "#d4d4d8",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 98,
+  "bottomRow": 116,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{\n  {\n    collection: (qry_collection_get.data && qry_collection_get.data[0]) || {}\n  }\n}}",
   "dynamicBindingPathList": [
@@ -37,8 +37,8 @@
   "mobileTopRow": 61,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 98,
-  "originalTopRow": 61,
+  "originalBottomRow": 116,
+  "originalTopRow": 65,
   "parentColumnSpace": 12,
   "parentId": "wg91e07364",
   "parentRowSpace": 10,
@@ -51,7 +51,7 @@
     "js": "function escHtml(str) {\n  return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\nfunction fmtDateTime(d) {\n  if (!d) return '—';\n  var dt = new Date(d);\n  if (isNaN(dt.getTime())) return '—';\n  return dt.toLocaleDateString('en-GB', {\n    day: '2-digit',\n    month: 'short',\n    year: 'numeric'\n  }) + ' at ' + dt.toLocaleTimeString('en-GB', {\n    hour: '2-digit',\n    minute: '2-digit'\n  });\n}\nfunction render(model) {\n  var body = document.getElementById('jobsheet_body');\n  if (!body) return;\n  var c = model.collection || {};\n  if (!c.collection_vehicle && !c.driver_signature) {\n    body.innerHTML = '<div class=\"empty\">No job sheet submitted yet</div>';\n    return;\n  }\n  body.innerHTML = '<div class=\"meta-grid\">' + '<div class=\"meta-item\"><div class=\"meta-label\">Vehicle</div><div class=\"meta-value\">' + escHtml(c.collection_vehicle || '—') + '</div></div>' + '<div class=\"meta-item\"><div class=\"meta-label\">Driver</div><div class=\"meta-value\">' + escHtml(c.driver || '—') + '</div></div>' + '<div class=\"meta-item\"><div class=\"meta-label\">Customer On-Site</div><div class=\"meta-value\">' + escHtml(c.client_name_onsite || '—') + '</div></div>' + '</div>' + '<div class=\"meta-item\" style=\"grid-column: 1 / -1;\"><div class=\"meta-label\">Signed On</div><div class=\"meta-value\">' + fmtDateTime(c.client_signature_timestamp) + '</div></div>' + '<div class=\"sig-row\">' + '<div class=\"sig-block\"><label>Driver Signature</label>' + (c.driver_signature ? '<img src=\"' + c.driver_signature + '\"/>' : '<div class=\"empty\">Not signed</div>') + '</div>' + '<div class=\"sig-block\"><label>Customer Signature</label>' + (c.client_signature ? '<img src=\"' + c.client_signature + '\"/>' : '<div class=\"empty\">Not signed</div>') + '</div>' + '</div>';\n}\nfunction initWhenReady() {\n  if (typeof appsmith === 'undefined' || !appsmith.onReady) {\n    setTimeout(initWhenReady, 50);\n    return;\n  }\n  appsmith.onReady(function () {\n    render(appsmith.model);\n  });\n  appsmith.onModelChange(function (model) {\n    render(model);\n  });\n}\ninitWhenReady();"
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 61,
+  "topRow": 65,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n}\n\n.tip-container {\n  margin-bottom: 20px;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.tip-container h2 {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.tip-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  margin-bottom: 9px;\n}\n\n.tip-header div {\n  color: #999;\n}\n\n.content {\n  white-space: pre-wrap;\n  word-break: break-word;\n  font-size: 14px;\n  line-height: 1.571429;\n}\n\n.button-container {\n  text-align: right;\n  padding-top: 4px;\n}\n\n.button-container button {\n  margin: 0 10px;\n  cursor: pointer;\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 6px 16px;\n  background: none;\n  height: auto;\n  transition: all 0.3s ease;\n}\n\n.button-container button.primary {\n  background: var(--appsmith-theme-primaryColor) !important;\n  color: #fff;\n  border: 1px solid var(--appsmith-theme-primaryColor) !important;\n}\n\n.button-container button.reset {\n  border: 1px solid #999;\n  color: #999;\n  outline: none;\n  box-shadow: none;\n}\n\n.button-container button.reset:hover:not(:disabled) {\n  color: var(--appsmith-theme-primaryColor);\n  border-color: var(--appsmith-theme-primaryColor);\n}\n\n.button-container button.reset:disabled {\n  cursor: default;\n}",

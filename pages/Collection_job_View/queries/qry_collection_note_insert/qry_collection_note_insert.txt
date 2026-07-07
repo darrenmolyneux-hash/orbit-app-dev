@@ -10,6 +10,6 @@ INSERT INTO job_notes (
   '{{appsmith.store.noteText}}',
   '{{appsmith.store.noteType || "general"}}',
   false,
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   NOW()
 );

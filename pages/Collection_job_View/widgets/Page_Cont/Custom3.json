@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 60,
+  "bottomRow": 65,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{\n  \"site_contact\": \"{{qry_collection_get.data[0]?.site_contact}}\",\n  \"contact_number\": \"{{qry_collection_get.data[0]?.contact_number}}\",\n  \"contact_email\": \"{{qry_collection_get.data[0]?.contact_email}}\"\n}",
   "dynamicBindingPathList": [
@@ -37,7 +37,7 @@
   "mobileTopRow": 1,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 60,
+  "originalBottomRow": 65,
   "originalTopRow": 44,
   "parentColumnSpace": 8.6650390625,
   "parentId": "wg91e07364",

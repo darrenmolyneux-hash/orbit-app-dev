@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- qry_pre_inventory_insert — SIMPLIFIED\n-- Pre-inventory now only records the salvageable/scrap decision.\n\nINSERT INTO pre_inventory_assessments (\n  asset_id,\n  part_type_id,\n  is_salvageable,\n  assessed_by,\n  assessed_at\n) VALUES (\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  {{Number(appsmith.store.pi_part_type_id)}},\n  {{appsmith.store.pi_salvageable}},\n  '{{appsmith.user.name}}',\n  NOW()\n)\nON CONFLICT (asset_id, part_type_id)\nDO UPDATE SET\n  is_salvageable   = EXCLUDED.is_salvageable,\n  assessed_by      = EXCLUDED.assessed_by,\n  assessed_at      = EXCLUDED.assessed_at\nRETURNING id;",
+      "body": "-- qry_pre_inventory_insert — SIMPLIFIED\n-- Pre-inventory now only records the salvageable/scrap decision.\n\nINSERT INTO pre_inventory_assessments (\n  asset_id,\n  part_type_id,\n  is_salvageable,\n  assessed_by,\n  assessed_at\n) VALUES (\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  {{Number(appsmith.store.pi_part_type_id)}},\n  {{appsmith.store.pi_salvageable}},\n  '{{appsmith.store.userName}}',\n  NOW()\n)\nON CONFLICT (asset_id, part_type_id)\nDO UPDATE SET\n  is_salvageable   = EXCLUDED.is_salvageable,\n  assessed_by      = EXCLUDED.assessed_by,\n  assessed_at      = EXCLUDED.assessed_at\nRETURNING id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

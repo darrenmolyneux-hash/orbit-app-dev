@@ -13,7 +13,7 @@ INSERT INTO parts_orders (
   {{this.params.expectedDelivery ? "'" + this.params.expectedDelivery + "'" : 'NULL'}},
   '{{this.params.notes}}',
   {{Number(this.params.locationId)}},
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   NOW(), 'Pending'
 )
 RETURNING order_id;

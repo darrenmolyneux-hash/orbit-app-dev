@@ -19,7 +19,7 @@ INSERT INTO parts_audit_log (
   {{appsmith.store.pal_to_asset_id || 'NULL'}},
   {{appsmith.store.pal_from_location_id || 'NULL'}},
   {{appsmith.store.pal_to_location_id || 'NULL'}},
-  '{{appsmith.user.name}}',
+  '{{appsmith.store.userName}}',
   '{{appsmith.store.hp_condition_grade}}',
   '{{appsmith.store.hp_notes}}',
   '{{appsmith.store.hp_signature}}',

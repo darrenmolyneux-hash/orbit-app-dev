@@ -42,10 +42,10 @@ onSearchCollection: async () => {
   }
   },
   onGoCreateSalePallet: () => {
-    navigateTo('Waste_Detail_Page', { tab: 'sale_pallets' }, 'SAME_WINDOW');
+    navigateTo('Waste_Detail_Page', { tab1: 'sale_pallets' }, 'SAME_WINDOW');
   },
   onGoCreateWastePallet: () => {
-    navigateTo('Waste_Detail_Page', { tab: 'waste_pallets' }, 'SAME_WINDOW');
+    navigateTo('Waste_Detail_Page', { tab1: 'waste pallets' }, 'SAME_WINDOW');
   },
   onLoadMyActivity: async () => {
     let attempts = 0;

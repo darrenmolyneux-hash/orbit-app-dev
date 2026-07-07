@@ -2,7 +2,7 @@ INSERT INTO asset_status_history (asset_id, status_id, changed_by)
 SELECT
   {{Number(appsmith.URL.queryParams.asset_id)}},
   {{Number(appsmith.store.pending_status_id)}},
-  '{{appsmith.user.email}}'
+  '{{appsmith.store.userName}}'
 WHERE {{Number(appsmith.store.pending_status_id)}} > 0
 AND NOT EXISTS (
   SELECT 1 FROM asset_status_history

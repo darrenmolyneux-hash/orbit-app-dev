@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO parts_orders (\n  asset_id, part_type_id, part_description, supplier, order_ref,\n  unit_cost, quantity, expected_delivery, notes, location_id,\n  ordered_by, ordered_at, status\n) VALUES (\n  NULL,\n  {{Number(this.params.partTypeId)}},\n  '{{this.params.partDescription}}',\n  '{{this.params.supplier}}',\n  '{{this.params.orderRef}}',\n  {{Number(this.params.unitCost)}},\n  {{Number(this.params.quantity)}},\n  {{this.params.expectedDelivery ? \"'\" + this.params.expectedDelivery + \"'\" : 'NULL'}},\n  '{{this.params.notes}}',\n  {{Number(this.params.locationId)}},\n  '{{appsmith.user.name}}',\n  NOW(), 'Pending'\n)\nRETURNING order_id;",
+      "body": "INSERT INTO parts_orders (\n  asset_id, part_type_id, part_description, supplier, order_ref,\n  unit_cost, quantity, expected_delivery, notes, location_id,\n  ordered_by, ordered_at, status\n) VALUES (\n  NULL,\n  {{Number(this.params.partTypeId)}},\n  '{{this.params.partDescription}}',\n  '{{this.params.supplier}}',\n  '{{this.params.orderRef}}',\n  {{Number(this.params.unitCost)}},\n  {{Number(this.params.quantity)}},\n  {{this.params.expectedDelivery ? \"'\" + this.params.expectedDelivery + \"'\" : 'NULL'}},\n  '{{this.params.notes}}',\n  {{Number(this.params.locationId)}},\n  '{{appsmith.store.userName}}',\n  NOW(), 'Pending'\n)\nRETURNING order_id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

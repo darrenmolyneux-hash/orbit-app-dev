@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_1975f35f-b9e2-4046-950d-a2b51ce164f1",
+  "id": "Admin_Console_AssetListActions",
+  "unpublishedCollection": {
+    "name": "AssetListActions",
+    "pageId": "Admin_Console",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

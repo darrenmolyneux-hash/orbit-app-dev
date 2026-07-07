@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 37,
+  "bottomRow": 70,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  \"customer\": qry_get_customer.data[0],\n  \"sites\": qry_get_customer_sites.data,\n  \"collections\": qry_get_customer_collections.data\n}}}",
   "dynamicBindingPathList": [
@@ -21,7 +21,11 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSaveSite"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onGoBack"
@@ -34,13 +38,17 @@
     },
     {
       "key": "onViewCollection"
+    },
+    {
+      "key": "onSaveSite"
     }
   ],
   "events": [
     "onGoBack",
     "onSaveCustomer",
     "onViewSite",
-    "onViewCollection"
+    "onViewCollection",
+    "onSaveSite"
   ],
   "isCanvas": false,
   "isLoading": false,
@@ -57,9 +65,10 @@
   "needsErrorInfo": false,
   "onGoBack": "{{CustomerDetailActions.onGoBack();}}",
   "onSaveCustomer": "{{CustomerDetailActions.onSaveCustomer();}}",
+  "onSaveSite": "{{CustomerDetailActions.onSaveSite()}}",
   "onViewCollection": "{{CustomerDetailActions.onViewCollection();}}",
   "onViewSite": "{{CustomerDetailActions.onViewSite();}}",
-  "originalBottomRow": 53,
+  "originalBottomRow": 37,
   "originalTopRow": 0,
   "parentColumnSpace": 16.375,
   "parentId": "e5vhcser10",
