@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 69,
+  "bottomRow": 64,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n{\n  \"dial_ref\": qry_collection_get.data[0]?.dial,\n  \"dial_expiry\": qry_collection_get.data[0]?.dial_expiry,\n  \"msa_signed\": qry_collection_get.data[0]?.msa_signed,\n  \"current_status\": qry_collection_get.data[0]?.status,\n  \"summary\": appsmith.store.collection_summary || qry_collection_summary.data[0],\n  \"site_contact\": qry_collection_get.data[0]?.site_contact,\n  \"contact_number\": qry_collection_get.data[0]?.contact_number,\n  \"contact_email\": qry_collection_get.data[0]?.contact_email,\n  \"date_created\": qry_collection_get.data[0]?.created_at,\n  \"created_by\": qry_collection_get.data[0]?.created_by,\n  \"customer_name\": qry_collection_get.data[0]?.customer_name,\n  \"address1\": qry_collection_get.data[0]?.address1,\n  \"address2\": qry_collection_get.data[0]?.address2,\n  \"city\": qry_collection_get.data[0]?.city,\n  \"postcode\": qry_collection_get.data[0]?.postcode\n}\n}}",
   "dynamicBindingPathList": [

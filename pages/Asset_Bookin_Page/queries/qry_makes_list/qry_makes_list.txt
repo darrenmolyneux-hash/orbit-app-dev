@@ -1,4 +1,4 @@
 SELECT make_id, make_name
 FROM makes
-WHERE item_type_id = {{Number(Custom3.model.selectedItemTypeId)}}
+WHERE item_type_id = {{Number(this.params?.itemTypeId ?? Custom3.model.selectedItemTypeId)}}
 ORDER BY make_name;

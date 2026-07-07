@@ -1,0 +1,76 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 43,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n{\n  \"rows\": qry_unmatched_assets.data\n}\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    },
+    {
+      "key": "onUpdateModel"
+    }
+  ],
+  "events": [
+    "onResetClick",
+    "onUpdateModel"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "bsb3tkxnl2",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 35,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "onUpdateModel": "{{\n  (async function() {\n    const row = UnmatchedReviewWidget.model.selectedRow;\n    if (!row) return;\n    await storeValue('reviewContext', {\n      asset_id: row.asset_id,\n      make_id: row.make,\n      item_type_id: row.item_type\n    });\n    showModal('Modal1');\n  })()\n}}",
+  "originalBottomRow": 35,
+  "originalTopRow": 5,
+  "parentColumnSpace": 13.125,
+  "parentId": "r5741hn4ba",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "@import url(\"https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap\");\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: \"Figtree\", sans-serif;\n  background: transparent;\n}\n\n.umr-wrap {\n  padding: 0.5rem;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n\n.umr-title {\n  font-size: 18px;\n  font-weight: 700;\n  color: #05042E;\n}\n\n.umr-table-wrap {\n  max-height: 280px;\n  overflow-y: auto;\n  border: 0.5px solid rgba(0, 0, 0, 0.08);\n  border-radius: 8px;\n}\n\n.umr-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n\n.umr-table th {\n  position: sticky;\n  top: 0;\n  text-align: left;\n  font-size: 10px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: #fff;\n  background: #05042E;\n  padding: 8px 10px;\n}\n\n.umr-table td {\n  padding: 8px 10px;\n  font-weight: 600;\n  color: #05042E;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n  cursor: pointer;\n}\n\n.umr-table tr:hover td {\n  background: #f9f8f6;\n}\n\n.umr-table tr.selected td {\n  background: rgba(70, 155, 192, 0.1);\n}\n\n.umr-empty-cell {\n  color: #888780;\n}\n\n.umr-footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n  padding-top: 6px;\n  border-top: 0.5px solid rgba(0, 0, 0, 0.08);\n}\n\n.umr-selected {\n  font-size: 13px;\n  font-weight: 700;\n  color: #05042E;\n}\n\n.umr-btn {\n  font-family: \"Figtree\", sans-serif;\n  font-weight: 700;\n  font-size: 13px;\n  color: #05042E;\n  background: #A3E851;\n  border: none;\n  border-radius: 6px;\n  padding: 9px 18px;\n  cursor: pointer;\n}\n\n.umr-btn:hover {\n  background: #93d846;\n}\n\n.umr-btn:disabled {\n  background: #E0DFE1;\n  color: #aaa;\n  cursor: not-allowed;\n}",
+    "html": "<div class=\"umr-wrap\">\n  <div class=\"umr-title\">Unmatched Model Review</div>\n  <div class=\"umr-table-wrap\">\n    <table class=\"umr-table\">\n      <thead>\n        <tr>\n          <th>Asset Ref</th>\n          <th>Serial</th>\n          <th>Item Type</th>\n          <th>Make</th>\n          <th>Model</th>\n        </tr>\n      </thead>\n      <tbody id=\"umr-body\"></tbody>\n    </table>\n  </div>\n  <div class=\"umr-footer\">\n    <div class=\"umr-selected\" id=\"umr-selected\">No row selected</div>\n    <button class=\"umr-btn\" id=\"umr-btn\" disabled onclick=\"window.umrUpdateModel()\">Update Model</button>\n  </div>\n</div>",
+    "js": "function escHtml(str) {\n  return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\nvar selectedRow = null;\nvar currentRows = [];\nfunction render(model) {\n  currentRows = model.rows || [];\n  var tbody = document.getElementById('umr-body');\n  if (!currentRows.length) {\n    tbody.innerHTML = '<tr><td colspan=\"5\" class=\"umr-empty-cell\" style=\"text-align:center;padding:1.5rem;\">No unmatched rows</td></tr>';\n    updateFooter();\n    return;\n  }\n  tbody.innerHTML = currentRows.map(function (r) {\n    var isSelected = selectedRow && selectedRow.asset_id === r.asset_id;\n    return '<tr class=\"' + (isSelected ? 'selected' : '') + '\" data-asset-id=\"' + r.asset_id + '\">' + '<td>' + escHtml(r.asset_ref) + '</td>' + '<td>' + escHtml(r.serial_number || '—') + '</td>' + '<td>' + escHtml(r.item_type_name || '—') + '</td>' + '<td class=\"' + (r.make_name ? '' : 'umr-empty-cell') + '\">' + escHtml(r.make_name || '—') + '</td>' + '<td class=\"' + (r.model_name ? '' : 'umr-empty-cell') + '\">' + escHtml(r.model_name || '—') + '</td>' + '</tr>';\n  }).join('');\n  document.querySelectorAll('#umr-body tr[data-asset-id]').forEach(function (tr) {\n    tr.addEventListener('click', function () {\n      var id = Number(this.dataset.assetId);\n      selectedRow = currentRows.find(function (r) {\n        return r.asset_id === id;\n      });\n      render({\n        rows: currentRows\n      });\n    });\n  });\n  updateFooter();\n}\nfunction updateFooter() {\n  var label = document.getElementById('umr-selected');\n  var btn = document.getElementById('umr-btn');\n  if (selectedRow) {\n    label.textContent = selectedRow.asset_ref;\n    btn.disabled = false;\n  } else {\n    label.textContent = 'No row selected';\n    btn.disabled = true;\n  }\n}\nwindow.umrUpdateModel = function () {\n  if (!selectedRow) return;\n  appsmith.updateModel({\n    selectedRow: selectedRow\n  });\n  appsmith.triggerEvent('onUpdateModel');\n};\nappsmith.onReady(function () {\n  render(appsmith.model);\n});\nappsmith.onModelChange(function (m) {\n  render(m);\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 5,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}\nbody{font-family:'Figtree',sans-serif;background:transparent;}\n.umr-wrap{padding:0.5rem;display:flex;flex-direction:column;gap:14px;}\n.umr-title{font-size:18px;font-weight:700;color:#05042E;}\n.umr-table-wrap{max-height:280px;overflow-y:auto;border:0.5px solid rgba(0,0,0,0.08);border-radius:8px;}\n.umr-table{width:100%;border-collapse:collapse;font-size:13px;}\n.umr-table th{position:sticky;top:0;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#fff;background:#05042E;padding:8px 10px;}\n.umr-table td{padding:8px 10px;font-weight:600;color:#05042E;border-bottom:1px solid rgba(0,0,0,0.06);cursor:pointer;}\n.umr-table tr:hover td{background:#f9f8f6;}\n.umr-table tr.selected td{background:rgba(70,155,192,0.1);}\n.umr-empty-cell{color:#888780;}\n.umr-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:6px;border-top:0.5px solid rgba(0,0,0,0.08);}\n.umr-selected{font-size:13px;font-weight:700;color:#05042E;}\n.umr-btn{font-family:'Figtree',sans-serif;font-weight:700;font-size:13px;color:#05042E;background:#A3E851;border:none;border-radius:6px;padding:9px 18px;cursor:pointer;}\n.umr-btn:hover{background:#93d846;}\n.umr-btn:disabled{background:#E0DFE1;color:#aaa;cursor:not-allowed;}",
+    "html": "<div class=\"umr-wrap\">\n  <div class=\"umr-title\">Unmatched Model Review</div>\n  <div class=\"umr-table-wrap\">\n    <table class=\"umr-table\">\n      <thead>\n        <tr>\n          <th>Asset Ref</th>\n          <th>Serial</th>\n          <th>Item Type</th>\n          <th>Make</th>\n          <th>Model</th>\n        </tr>\n      </thead>\n      <tbody id=\"umr-body\"></tbody>\n    </table>\n  </div>\n  <div class=\"umr-footer\">\n    <div class=\"umr-selected\" id=\"umr-selected\">No row selected</div>\n    <button class=\"umr-btn\" id=\"umr-btn\" disabled onclick=\"window.umrUpdateModel()\">Update Model</button>\n  </div>\n</div>",
+    "js": "function escHtml(str) {\n  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\n}\n\nvar selectedRow = null;\nvar currentRows = [];\n\nfunction render(model) {\n  currentRows = model.rows || [];\n  var tbody = document.getElementById('umr-body');\n\n  if (!currentRows.length) {\n    tbody.innerHTML = '<tr><td colspan=\"5\" class=\"umr-empty-cell\" style=\"text-align:center;padding:1.5rem;\">No unmatched rows</td></tr>';\n    updateFooter();\n    return;\n  }\n\n  tbody.innerHTML = currentRows.map(function (r) {\n    var isSelected = selectedRow && selectedRow.asset_id === r.asset_id;\n    return '<tr class=\"' + (isSelected ? 'selected' : '') + '\" data-asset-id=\"' + r.asset_id + '\">' +\n      '<td>' + escHtml(r.asset_ref) + '</td>' +\n      '<td>' + escHtml(r.serial_number || '—') + '</td>' +\n      '<td>' + escHtml(r.item_type_name || '—') + '</td>' +\n      '<td class=\"' + (r.make_name ? '' : 'umr-empty-cell') + '\">' + escHtml(r.make_name || '—') + '</td>' +\n      '<td class=\"' + (r.model_name ? '' : 'umr-empty-cell') + '\">' + escHtml(r.model_name || '—') + '</td>' +\n      '</tr>';\n  }).join('');\n\n  document.querySelectorAll('#umr-body tr[data-asset-id]').forEach(function (tr) {\n    tr.addEventListener('click', function () {\n      var id = Number(this.dataset.assetId);\n      selectedRow = currentRows.find(function (r) { return r.asset_id === id; });\n      render({ rows: currentRows });\n    });\n  });\n\n  updateFooter();\n}\n\nfunction updateFooter() {\n  var label = document.getElementById('umr-selected');\n  var btn = document.getElementById('umr-btn');\n  if (selectedRow) {\n    label.textContent = selectedRow.asset_ref;\n    btn.disabled = false;\n  } else {\n    label.textContent = 'No row selected';\n    btn.disabled = true;\n  }\n}\n\nwindow.umrUpdateModel = function () {\n  if (!selectedRow) return;\n  appsmith.updateModel({ selectedRow: selectedRow });\n  appsmith.triggerEvent('onUpdateModel');\n};\n\nappsmith.onReady(function () {\n  render(appsmith.model);\n});\nappsmith.onModelChange(function (m) {\n  render(m);\n});"
+  },
+  "version": 1,
+  "widgetId": "2b2e0z2qjn",
+  "widgetName": "UnmatchedReviewWidget"
+}

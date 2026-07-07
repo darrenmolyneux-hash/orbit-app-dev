@@ -1,0 +1,82 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 30,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{\n  \"tips\": [\n    \"Pass data to this widget in the default model field\",\n    \"Access data in the javascript file using the appsmith.model variable\",\n    \"Create events in the widget and trigger them in the javascript file using appsmith.triggerEvent('eventName')\",\n    \"Access data in CSS as var(--appsmith-model-{property-name})\"\n  ]\n}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onConfirm"
+    },
+    {
+      "key": "onClose"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    },
+    {
+      "key": "onConfirm"
+    },
+    {
+      "key": "onClose"
+    }
+  ],
+  "events": [
+    "onResetClick",
+    "onConfirm",
+    "onClose"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "bsb3tkxnl2",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 30,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClose": "{{closeModal('Modal1')}}",
+  "onConfirm": "{{\n  (async function() {\n    const name = ModelModalWidget.model.modelName;\n    const weight = ModelModalWidget.model.modelWeight;\n    if (!name || !weight) {\n      showAlert('Please enter both model name and weight', 'warning');\n      return;\n    }\n    try {\n      await storeValue('newModelNameInput', name);\n      await storeValue('newModelWeightInput', weight);\n      await qry_model_insert.run();\n      const newModelId = qry_model_insert.data[0]?.model_id;\n      const newModelName = qry_model_insert.data[0]?.model_name;\n      await qry_models_list.run();\n      await new Promise(resolve => setTimeout(resolve, 150));\n      await storeValue('autoSelectModelId', newModelId);\n      await storeValue('autoSelectModelName', newModelName);\n      closeModal('Modal1');\n      showAlert('Model added successfully', 'success');\n      if (appsmith.store.reviewContext) {\n        await qry_asset_review_update.run({\n          assetId: appsmith.store.reviewContext.asset_id,\n          itemTypeId: appsmith.store.reviewContext.item_type_id,\n          makeId: appsmith.store.reviewContext.make_id,\n          modelId: newModelId\n        });\n        await storeValue('reviewContext', null);\n        await qry_unmatched_assets.run();\n        await qry_booked_assets.run();\n      }\n    } catch (error) {\n      showAlert('Failed to add model — ' + (error?.message || JSON.stringify(error)), 'error');\n    }\n  })()\n}}",
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 6.9375,
+  "parentId": "0wxo7w24jv",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "srcDoc": {
+    "css": "@import url(\"https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap\");\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: \"Figtree\", sans-serif;\n  background: transparent;\n}\n\n.mm-wrap {\n  padding: 1.5rem;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n\n.mm-title {\n  font-size: 18px;\n  font-weight: 700;\n  color: #05042E;\n}\n\n.mm-field {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n}\n\n.mm-field label {\n  font-size: 11px;\n  font-weight: 700;\n  color: #888780;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.mm-field input {\n  font-family: \"Figtree\", sans-serif;\n  font-size: 14px;\n  font-weight: 600;\n  color: #05042E;\n  border: 0.5px solid rgba(0, 0, 0, 0.15);\n  border-radius: 6px;\n  padding: 9px 12px;\n  outline: none;\n}\n\n.mm-field input:focus {\n  border-color: #469BC0;\n}\n\n.mm-hint {\n  font-size: 12px;\n  font-weight: 600;\n  color: #DC2626;\n}\n\n.mm-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n  margin-top: 6px;\n}\n\n.mm-btn-close {\n  font-family: \"Figtree\", sans-serif;\n  font-weight: 700;\n  font-size: 13px;\n  color: #469BC0;\n  background: #fff;\n  border: 1px solid #469BC0;\n  border-radius: 6px;\n  padding: 9px 18px;\n  cursor: pointer;\n}\n\n.mm-btn-confirm {\n  font-family: \"Figtree\", sans-serif;\n  font-weight: 700;\n  font-size: 13px;\n  color: #05042E;\n  background: #A3E851;\n  border: none;\n  border-radius: 6px;\n  padding: 9px 18px;\n  cursor: pointer;\n}\n\n.mm-btn-confirm:hover {\n  background: #93d846;\n}",
+    "html": "<div class=\"mm-wrap\">\n  <div class=\"mm-title\">Add New Model</div>\n  <div class=\"mm-field\">\n    <label>Model name</label>\n    <input type=\"text\" id=\"mm-name\" placeholder=\"e.g. XPS 13 Plus 9320\"/>\n  </div>\n  <div class=\"mm-field\">\n    <label>Weight in kg</label>\n    <input type=\"number\" id=\"mm-weight\" step=\"0.01\" min=\"0\" placeholder=\"e.g. 1.2\"/>\n  </div>\n  <div class=\"mm-hint\">Asset weight must be captured when adding new asset</div>\n  <div class=\"mm-actions\">\n    <button class=\"mm-btn-close\" onclick=\"window.mmClose()\">Close</button>\n    <button class=\"mm-btn-confirm\" onclick=\"window.mmConfirm()\">Confirm</button>\n  </div>\n</div>",
+    "js": "window.mmConfirm = function () {\n  const name = document.getElementById('mm-name').value.trim();\n  const weight = document.getElementById('mm-weight').value;\n  appsmith.updateModel({\n    modelName: name,\n    modelWeight: weight\n  });\n  appsmith.triggerEvent('onConfirm');\n};\nwindow.mmClose = function () {\n  appsmith.triggerEvent('onClose');\n};\nfunction clearFields() {\n  document.getElementById('mm-name').value = '';\n  document.getElementById('mm-weight').value = '';\n}\nappsmith.onReady(function () {\n  clearFields();\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}\nbody{font-family:'Figtree',sans-serif;background:transparent;}\n.mm-wrap{padding:1.5rem;display:flex;flex-direction:column;gap:14px;}\n.mm-title{font-size:18px;font-weight:700;color:#05042E;}\n.mm-field{display:flex;flex-direction:column;gap:5px;}\n.mm-field label{font-size:11px;font-weight:700;color:#888780;text-transform:uppercase;letter-spacing:0.05em;}\n.mm-field input{font-family:'Figtree',sans-serif;font-size:14px;font-weight:600;color:#05042E;border:0.5px solid rgba(0,0,0,0.15);border-radius:6px;padding:9px 12px;outline:none;}\n.mm-field input:focus{border-color:#469BC0;}\n.mm-hint{font-size:12px;font-weight:600;color:#DC2626;}\n.mm-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:6px;}\n.mm-btn-close{font-family:'Figtree',sans-serif;font-weight:700;font-size:13px;color:#469BC0;background:#fff;border:1px solid #469BC0;border-radius:6px;padding:9px 18px;cursor:pointer;}\n.mm-btn-confirm{font-family:'Figtree',sans-serif;font-weight:700;font-size:13px;color:#05042E;background:#A3E851;border:none;border-radius:6px;padding:9px 18px;cursor:pointer;}\n.mm-btn-confirm:hover{background:#93d846;}",
+    "html": "<div class=\"mm-wrap\">\n  <div class=\"mm-title\">Add New Model</div>\n  <div class=\"mm-field\">\n    <label>Model name</label>\n    <input type=\"text\" id=\"mm-name\" placeholder=\"e.g. XPS 13 Plus 9320\"/>\n  </div>\n  <div class=\"mm-field\">\n    <label>Weight in kg</label>\n    <input type=\"number\" id=\"mm-weight\" step=\"0.01\" min=\"0\" placeholder=\"e.g. 1.2\"/>\n  </div>\n  <div class=\"mm-hint\">Asset weight must be captured when adding new asset</div>\n  <div class=\"mm-actions\">\n    <button class=\"mm-btn-close\" onclick=\"window.mmClose()\">Close</button>\n    <button class=\"mm-btn-confirm\" onclick=\"window.mmConfirm()\">Confirm</button>\n  </div>\n</div>",
+    "js": "window.mmConfirm = function () {\n  const name = document.getElementById('mm-name').value.trim();\n  const weight = document.getElementById('mm-weight').value;\n  appsmith.updateModel({ modelName: name, modelWeight: weight });\n  appsmith.triggerEvent('onConfirm');\n};\n\nwindow.mmClose = function () {\n  appsmith.triggerEvent('onClose');\n};\n\nfunction clearFields() {\n  document.getElementById('mm-name').value = '';\n  document.getElementById('mm-weight').value = '';\n}\n\nappsmith.onReady(function () {\n  clearFields();\n});"
+  },
+  "version": 1,
+  "widgetId": "twuk8ansng",
+  "widgetName": "ModelModalWidget"
+}

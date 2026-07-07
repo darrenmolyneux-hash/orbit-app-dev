@@ -11,6 +11,5 @@ LEFT JOIN customers cu
     ON c.customer_id = cu.customer_id
 LEFT JOIN assets a
     ON a.collection_id = c.collection_id
-WHERE c.status NOT IN ('Complete', 'Cancelled')
 GROUP BY c.collection_id, c.collection_date, c.customer_id, cu.customer_name, c.address1, c.status
 ORDER BY c.created_at DESC;

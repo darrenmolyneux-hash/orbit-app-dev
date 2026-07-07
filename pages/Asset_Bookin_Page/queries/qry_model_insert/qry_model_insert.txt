@@ -1,7 +1,7 @@
 INSERT INTO models (model_name, make_id, weight)
 VALUES (
-  '{{FormatUtils.titleCase(inp_new_model_name.text)}}',
+  '{{FormatUtils.titleCase(appsmith.store.newModelNameInput)}}',
   {{Number(appsmith.store.reviewContext?.make_id || Custom3.model.selectedMakeId)}},
-  {{Number(inp_new_model_weight.text)}}
+  {{Number(appsmith.store.newModelWeightInput)}}
 )
 RETURNING model_id, model_name, weight;

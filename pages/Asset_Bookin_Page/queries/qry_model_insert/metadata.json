@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO models (model_name, make_id, weight)\nVALUES (\n  '{{FormatUtils.titleCase(inp_new_model_name.text)}}',\n  {{Number(appsmith.store.reviewContext?.make_id || Custom3.model.selectedMakeId)}},\n  {{Number(inp_new_model_weight.text)}}\n)\nRETURNING model_id, model_name, weight;",
+      "body": "INSERT INTO models (model_name, make_id, weight)\nVALUES (\n  '{{FormatUtils.titleCase(appsmith.store.newModelNameInput)}}',\n  {{Number(appsmith.store.reviewContext?.make_id || Custom3.model.selectedMakeId)}},\n  {{Number(appsmith.store.newModelWeightInput)}}\n)\nRETURNING model_id, model_name, weight;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

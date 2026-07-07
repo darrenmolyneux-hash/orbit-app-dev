@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    c.collection_id,\n    c.collection_date,\n    c.customer_id,\n    cu.customer_name,\n    c.address1,\n    c.status,\n    COUNT(a.asset_id) AS asset_count\nFROM collections c\nLEFT JOIN customers cu\n    ON c.customer_id = cu.customer_id\nLEFT JOIN assets a\n    ON a.collection_id = c.collection_id\nWHERE c.status NOT IN ('Complete', 'Cancelled')\nGROUP BY c.collection_id, c.collection_date, c.customer_id, cu.customer_name, c.address1, c.status\nORDER BY c.created_at DESC;",
+      "body": "SELECT \n    c.collection_id,\n    c.collection_date,\n    c.customer_id,\n    cu.customer_name,\n    c.address1,\n    c.status,\n    COUNT(a.asset_id) AS asset_count\nFROM collections c\nLEFT JOIN customers cu\n    ON c.customer_id = cu.customer_id\nLEFT JOIN assets a\n    ON a.collection_id = c.collection_id\nGROUP BY c.collection_id, c.collection_date, c.customer_id, cu.customer_name, c.address1, c.status\nORDER BY c.created_at DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
