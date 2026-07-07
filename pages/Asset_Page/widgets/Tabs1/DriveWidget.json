@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 25,
+  "bottomRow": 17,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n{\n  \"asset\": qry_GetAssetById.data?.[0] || {},\n  \"shredRecords\": qry_get_shred_records.data || [],\n  \"openPallets\": qry_get_open_hdd_pallets.data || [],\n  \"drives\": qry_get_drives.data || []\n}\n}}",
   "dynamicBindingPathList": [
