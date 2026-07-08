@@ -1,0 +1,5 @@
+INSERT INTO asset_status_history (asset_id, status_id, changed_by)
+SELECT
+  {{Number(this.params.assetId)}},
+  (SELECT status_id FROM status_types WHERE status_name = 'Received'),
+  '{{appsmith.user.email}}';

@@ -55,6 +55,9 @@ export default {
           oldValue: '—',
           newValue: 'Received'
         });
+        await qry_insert_received_status_his.run({
+          assetId: newAssetId
+        });
       }
       bookedRows.push({
         serial: row.serial,

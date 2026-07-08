@@ -25,6 +25,9 @@ export default {
           oldValue: '—',
           newValue: 'Received'
         });
+        await qry_insert_received_status_his.run({
+          assetId: insertedRows[j].asset_id
+        });
       }
       await qry_booked_assets.run();
       return true;
