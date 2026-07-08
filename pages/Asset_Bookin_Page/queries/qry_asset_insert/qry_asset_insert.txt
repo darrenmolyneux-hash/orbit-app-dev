@@ -9,7 +9,8 @@ INSERT INTO assets (
   data_bearing,
   added_by,
   date_added,
-  status_id
+  status_id,
+  weight_kg
 )
 SELECT
   {{Number(appsmith.URL.queryParams.collectionId)}},
@@ -22,9 +23,10 @@ SELECT
   serial.value,
   ref.value,
   {{appsmith.store.pendingDataBearing === true}},
-  '{{appsmith.store.userName}}',
+  '{{appsmith.user.name}}',
   NOW(),
-  (SELECT status_id FROM status_types WHERE status_name = 'Received')
+  (SELECT status_id FROM status_types WHERE status_name = 'Received'),
+  (SELECT weight FROM models WHERE model_id = {{Number(appsmith.store.pendingModel)}})
 FROM jsonb_array_elements_text('{{appsmith.store.pendingSerials || "[]"}}'::jsonb) WITH ORDINALITY AS serial(value, idx)
 JOIN jsonb_array_elements_text('{{appsmith.store.pendingAssetRefs || "[]"}}'::jsonb) WITH ORDINALITY AS ref(value, idx2)
   ON serial.idx = ref.idx2

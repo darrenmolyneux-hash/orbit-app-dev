@@ -96,7 +96,7 @@
   "onNewModel": "{{showModal('Modal1')}}",
   "onOpenBulkUpload": "{{showModal('Modal_BulkUpload')}}",
   "onOpenUnmatchedReview": "{{qry_unmatched_assets.run().then(() => showModal('ModalUnmatchedRows'))}}",
-  "originalBottomRow": 77,
+  "originalBottomRow": 76,
   "originalTopRow": 23,
   "parentColumnSpace": 14.2685546875,
   "parentId": "0",

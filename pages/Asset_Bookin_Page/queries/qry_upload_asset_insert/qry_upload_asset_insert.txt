@@ -10,7 +10,8 @@ INSERT INTO assets (
   added_by,
   date_added,
   status_id,
-  needs_review
+  needs_review,
+  weight_kg
 )
 SELECT
   {{Number(appsmith.URL.queryParams.collectionId)}},
@@ -26,5 +27,6 @@ SELECT
   '{{appsmith.user.name}}',
   NOW(),
   (SELECT status_id FROM status_types WHERE status_name = 'Received'),
-  {{this.params.needsReview === true}}
+  {{this.params.needsReview === true}},
+  (SELECT weight FROM models WHERE model_id = {{this.params.modelId === null ? null : Number(this.params.modelId)}})
 RETURNING asset_id;
