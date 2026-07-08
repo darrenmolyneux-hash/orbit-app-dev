@@ -8,14 +8,12 @@ export default {
     for (var i = 0; i < rows.length; i++) {
       var row = rows[i];
       var needsReview = false;
-
       const itemType = itemTypes.find(it =>
         it.item_type_name.toLowerCase() === row.item_type.toLowerCase()
       );
       var itemTypeId = itemType ? itemType.item_type_id : null;
       var isDataBearing = itemType ? itemType.is_data_bearing : false;
       if (!itemType) needsReview = true;
-
       var makeId = null;
       if (itemType) {
         await qry_makes_list.run({ itemTypeId: itemType.item_type_id });
@@ -27,7 +25,6 @@ export default {
       } else {
         needsReview = true;
       }
-
       var modelId = null;
       if (makeId) {
         await qry_models_list.run({ makeId: makeId });
@@ -39,10 +36,9 @@ export default {
       } else {
         needsReview = true;
       }
-
       await qry_next_asset_ref.run();
       var ref = qry_next_asset_ref.data[0].asset_ref;
-      await qry_upload_asset_insert.run({
+      const insertResult = await qry_upload_asset_insert.run({
         itemTypeId: itemTypeId,
         makeId: makeId,
         modelId: modelId,
@@ -51,6 +47,15 @@ export default {
         dataBearing: isDataBearing,
         needsReview: needsReview
       });
+      const newAssetId = insertResult[0]?.asset_id;
+      if (newAssetId) {
+        await InsertAssetAuditLog.run({
+          assetId: newAssetId,
+          fieldName: 'status',
+          oldValue: '—',
+          newValue: 'Received'
+        });
+      }
       bookedRows.push({
         serial: row.serial,
         asset_ref: ref,

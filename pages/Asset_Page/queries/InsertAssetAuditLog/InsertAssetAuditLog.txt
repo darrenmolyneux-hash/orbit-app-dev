@@ -2,9 +2,9 @@ INSERT INTO asset_audit_log
 (asset_id, field_name, old_value, new_value, changed_by)
 VALUES
 (
-  {{Number(qry_GetAssetById.data[0]?.asset_id)}},
-  'status',
-  '{{AssetState.oldStatus}}',
-  '{{Custom5.model.selectedStatusId}}',
-  '{{appsmith.store.userName}} '
+  {{Number(this.params.assetId ?? appsmith.URL.queryParams.asset_id)}},
+  '{{this.params.fieldName}}',
+  '{{this.params.oldValue}}',
+  '{{this.params.newValue}}',
+  '{{appsmith.user.email}}'
 );

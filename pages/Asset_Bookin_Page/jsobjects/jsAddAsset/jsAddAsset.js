@@ -17,7 +17,15 @@ export default {
       }
       await storeValue('pendingSerials', JSON.stringify(serials));
       await storeValue('pendingAssetRefs', JSON.stringify(refs));
-      await qry_asset_insert.run();
+      const insertedRows = await qry_asset_insert.run();
+      for (var j = 0; j < insertedRows.length; j++) {
+        await InsertAssetAuditLog.run({
+          assetId: insertedRows[j].asset_id,
+          fieldName: 'status',
+          oldValue: '—',
+          newValue: 'Received'
+        });
+      }
       await qry_booked_assets.run();
       return true;
     } catch (error) {
@@ -33,9 +41,16 @@ export default {
   onSaveAssetSerial: async () => {
     try {
       const row = tbl_booked_assets.updatedRow;
+      const previousSerial = row.serial_number;
       await qry_asset_serial_update.run({
         asset_id: row.asset_id,
         serial_number: row.serial_number
+      });
+      await InsertAssetAuditLog.run({
+        assetId: row.asset_id,
+        fieldName: 'Serial Number',
+        oldValue: previousSerial ?? '—',
+        newValue: row.serial_number
       });
       await qry_booked_assets.run();
       showAlert('Serial number updated', 'success');
