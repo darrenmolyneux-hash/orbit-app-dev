@@ -29,14 +29,15 @@ export default {
       await qry_booked_assets.run();
       return true;
     } catch (error) {
-      const msg = error?.message || '';
-      if (msg.includes('idx_assets_serial_unique') || msg.includes('duplicate key')) {
-        showAlert('An asset with this serial number already exists — please check and try again.', 'error');
-      } else {
-        showAlert('Failed to add asset — ' + (msg || 'unknown error'), 'error');
-      }
-      return false;
-    }
+  const msg = error?.message || '';
+  if (msg.includes('idx_assets_serial_unique') || msg.includes('duplicate key')) {
+    showAlert('An asset with this serial number already exists — please check and try again.', 'error');
+  } else {
+    showAlert('Failed to add asset — ' + (msg || 'unknown error'), 'error');
+  }
+  await qry_booked_assets.run();
+  return false;
+}
   },
   onSaveAssetSerial: async () => {
     try {

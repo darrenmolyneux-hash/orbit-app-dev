@@ -1,0 +1,10 @@
+INSERT INTO asset_audit_log
+(asset_id, field_name, old_value, new_value, changed_by)
+VALUES
+(
+  {{Number(this.params.assetId ?? appsmith.URL.queryParams.asset_id)}},
+  '{{this.params.fieldName}}',
+  '{{this.params.oldValue}}',
+  '{{this.params.newValue}}',
+  '{{appsmith.user.email}}'
+);

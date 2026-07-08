@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 76,
+  "bottomRow": 77,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{\n{\n  \"itemTypes\": qry_item_types_list.data,\n  \"makes\": qry_makes_list.data,\n  \"models\": qry_models_list.data,\n  \"isDataBearing\": false,\n  \"asset\": {},\n  \"matchedCount\": qry_booked_assets.data.filter(r => !r.needs_review).length,\n  \"unmatchedCount\": qry_booked_assets.data.filter(r => r.needs_review).length,\n  \"autoSelectModelId\": appsmith.store.autoSelectModelId,\n  \"autoSelectModelName\": appsmith.store.autoSelectModelName,\n  \"bookedAssetsRaw\": qry_booked_assets.data,\n  \"collectionId\": appsmith.URL.queryParams.collectionId\n}\n}}",
   "dynamicBindingPathList": [
@@ -96,7 +96,7 @@
   "onNewModel": "{{showModal('Modal1')}}",
   "onOpenBulkUpload": "{{showModal('Modal_BulkUpload')}}",
   "onOpenUnmatchedReview": "{{qry_unmatched_assets.run().then(() => showModal('ModalUnmatchedRows'))}}",
-  "originalBottomRow": 76,
+  "originalBottomRow": 77,
   "originalTopRow": 23,
   "parentColumnSpace": 14.2685546875,
   "parentId": "0",
