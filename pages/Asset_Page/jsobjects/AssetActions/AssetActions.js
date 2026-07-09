@@ -1,14 +1,15 @@
 export default {
   updateStatus: async () => {
     const newStatusId = Custom5.model.selectedStatusId;
+    const previousStatus = qry_GetAssetById.data[0]?.status_id;
     storeValue('pending_status_id', newStatusId);
     if (newStatusId === 15) { showModal('Harvest_Warning'); return; }
     if (newStatusId === 13) { showModal('Repair_Warning'); return; }
     await UpdateAssetStatus.run();
     await InsertAssetAuditLog.run({
       fieldName: 'status',
-      oldValue: AssetState.oldStatus,
-      newValue: Custom5.model.selectedStatusId
+      oldValue: previousStatus ?? '—',
+      newValue: newStatusId
     });
     await qry_insert_status_history.run();
     await qry_GetAssetById.run();
@@ -17,10 +18,11 @@ export default {
   cancelHarvest: () => { storeValue('pending_status_id', null); qry_GetAssetById.run(); },
   confirmHarvest: async () => {
     try {
+      const previousStatus = qry_GetAssetById.data[0]?.status_id;
       await UpdateAssetStatus.run();
       await InsertAssetAuditLog.run({
         fieldName: 'status',
-        oldValue: AssetState.oldStatus,
+        oldValue: previousStatus ?? '—',
         newValue: Custom5.model.selectedStatusId
       });
       await qry_insert_status_history.run();
@@ -34,10 +36,11 @@ export default {
   cancelRepair: () => { storeValue('pending_status_id', null); qry_GetAssetById.run(); },
   confirmRepair: async () => {
     try {
+      const previousStatus = qry_GetAssetById.data[0]?.status_id;
       await UpdateAssetStatus.run();
       await InsertAssetAuditLog.run({
         fieldName: 'status',
-        oldValue: AssetState.oldStatus,
+        oldValue: previousStatus ?? '—',
         newValue: Custom5.model.selectedStatusId
       });
       await qry_insert_status_history.run();

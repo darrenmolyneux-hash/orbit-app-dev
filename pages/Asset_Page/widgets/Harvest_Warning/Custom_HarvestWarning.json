@@ -59,7 +59,7 @@
   "mobileTopRow": 33,
   "needsErrorInfo": false,
   "onCancel": "{{closeModal('Harvest_Warning')}}",
-  "onConfirm": "{{AssetActions.confirmHarvest()}}",
+  "onConfirm": "{{AssetActions.confirmHarvest();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "parentColumnSpace": 6.9375,
   "parentId": "2rzqsz0lwr",

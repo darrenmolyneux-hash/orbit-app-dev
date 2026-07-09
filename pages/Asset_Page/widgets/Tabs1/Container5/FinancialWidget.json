@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 47,
+  "bottomRow": 48,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n{\n  \"fees\": GetFeesForSaleItem.data,\n  \"carriage\": qry_GetAssetById.data[0] ? Number(qry_GetAssetById.data[0].carriage_cost_allocated || 0) : 0,\n  \"sell_price\": qry_GetAssetById.data[0] ? Number(qry_GetAssetById.data[0].sell_price || 0) : 0,\n  \"original_cost\": qry_GetAssetById.data[0] ? Number(qry_GetAssetById.data[0].original_cost || 0) : 0,\n  \"parts_cost\": qry_get_asset_parts_cost.data[0] ? Number(qry_get_asset_parts_cost.data[0].total_parts_cost || 0) : 0,\n  \"erasure_fee\": qry_get_asset_fees.data[0] ? Number(qry_get_asset_fees.data[0].total_fees || 0) : 0,\n  \"erasure_status\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].erasure_status : \"\",\n  \"status_name\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].status_name : \"\",\n  \"sale_id\": qry_GetAssetById.data[0] ? qry_GetAssetById.data[0].sale_id : null\n}\n}}",
   "dynamicBindingPathList": [
@@ -54,7 +54,7 @@
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "onSaveCost": "{{AssetActions.saveCost()}}",
   "onSaveSell": "{{AssetActions.saveSellPrice()}}",
-  "originalBottomRow": 47,
+  "originalBottomRow": 48,
   "originalTopRow": 0,
   "parentColumnSpace": 6.33984375,
   "parentId": "q34ac66bp9",
