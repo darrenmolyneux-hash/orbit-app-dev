@@ -1,0 +1,4 @@
+UPDATE pre_inventory_assessments
+SET harvested_part_id = NULL
+WHERE asset_id = {{Number(this.params.assetId)}}
+  AND harvested_part_id = {{Number(this.params.harvestedPartId)}};

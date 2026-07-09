@@ -1,0 +1,3 @@
+UPDATE harvested_parts
+SET part_cost = {{Number(this.params.newCost)}}
+WHERE id = {{Number(this.params.harvestedPartId)}};

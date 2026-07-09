@@ -1,0 +1,6 @@
+UPDATE harvested_parts
+SET
+  status = 'in_stock',
+  installed_in_asset_id = NULL,
+  date_added_to_stock = NOW()
+WHERE id = {{Number(this.params.harvestedPartId)}};

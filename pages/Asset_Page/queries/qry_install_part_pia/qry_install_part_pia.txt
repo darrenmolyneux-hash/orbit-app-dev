@@ -8,7 +8,7 @@ INSERT INTO pre_inventory_assessments (
   notes
 )
 SELECT
-  {{Number(appsmith.URL.queryParams.asset_id)}},
+  {{Number(this.params.assetId ?? appsmith.URL.queryParams.asset_id)}},
   hp.part_type_id,
   hp.is_salvageable,
   {{appsmith.store.userName}},

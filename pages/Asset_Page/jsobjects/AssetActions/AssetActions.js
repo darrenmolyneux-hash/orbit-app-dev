@@ -72,6 +72,19 @@ export default {
     }
     showAlert('Cost saved ✓', 'success');
   },
+	saveHarvestedPartCost: async (harvestedPartId, newCost) => {
+  try {
+    await qry_update_harvested_part_cost.run({
+      harvestedPartId: harvestedPartId,
+      newCost: newCost
+    });
+    await qry_get_asset_parts_combined.run();
+    await qry_get_asset_parts_cost.run();
+    showAlert('Cost updated ✓', 'success');
+  } catch (err) {
+    showAlert('Failed to update cost — ' + err.message, 'error');
+  }
+},
   saveSellPrice: async () => {
     const m = FinancialWidget.model;
     const previousPrice = qry_GetAssetById.data[0]?.sell_price;
@@ -124,24 +137,28 @@ export default {
     const row = appsmith.store.add_part_row;
     if (!row) { showAlert('No part selected', 'warning'); return; }
     if (row.availability === 'in_stock') {
-      storeValue('hp_install_id', row.harvested_part_id);
-      storeValue('pal_part_id', row.harvested_part_id);
-      storeValue('pal_action', 'stock_to_asset');
-      storeValue('pal_movement_type', 'stock_to_asset');
-      storeValue('pal_from_asset_id', null);
-      storeValue('pal_from_location_id', null);
-      storeValue('pal_to_asset_id', Number(appsmith.URL.queryParams.asset_id));
-      storeValue('pal_to_location_id', null);
-      storeValue('hp_condition_grade', row.condition_grade);
-      storeValue('hp_notes', 'Installed from stock');
-      storeValue('hp_signature', appsmith.store.userName + ' | ' + new Date().toISOString());
+      await Promise.all([
+        storeValue('hp_install_id', row.harvested_part_id),
+        storeValue('pal_part_id', row.harvested_part_id),
+        storeValue('pal_action', 'stock_to_asset'),
+        storeValue('pal_movement_type', 'stock_to_asset'),
+        storeValue('pal_from_asset_id', null),
+        storeValue('pal_from_location_id', null),
+        storeValue('pal_to_asset_id', Number(appsmith.URL.queryParams.asset_id)),
+        storeValue('pal_to_location_id', null),
+        storeValue('hp_condition_grade', row.condition_grade),
+        storeValue('hp_notes', 'Installed from stock'),
+        storeValue('hp_part_cost', row.part_cost),
+        storeValue('hp_signature', appsmith.store.userName + ' | ' + new Date().toISOString())
+      ]);
       try {
         await qry_install_part.run();
-        await qry_install_part_pia.run();
+        await qry_install_part_pia.run({ assetId: Number(appsmith.URL.queryParams.asset_id) });
         await qry_update_part_cost.run();
         await qry_insert_parts_audit_log.run();
         await qry_add_parts_search.run();
         await qry_get_asset_parts_combined.run();
+        await qry_get_asset_parts_cost.run();
         showAlert('Part installed ✓', 'success');
       } catch (err) { showAlert('Install failed: ' + err.message, 'error'); }
     } else {
@@ -218,6 +235,34 @@ export default {
       showAlert('Shred record created ✓', 'success');
     } catch(err) {
       showAlert('Shred error: ' + err.message, 'error');
+    }
+  },
+  removeInstalledPart: async (harvestedPartId) => {
+    try {
+      await qry_uninstall_part.run({ harvestedPartId: harvestedPartId });
+      await qry_clear_pia_link.run({
+        assetId: Number(appsmith.URL.queryParams.asset_id),
+        harvestedPartId: harvestedPartId
+      });
+      await Promise.all([
+        storeValue('pal_part_id', harvestedPartId),
+        storeValue('pal_action', 'asset_to_stock'),
+        storeValue('pal_movement_type', 'asset_to_stock'),
+        storeValue('pal_from_asset_id', Number(appsmith.URL.queryParams.asset_id)),
+        storeValue('pal_to_asset_id', null),
+        storeValue('pal_from_location_id', null),
+        storeValue('pal_to_location_id', null),
+        storeValue('hp_condition_grade', ''),
+        storeValue('hp_notes', 'Removed from asset — returned to stock'),
+        storeValue('hp_signature', appsmith.store.userName + ' | ' + new Date().toISOString())
+      ]);
+      await qry_insert_parts_audit_log.run();
+      await qry_get_asset_parts_combined.run();
+      await qry_search_available_parts.run();
+      await qry_get_asset_parts_cost.run();
+      showAlert('Part removed and returned to stock ✓', 'success');
+    } catch (err) {
+      showAlert('Failed to remove part — ' + err.message, 'error');
     }
   },
   saveGrading: async () => {

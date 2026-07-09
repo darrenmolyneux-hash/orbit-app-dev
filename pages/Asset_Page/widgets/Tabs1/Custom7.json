@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 17,
+  "bottomRow": 21,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n  total: qry_pre_inventory_summary.data[0]?.total || 0,\n  salvageable: qry_pre_inventory_summary.data[0]?.salvageable || 0,\n  scrapped: qry_pre_inventory_summary.data[0]?.scrapped || 0,\n  removed: qry_pre_inventory_summary.data[0]?.removed || 0,\n  still_in_asset: qry_pre_inventory_summary.data[0]?.still_in_asset || 0,\n  overdue: qry_pre_inventory_summary.data[0]?.overdue || 0,\n  due_soon: qry_pre_inventory_summary.data[0]?.due_soon || 0,\n  assessed_at: qry_pre_inventory_summary.data[0]?.assessed_at || '',\n  assessed_by: qry_pre_inventory_summary.data[0]?.assessed_by || '',\n  installedParts: qry_get_asset_parts_cost.data,\n  partsCount: qry_get_part_types.data ? qry_get_part_types.data.length : 0\n}}}",
   "dynamicBindingPathList": [
@@ -53,7 +53,7 @@
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
   "onViewAllParts": "{{\n  (function() {\n    qry_get_asset_parts_combined.run();\n    storeValue('showPartsTable', true);\n    showModal('ModalParts');\n  })()\n}}",
-  "originalBottomRow": 21,
+  "originalBottomRow": 17,
   "originalTopRow": 0,
   "parentColumnSpace": 19.5,
   "parentId": "onlm3me0uv",

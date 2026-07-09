@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO pre_inventory_assessments (\n  asset_id,\n  part_type_id,\n  is_salvageable,\n  assessed_by,\n  assessed_at,\n  harvested_part_id,\n  notes\n)\nSELECT\n  {{Number(appsmith.URL.queryParams.asset_id)}},\n  hp.part_type_id,\n  hp.is_salvageable,\n  {{appsmith.store.userName}},\n  NOW(),\n  hp.id,\n  'Installed from stock'\nFROM harvested_parts hp\nWHERE hp.id = {{Number(appsmith.store.hp_install_id)}}\n  AND hp.part_type_id IS NOT NULL\nON CONFLICT (asset_id, part_type_id)\nDO UPDATE SET\n  harvested_part_id = EXCLUDED.harvested_part_id,\n  is_salvageable    = EXCLUDED.is_salvageable,\n  assessed_by       = EXCLUDED.assessed_by,\n  assessed_at       = EXCLUDED.assessed_at,\n  notes             = EXCLUDED.notes;",
+      "body": "INSERT INTO pre_inventory_assessments (\n  asset_id,\n  part_type_id,\n  is_salvageable,\n  assessed_by,\n  assessed_at,\n  harvested_part_id,\n  notes\n)\nSELECT\n  {{Number(this.params.assetId ?? appsmith.URL.queryParams.asset_id)}},\n  hp.part_type_id,\n  hp.is_salvageable,\n  {{appsmith.store.userName}},\n  NOW(),\n  hp.id,\n  'Installed from stock'\nFROM harvested_parts hp\nWHERE hp.id = {{Number(appsmith.store.hp_install_id)}}\n  AND hp.part_type_id IS NOT NULL\nON CONFLICT (asset_id, part_type_id)\nDO UPDATE SET\n  harvested_part_id = EXCLUDED.harvested_part_id,\n  is_salvageable    = EXCLUDED.is_salvageable,\n  assessed_by       = EXCLUDED.assessed_by,\n  assessed_at       = EXCLUDED.assessed_at,\n  notes             = EXCLUDED.notes;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

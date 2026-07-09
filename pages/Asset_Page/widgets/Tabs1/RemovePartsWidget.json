@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 52,
+  "bottomRow": 54,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n  {\n    removedParts: qry_get_asset_parts_combined.data.filter(r => r.row_status === 'removed') || [],\n    repairScraps: qry_repair_scraps.data || [],\n    step: appsmith.store.harvest_step,\n    isBattery: appsmith.store.hp_is_battery,\n    harvestSigned: appsmith.store.harvest_signed,\n    locationOptions: JSParts.locationOptions(),\n    donorLocationOptions: JSParts.donorLocationOptions(),\n    disposeByDate: JSParts.disposeByDate(),\n    signOffLabel: JSParts.signOffLabel(),\n    itemPartType: appsmith.store.hp_part_type,\n    sourceAssetRef: qry_GetAssetById.data[0]?.asset_ref\n  }\n}}",
   "dynamicBindingPathList": [
@@ -68,8 +68,8 @@
   "onStep3to4": "{{JSParts.step3to4();}}",
   "onSubmitRemoval": "{{JSParts.submit();}}",
   "onWizardBack": "{{JSParts.onWizardBack();}}",
-  "originalBottomRow": 69,
-  "originalTopRow": 21,
+  "originalBottomRow": 52,
+  "originalTopRow": 17,
   "parentColumnSpace": 14.5,
   "parentId": "onlm3me0uv",
   "parentRowSpace": 10,
@@ -82,7 +82,7 @@
     "js": ""
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 17,
+  "topRow": 21,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": "",
