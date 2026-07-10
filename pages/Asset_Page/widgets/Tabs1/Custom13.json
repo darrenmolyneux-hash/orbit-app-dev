@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 34,
+  "bottomRow": 33,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n{\n  \"history\": qry_asset_history.data\n}\n}}",
   "dynamicBindingPathList": [
@@ -43,7 +43,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 12,
+  "originalBottomRow": 34,
   "originalTopRow": 0,
   "parentColumnSpace": 14.5,
   "parentId": "wk1qz7r8y0",

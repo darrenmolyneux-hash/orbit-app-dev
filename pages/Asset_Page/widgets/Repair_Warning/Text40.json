@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
+  "bottomRow": 14,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "originalBottomRow": 14,
-  "originalTopRow": 10,
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
   "overflow": "NONE",
   "parentColumnSpace": 18.8125,
   "parentId": "1ut5fwuzmt",
@@ -43,7 +43,7 @@
   "text": "Ensure you have identified the required part before proceeding.",
   "textAlign": "CENTER",
   "textColor": "#ef4444",
-  "topRow": 11,
+  "topRow": 10,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
