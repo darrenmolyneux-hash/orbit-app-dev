@@ -4,14 +4,11 @@
   "borderRadius": "1.5rem",
   "borderWidth": "1",
   "bottomRow": 82,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{\n  {\n    pallets: qry_get_sale_pallets.data || [],\n    customers: qry_search_sale_customers.data || [],\n    pallet: qry_get_sale_pallet_detail.data?.[0] || {},\n    items: qry_get_sale_pallet_items.data || [],\n    asset_results: qry_search_assets_for_sale_pal.data || []\n  }\n}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "defaultModel"

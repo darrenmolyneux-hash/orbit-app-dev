@@ -1,26 +1,20 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 114,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "bottomRow": 65,
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{\n  \"platforms\": GetPlatforms.data || [],\n  \"saleList\": appsmith.store.saleList || [],\n  \"selectedPlatform\": appsmith.store.selectedPlatform || \"\"\n}}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
     },
     {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "defaultModel"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
@@ -64,8 +58,8 @@
   "onProcessOrder": "{{SaleListActions.runOnProcessOrder();}}",
   "onRemove": "{{SaleListActions.runOnRemoveItem();}}",
   "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
-  "originalBottomRow": 114,
-  "originalTopRow": 59,
+  "originalBottomRow": 93,
+  "originalTopRow": 67,
   "parentColumnSpace": 16.6875,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -78,7 +72,7 @@
     "js": "function escHtml(str) {\n  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\nfunction render() {\n  const m = appsmith.model || {};\n  const platforms = Array.isArray(m.platforms) ? m.platforms : [];\n  const items = Array.isArray(m.saleList) ? m.saleList : [];\n  const selectedPlatform = m.selectedPlatform || '';\n  const select = document.getElementById('platformSelect');\n  if (select.options.length <= 1 && platforms.length > 0) {\n    platforms.forEach(function (p) {\n      const opt = document.createElement('option');\n      opt.value = p.platform;\n      opt.textContent = p.platform;\n      select.appendChild(opt);\n    });\n  }\n  if (select.value !== selectedPlatform) select.value = selectedPlatform;\n  const tbody = document.getElementById('saleTbody');\n  if (!items.length) {\n    tbody.innerHTML = '<tr><td colspan=\"6\" class=\"empty-row\">No items added yet.</td></tr>';\n    document.getElementById('saleTotal').textContent = '£0.00';\n    return;\n  }\n  let total = 0;\n  tbody.innerHTML = items.map(function (item, idx) {\n    const price = Number(item.sell_price || 0);\n    total += price;\n    return '<tr>' + '<td>' + escHtml(item.asset_ref) + '</td>' + '<td>' + escHtml(item.item_type_name) + '</td>' + '<td>' + escHtml(item.make_name) + ' ' + escHtml(item.model_name) + '</td>' + '<td>' + escHtml(item.serial_number) + '</td>' + '<td><input type=\"number\" step=\"0.01\" class=\"priceInput\" data-idx=\"' + idx + '\" value=\"' + price.toFixed(2) + '\" /></td>' + '<td><button class=\"removeBtn\" data-id=\"' + escHtml(item.asset_id) + '\">&times;</button></td>' + '</tr>';\n  }).join('');\n  document.getElementById('saleTotal').textContent = '£' + total.toFixed(2);\n  Array.from(document.getElementsByClassName('priceInput')).forEach(function (input) {\n    input.addEventListener('focus', function () {\n      input.select();\n    });\n    input.onchange = function () {\n      const idx = Number(input.dataset.idx);\n      appsmith.updateModel({\n        priceUpdate: {\n          idx: idx,\n          value: Number(input.value)\n        }\n      });\n      appsmith.triggerEvent('onPriceChange');\n    };\n  });\n  Array.from(document.getElementsByClassName('removeBtn')).forEach(function (btn) {\n    btn.onclick = function () {\n      appsmith.updateModel({\n        removeId: btn.dataset.id\n      });\n      appsmith.triggerEvent('onRemoveItem');\n    };\n  });\n}\nappsmith.onReady(function () {\n  render();\n  document.getElementById('platformSelect').onchange = function () {\n    appsmith.updateModel({\n      selectedPlatform: this.value\n    });\n    appsmith.triggerEvent('onPlatformChange');\n  };\n  document.getElementById('processOrderBtn').onclick = function () {\n    appsmith.triggerEvent('onProcessOrder');\n  };\n});\nappsmith.onModelChange(render);"
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 59,
+  "topRow": 39,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": "@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');\n*,*::before,*::after{box-sizing:border-box;}\n#saleListBox{font-family:'Figtree',sans-serif;padding:0;}\n.card{background:#fff;border:0.5px solid rgba(0,0,0,0.1);border-radius:10px;overflow:hidden;}\n.widget-header{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:0.5px solid rgba(0,0,0,0.08);}\n.widget-header-icon{width:26px;height:26px;border-radius:8px;background:rgba(5,4,46,0.1);display:flex;align-items:center;justify-content:center;color:#05042E;font-size:13px;flex-shrink:0;}\n.widget-header span{font-size:10px;font-weight:700;color:#05042E;text-transform:uppercase;letter-spacing:0.05em;}\n#platformRow{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:0.5px solid rgba(0,0,0,0.08);}\n#platformRow label{font-size:10px;font-weight:700;color:#888780;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap;}\n#platformSelect{flex:1;padding:7px 10px;font-family:'Figtree',sans-serif;font-size:13px;font-weight:600;color:#05042E;border:0.5px solid rgba(0,0,0,0.1);border-radius:6px;background:#fff;outline:none;}\n#platformSelect:focus{border-color:#469BC0;}\n#saleTable{width:100%;border-collapse:collapse;}\n#saleTable th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:#888780;font-weight:700;padding:8px 12px;border-bottom:0.5px solid rgba(0,0,0,0.08);}\n#saleTable td{padding:8px 12px;font-size:13px;font-weight:600;border-bottom:0.5px solid rgba(0,0,0,0.06);color:#05042E;}\n#saleTable tr:last-child td{border-bottom:none;}\n.priceInput{width:70px;padding:5px 7px;font-family:'Figtree',sans-serif;font-size:12px;font-weight:600;color:#05042E;border:0.5px solid rgba(0,0,0,0.1);border-radius:6px;outline:none;}\n.priceInput:focus{border-color:#469BC0;}\n.fee-cell{color:#888780;}\n.removeBtn{background:none;border:none;color:#991b1b;font-size:16px;cursor:pointer;line-height:1;padding:4px 6px;}\n.removeBtn:hover{color:#7f1d1d;}\n.empty-row{text-align:center;color:#888780;font-weight:600;padding:20px 0;font-size:12px;}\n#saleTotalRow{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(5,4,46,0.04);border-top:0.5px solid rgba(0,0,0,0.08);font-weight:700;font-size:14px;color:#05042E;}\n#processOrderBtn{width:100%;padding:11px;font-family:'Figtree',sans-serif;background:#A3E851;color:#05042E;font-weight:700;font-size:12px;border:none;cursor:pointer;transition:background 0.15s;}\n#processOrderBtn:hover{background:#5DC987;}",

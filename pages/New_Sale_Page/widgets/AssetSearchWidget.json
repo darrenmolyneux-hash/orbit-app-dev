@@ -1,26 +1,20 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 59,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "bottomRow": 39,
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "defaultModel": "{{{\n  \"searchTerm\": \"\",\n  \"asset\": SearchSaleItem.data && SearchSaleItem.data[0] ? SearchSaleItem.data[0] : null,\n  \"statusInfo\": {\n    \"status_name\": GetAssetStatus.data && GetAssetStatus.data[0] ? GetAssetStatus.data[0].status_name : null,\n    \"alreadySold\": CheckAssetOnSale.data && CheckAssetOnSale.data.length > 0,\n    \"sale_ref\": CheckAssetOnSale.data && CheckAssetOnSale.data.length > 0 ? CheckAssetOnSale.data[0].sale_ref : null\n  },\n  \"assetToAdd\": null\n}}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"
     },
     {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "defaultModel"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
@@ -49,7 +43,7 @@
   "needsErrorInfo": false,
   "onAddToSale": "{{JSObject4.runOnAddToSale();}}",
   "onSearch": "{{JSObject3.Custom2onSearch();}}",
-  "originalBottomRow": 59,
+  "originalBottomRow": 56,
   "originalTopRow": 20,
   "parentColumnSpace": 16.6875,
   "parentId": "0",

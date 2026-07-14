@@ -1,24 +1,23 @@
 {
-  "gitSyncId": "6a1ebe10be4ef87dd1dc50cf_770c59fb-ff7f-47d9-9ccb-6496420affb8",
+  "gitSyncId": "6a305b9e0882adc7e482e226_db641f9f-c8e2-4225-a137-90b25496ad15",
   "unpublishedPage": {
-    "isHidden": true,
+    "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 650,
+          "bottomRow": 890,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
-          "dynamicTriggerPathList": [],
           "leftColumn": 0,
-          "minHeight": 900,
+          "minHeight": 780,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
-          "rightColumn": 1174,
+          "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 125,
+          "snapRows": 76,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 94,
@@ -27,7 +26,7 @@
         }
       }
     ],
-    "name": "New_Sale_Page",
-    "slug": "new-sale-page"
+    "name": "Asset_Pricing _History",
+    "slug": "asset-pricing-history"
   }
 }

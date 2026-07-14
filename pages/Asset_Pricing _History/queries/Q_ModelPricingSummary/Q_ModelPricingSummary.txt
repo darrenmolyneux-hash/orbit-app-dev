@@ -1,0 +1,19 @@
+SELECT
+  (SELECT ROUND(AVG(a.original_cost),2) FROM assets a
+     WHERE a.model = {{ appsmith.store.selectedModel }}
+       AND a.original_cost IS NOT NULL
+       AND a.date_added >= NOW() - INTERVAL '6 months') AS avg_paid_6mo,
+  (SELECT COUNT(*) FROM assets a
+     WHERE a.model = {{ appsmith.store.selectedModel }}
+       AND a.original_cost IS NOT NULL
+       AND a.date_added >= NOW() - INTERVAL '6 months') AS units_paid_6mo,
+  (SELECT ROUND(AVG(si.sell_price),2) FROM assets a
+     JOIN sale_items si ON si.asset_id = a.asset_id
+     JOIN sales s ON s.sale_id = si.sale_id
+     WHERE a.model = {{ appsmith.store.selectedModel }}
+       AND s.sale_date >= NOW() - INTERVAL '6 months') AS avg_sold_6mo,
+  (SELECT COUNT(*) FROM assets a
+     JOIN sale_items si ON si.asset_id = a.asset_id
+     JOIN sales s ON s.sale_id = si.sale_id
+     WHERE a.model = {{ appsmith.store.selectedModel }}
+       AND s.sale_date >= NOW() - INTERVAL '6 months') AS units_sold_6mo;

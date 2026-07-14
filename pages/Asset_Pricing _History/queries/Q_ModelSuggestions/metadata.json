@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a27f57e40e83311173efe61_328408b9-4f26-4ea5-91e8-ded956bdd489",
-  "id": "New_Sale_Page_CheckAssetOnSale",
+  "gitSyncId": "6a305b9e0882adc7e482e226_20fb2d2c-3bed-4900-9a4e-c08ce5bd5d27",
+  "id": "Asset_Pricing _History_Q_ModelSuggestions",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- CheckAssetOnSale\nSELECT \n    si.sale_id,\n    s.sale_ref\nFROM sale_items si\nLEFT JOIN sales s ON si.sale_id = s.sale_id\nWHERE si.asset_id = {{Number(AssetSearchWidget.model.asset?.asset_id)}};",
+      "body": "SELECT model_id, model_name\nFROM models\nWHERE model_name ILIKE '%' || {{ModelSearchInput.filterText}} || '%'\nORDER BY model_name;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "CheckAssetOnSale",
-    "pageId": "New_Sale_Page",
-    "runBehaviour": "MANUAL",
+    "name": "Q_ModelSuggestions",
+    "pageId": "Asset_Pricing _History",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

@@ -1,0 +1,4 @@
+SELECT model_id, model_name
+FROM models
+WHERE model_name ILIKE '%' || {{ModelSearchInput.filterText}} || '%'
+ORDER BY model_name;

@@ -1,0 +1,77 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "onFilterUpdate"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "onFilterUpdate"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "u723au5pz5",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Search Model",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onFilterUpdate": "{{Q_ModelSuggestions.run()}}",
+  "onOptionChange": "{{(async () => {\n  await storeValue('selectedModel', ModelSearchInput.selectedOptionValue);\n  await Q_ModelPricingSummary.run();\n  await Q_ModelGradeBreakdown.run();\n  await Q_ModelSaleTrend.run();\n})()}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 19.5,
+  "parentId": "kk03s7t1bg",
+  "parentRowSpace": 10,
+  "placeholderText": "Search for a model",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 21,
+  "serverSideFiltering": true,
+  "sourceData": "{{(Q_ModelSuggestions.data || []).map(d => ({label: d.model_name, value: d.model_id}))}}",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "q9xn33q5s4",
+  "widgetName": "ModelSearchInput"
+}

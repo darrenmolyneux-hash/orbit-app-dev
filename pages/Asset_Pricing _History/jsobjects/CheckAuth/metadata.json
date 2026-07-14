@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a305b9e0882adc7e482e226_d6397489-b91a-4b0e-b8a2-f53c44a8f372",
+  "id": "Asset_Pricing _History_CheckAuth",
+  "unpublishedCollection": {
+    "name": "CheckAuth",
+    "pageId": "Asset_Pricing _History",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

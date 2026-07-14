@@ -29,7 +29,7 @@
     ],
     "name": "SearchSaleItem",
     "pageId": "New_Sale_Page",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

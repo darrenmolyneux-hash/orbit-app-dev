@@ -104,6 +104,10 @@
     {
       "id": "Customer_Detail_Page",
       "isDefault": false
+    },
+    {
+      "id": "Asset_Pricing _History",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

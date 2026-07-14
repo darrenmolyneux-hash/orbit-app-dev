@@ -1,0 +1,25 @@
+SELECT
+  COALESCE(p.grade, s.grade) AS grade,
+  COALESCE(p.units_paid, 0) AS units_paid,
+  p.avg_paid,
+  COALESCE(s.units_sold, 0) AS units_sold,
+  s.avg_sold
+FROM (
+  SELECT a.grade, COUNT(*) AS units_paid, ROUND(AVG(a.original_cost),2) AS avg_paid
+  FROM assets a
+  WHERE a.model = {{ appsmith.store.selectedModel }}
+    AND a.original_cost IS NOT NULL
+    AND a.date_added >= NOW() - INTERVAL '6 months'
+  GROUP BY a.grade
+) p
+FULL OUTER JOIN (
+  SELECT a.grade, COUNT(*) AS units_sold, ROUND(AVG(si.sell_price),2) AS avg_sold
+  FROM assets a
+  JOIN sale_items si ON si.asset_id = a.asset_id
+  JOIN sales s ON s.sale_id = si.sale_id
+  WHERE a.model = {{ appsmith.store.selectedModel }}
+    AND s.sale_date >= NOW() - INTERVAL '6 months'
+  GROUP BY a.grade
+) s ON p.grade = s.grade
+WHERE COALESCE(p.grade, s.grade) IS NOT NULL
+ORDER BY grade;
