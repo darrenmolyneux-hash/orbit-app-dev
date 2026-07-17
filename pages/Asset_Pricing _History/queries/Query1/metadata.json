@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a305b9e0882adc7e482e226_08ce27da-cff9-4059-b130-a1e1fbdf34d9",
+  "gitSyncId": "6a305b9e0882adc7e482e226_f58f67fe-f323-47a3-89f5-50c83ad17fb0",
   "id": "Asset_Pricing _History_Query1",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT asset_id, overall_grade, sold, sold_date, sell_price, original_cost\nFROM assets\nWHERE model = {{ appsmith.store.selectedModel }};",
+      "body": "SELECT asset_ref, make, model, model_id \nFROM assets \nWHERE asset_ref = '<that asset ref>';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,11 +22,7 @@
       "name": "ERP_DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "name": "Query1",
     "pageId": "Asset_Pricing _History",
     "runBehaviour": "MANUAL",

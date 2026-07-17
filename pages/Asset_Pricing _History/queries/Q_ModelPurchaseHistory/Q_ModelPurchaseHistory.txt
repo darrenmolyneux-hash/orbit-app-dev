@@ -1,0 +1,10 @@
+SELECT 
+  a.asset_ref,
+  CONCAT_WS(' / ', mk.make_name, md.model_name, a.colour, a.serial_number) AS details,
+  a.original_cost AS purchase_price,
+  a.date_added AS purchase_date
+FROM assets a
+LEFT JOIN makes mk ON mk.make_id = a.make
+LEFT JOIN models md ON md.model_id = a.model
+WHERE md.model_id = {{ appsmith.store.selectedModel }}
+ORDER BY a.date_added DESC
